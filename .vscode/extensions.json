@@ -1,0 +1,17 @@
+{
+	"recommendations": [
+		"christian-kohler.path-intellisense",
+		"kuscamara.remove-unused-imports",
+		"streetsidesoftware.code-spell-checker",
+		"timonwong.shellcheck",
+		"tyriar.sort-lines",
+		"vunguyentuan.vscode-css-variables",
+		"wallabyjs.console-ninja",
+		"yoavbls.pretty-ts-errors",
+		"arcanis.vscode-zipfs",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"ryanluker.vscode-coverage-gutters",
+		"oven.bun-vscode"
+	]
+}

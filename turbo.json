@@ -1,0 +1,76 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", "**/dist/*", "**/dist/**/*"],
+			"inputs": [
+				"**/package.json",
+				"src/**/*.{ts,tsx,scss,mdx}",
+				"**/src/**/*.{ts,tsx,scss,mdx}"
+			]
+		},
+		"test:once": {
+			"dependsOn": ["build"],
+			"inputs": [
+				"**/package.json",
+				"src/**/*.{ts,tsx,scss,mdx}",
+				"**/src/**/*.{ts,tsx,scss,mdx}",
+				"__tests__/**/*.{ts?x}",
+				"__scripts__/**/*.ts"
+			]
+		},
+		"test:coverage": {
+			"outputs": ["coverage/**", "**/coverage/*", "**/coverage/**/*"],
+			"inputs": [
+				"**/package.json",
+				"src/**/*.{ts,tsx,scss,mdx}",
+				"**/src/**/*.{ts,tsx,scss,mdx}",
+				"__tests__/**/*.{ts?x}",
+				"__scripts__/**/*.ts"
+			]
+		},
+		"test:semver": {
+			"inputs": [
+				"../break-check/src/**/*.ts",
+				"break-check.config.json",
+				"**/package.json",
+				"src/**/*.{ts,tsx,scss,mdx}",
+				"**/src/**/*.{ts,tsx,scss,mdx}",
+				"__tests__/public/**/*.test.{ts,tsx}",
+				"__scripts__/**/*.ts"
+			]
+		},
+		"lint:biome": {
+			"cache": false
+		},
+		"lint:eslint": {
+			"inputs": [
+				"**/package.json",
+				"tsconfig.json",
+				"src/**/*.{ts,tsx}",
+				"**/src/**/*.{ts,tsx}",
+				"__tests__/**/*.{ts?x}",
+				"__scripts__/**/*.{ts?x}",
+				"../../eslint.config.js"
+			]
+		},
+		"lint:types": {
+			"dependsOn": ["gen"],
+			"inputs": [
+				"**/package.json",
+				"tsconfig.json",
+				"src/**/*.{ts,tsx}",
+				"**/src/**/*.{ts,tsx}",
+				"__tests__/**/*.{ts?x}",
+				"__scripts__/**/*.{ts?x}"
+			]
+		},
+		"lint": {
+			"dependsOn": ["lint:biome", "lint:eslint", "lint:types"]
+		},
+		"globalDependencies": {
+			"inputs": ["pnpm-lock.yaml", "tsconfig.json", ".nvmrc"]
+		}
+	}
+}
