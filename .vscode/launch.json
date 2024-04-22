@@ -1,0 +1,38 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Debug Current Test File",
+			"autoAttachChildProcesses": true,
+			"skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+			"cwd": "${workspaceRoot}/packages/atom.io",
+			"program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+			"args": ["run", "${fileBasenameNoExtension}"],
+			"smartStep": true,
+			"console": "integratedTerminal"
+		},
+		{
+			"type": "bun",
+			"request": "launch",
+			"name": "Debug Bun",
+			"program": "${file}",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"env": {},
+			"strictEnv": false,
+			"watchMode": false,
+			"stopOnEntry": false,
+			"noDebug": false,
+			"runtime": "bun",
+			"runtimeArgs": []
+		},
+		{
+			"type": "bun",
+			"request": "attach",
+			"name": "Attach to Bun",
+			"url": "ws://localhost:6499/"
+		}
+	]
+}

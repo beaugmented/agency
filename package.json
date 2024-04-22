@@ -1,0 +1,48 @@
+{
+	"name": "@beaugmented/agency-monorepo",
+	"version": "0.0.0",
+	"type": "module",
+	"repository": "https://github.com/beaugmented/agency",
+	"author": "Augmented AI",
+	"license": "MIT",
+	"private": true,
+	"packageManager": "pnpm@8.15.7",
+	"engines": {
+		"bun": "1.1.4",
+		"node": "20.12.2",
+		"pnpm": "8.15.7"
+	},
+	"scripts": {
+		"dev": "tsc --watch",
+		"lint": "turbo run lint",
+		"lint:biome": "turbo run lint:biome",
+		"lint:eslint": "turbo run lint:eslint",
+		"lint:types": "turbo run lint:types",
+		"lint:fix:biome": "biome check --apply *",
+		"lint:fix:eslint": "eslint --fix .",
+		"fmt": "biome format .",
+		"fmt:fix": "biome format --write .",
+		"build": "turbo run build",
+		"test": "cross-env CI=true turbo run test:once",
+		"test:coverage": "cross-env CI=true turbo run test:coverage",
+		"test:semver": "cross-env CI=true turbo run test:semver",
+		"release": "bun run build && changeset publish",
+		"notes": "changeset",
+		"nuke": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm pnpm-lock.yaml"
+	},
+	"trustedDependencies": ["@biomejs/biome"],
+	"devDependencies": {
+		"@biomejs/biome": "1.7.1",
+		"@changesets/cli": "2.27.1",
+		"@eslint/eslintrc": "3.0.2",
+		"@eslint/js": "9.1.1",
+		"@typescript-eslint/eslint-plugin": "7.7.0",
+		"@typescript-eslint/parser": "7.7.0",
+		"cross-env": "7.0.3",
+		"eslint-plugin-import": "2.29.1",
+		"eslint-plugin-simple-import-sort": "12.1.0",
+		"turbo": "1.13.2",
+		"typescript": "5.4.5",
+		"vitest": "1.5.0"
+	}
+}
