@@ -6,11 +6,11 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "pnpm@8.15.7",
+	"packageManager": "pnpm@9.0.5",
 	"engines": {
 		"bun": "1.1.4",
 		"node": "20.12.2",
-		"pnpm": "8.15.7"
+		"pnpm": "9.0.5"
 	},
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
