@@ -4,7 +4,7 @@
 	"json.schemas": [
 		{
 			"fileMatch": ["**/break-check.config.json"],
-			"url": "./packages/break-check/break-check.schema.json"
+			"url": "https://unpkg.com/break-check@0.6.2/dist/break-check.schema.json"
 		}
 	],
 	"editor.formatOnSave": true,
