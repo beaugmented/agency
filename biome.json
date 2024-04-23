@@ -3,13 +3,12 @@
 	"files": {
 		"ignoreUnknown": true,
 		"ignore": [
+			".varmint",
 			"build",
 			"coverage",
 			"dist",
 			"generated",
-			"node_modules",
-			"server-build",
-			"ui/icons"
+			"node_modules"
 		]
 	},
 	"javascript": {
