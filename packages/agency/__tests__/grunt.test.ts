@@ -57,8 +57,8 @@ describe(`ai`, () => {
 			},
 		)
 		function openDialogue<Update0, Update1>(
-			agent0: Agent<any, Update0>,
-			agent1: Agent<any, Update1>,
+			agent0: Agent<unknown, Update0>,
+			agent1: Agent<unknown, Update1>,
 			options?: { log?: boolean },
 		): [
 			callAgent0: () => Promise<AgentCompletion<Update0>>,
