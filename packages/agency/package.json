@@ -43,7 +43,7 @@
 		"zod": "3.23.4"
 	},
 	"dependencies": {
-		"atom.io": "0.19.4",
+		"atom.io": "0.20.0",
 		"varmint": "0.0.0"
 	}
 }
