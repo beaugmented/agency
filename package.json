@@ -42,7 +42,7 @@
 		"cross-env": "7.0.3",
 		"eslint-plugin-import": "2.29.1",
 		"eslint-plugin-simple-import-sort": "12.1.0",
-		"turbo": "1.13.2",
+		"turbo": "1.13.3",
 		"typescript": "5.4.5",
 		"vitest": "1.5.2"
 	}
