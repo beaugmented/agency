@@ -88,8 +88,8 @@ importers:
         specifier: 1.5.2
         version: 1.5.2(@types/node@20.12.8)
       zod:
-        specifier: 3.23.5
-        version: 3.23.5
+        specifier: 3.23.6
+        version: 3.23.6
 
 packages:
 
@@ -2748,8 +2748,8 @@ packages:
   zod@3.23.1:
     resolution: {integrity: sha512-fwxuO7wwRmBv1+OvqlZF0t73s3xhR0Cr7mRIFSca6Z/ZNsrzvCPl4Az4KJqi1mgkXdODuan91Cyyg8it0my1ag==}
 
-  zod@3.23.5:
-    resolution: {integrity: sha512-fkwiq0VIQTksNNA131rDOsVJcns0pfVUjHzLrNBiF/O/Xxb5lQyEXkhZWcJ7npWsYlvs+h0jFWXXy4X46Em1JA==}
+  zod@3.23.6:
+    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
 
 snapshots:
 
@@ -5531,4 +5531,4 @@ snapshots:
 
   zod@3.23.1: {}
 
-  zod@3.23.5: {}
+  zod@3.23.6: {}
