@@ -27,8 +27,8 @@ importers:
         specifier: 7.8.0
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       atom.io:
-        specifier: 0.20.3
-        version: 0.20.3
+        specifier: 0.21.0
+        version: 0.21.0
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -51,8 +51,8 @@ importers:
   packages/agency:
     dependencies:
       atom.io:
-        specifier: 0.20.3
-        version: 0.20.3
+        specifier: 0.21.0
+        version: 0.21.0
       varmint:
         specifier: 0.0.0
         version: 0.0.0
@@ -888,8 +888,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  atom.io@0.20.3:
-    resolution: {integrity: sha512-k7lNy4htAza198W3wlLu0h604NrwIjnVvLFp27hULrL9ECr+kpd1qS6fhEjEJuTQBR9GIWN2FtOvB0SPc+3RMA==}
+  atom.io@0.21.0:
+    resolution: {integrity: sha512-L1Aq2Bby3isX6f+If2l4vgNZlJS/ayM0e81c+Sj/jQ/mFEiI7RLgGFX3tO02vmhdZ2OFMZKUai9MRZwViyhbcg==}
     peerDependencies:
       '@floating-ui/react': '>=0.25.0'
       '@floating-ui/react-dom': '>=2.0.0'
@@ -3524,7 +3524,7 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  atom.io@0.20.3: {}
+  atom.io@0.21.0: {}
 
   available-typed-arrays@1.0.7:
     dependencies:
