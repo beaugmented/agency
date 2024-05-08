@@ -40,7 +40,7 @@
 		"vite": "5.2.11",
 		"vite-tsconfig-paths": "4.3.2",
 		"vitest": "1.6.0",
-		"zod": "3.23.7"
+		"zod": "3.23.8"
 	},
 	"dependencies": {
 		"atom.io": "0.21.1",
