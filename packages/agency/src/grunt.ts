@@ -1,7 +1,8 @@
 import * as crypto from "node:crypto"
 
-import { findState, getState, setState } from "atom.io"
+import { getState, setState } from "atom.io"
 import type { Loadable } from "atom.io/data"
+import { findState } from "atom.io/ephemeral"
 
 import { type Agenda, agendaAtoms } from "./agenda"
 import type {
