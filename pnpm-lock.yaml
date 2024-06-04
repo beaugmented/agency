@@ -54,8 +54,8 @@ importers:
         specifier: 0.25.3
         version: 0.25.3
       varmint:
-        specifier: 0.0.0
-        version: 0.0.0
+        specifier: 0.2.0
+        version: 0.2.0
     devDependencies:
       '@types/node':
         specifier: 20.14.10
@@ -2212,8 +2212,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  varmint@0.0.0:
-    resolution: {integrity: sha512-sHbLUC32eZSHW+1z/zDvsDMprsvseBwSvFG8zigbLGLYnVDMjnD3qCra0S/jRY1kGIzfnWkf10Y4RduUzFe4cA==}
+  varmint@0.2.0:
+    resolution: {integrity: sha512-zoQYJRhej0Y85BICFsSUoUrTfcm+q5KnQMLI7H13n478Fc08VbIF4JD3+6XOHy3gMOdc9JKTQGvy1VZ80XBbSg==}
 
   vite-node@2.0.1:
     resolution: {integrity: sha512-nVd6kyhPAql0s+xIVJzuF+RSRH8ZimNrm6U8ZvTA4MXv8CHI17TFaQwRaFiK75YX6XeFqZD4IoAaAfi9OR1XvQ==}
@@ -4617,7 +4617,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  varmint@0.0.0: {}
+  varmint@0.2.0: {}
 
   vite-node@2.0.1(@types/node@20.14.10):
     dependencies:
