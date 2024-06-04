@@ -39,7 +39,8 @@ export async function evaluateAgentResponse({
 		} as const,
 	]
 	return completions
-		.get(statement, {
+		.for(statement)
+		.get({
 			model: `gpt-4-turbo`,
 			messages,
 		})
