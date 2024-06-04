@@ -68,7 +68,8 @@ export class Grunt<State extends Agenda>
 		const paramsLoadable = getState(findState(openAiParamsSelectors, this.id))
 		const params = await paramsLoadable
 		const assistance = completions
-			.get(`${this.id}-${this.index}`, params)
+			.for(`${this.id}-${this.index}`)
+			.get(params)
 			.then((completion) => {
 				const [text, stateUpdateRaw] =
 					completion.choices[0].message.content?.split(`AGENDA_JSON`) ?? ``
