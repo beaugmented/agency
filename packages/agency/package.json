@@ -9,7 +9,7 @@
 	"packageManager": "pnpm@9.1.4",
 	"engines": {
 		"bun": "1.1.4",
-		"node": "20.13.1",
+		"node": "20.14.0",
 		"pnpm": "9.1.4"
 	},
 	"main": "dist/index.js",
@@ -30,7 +30,7 @@
 		"test:semver": "bun run build && bun run test:once"
 	},
 	"devDependencies": {
-		"@types/node": "20.12.12",
+		"@types/node": "20.14.1",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.2",
 		"concurrently": "8.2.2",
