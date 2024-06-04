@@ -34,7 +34,7 @@
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.2",
 		"concurrently": "8.2.2",
-		"openai": "4.47.1",
+		"openai": "4.48.1",
 		"tmp": "0.2.3",
 		"tsup": "8.0.2",
 		"vite": "5.2.12",
