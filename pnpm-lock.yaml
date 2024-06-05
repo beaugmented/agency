@@ -54,8 +54,8 @@ importers:
         specifier: 0.24.3
         version: 0.24.3
       varmint:
-        specifier: 0.0.0
-        version: 0.0.0
+        specifier: 0.2.0
+        version: 0.2.0
     devDependencies:
       '@types/node':
         specifier: 20.14.2
@@ -2571,8 +2571,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  varmint@0.0.0:
-    resolution: {integrity: sha512-sHbLUC32eZSHW+1z/zDvsDMprsvseBwSvFG8zigbLGLYnVDMjnD3qCra0S/jRY1kGIzfnWkf10Y4RduUzFe4cA==}
+  varmint@0.2.0:
+    resolution: {integrity: sha512-zoQYJRhej0Y85BICFsSUoUrTfcm+q5KnQMLI7H13n478Fc08VbIF4JD3+6XOHy3gMOdc9JKTQGvy1VZ80XBbSg==}
 
   vite-node@1.6.0:
     resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==}
@@ -5337,7 +5337,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  varmint@0.0.0: {}
+  varmint@0.2.0: {}
 
   vite-node@1.6.0(@types/node@20.14.2):
     dependencies:
