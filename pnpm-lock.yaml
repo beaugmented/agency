@@ -70,8 +70,8 @@ importers:
         specifier: 8.2.2
         version: 8.2.2
       openai:
-        specifier: 4.49.0
-        version: 4.49.0
+        specifier: 4.49.1
+        version: 4.49.1
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -1954,8 +1954,8 @@ packages:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
     engines: {node: '>=12'}
 
-  openai@4.49.0:
-    resolution: {integrity: sha512-/UkrBSej5ejZ4vnOFoeFefX7erjp4k3+xoLKkswjLEvgBU9QtCnOUgsfpvHkzTzgDXpqPMCzyQHQXWsgiq2xPw==}
+  openai@4.49.1:
+    resolution: {integrity: sha512-bsFSNhhTNon+g6r4UYPKGLi+PlfP1G9TJGSkZS5nZx+PTwW2YUTlfxXxpOKrPab5auIXJdlYpC/g/wkHGR1xug==}
     hasBin: true
 
   optionator@0.9.3:
@@ -4713,7 +4713,7 @@ snapshots:
     dependencies:
       mimic-fn: 4.0.0
 
-  openai@4.49.0:
+  openai@4.49.1:
     dependencies:
       '@types/node': 18.19.31
       '@types/node-fetch': 2.6.11
