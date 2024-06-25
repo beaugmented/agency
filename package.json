@@ -33,7 +33,7 @@
 	"trustedDependencies": ["@biomejs/biome"],
 	"devDependencies": {
 		"@biomejs/biome": "1.8.2",
-		"@changesets/cli": "2.27.5",
+		"@changesets/cli": "2.27.6",
 		"@eslint/eslintrc": "3.1.0",
 		"@eslint/js": "9.5.0",
 		"@typescript-eslint/eslint-plugin": "7.13.1",
