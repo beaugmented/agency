@@ -28,22 +28,20 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Set up Node
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4.0.0
+
+      - name: Set up Node    
         uses: actions/setup-node@v4.0.2
         with:
           node-version-file: .nvmrc
           cache: pnpm
 
-      - name: Set up Bun
+      - name: Set up Bun    
         uses: oven-sh/setup-bun@v1.2.2
         with:
           bun-version: 1.1.4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 9.4.0
-
+    
       - name: Install Dependencies
         run: pnpm i
 
@@ -80,6 +78,9 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
       - name: Set up Node
         uses: actions/setup-node@v4.0.2
         with:
@@ -90,11 +91,6 @@ jobs:
         uses: oven-sh/setup-bun@v1.2.2
         with:
           bun-version: 1.1.4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 9.4.0
 
       - name: Install Dependencies
         run: pnpm i
