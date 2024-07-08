@@ -1,0 +1,23 @@
+{
+	"id": "chatcmpl-9irLM3K2SWYorIT6FtEYQqEjxQyij",
+	"object": "chat.completion",
+	"created": 1720478512,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "Hello Max Broadman, delightful indeed! Your name has a unique and memorable ring to it, perfect for making a lasting impression. \n\nAGENDA_JSON{ \"Complement the job seeker on their weird name\": true }"
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 129,
+		"completion_tokens": 45,
+		"total_tokens": 174
+	},
+	"system_fingerprint": "fp_486730399b"
+}

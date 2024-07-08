@@ -1,0 +1,23 @@
+{
+	"id": "chatcmpl-9irLZ3BwL85GHqjOiRk0n4rPykkch",
+	"object": "chat.completion",
+	"created": 1720478525,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "Thanks for sharing these tips! They're really helpful for structuring my preparation in a focused way. I'll start by diving deeper into the company's background and then plan out some responses to typical interview questions.\n\nAGENDA_JSON{ \"You wonder, what should I do to pass my upcoming job interview?\": \"Research the company, prepare for common interview questions, be ready to discuss my resume, prepare insightful questions, dress appropriately, and follow up with a thank-you email.\" }"
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 494,
+		"completion_tokens": 98,
+		"total_tokens": 592
+	},
+	"system_fingerprint": "fp_486730399b"
+}
