@@ -1,0 +1,23 @@
+{
+	"id": "chatcmpl-9irLKTCRiFoNl30XcDXLhGYXNIpYB",
+	"object": "chat.completion",
+	"created": 1720478510,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "Hello! I'm Max Broadman, delighted to meet you. \n\nAGENDA_JSON{ \"Introduce yourself, taking creative liberties with your name.\": \"Max Broadman\" }"
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 189,
+		"completion_tokens": 38,
+		"total_tokens": 227
+	},
+	"system_fingerprint": "fp_486730399b"
+}

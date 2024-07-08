@@ -4,11 +4,11 @@
 		"messages": [
 			{
 				"role": "user",
-				"content": "Hello! I'm Barton Broadbelt, a uniquely proportioned individual on the lookout for new career opportunities. Excited to explore avenues where my distinct dimensions can be an asset!\n\n"
+				"content": "Hello! I'm Max Broadman, delighted to meet you. \n\n"
 			},
 			{
 				"role": "system",
-				"content": "You are a career advisor."
+				"content": "You are a career advisor.\n\nKeep messages short."
 			},
 			{
 				"role": "system",

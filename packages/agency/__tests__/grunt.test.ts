@@ -20,7 +20,7 @@ beforeEach(() => {
 describe(`ai`, () => {
 	test(`ai testing`, async () => {
 		const istanbulEnthusiast = new Grunt(
-			`eris`,
+			`turkish-man`,
 			`You are a large Turkish man with a booming voice and a jolly smile.`,
 			{
 				"Relentlessly talk up vacationing in Istanbul": false,
