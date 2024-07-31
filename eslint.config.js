@@ -1,4 +1,5 @@
 // @ts-check
+
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin"
 import parser from "@typescript-eslint/parser"
 import AtomIOPlugin from "atom.io/eslint-plugin"
@@ -13,7 +14,7 @@ const parserOptions = {
 	sourceType: `module`,
 }
 
-/** @type {import("eslint").Linter.FlatConfig["ignores"]} */
+/** @type {import("eslint").Linter.Config["ignores"]} */
 const ignores = [
 	`**/_shared/**`,
 	`**/build/**`,
@@ -24,7 +25,7 @@ const ignores = [
 	`**/icons/**`,
 ]
 
-/** @type {import("eslint").Linter.FlatConfig} */
+/** @type {import("eslint").Linter.Config} */
 const config = {
 	languageOptions: {
 		parser,
@@ -43,7 +44,6 @@ const config = {
 		"@typescript-eslint/await-thenable": 0,
 		"@typescript-eslint/ban-ts-comment": ERROR,
 		"@typescript-eslint/ban-tslint-comment": 0,
-		"@typescript-eslint/ban-types": ERROR,
 		"@typescript-eslint/class-literal-property-style": ERROR,
 		"@typescript-eslint/consistent-generic-constructors": 0,
 		"@typescript-eslint/consistent-indexed-object-style": 0,
@@ -129,7 +129,6 @@ const config = {
 		"@typescript-eslint/no-use-before-define": 0,
 		"@typescript-eslint/no-useless-constructor": ERROR,
 		"@typescript-eslint/no-useless-empty-export": ERROR,
-		"@typescript-eslint/no-useless-template-literals": ERROR,
 		"@typescript-eslint/no-var-requires": ERROR,
 		"@typescript-eslint/non-nullable-type-assertion-style": 0,
 		"@typescript-eslint/parameter-properties": 0,

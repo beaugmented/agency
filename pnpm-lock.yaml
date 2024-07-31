@@ -20,6 +20,9 @@ importers:
       '@eslint/js':
         specifier: 9.8.0
         version: 9.8.0
+      '@types/eslint':
+        specifier: 9.6.0
+        version: 9.6.0
       '@typescript-eslint/eslint-plugin':
         specifier: 8.0.0
         version: 8.0.0(@typescript-eslint/parser@8.0.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
@@ -41,9 +44,6 @@ importers:
       turbo:
         specifier: 2.0.10
         version: 2.0.10
-      typescript:
-        specifier: 5.5.4
-        version: 5.5.4
       vitest:
         specifier: 2.0.5
         version: 2.0.5(@types/node@20.14.13)
@@ -78,6 +78,9 @@ importers:
       tsup:
         specifier: 8.2.3
         version: 8.2.3(postcss@8.4.39)(typescript@5.5.4)
+      typescript:
+        specifier: 5.5.4
+        version: 5.5.4
       vite:
         specifier: 5.3.5
         version: 5.3.5(@types/node@20.14.13)
@@ -664,8 +667,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@types/eslint@9.6.0':
+    resolution: {integrity: sha512-gi6WQJ7cHRgZxtkQEoyHMppPjq9Kxo5Tjn2prSKDSmZrCz8TZ3jSRCeTJm+WoM+oB0WG37bRqLzaaU3q7JypGg==}
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+
+  '@types/json-schema@7.0.15':
+    resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -3016,7 +3025,14 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.19.0':
     optional: true
 
+  '@types/eslint@9.6.0':
+    dependencies:
+      '@types/estree': 1.0.5
+      '@types/json-schema': 7.0.15
+
   '@types/estree@1.0.5': {}
+
+  '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
 
