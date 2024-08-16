@@ -169,7 +169,6 @@ const config = {
 		"atom.io/synchronous-selector-dependencies": ERROR,
 
 		"import/first": ERROR,
-		"import/newline-after-import": ERROR,
 		"import/no-duplicates": ERROR,
 
 		"simple-import-sort/imports": ERROR,
