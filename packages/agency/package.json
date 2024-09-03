@@ -30,7 +30,7 @@
 		"test:semver": "bun run build && bun run test:once"
 	},
 	"devDependencies": {
-		"@types/node": "20.16.2",
+		"@types/node": "20.16.3",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.3",
 		"concurrently": "8.2.2",
