@@ -41,7 +41,7 @@
 		"@types/eslint": "9.6.1",
 		"@typescript-eslint/eslint-plugin": "8.4.0",
 		"@typescript-eslint/parser": "8.4.0",
-		"atom.io": "0.28.2",
+		"atom.io": "0.29.0",
 		"cross-env": "7.0.3",
 		"eslint": "9.9.1",
 		"eslint-plugin-import": "2.30.0",
