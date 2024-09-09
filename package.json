@@ -6,11 +6,11 @@
 	"author": "Augmented AI",
 	"license": "MIT",
 	"private": true,
-	"packageManager": "pnpm@9.9.0",
+	"packageManager": "pnpm@9.10.0",
 	"engines": {
 		"bun": "1.1.4",
 		"node": "20.17.0",
-		"pnpm": "9.9.0"
+		"pnpm": "9.10.0"
 	},
 	"scripts": {
 		"dev": "tsc --watch",
