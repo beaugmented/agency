@@ -1,5 +1,5 @@
 export * from "./agenda"
-export * from "./agent"
+export type * from "./agent"
 export * from "./conversation"
 export * from "./evaluation"
 export * from "./grunt"
