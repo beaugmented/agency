@@ -3,7 +3,7 @@
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin"
 import parser from "@typescript-eslint/parser"
 import AtomIOPlugin from "atom.io/eslint-plugin"
-import ImportPlugin from "eslint-plugin-import"
+import ImportPlugin from "eslint-plugin-import-x"
 import SimpleImportSortPlugin from "eslint-plugin-simple-import-sort"
 
 const ERROR = 2
