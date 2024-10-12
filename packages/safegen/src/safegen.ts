@@ -20,10 +20,15 @@ export type GenerateSafeData<T> = (
 	maxAttempts?: number,
 ) => Promise<T>
 
+export type GenerateFromSchema = <J extends Json.Object>(
+	responseSchema: ZodSchema<J>,
+	example: J,
+) => GenerateSafeData<J>
+
 export function createSafeDataGenerator(
 	gen: GenerateJsonFromLLM,
 	logger?: Pick<Console, `error` | `info` | `warn`>,
-) {
+): GenerateFromSchema {
 	return function generateFromSchema<J extends Json.Object>(
 		responseSchema: ZodSchema<J>,
 		example: J,
