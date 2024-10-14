@@ -37,6 +37,7 @@ describe(`ai`, () => {
 		})
 		console.log(evaluation)
 		expect(evaluation.passed).toBe(true)
+		istanbulEnthusiast.flushTestFiles()
 	}, 20_000)
 	test(`ai testing conversation`, async () => {
 		const jobSeeker = new Grunt(
@@ -99,5 +100,6 @@ describe(`ai`, () => {
 		})
 		console.log(evaluation)
 		expect(evaluation.passed).toBe(true)
+		careerAdvisor.flushTestFiles()
 	}, 120_000)
 })
