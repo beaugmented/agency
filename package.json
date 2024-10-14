@@ -30,9 +30,7 @@
 		"notes": "changeset",
 		"nuke": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm pnpm-lock.yaml"
 	},
-	"trustedDependencies": [
-		"@biomejs/biome"
-	],
+	"trustedDependencies": ["@biomejs/biome"],
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
 		"@changesets/cli": "2.27.9",
