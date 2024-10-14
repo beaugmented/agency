@@ -14,14 +14,30 @@ export type AsyncFn = (...params: any[]) => Promise<any>
 let squirrel: Squirrel
 export type Squirreled<Fn extends AsyncFn> = ReturnType<typeof squirrel.add<Fn>>
 
+export type OpenAiSafeGenOptions = {
+	model: ChatModel
+	usdBudget: number
+	usdFloor: number
+	apiKey: string
+}
+
 export class OpenAiSafeGenerator {
+	public usdFloor: number
+	public usdBudget: number
 	public squirrel: Squirrel
 	public getUnknownJsonFromOpenAi: ReturnType<typeof setUpOpenAiJsonGenerator>
 	public getUnknownJsonFromOpenAiCached: Squirreled<
 		ReturnType<typeof setUpOpenAiJsonGenerator>
 	>
 
-	public constructor(model: ChatModel, apiKey: string) {
+	public constructor({
+		model,
+		usdBudget,
+		usdFloor,
+		apiKey,
+	}: OpenAiSafeGenOptions) {
+		this.usdBudget = usdBudget
+		this.usdFloor = usdFloor
 		this.squirrel = new Squirrel(
 			process.env.CI
 				? `read`
@@ -35,6 +51,11 @@ export class OpenAiSafeGenerator {
 			this.getUnknownJsonFromOpenAi,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
+			if (this.usdBudget < this.usdFloor) {
+				console.warn(`SafeGen budget exhausted`)
+				const fallback = params[1]
+				return fallback
+			}
 			const openAiParams = buildOpenAiRequestParams(model, ...params)
 			const instruction = params[0]
 			const previouslyFailedResponses = params[3]
@@ -43,7 +64,8 @@ export class OpenAiSafeGenerator {
 					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
 				)
 				.get(openAiParams)
-			return response
+			this.usdBudget -= response.usdPrice
+			return response.data
 		})
 	}
 

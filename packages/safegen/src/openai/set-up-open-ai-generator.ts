@@ -5,12 +5,14 @@ import OpenAI from "openai"
 import type * as OpenAICore from "openai/core"
 import type OpenAIResources from "openai/resources/index"
 
+import { OPEN_AI_PRICING_FACTS } from "./pricing-facts"
+
 export const clientCache = new Map<string, OpenAI>()
 
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
 	options?: OpenAICore.RequestOptions,
-) => Promise<Json.Object>
+) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpOpenAiJsonGenerator(
 	apiKey = `NO_API_KEY_PROVIDED`,
@@ -34,9 +36,27 @@ export function setUpOpenAiJsonGenerator(
 			options,
 		)
 		const content = completion.choices[0].message?.content
-		if (content) {
-			return JSON.parse(content)
+		const { usage } = completion
+		if (content && usage) {
+			const promptTokensTotal = usage.prompt_tokens
+			const promptTokensCached = usage.prompt_tokens_details?.cached_tokens ?? 0
+			const promptTokensFresh = promptTokensTotal - promptTokensCached
+			const outputTokens = usage.completion_tokens
+			const usdPrice =
+				promptTokensTotal *
+					OPEN_AI_PRICING_FACTS[body.model].promptPricePerToken +
+				promptTokensFresh *
+					OPEN_AI_PRICING_FACTS[body.model].promptPricePerTokenCached +
+				outputTokens * OPEN_AI_PRICING_FACTS[body.model].completionPricePerToken
+			const data = JSON.parse(content)
+			return { data, usdPrice }
 		}
-		throw new Error(`No message found in completion`)
+		if (!content && !usage) {
+			throw new Error(`No content or usage found in completion`)
+		}
+		if (!content) {
+			throw new Error(`No content found in completion`)
+		}
+		throw new Error(`No usage found in completion`)
 	}
 }
