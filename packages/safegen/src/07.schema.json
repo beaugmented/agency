@@ -13,7 +13,10 @@
 			"minimum": 0
 		},
 		"nonNegativeIntegerDefault0": {
-			"allOf": [{ "$ref": "#/definitions/nonNegativeInteger" }, { "default": 0 }]
+			"allOf": [
+				{ "$ref": "#/definitions/nonNegativeInteger" },
+				{ "default": 0 }
+			]
 		},
 		"simpleTypes": {
 			"enum": [
