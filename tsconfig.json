@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es2017",
+		"target": "ES2023",
 		"lib": ["es2023", "ES2023.Array"],
 		"module": "preserve",
 		"moduleResolution": "bundler",

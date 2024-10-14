@@ -1,0 +1,6 @@
+{
+	"tagPattern": "@beaugmented/agency",
+	"testPattern": "__tests__/public/**/*.test.{ts,tsx}",
+	"testCommand": "bun run build && bun run test:once:public",
+	"certifyCommand": "echo 'no certify command'"
+}
