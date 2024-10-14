@@ -1,0 +1,30 @@
+{
+	"id": "chatcmpl-AIOkPHQeiMtnupQuoInPvFhT7Ty9c",
+	"object": "chat.completion",
+	"created": 1728948397,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "I'm really interested in tech companies, especially those that focus on innovation and startups. The energy and rapid growth in these environments seem thrilling. I think companies that are pioneering in areas like AI, fintech, or renewable energies could be extremely fascinating. I am looking at firms where I can contribute to significant projects and grow my skills further.\n\nAGENDA_JSON{ \"You wonder, what should I do to pass my upcoming job interview?\": null }",
+				"refusal": null
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 466,
+		"completion_tokens": 91,
+		"total_tokens": 557,
+		"prompt_tokens_details": {
+			"cached_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_83975a045a"
+}

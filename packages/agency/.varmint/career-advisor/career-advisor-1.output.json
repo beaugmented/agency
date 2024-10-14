@@ -1,0 +1,30 @@
+{
+	"id": "chatcmpl-AIOkMdXnp6T4D8cSNiVhXCjmxfsIe",
+	"object": "chat.completion",
+	"created": 1728948394,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "That's a great mix of skills and interests! Based on what you've shared, consider roles like Project Manager, Product Manager, or even Customer Success Manager in tech companies. These roles often require a blend of teamwork and autonomy, and they rely heavily on problem-solving and communication skills. \n\nExploring startups or creative tech firms that value innovation and adaptability could also be a promising avenue. Have you thought about which industries or specific companies might excite you the most?\n\nAGENDA_JSON{ \"Give advice until the user has no more questions.\": false }",
+				"refusal": null
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 281,
+		"completion_tokens": 113,
+		"total_tokens": 394,
+		"prompt_tokens_details": {
+			"cached_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_83975a045a"
+}

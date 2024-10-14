@@ -1,0 +1,30 @@
+{
+	"id": "chatcmpl-AIOkFMMrADu4vHGY6IspYiBnCDOgh",
+	"object": "chat.completion",
+	"created": 1728948387,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "Hello! I'm Tiny Broadsworth, a unique individual with a compact and robust build, excited to find my perfect job fit.\n\nAGENDA_JSON{ \"Introduce yourself, taking creative liberties with your name.\": \"Tiny Broadsworth\" }",
+				"refusal": null
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 189,
+		"completion_tokens": 50,
+		"total_tokens": 239,
+		"prompt_tokens_details": {
+			"cached_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_83975a045a"
+}

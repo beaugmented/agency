@@ -46,7 +46,7 @@ export class Grunt<State extends Agenda>
 		if (initialState) {
 			setState(findState(agendaAtoms, id), initialState)
 		}
-		this.completions = squirrel.add(`openai`, aiComplete)
+		this.completions = squirrel.add(this.id, aiComplete)
 	}
 
 	public get conversation(): Loadable<
