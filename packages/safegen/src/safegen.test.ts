@@ -6,7 +6,7 @@ import { OpenAiSafeGenerator } from "./openai"
 describe(`safeGen`, () => {
 	test(`safeGen should answer request in the form of data`, async () => {
 		const gpt4o = new OpenAiSafeGenerator(
-			`gpt-4o`,
+			`gpt-4o-mini`,
 			import.meta.env.VITE_OPENAI_API_KEY,
 		)
 
