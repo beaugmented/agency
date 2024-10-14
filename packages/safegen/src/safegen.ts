@@ -20,20 +20,24 @@ export type GenerateSafeData<T> = (
 	maxAttempts?: number,
 ) => Promise<T>
 
+export type DataSpec<T> = {
+	schema: ZodSchema<T>
+	fallback: T
+}
+
 export type GenerateFromSchema = <J extends Json.Object>(
-	responseSchema: ZodSchema<J>,
-	example: J,
+	dataSpec: DataSpec<J>,
 ) => GenerateSafeData<J>
 
 export function createSafeDataGenerator(
 	gen: GenerateJsonFromLLM,
 	logger?: Pick<Console, `error` | `info` | `warn`>,
 ): GenerateFromSchema {
-	return function generateFromSchema<J extends Json.Object>(
-		responseSchema: ZodSchema<J>,
-		example: J,
-	): GenerateSafeData<J> {
-		const jsonSchema = zodToJsonSchema(responseSchema)
+	return function generateFromSchema<J extends Json.Object>({
+		schema,
+		fallback,
+	}: DataSpec<J>): GenerateSafeData<J> {
+		const jsonSchema = zodToJsonSchema(schema)
 		return async function generateSafeData(
 			userInstruction: string,
 			maxAttempts = 3,
@@ -44,10 +48,10 @@ export function createSafeDataGenerator(
 				currentResponse = await gen(
 					userInstruction,
 					jsonSchema,
-					example,
+					fallback,
 					invalidResponses,
 				)
-				const result = responseSchema.safeParse(currentResponse)
+				const result = schema.safeParse(currentResponse)
 				if (result.success) {
 					return result.data
 				}
@@ -67,7 +71,7 @@ export function createSafeDataGenerator(
 			logger?.error(
 				`safegen was unable to generate well-formed data after ${maxAttempts} failed attempts.`,
 			)
-			return example
+			return fallback
 		}
 	}
 }

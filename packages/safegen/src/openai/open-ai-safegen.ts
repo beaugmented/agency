@@ -2,7 +2,7 @@ import type { ChatModel } from "openai/resources/index"
 
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-open-ai-request-params"
-import { setUpOpenAiJsonGenerator } from "./open-ai-client"
+import { setUpOpenAiJsonGenerator } from "./set-up-open-ai-generator"
 
 let getUnknownJsonFromOpenAi: ReturnType<typeof setUpOpenAiJsonGenerator>
 export const openaiSafeGen = (model: ChatModel, apiKey: string) =>

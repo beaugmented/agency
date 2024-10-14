@@ -7,12 +7,16 @@ import type OpenAIResources from "openai/resources/index"
 
 export const clientCache = new Map<string, OpenAI>()
 
-export function setUpOpenAiJsonGenerator(apiKey: string) {
+export type GetUnknownJsonFromOpenAi = (
+	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
+	options?: OpenAICore.RequestOptions,
+) => Promise<Json.Object>
+
+export function setUpOpenAiJsonGenerator(
+	apiKey = `NO_API_KEY_PROVIDED`,
+): GetUnknownJsonFromOpenAi {
 	const keyHash = createHash(`sha256`).update(apiKey).digest(`hex`)
-	return async function getUnknownJsonFromOpenAi(
-		body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
-		options?: OpenAICore.RequestOptions,
-	): Promise<Json.Object> {
+	return async function getUnknownJsonFromOpenAi(body, options) {
 		let client = clientCache.get(keyHash)
 		if (!client) {
 			client = new OpenAI({
