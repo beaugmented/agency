@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.0.3
+
+### Patch Changes
+
+- 9263929: 💥 Renamed option `usdFloor` to `usdMinimum`. This is the amount of money below which no further API requests will be made.
+- 9263929: ✨ Pass a custom `logger` in the `OpenAiSafegenOptions`.
+
 ## 0.0.2
 
 ### Patch Changes
