@@ -1,0 +1,27 @@
+[
+	{
+		"model": "gpt-4-turbo",
+		"messages": [
+			{
+				"role": "user",
+				"content": "Hello! I'm Tiny Broadsworth, a unique individual with a compact and robust build, excited to find my perfect job fit.\n\n"
+			},
+			{
+				"role": "assistant",
+				"content": "Hello Tiny! Your name definitely stands out and adds an interesting twist to your vibrant personality. What are some of your key strengths and interests that you’d like to explore in your career?\n\n"
+			},
+			{
+				"role": "user",
+				"content": "Hello! I appreciate your enthusiasm in learning more about my career aspirations. I'd love to find a position where I can utilize my strengths in resilience, problem-solving, and interpersonal communication. I'm particularly interested in roles that require a dynamic mix of teamwork and independent responsibilities, ideally in an environment that values creativity and innovation. I'm open to exploring opportunities in various fields, from tech to management, as versatility is a key aspect I bring to any job. \n\n"
+			},
+			{
+				"role": "system",
+				"content": "You are a career advisor.\n\nKeep messages short."
+			},
+			{
+				"role": "system",
+				"content": "Your current agenda item is \"Give advice until the user has no more questions.\".\n\nAt the end of your message, determine whether this agenda item is complete.\n\nIf it is, end your message with the line\n\nAGENDA_JSON{ \"Give advice until the user has no more questions.\": true }\n\nIf it remains incomplete, end your message with the line\n\nAGENDA_JSON{ \"Give advice until the user has no more questions.\": false }"
+			}
+		]
+	}
+]

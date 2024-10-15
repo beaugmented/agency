@@ -1,0 +1,30 @@
+{
+	"id": "chatcmpl-AIOkHEBwD6aXjemsbn6r4M2zrr0kO",
+	"object": "chat.completion",
+	"created": 1728948389,
+	"model": "gpt-4-turbo-2024-04-09",
+	"choices": [
+		{
+			"index": 0,
+			"message": {
+				"role": "assistant",
+				"content": "Hello Tiny! Your name definitely stands out and adds an interesting twist to your vibrant personality. What are some of your key strengths and interests that you’d like to explore in your career?\n\nAGENDA_JSON{ \"Complement the job seeker on their weird name\": true }",
+				"refusal": null
+			},
+			"logprobs": null,
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 141,
+		"completion_tokens": 55,
+		"total_tokens": 196,
+		"prompt_tokens_details": {
+			"cached_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_83975a045a"
+}

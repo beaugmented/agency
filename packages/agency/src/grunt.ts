@@ -3,6 +3,7 @@ import * as crypto from "node:crypto"
 import { getState, setState } from "atom.io"
 import type { Loadable } from "atom.io/data"
 import { findState } from "atom.io/ephemeral"
+import type { Squirreled } from "varmint"
 
 import { type Agenda, agendaAtoms } from "./agenda"
 import type {
@@ -18,12 +19,13 @@ import {
 	conversationSelectors,
 	messageIndices,
 } from "./conversation"
-import { completions, openAiParamsSelectors } from "./openai"
+import { aiComplete, openAiParamsSelectors, squirrel } from "./openai"
 import { orientationAtoms } from "./orientation"
 
 export class Grunt<State extends Agenda>
 	implements Agent<State, Partial<State>>
 {
+	private completions: Squirreled<typeof aiComplete>
 	public index = 0
 	public constructor(
 		public id: string,
@@ -44,6 +46,7 @@ export class Grunt<State extends Agenda>
 		if (initialState) {
 			setState(findState(agendaAtoms, id), initialState)
 		}
+		this.completions = squirrel.add(this.id, aiComplete)
 	}
 
 	public get conversation(): Loadable<
@@ -67,7 +70,7 @@ export class Grunt<State extends Agenda>
 		const agendaAtom = findState(agendaAtoms, this.id)
 		const paramsLoadable = getState(findState(openAiParamsSelectors, this.id))
 		const params = await paramsLoadable
-		const assistance = completions
+		const assistance = this.completions
 			.for(`${this.id}-${this.index}`)
 			.get(params)
 			.then((completion) => {
@@ -114,5 +117,9 @@ export class Grunt<State extends Agenda>
 			role: `user`,
 			content,
 		})
+	}
+
+	public flushTestFiles(): void {
+		this.completions.flush()
 	}
 }

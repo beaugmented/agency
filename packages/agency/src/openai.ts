@@ -10,7 +10,7 @@ import { conversationSelectors } from "./conversation"
 import { orientationAtoms } from "./orientation"
 
 let openAiClient: OpenAI
-function aiComplete(
+export function aiComplete(
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
 	options?: OpenAICore.RequestOptions,
 ): OpenAICore.APIPromise<OpenAIResources.ChatCompletion> {
@@ -29,7 +29,7 @@ function aiComplete(
 	)
 }
 
-const squirrel = new Squirrel(
+export const squirrel = new Squirrel(
 	process.env.CI
 		? `read`
 		: process.env.NODE_ENV === `production`

@@ -24,5 +24,6 @@ describe(`safeGen`, () => {
 		)
 		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
 		expect(gpt4oMini.usdBudget).toBeGreaterThan(0.0099)
+		gpt4oMini.squirrel.flush()
 	})
 })
