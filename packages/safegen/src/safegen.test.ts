@@ -3,13 +3,18 @@ import { z } from "zod"
 
 import { OpenAiSafeGenerator } from "./openai"
 
+beforeAll(() => {
+	vitest.spyOn(console, `warn`)
+})
+
 describe(`safeGen`, () => {
 	test(`safeGen should answer request in the form of data`, async () => {
 		const gpt4oMini = new OpenAiSafeGenerator({
 			usdBudget: 0.01,
-			usdFloor: 0.005,
+			usdMinimum: 0.00_999,
 			model: `gpt-4o-mini`,
 			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+			logger: console,
 		})
 
 		const countSpec = {

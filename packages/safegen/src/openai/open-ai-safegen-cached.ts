@@ -1,43 +1,37 @@
 import type { ChatModel } from "openai/resources/index.mjs"
+import type { Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-open-ai-request-params"
+import type { GetUnknownJsonFromOpenAi } from "./set-up-open-ai-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-open-ai-generator"
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// biome-ignore lint/suspicious/noExplicitAny: here it's really the type of a function
-export type AsyncFn = (...params: any[]) => Promise<any>
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
-let squirrel: Squirrel
-export type Squirreled<Fn extends AsyncFn> = ReturnType<typeof squirrel.add<Fn>>
 
 export type OpenAiSafeGenOptions = {
 	model: ChatModel
 	usdBudget: number
-	usdFloor: number
+	usdMinimum: number
 	apiKey: string
+	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
 export class OpenAiSafeGenerator {
 	public usdFloor: number
 	public usdBudget: number
+	public getUnknownJsonFromOpenAi: GetUnknownJsonFromOpenAi
+	public getUnknownJsonFromOpenAiSquirreled: Squirreled<GetUnknownJsonFromOpenAi>
 	public squirrel: Squirrel
-	public getUnknownJsonFromOpenAi: ReturnType<typeof setUpOpenAiJsonGenerator>
-	public getUnknownJsonFromOpenAiCached: Squirreled<
-		ReturnType<typeof setUpOpenAiJsonGenerator>
-	>
 
 	public constructor({
 		model,
 		usdBudget,
-		usdFloor,
+		usdMinimum,
 		apiKey,
+		logger,
 	}: OpenAiSafeGenOptions) {
 		this.usdBudget = usdBudget
-		this.usdFloor = usdFloor
+		this.usdFloor = usdMinimum
 		this.squirrel = new Squirrel(
 			process.env.CI
 				? `read`
@@ -46,20 +40,20 @@ export class OpenAiSafeGenerator {
 					: `read-write`,
 		)
 		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(apiKey)
-		this.getUnknownJsonFromOpenAiCached = this.squirrel.add(
+		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
 			`openai-safegen`,
 			this.getUnknownJsonFromOpenAi,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
 			if (this.usdBudget < this.usdFloor) {
-				console.warn(`SafeGen budget exhausted`)
+				logger?.warn(`SafeGen budget exhausted`)
 				const fallback = params[1]
 				return fallback
 			}
 			const openAiParams = buildOpenAiRequestParams(model, ...params)
 			const instruction = params[0]
 			const previouslyFailedResponses = params[3]
-			const response = await this.getUnknownJsonFromOpenAiCached
+			const response = await this.getUnknownJsonFromOpenAiSquirreled
 				.for(
 					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
 				)
