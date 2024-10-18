@@ -1,5 +1,5 @@
 import type { ChatModel } from "openai/resources/index.mjs"
-import type { Squirreled } from "varmint"
+import type { Squirreled, SquirrelMode } from "varmint"
 import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema } from "../safegen"
@@ -13,6 +13,7 @@ export type OpenAiSafeGenOptions = {
 	usdBudget: number
 	usdMinimum: number
 	apiKey: string
+	cachingMode: SquirrelMode
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
@@ -28,17 +29,12 @@ export class OpenAiSafeGenerator {
 		usdBudget,
 		usdMinimum,
 		apiKey,
+		cachingMode,
 		logger,
 	}: OpenAiSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdFloor = usdMinimum
-		this.squirrel = new Squirrel(
-			process.env.CI
-				? `read`
-				: process.env.NODE_ENV === `production`
-					? `off`
-					: `read-write`,
-		)
+		this.squirrel = new Squirrel(cachingMode)
 		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(apiKey)
 		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
 			`openai-safegen`,
