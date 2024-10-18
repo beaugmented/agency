@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.0.4
+
+### Patch Changes
+
+- 7aade89: ✨ OpenAiSafeGenerator now includes a `cachingMode` option to allow developers to cache or not on depending on environmental cues.
+
 ## 0.0.3
 
 ### Patch Changes
