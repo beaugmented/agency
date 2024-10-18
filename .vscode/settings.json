@@ -13,6 +13,9 @@
 		"quickfix.biome": "explicit",
 		"source.fixAll.eslint": "explicit"
 	},
+	"eslint.options": {
+		"flags": ["unstable_ts_config"]
+	},
 	"[html]": {
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
