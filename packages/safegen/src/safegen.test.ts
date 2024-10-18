@@ -14,6 +14,11 @@ describe(`safeGen`, () => {
 			usdMinimum: 0.00_999,
 			model: `gpt-4o-mini`,
 			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+			cachingMode: process.env.CI
+				? `read`
+				: process.env.NODE_ENV === `production`
+					? `off`
+					: `read-write`,
 			logger: console,
 		})
 
