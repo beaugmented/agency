@@ -1,20 +1,17 @@
-// @ts-check
-
-import TypeScriptPlugin from "@typescript-eslint/eslint-plugin"
-import parser from "@typescript-eslint/parser"
+import { default as TypeScriptPlugin } from "@typescript-eslint/eslint-plugin"
+import * as parser from "@typescript-eslint/parser"
 import AtomIOPlugin from "atom.io/eslint-plugin"
-import ImportPlugin from "eslint-plugin-import-x"
-import SimpleImportSortPlugin from "eslint-plugin-simple-import-sort"
+import type { Linter } from "eslint"
+import * as ImportPlugin from "eslint-plugin-import-x"
+import { default as SimpleImportSortPlugin } from "eslint-plugin-simple-import-sort"
 
 const ERROR = 2
 
-/** @type {import("@typescript-eslint/parser").ParserOptions} */
 const parserOptions = {
 	project: [`./tsconfig.json`],
 	sourceType: `module`,
-}
+} satisfies parser.ParserOptions
 
-/** @type {import("eslint").Linter.Config["ignores"]} */
 const ignores = [
 	`**/_shared/**`,
 	`**/build/**`,
@@ -25,7 +22,6 @@ const ignores = [
 	`**/icons/**`,
 ]
 
-/** @type {import("eslint").Linter.Config} */
 const config = {
 	languageOptions: {
 		parser,
@@ -177,5 +173,6 @@ const config = {
 		"no-mixed-spaces-and-tabs": 0,
 		quotes: [ERROR, `backtick`],
 	},
-}
+} satisfies Linter.Config
+
 export default [config, { ignores }]
