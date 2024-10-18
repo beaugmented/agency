@@ -17,7 +17,7 @@
 		"lint:eslint": "turbo run lint:eslint",
 		"lint:types": "turbo run lint:types",
 		"lint:fix:biome": "biome check --apply *",
-		"lint:fix:eslint": "eslint --fix .",
+		"lint:fix:eslint": "eslint --fix --flag unstable_ts_config .",
 		"fmt": "biome format .",
 		"fmt:fix": "biome format --write .",
 		"build": "turbo run build",
