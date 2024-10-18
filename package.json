@@ -8,7 +8,7 @@
 	"private": true,
 	"packageManager": "pnpm@9.12.2",
 	"engines": {
-		"node": "20.18.0"
+		"node": "22.10.0"
 	},
 	"scripts": {
 		"dev": "tsc --watch",

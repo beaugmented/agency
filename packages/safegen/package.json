@@ -9,7 +9,7 @@
 	"packageManager": "pnpm@9.12.2",
 	"engines": {
 		"bun": "1.1.4",
-		"node": "20.18.0",
+		"node": "22.10.0",
 		"pnpm": "9.12.2"
 	},
 	"main": "dist/index.js",
@@ -52,7 +52,7 @@
 		"zod-to-json-schema": "3.23.3"
 	},
 	"devDependencies": {
-		"@types/node": "20.16.12",
+		"@types/node": "22.7.6",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.4",
 		"openai": "4.68.0",
