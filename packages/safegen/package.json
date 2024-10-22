@@ -55,7 +55,7 @@
 		"@types/node": "22.7.8",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.4",
-		"openai": "4.68.1",
+		"openai": "4.68.2",
 		"rimraf": "6.0.1",
 		"tmp": "0.2.3",
 		"tsup": "8.3.0",
