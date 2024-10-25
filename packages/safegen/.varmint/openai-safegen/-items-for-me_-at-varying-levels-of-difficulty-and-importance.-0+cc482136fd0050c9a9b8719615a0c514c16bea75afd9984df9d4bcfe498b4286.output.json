@@ -1,0 +1,57 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"title": "Grocery shopping",
+				"completed": false
+			},
+			{
+				"id": 2,
+				"title": "Submit project report",
+				"completed": false
+			},
+			{
+				"id": 3,
+				"title": "Clean the house",
+				"completed": true
+			},
+			{
+				"id": 4,
+				"title": "Call the dentist to schedule an appointment",
+				"completed": false
+			},
+			{
+				"id": 5,
+				"title": "Finish reading the book 'The Great Gatsby'",
+				"completed": false
+			},
+			{
+				"id": 6,
+				"title": "Exercise for at least 30 minutes",
+				"completed": false
+			},
+			{
+				"id": 7,
+				"title": "Organize digital files",
+				"completed": false
+			},
+			{
+				"id": 8,
+				"title": "Learn a new recipe and cook dinner",
+				"completed": false
+			},
+			{
+				"id": 9,
+				"title": "Plan upcoming vacation itinerary",
+				"completed": false
+			},
+			{
+				"id": 10,
+				"title": "Write a personal blog post",
+				"completed": false
+			}
+		]
+	},
+	"usdPrice": 0.000218325
+}
