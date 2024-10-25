@@ -1,0 +1,57 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 2,
+				"rationale": "Submitting the project report is crucial for meeting deadlines and professional obligations, which impacts family stability and financial security.",
+				"priority": 90
+			},
+			{
+				"id": 4,
+				"rationale": "Scheduling a dentist appointment is important for maintaining health, which plays a role in overall family well-being.",
+				"priority": 80
+			},
+			{
+				"id": 1,
+				"rationale": "Grocery shopping is necessary to ensure the family has food and maintains a balanced diet, directly affecting family harmony.",
+				"priority": 75
+			},
+			{
+				"id": 9,
+				"rationale": "Planning a vacation can enhance family bonding and create lasting memories, making it a high priority for family harmony.",
+				"priority": 70
+			},
+			{
+				"id": 8,
+				"rationale": "Learning a new recipe and cooking for the family can foster togetherness and create enjoyable shared experiences at home.",
+				"priority": 65
+			},
+			{
+				"id": 6,
+				"rationale": "Exercising helps maintain personal physical health, which is essential for being present and active in family life.",
+				"priority": 60
+			},
+			{
+				"id": 10,
+				"rationale": "Writing a personal blog post is a way to express feelings and experiences, which can ultimately improve personal happiness and family interactions.",
+				"priority": 50
+			},
+			{
+				"id": 7,
+				"rationale": "Organizing digital files can help reduce stress and improve efficiency in managing the family’s activities, though it's less urgent.",
+				"priority": 40
+			},
+			{
+				"id": 5,
+				"rationale": "Finishing reading 'The Great Gatsby' is a personal leisure activity that does not directly impact family dynamics but is enjoyable.",
+				"priority": 30
+			},
+			{
+				"id": 3,
+				"rationale": "Cleaning the house, though already completed, contributes to a pleasant environment, but is less pressing now that it’s done.",
+				"priority": 20
+			}
+		]
+	},
+	"usdPrice": 0.00039539999999999996
+}
