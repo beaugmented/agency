@@ -1,15 +1,15 @@
-import type { ChatModel } from "openai/resources/index.mjs"
 import type { Squirreled, SquirrelMode } from "varmint"
 import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-open-ai-request-params"
+import type { OPEN_AI_PRICING_FACTS } from "./pricing-facts"
 import type { GetUnknownJsonFromOpenAi } from "./set-up-open-ai-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-open-ai-generator"
 
 export type OpenAiSafeGenOptions = {
-	model: ChatModel
+	model: keyof typeof OPEN_AI_PRICING_FACTS
 	usdBudget: number
 	usdMinimum: number
 	apiKey: string
