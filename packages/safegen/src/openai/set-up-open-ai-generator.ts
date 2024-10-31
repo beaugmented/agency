@@ -12,13 +12,14 @@ export const clientCache = new Map<string, OpenAI>()
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
 	options?: OpenAICore.RequestOptions,
-) => Promise<{ data: Json.Object; usdPrice: number }>
+	logger?: Pick<Console, `error` | `info` | `warn`>,
+) => Promise<{ data: Json.Object; usdPrice?: number }>
 
 export function setUpOpenAiJsonGenerator(
 	apiKey = `NO_API_KEY_PROVIDED`,
 ): GetUnknownJsonFromOpenAi {
 	const keyHash = createHash(`sha256`).update(apiKey).digest(`hex`)
-	return async function getUnknownJsonFromOpenAi(body, options) {
+	return async function getUnknownJsonFromOpenAi(body, options, logger) {
 		let client = clientCache.get(keyHash)
 		if (!client) {
 			client = new OpenAI({
@@ -37,6 +38,10 @@ export function setUpOpenAiJsonGenerator(
 		)
 		const content = completion.choices[0].message?.content
 		const { usage } = completion
+		if (content && !OPEN_AI_PRICING_FACTS[body.model]) {
+			logger?.warn(`No pricing facts found for model ${body.model}`)
+			return { data: JSON.parse(content) }
+		}
 		if (content && usage) {
 			const promptTokensTotal = usage.prompt_tokens
 			const promptTokensCached = usage.prompt_tokens_details?.cached_tokens ?? 0

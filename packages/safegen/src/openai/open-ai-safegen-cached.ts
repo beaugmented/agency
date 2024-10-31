@@ -54,6 +54,7 @@ export class OpenAiSafeGenerator {
 					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
 				)
 				.get(openAiParams)
+			if (this.usdBudget !== undefined && response.usdPrice !== undefined) {
 			this.usdBudget -= response.usdPrice
 			return response.data
 		})
