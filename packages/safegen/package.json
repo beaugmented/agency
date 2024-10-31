@@ -34,8 +34,9 @@
 		"lint": "bun run lint:biome && bun run lint:eslint && bun run lint:types",
 		"test": "vitest",
 		"test:once": "vitest run",
+		"test:once:public": "vitest run public",
 		"test:coverage": "echo no test coverage yet",
-		"test:semver": "bun run build && bun run test:once"
+		"test:semver": "break-check --verbose"
 	},
 	"peerDependencies": {
 		"openai": ">=4.0.0"

@@ -1,6 +1,6 @@
 {
-	"tagPattern": "@beaugmented/agency",
+	"tagPattern": "safegen",
 	"testPattern": "__tests__/public/**/*.test.{ts,tsx}",
-	"testCommand": "bun run build && bun run test:once:public",
-	"certifyCommand": "echo 'no certify command'"
+	"testCommand": "bun run test:once:public",
+	"certifyCommand": "grep -q -F '\"safegen\": minor' ../../.changeset/*.md"
 }
