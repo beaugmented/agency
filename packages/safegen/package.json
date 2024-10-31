@@ -52,7 +52,7 @@
 		"zod-to-json-schema": "3.23.5"
 	},
 	"devDependencies": {
-		"@types/node": "22.8.4",
+		"@types/node": "22.8.5",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.4",
 		"openai": "4.69.0",
