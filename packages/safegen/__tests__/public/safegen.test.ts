@@ -1,8 +1,8 @@
 import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
-import { OpenAiSafeGenerator } from "./openai"
-import type { DataSpec } from "./safegen"
+import { OpenAiSafeGenerator } from "../../src/openai"
+import type { DataSpec } from "../../src/safegen"
 
 beforeAll(() => {
 	vitest.spyOn(console, `warn`)
