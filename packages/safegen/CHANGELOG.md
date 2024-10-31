@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.1.0
+
+### Minor Changes
+
+- a6d2674: Only allow openai models we have pricing data for
+
 ## 0.0.5
 
 ### Patch Changes
