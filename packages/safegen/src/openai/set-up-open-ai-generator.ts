@@ -17,9 +17,10 @@ export type GetUnknownJsonFromOpenAi = (
 
 export function setUpOpenAiJsonGenerator(
 	apiKey = `NO_API_KEY_PROVIDED`,
+	logger?: Pick<Console, `error` | `info` | `warn`>,
 ): GetUnknownJsonFromOpenAi {
 	const keyHash = createHash(`sha256`).update(apiKey).digest(`hex`)
-	return async function getUnknownJsonFromOpenAi(body, options, logger) {
+	return async function getUnknownJsonFromOpenAi(body, options) {
 		let client = clientCache.get(keyHash)
 		if (!client) {
 			client = new OpenAI({

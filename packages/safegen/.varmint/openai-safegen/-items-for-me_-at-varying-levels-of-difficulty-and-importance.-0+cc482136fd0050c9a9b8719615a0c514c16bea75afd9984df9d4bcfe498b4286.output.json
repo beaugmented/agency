@@ -8,50 +8,40 @@
 			},
 			{
 				"id": 2,
-				"title": "Submit project report",
+				"title": "Finish the monthly report",
 				"completed": false
 			},
 			{
 				"id": 3,
-				"title": "Clean the house",
-				"completed": true
+				"title": "Exercise for 30 minutes",
+				"completed": false
 			},
 			{
 				"id": 4,
-				"title": "Call the dentist to schedule an appointment",
+				"title": "Read a chapter of a book",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Finish reading the book 'The Great Gatsby'",
-				"completed": false
+				"title": "Organize the workspace",
+				"completed": true
 			},
 			{
 				"id": 6,
-				"title": "Exercise for at least 30 minutes",
+				"title": "Call a friend",
 				"completed": false
 			},
 			{
 				"id": 7,
-				"title": "Organize digital files",
+				"title": "Prepare dinner",
 				"completed": false
 			},
 			{
 				"id": 8,
-				"title": "Learn a new recipe and cook dinner",
-				"completed": false
-			},
-			{
-				"id": 9,
-				"title": "Plan upcoming vacation itinerary",
-				"completed": false
-			},
-			{
-				"id": 10,
-				"title": "Write a personal blog post",
+				"title": "Attend the team meeting",
 				"completed": false
 			}
 		]
 	},
-	"usdPrice": 0.000218325
+	"usdPrice": 0.000178725
 }

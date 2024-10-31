@@ -2,10 +2,12 @@ import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
 import { OpenAiSafeGenerator } from "./openai"
+import { OPEN_AI_PRICING_FACTS } from "./openai/pricing-facts"
 import type { DataSpec } from "./safegen"
 
+let consoleWarnSpy: ReturnType<typeof vitest.spyOn>
 beforeAll(() => {
-	vitest.spyOn(console, `warn`)
+	consoleWarnSpy = vitest.spyOn(console, `warn`)
 })
 
 const gpt4oMini = new OpenAiSafeGenerator({
@@ -21,8 +23,29 @@ const gpt4oMini = new OpenAiSafeGenerator({
 	logger: console,
 })
 
-afterAll(() => {
-	gpt4oMini.squirrel.flush()
+const noPricingModel = `gpt-4-turbo-2024-04-09`
+const gptNoPricing = new OpenAiSafeGenerator({
+	usdBudget: 0.01,
+	usdMinimum: 0.00_01,
+	model: noPricingModel,
+	apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+	cachingMode: process.env.CI
+		? `read`
+		: process.env.NODE_ENV === `production`
+			? `off`
+			: `read-write`,
+	logger: console,
+})
+
+const gpt4oMiniNoBudget = new OpenAiSafeGenerator({
+	model: `gpt-4o-mini`,
+	apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+	cachingMode: process.env.CI
+		? `read`
+		: process.env.NODE_ENV === `production`
+			? `off`
+			: `read-write`,
+	logger: console,
 })
 
 describe(`safeGen`, () => {
@@ -40,6 +63,7 @@ describe(`safeGen`, () => {
 		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
 		expect(gpt4oMini.usdBudget).toBeGreaterThan(0.0099)
 	})
+
 	test(`safeGen should answer request in the form of data`, async () => {
 		const todoListSpec = {
 			schema: z.object({
@@ -106,5 +130,37 @@ describe(`safeGen`, () => {
 				return 0
 			}),
 		)
-	}, 10000)
+	}, 100_000)
+
+	test(`safeGen should answer request without pricing info`, async () => {
+		expect(OPEN_AI_PRICING_FACTS[noPricingModel]).toBeUndefined()
+		const countSpec = {
+			schema: z.object({ count: z.number() }),
+			fallback: { count: 0 },
+		}
+
+		const counter = gptNoPricing.from(countSpec)
+
+		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
+			`How many planets are in the solar system?`,
+		)
+		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
+		expect(consoleWarnSpy).toHaveBeenCalledWith(
+			`No pricing facts found for model ${noPricingModel}`,
+		)
+	})
+
+	test(`safeGen should answer request without budget`, async () => {
+		const countSpec = {
+			schema: z.object({ count: z.number() }),
+			fallback: { count: 0 },
+		}
+
+		const counter = gpt4oMiniNoBudget.from(countSpec)
+
+		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
+			`How many planets are in the solar system?`,
+		)
+		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
+	})
 })

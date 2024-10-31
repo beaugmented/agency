@@ -10,16 +10,16 @@ import { setUpOpenAiJsonGenerator } from "./set-up-open-ai-generator"
 
 export type OpenAiSafeGenOptions = {
 	model: ChatModel
-	usdBudget: number
-	usdMinimum: number
+	usdBudget?: number
+	usdMinimum?: number
 	apiKey: string
 	cachingMode: SquirrelMode
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
 export class OpenAiSafeGenerator {
-	public usdFloor: number
-	public usdBudget: number
+	public usdFloor: number | undefined
+	public usdBudget: number | undefined
 	public getUnknownJsonFromOpenAi: GetUnknownJsonFromOpenAi
 	public getUnknownJsonFromOpenAiSquirreled: Squirreled<GetUnknownJsonFromOpenAi>
 	public squirrel: Squirrel
@@ -35,13 +35,17 @@ export class OpenAiSafeGenerator {
 		this.usdBudget = usdBudget
 		this.usdFloor = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
-		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(apiKey)
+		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(apiKey, logger)
 		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
 			`openai-safegen`,
 			this.getUnknownJsonFromOpenAi,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
-			if (this.usdBudget < this.usdFloor) {
+			if (
+				this.usdBudget !== undefined &&
+				this.usdFloor !== undefined &&
+				this.usdBudget < this.usdFloor
+			) {
 				logger?.warn(`SafeGen budget exhausted`)
 				const fallback = params[1]
 				return fallback
@@ -55,7 +59,8 @@ export class OpenAiSafeGenerator {
 				)
 				.get(openAiParams)
 			if (this.usdBudget !== undefined && response.usdPrice !== undefined) {
-			this.usdBudget -= response.usdPrice
+				this.usdBudget -= response.usdPrice
+			}
 			return response.data
 		})
 	}

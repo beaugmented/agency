@@ -1,0 +1,47 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 7,
+				"rationale": "Preparing dinner is essential for family bonding and ensures everyone has a meal together, which promotes family harmony.",
+				"priority": 95
+			},
+			{
+				"id": 1,
+				"rationale": "Grocery shopping is important for maintaining the household and ensuring there are ingredients for family meals, impacting family harmony.",
+				"priority": 90
+			},
+			{
+				"id": 2,
+				"rationale": "Finishing the monthly report is important for professional responsibilities, but its urgency may depend on deadlines and can't directly affect family harmony.",
+				"priority": 70
+			},
+			{
+				"id": 8,
+				"rationale": "Attending the team meeting is necessary for work collaboration, which can indirectly support family stability through job security.",
+				"priority": 65
+			},
+			{
+				"id": 3,
+				"rationale": "Exercising promotes personal health, which can indirectly improve family dynamics by having a healthier member.",
+				"priority": 60
+			},
+			{
+				"id": 6,
+				"rationale": "Calling a friend is a good way to socialize and maintain personal relationships, which can enhance personal well-being and indirectly benefit family harmony.",
+				"priority": 50
+			},
+			{
+				"id": 4,
+				"rationale": "Reading a chapter of a book is a good personal activity but is less critical compared to tasks that directly impact family or work.",
+				"priority": 40
+			},
+			{
+				"id": 5,
+				"rationale": "Organizing the workspace is already completed and therefore does not need to be prioritized.",
+				"priority": 0
+			}
+		]
+	},
+	"usdPrice": 0.00032355
+}
