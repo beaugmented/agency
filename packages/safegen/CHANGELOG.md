@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.0.5
+
+### Patch Changes
+
+- 325dc93: ♻️ Internal updates to establish semantic versioning testing.
+
 ## 0.0.4
 
 ### Patch Changes
