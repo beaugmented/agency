@@ -4,11 +4,11 @@
 		"messages": [
 			{
 				"role": "user",
-				"content": "Please create a list of todo items for me, at varying levels of difficulty and importance."
+				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"number\"\n          },\n          \"title\": {\n            \"type\": \"string\"\n          },\n          \"completed\": {\n            \"type\": \"boolean\"\n          }\n        },\n        \"required\": [\n          \"id\",\n          \"title\",\n          \"completed\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"items\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}"
 			},
 			{
 				"role": "user",
-				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"number\"\n          },\n          \"title\": {\n            \"type\": \"string\"\n          },\n          \"completed\": {\n            \"type\": \"boolean\"\n          }\n        },\n        \"required\": [\n          \"id\",\n          \"title\",\n          \"completed\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"items\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}"
+				"content": "Please create a list of todo items for me, at varying levels of difficulty and importance."
 			}
 		]
 	}

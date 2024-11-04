@@ -3,55 +3,45 @@
 		"items": [
 			{
 				"id": 1,
-				"title": "Grocery shopping",
+				"title": "Complete the project report",
 				"completed": false
 			},
 			{
 				"id": 2,
-				"title": "Submit project report",
+				"title": "Prepare for the team meeting",
 				"completed": false
 			},
 			{
 				"id": 3,
-				"title": "Clean the house",
+				"title": "Grocery shopping",
 				"completed": true
 			},
 			{
 				"id": 4,
-				"title": "Call the dentist to schedule an appointment",
-				"completed": false
-			},
-			{
-				"id": 5,
-				"title": "Finish reading the book 'The Great Gatsby'",
-				"completed": false
-			},
-			{
-				"id": 6,
 				"title": "Exercise for at least 30 minutes",
 				"completed": false
 			},
 			{
+				"id": 5,
+				"title": "Read a chapter of a book",
+				"completed": true
+			},
+			{
+				"id": 6,
+				"title": "Send birthday invitations",
+				"completed": false
+			},
+			{
 				"id": 7,
-				"title": "Organize digital files",
+				"title": "Organize the garage",
 				"completed": false
 			},
 			{
 				"id": 8,
-				"title": "Learn a new recipe and cook dinner",
-				"completed": false
-			},
-			{
-				"id": 9,
-				"title": "Plan upcoming vacation itinerary",
-				"completed": false
-			},
-			{
-				"id": 10,
-				"title": "Write a personal blog post",
+				"title": "Schedule a dentist appointment",
 				"completed": false
 			}
 		]
 	},
-	"usdPrice": 0.000218325
+	"usdPrice": 0.000181725
 }
