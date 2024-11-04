@@ -4,11 +4,11 @@
 		"messages": [
 			{
 				"role": "user",
-				"content": "How many planets are in the solar system?"
+				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"count\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}"
 			},
 			{
 				"role": "user",
-				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"count\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}"
+				"content": "How many planets are in the solar system?"
 			}
 		]
 	}
