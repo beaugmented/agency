@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.1.1
+
+### Patch Changes
+
+- 3dc2d57: 🚀 `safegen/openai` now takes advantage of OpenAI's cached input tokens cost optimization by default by placing the unchanging response schema first in the prompt.
+- 6320972: 🐛 Remove node version stipulation from safegen's engines field.
+
 ## 0.1.0
 
 ### Minor Changes
