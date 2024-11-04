@@ -15,11 +15,11 @@ export function buildOpenAiRequestParams(
 	const messages: ChatCompletionMessageParam[] = [
 		{
 			role: `user`,
-			content: instruction,
+			content: jsonSchemaToInstruction(jsonSchema),
 		},
 		{
 			role: `user`,
-			content: jsonSchemaToInstruction(jsonSchema),
+			content: instruction,
 		},
 	]
 	const lastFailedResponse = previouslyFailedResponses.at(-1)
