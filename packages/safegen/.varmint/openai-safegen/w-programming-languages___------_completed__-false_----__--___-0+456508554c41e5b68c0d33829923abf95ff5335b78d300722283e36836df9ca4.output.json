@@ -1,0 +1,57 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"rationale": "Grocery shopping is essential for family meals and maintaining harmony at home.",
+				"priority": 90
+			},
+			{
+				"id": 6,
+				"rationale": "Organizing the home office will create a better environment for working and family productivity.",
+				"priority": 85
+			},
+			{
+				"id": 2,
+				"rationale": "Completing the monthly budget review is crucial for managing finances and reducing stress in the family.",
+				"priority": 80
+			},
+			{
+				"id": 4,
+				"rationale": "Preparing a presentation for work affects job security and can influence family stability.",
+				"priority": 75
+			},
+			{
+				"id": 9,
+				"rationale": "Planning a weekend trip itinerary can enhance family bonding and create cherished memories.",
+				"priority": 70
+			},
+			{
+				"id": 3,
+				"rationale": "Finishing 'The Great Gatsby' is for personal enrichment and leisure, which supports overall well-being.",
+				"priority": 60
+			},
+			{
+				"id": 10,
+				"rationale": "Researching new programming languages contributes to personal and professional growth.",
+				"priority": 55
+			},
+			{
+				"id": 7,
+				"rationale": "Learning new vocabulary words is beneficial for intellectual development, though less immediate in impact.",
+				"priority": 50
+			},
+			{
+				"id": 8,
+				"rationale": "Attending yoga class is important for personal well-being and stress management, indirectly supporting family harmony.",
+				"priority": 45
+			},
+			{
+				"id": 5,
+				"rationale": "Running 5 km has been completed, contributing to personal health, but not an active priority anymore.",
+				"priority": 0
+			}
+		]
+	},
+	"usdPrice": 0.0003588
+}

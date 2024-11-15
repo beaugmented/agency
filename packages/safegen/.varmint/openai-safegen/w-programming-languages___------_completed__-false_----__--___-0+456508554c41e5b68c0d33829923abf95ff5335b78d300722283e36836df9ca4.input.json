@@ -1,0 +1,15 @@
+[
+	{
+		"model": "gpt-4o-mini",
+		"messages": [
+			{
+				"role": "user",
+				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"number\"\n          },\n          \"rationale\": {\n            \"type\": \"string\"\n          },\n          \"priority\": {\n            \"type\": \"number\"\n          }\n        },\n        \"required\": [\n          \"id\",\n          \"rationale\",\n          \"priority\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"items\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}"
+			},
+			{
+				"role": "user",
+				"content": "Prioritize this list in order of importance, giving each item a priority number between 1 and 100.\nConsider the fact that family harmony is important to me.\n{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"title\": \"Grocery shopping\",\n      \"completed\": false\n    },\n    {\n      \"id\": 2,\n      \"title\": \"Complete monthly budget review\",\n      \"completed\": false\n    },\n    {\n      \"id\": 3,\n      \"title\": \"Finish reading 'The Great Gatsby'\",\n      \"completed\": false\n    },\n    {\n      \"id\": 4,\n      \"title\": \"Prepare presentation for work meeting\",\n      \"completed\": false\n    },\n    {\n      \"id\": 5,\n      \"title\": \"Run 5 km\",\n      \"completed\": true\n    },\n    {\n      \"id\": 6,\n      \"title\": \"Organize home office\",\n      \"completed\": false\n    },\n    {\n      \"id\": 7,\n      \"title\": \"Learn 10 new vocabulary words\",\n      \"completed\": false\n    },\n    {\n      \"id\": 8,\n      \"title\": \"Attend yoga class\",\n      \"completed\": true\n    },\n    {\n      \"id\": 9,\n      \"title\": \"Plan weekend trip itinerary\",\n      \"completed\": false\n    },\n    {\n      \"id\": 10,\n      \"title\": \"Research new programming languages\",\n      \"completed\": false\n    }\n  ]\n}"
+			}
+		]
+	}
+]
