@@ -3,45 +3,55 @@
 		"items": [
 			{
 				"id": 1,
-				"title": "Complete the project report",
+				"title": "Grocery shopping",
 				"completed": false
 			},
 			{
 				"id": 2,
-				"title": "Prepare for the team meeting",
+				"title": "Complete monthly budget review",
 				"completed": false
 			},
 			{
 				"id": 3,
-				"title": "Grocery shopping",
-				"completed": true
+				"title": "Finish reading 'The Great Gatsby'",
+				"completed": false
 			},
 			{
 				"id": 4,
-				"title": "Exercise for at least 30 minutes",
+				"title": "Prepare presentation for work meeting",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Read a chapter of a book",
+				"title": "Run 5 km",
 				"completed": true
 			},
 			{
 				"id": 6,
-				"title": "Send birthday invitations",
+				"title": "Organize home office",
 				"completed": false
 			},
 			{
 				"id": 7,
-				"title": "Organize the garage",
+				"title": "Learn 10 new vocabulary words",
 				"completed": false
 			},
 			{
 				"id": 8,
-				"title": "Schedule a dentist appointment",
+				"title": "Attend yoga class",
+				"completed": true
+			},
+			{
+				"id": 9,
+				"title": "Plan weekend trip itinerary",
+				"completed": false
+			},
+			{
+				"id": 10,
+				"title": "Research new programming languages",
 				"completed": false
 			}
 		]
 	},
-	"usdPrice": 0.000181725
+	"usdPrice": 0.000213525
 }
