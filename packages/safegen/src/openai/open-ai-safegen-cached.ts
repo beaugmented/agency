@@ -14,6 +14,7 @@ export type OpenAiSafeGenOptions = {
 	usdMinimum: number
 	apiKey: string
 	cachingMode: SquirrelMode
+	cacheKey?: string
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
@@ -30,6 +31,7 @@ export class OpenAiSafeGenerator {
 		usdMinimum,
 		apiKey,
 		cachingMode,
+		cacheKey = `openai-safegen`,
 		logger,
 	}: OpenAiSafeGenOptions) {
 		this.usdBudget = usdBudget
@@ -37,7 +39,7 @@ export class OpenAiSafeGenerator {
 		this.squirrel = new Squirrel(cachingMode)
 		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(apiKey)
 		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
-			`openai-safegen`,
+			cacheKey,
 			this.getUnknownJsonFromOpenAi,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
