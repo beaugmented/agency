@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.1.2
+
+### Patch Changes
+
+- d98630f: ✨ The `OpenAISafeGenerator` class now takes an option `cacheKey` to control the name of the folder that responses are cached to.
+
 ## 0.1.1
 
 ### Patch Changes
