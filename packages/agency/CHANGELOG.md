@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.0.3
+
+### Patch Changes
+
+- bc1c51c: 🐛 No longer complains when using a node version other than 22.
+
 ## 0.0.2
 
 ### Patch Changes
