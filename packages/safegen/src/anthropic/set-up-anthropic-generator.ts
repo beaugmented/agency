@@ -59,7 +59,6 @@ export function setUpAnthropicJsonGenerator(
 			promptTokensTotal *
 				ANTHROPIC_PRICING_FACTS[model].promptUsdPricePerToken +
 			outputTokens * ANTHROPIC_PRICING_FACTS[model].completionUsdPricePerToken
-		console.log(content)
 		let data: Json.Object
 		try {
 			const textMessage = content.find((message) => message.type === `text`)
@@ -68,7 +67,6 @@ export function setUpAnthropicJsonGenerator(
 			}
 			const stringifiedData = `{${textMessage.text}`
 			data = JSON.parse(stringifiedData)
-			console.log({ data, stringifiedData })
 		} catch (error) {
 			data = {}
 		}
