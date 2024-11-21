@@ -1,1 +1,1 @@
-export * from "./open-ai-safegen-cached"
+export * from "./openai-safegen-cached"
