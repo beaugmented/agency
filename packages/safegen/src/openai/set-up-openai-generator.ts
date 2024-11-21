@@ -5,7 +5,7 @@ import OpenAI from "openai"
 import type * as OpenAICore from "openai/core"
 import type OpenAIResources from "openai/resources/index"
 
-import { OPEN_AI_PRICING_FACTS } from "./pricing-facts"
+import { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
 
 export const clientCache = new Map<string, OpenAI>()
 

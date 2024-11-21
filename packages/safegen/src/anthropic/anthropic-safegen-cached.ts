@@ -3,8 +3,8 @@ import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
+import type { ANTHROPIC_PRICING_FACTS } from "./anthropic-pricing-facts"
 import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
-import type { ANTHROPIC_PRICING_FACTS } from "./pricing-facts"
 import type { GetUnknownJsonFromAnthropic } from "./set-up-anthropic-generator"
 import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-generator"
 

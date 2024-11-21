@@ -9,7 +9,7 @@ import {
 	ANTHROPIC_PRICING_FACTS,
 	isAnthropicModelSupported,
 	SAFEGEN_ANTHROPIC_SUPPORTED_MODELS,
-} from "./pricing-facts"
+} from "./anthropic-pricing-facts"
 
 export const clientCache = new Map<string, Anthropic>()
 
