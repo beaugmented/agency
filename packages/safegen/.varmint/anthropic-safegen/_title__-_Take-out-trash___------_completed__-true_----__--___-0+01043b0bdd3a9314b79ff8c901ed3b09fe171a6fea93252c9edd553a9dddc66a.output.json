@@ -1,0 +1,57 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"priority": 95,
+				"rationale": "Buying groceries is essential for family well-being and prevents stress over meal planning"
+			},
+			{
+				"id": 2,
+				"priority": 90,
+				"rationale": "Tax returns have strict deadlines and can impact family financial stability"
+			},
+			{
+				"id": 7,
+				"priority": 85,
+				"rationale": "Work emails affect income security and work-life balance"
+			},
+			{
+				"id": 8,
+				"priority": 80,
+				"rationale": "Fixing the faucet prevents water damage and maintains peaceful home environment"
+			},
+			{
+				"id": 5,
+				"priority": 75,
+				"rationale": "Dental health is important for long-term family wellness"
+			},
+			{
+				"id": 4,
+				"priority": 70,
+				"rationale": "Dissertation progress is important but can be balanced with family needs"
+			},
+			{
+				"id": 6,
+				"priority": 50,
+				"rationale": "Cleaning garage improves home organization but isn't time-sensitive"
+			},
+			{
+				"id": 9,
+				"priority": 45,
+				"rationale": "Resume updates are important for career growth but not urgent"
+			},
+			{
+				"id": 3,
+				"priority": 40,
+				"rationale": "Plant maintenance contributes to home atmosphere but isn't critical"
+			},
+			{
+				"id": 10,
+				"priority": 35,
+				"rationale": "Regular household maintenance but can be done quickly"
+			}
+		]
+	},
+	"usdPrice": 0.008202000000000001
+}
