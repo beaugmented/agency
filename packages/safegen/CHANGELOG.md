@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.1.3
+
+### Patch Changes
+
+- 018de54: ✨ Add `safegen/anthropic` module for using claude.
+
 ## 0.1.2
 
 ### Patch Changes
