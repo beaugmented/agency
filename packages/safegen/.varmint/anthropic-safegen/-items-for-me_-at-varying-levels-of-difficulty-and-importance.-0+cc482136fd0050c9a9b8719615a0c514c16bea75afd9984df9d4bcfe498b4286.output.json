@@ -1,0 +1,57 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"title": "Buy groceries for the week",
+				"completed": false
+			},
+			{
+				"id": 2,
+				"title": "Complete annual tax return",
+				"completed": false
+			},
+			{
+				"id": 3,
+				"title": "Water the plants",
+				"completed": true
+			},
+			{
+				"id": 4,
+				"title": "Write dissertation chapter",
+				"completed": false
+			},
+			{
+				"id": 5,
+				"title": "Schedule dental appointment",
+				"completed": false
+			},
+			{
+				"id": 6,
+				"title": "Clean garage",
+				"completed": false
+			},
+			{
+				"id": 7,
+				"title": "Reply to urgent work emails",
+				"completed": true
+			},
+			{
+				"id": 8,
+				"title": "Fix leaking bathroom faucet",
+				"completed": false
+			},
+			{
+				"id": 9,
+				"title": "Update resume",
+				"completed": false
+			},
+			{
+				"id": 10,
+				"title": "Take out trash",
+				"completed": true
+			}
+		]
+	},
+	"usdPrice": 0.005529
+}
