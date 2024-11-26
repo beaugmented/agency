@@ -1,6 +1,13 @@
 {
 	"editor.wordSeparators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
-	"cSpell.words": ["metafile", "openai", "safegen", "treeshake", "tsup"],
+	"cSpell.words": [
+		"metafile",
+		"Ollama",
+		"openai",
+		"safegen",
+		"treeshake",
+		"tsup"
+	],
 	"json.schemas": [
 		{
 			"fileMatch": ["**/break-check.config.json"],

@@ -3,6 +3,10 @@ import type { ZodError, ZodSchema } from "zod"
 import type { JsonSchema7Type } from "zod-to-json-schema"
 import zodToJsonSchema from "zod-to-json-schema"
 
+export interface SafeGenerator {
+	from: GenerateFromSchema
+}
+
 export type InvalidResponse = {
 	response: Json.Object
 	error: ZodError
