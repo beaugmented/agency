@@ -1,5 +1,14 @@
 # @beaugmented/agency
 
+## 0.1.4
+
+### Patch Changes
+
+- fd1435f: 🏷️ Add the `SafeGenerator` interface for custom implementations.
+- fd1435f: ✨ Add `safegen/ollama` module for using local models.
+- fd1435f: 🐛 Actually exported the anthropic module.
+- fd1435f: 🚀 Reduce bundle size by properly excluding dependencies.
+
 ## 0.1.3
 
 ### Patch Changes
