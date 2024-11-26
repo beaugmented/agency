@@ -11,10 +11,14 @@ export const OPTIONS = {
 	tsconfig: `tsconfig.json`,
 	dts: true,
 	format: [`esm`],
-	entry: [`src/index.ts`, `src/openai/index.ts`],
+	entry: [
+		`src/index.ts`,
+		`src/anthropic/index.ts`,
+		`src/ollama/index.ts`,
+		`src/openai/index.ts`,
+	],
 	metafile: false,
 	outDir: `dist`,
-	external: [`*`],
 } satisfies Options
 
 export default defineConfig(OPTIONS)
