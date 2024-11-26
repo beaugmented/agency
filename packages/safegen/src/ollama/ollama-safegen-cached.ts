@@ -1,7 +1,7 @@
 import type { Squirreled, SquirrelMode } from "varmint"
 import { Squirrel } from "varmint"
 
-import type { GenerateFromSchema } from "../safegen"
+import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOllamaRequestParams } from "./build-ollama-request-params"
 import type { GetUnknownJsonFromOllama } from "./set-up-ollama-generator"
@@ -16,9 +16,9 @@ export type OllamaSafeGenOptions = {
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
-export class OllamaSafeGenerator {
-	public usdFloor: number
+export class OllamaSafeGenerator implements SafeGenerator {
 	public usdBudget: number
+	public usdMinimum: number
 	public getUnknownJsonFromOllama: GetUnknownJsonFromOllama
 	public getUnknownJsonFromOllamaSquirreled: Squirreled<GetUnknownJsonFromOllama>
 	public squirrel: Squirrel
@@ -32,7 +32,7 @@ export class OllamaSafeGenerator {
 		logger,
 	}: OllamaSafeGenOptions) {
 		this.usdBudget = usdBudget
-		this.usdFloor = usdMinimum
+		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
 		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator()
 		this.getUnknownJsonFromOllamaSquirreled = this.squirrel.add(
@@ -40,7 +40,7 @@ export class OllamaSafeGenerator {
 			this.getUnknownJsonFromOllama,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
-			if (this.usdBudget < this.usdFloor) {
+			if (this.usdBudget < this.usdMinimum) {
 				logger?.warn(`SafeGen budget exhausted`)
 				const fallback = params[1]
 				return fallback

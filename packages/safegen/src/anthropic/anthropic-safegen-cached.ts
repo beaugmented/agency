@@ -1,7 +1,7 @@
 import type { Squirreled, SquirrelMode } from "varmint"
 import { Squirrel } from "varmint"
 
-import type { GenerateFromSchema } from "../safegen"
+import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import type { ANTHROPIC_PRICING_FACTS } from "./anthropic-pricing-facts"
 import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
@@ -18,9 +18,9 @@ export type AnthropicSafeGenOptions = {
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
-export class AnthropicSafeGenerator {
-	public usdFloor: number
+export class AnthropicSafeGenerator implements SafeGenerator {
 	public usdBudget: number
+	public usdMinimum: number
 	public getUnknownJsonFromAnthropic: GetUnknownJsonFromAnthropic
 	public getUnknownJsonFromAnthropicSquirreled: Squirreled<GetUnknownJsonFromAnthropic>
 	public squirrel: Squirrel
@@ -35,7 +35,7 @@ export class AnthropicSafeGenerator {
 		logger,
 	}: AnthropicSafeGenOptions) {
 		this.usdBudget = usdBudget
-		this.usdFloor = usdMinimum
+		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
 		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(apiKey)
 		this.getUnknownJsonFromAnthropicSquirreled = this.squirrel.add(
@@ -43,7 +43,7 @@ export class AnthropicSafeGenerator {
 			this.getUnknownJsonFromAnthropic,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
-			if (this.usdBudget < this.usdFloor) {
+			if (this.usdBudget < this.usdMinimum) {
 				logger?.warn(`SafeGen budget exhausted`)
 				const fallback = params[1]
 				return fallback
