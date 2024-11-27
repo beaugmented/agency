@@ -1,0 +1,12 @@
+{
+	"data": {
+		"examples": [
+			"go north",
+			"take key",
+			"look around",
+			"exit game",
+			"try open door"
+		]
+	},
+	"usdPrice": 0
+}

@@ -1,0 +1,8 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"interpretation\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interpretation\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}\n\nPlease interpret the following intention as a actions: going up\n\nHere is the schema describing the possible actions: {\n  \"go\": \"\\\"go __\\\": travel in a direction (possible directions: north, east, south, or west)\",\n  \"take\": \"\\\"take __\\\": put an item from the environment into the inventory\",\n  \"look\": \"\\\"look\\\": observe the environment\",\n  \"exit\": \"\\\"exit\\\": quit the game\",\n  \"try\": \"\\\"try ...\\\": try to do something\"\n}\n\nHere are some example commands: go north\ntake key\nlook around\nexit game\ntry open door\n\nWhat is the intention of the above command?",
+		"format": "json",
+		"stream": false
+	}
+]

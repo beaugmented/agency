@@ -1,11 +1,11 @@
 import type { Json } from "atom.io/json"
-import type { GenerateRequest } from "ollama"
+import type { ChatRequest, GenerateRequest } from "ollama"
 import { Ollama } from "ollama"
 
 export const ollamaClientCache = new Map<string, Ollama>()
 
 export type GetUnknownJsonFromOllama = (
-	body: GenerateRequest & { stream: false },
+	body: ChatRequest & { stream: false },
 ) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpOllamaJsonGenerator(): GetUnknownJsonFromOllama {
@@ -15,12 +15,12 @@ export function setUpOllamaJsonGenerator(): GetUnknownJsonFromOllama {
 			ollamaClient = new Ollama()
 			ollamaClientCache.set(`ollama`, ollamaClient)
 		}
-		const completion = await ollamaClient.generate(body)
-		const { response } = completion
+		const completion = await ollamaClient.chat(body)
+		const { message } = completion
 
 		let data: Json.Object
 		try {
-			data = JSON.parse(response)
+			data = JSON.parse(message.content)
 		} catch (error) {
 			data = {}
 		}

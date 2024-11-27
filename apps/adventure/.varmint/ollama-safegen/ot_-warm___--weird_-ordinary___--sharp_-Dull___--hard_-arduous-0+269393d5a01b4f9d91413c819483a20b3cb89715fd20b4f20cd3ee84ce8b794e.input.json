@@ -1,0 +1,8 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"name\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}\n\n--\nThe theme is skeleton siege.\n--\n I need the name for a zone. It has the following traits: \n\t- cool: awesome,\n\t- hot: warm,\n\t- weird: ordinary,\n\t- sharp: Dull,\n\t- hard: arduous",
+		"format": "json",
+		"stream": false
+	}
+]

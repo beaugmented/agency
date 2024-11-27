@@ -1,0 +1,8 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"examples\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"required\": [\n    \"examples\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}\n\nHere are all the possible actions: {\n  \"go\": \"\\\"go __\\\": travel in a direction (possible directions: north, east, south, or west)\",\n  \"take\": \"\\\"take __\\\": put an item from the environment into the inventory\",\n  \"look\": \"\\\"look\\\": observe the environment\",\n  \"exit\": \"\\\"exit\\\": quit the game\",\n  \"try\": \"\\\"try ...\\\": try to do something\"\n}\n\n Come up with some examples using this knowledge",
+		"format": "json",
+		"stream": false
+	}
+]

@@ -4,6 +4,8 @@ import type { JsonSchema7Type } from "zod-to-json-schema"
 import zodToJsonSchema from "zod-to-json-schema"
 
 export interface SafeGenerator {
+	usdBudget: number
+	usdMinimum: number
 	from: GenerateFromSchema
 }
 
