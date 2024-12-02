@@ -6,9 +6,6 @@
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"baseUrl": "./",
-		"paths": {
-			"~/*": ["./*"]
-		},
 		"types": ["vitest/globals"],
 		"resolveJsonModule": true,
 		"allowJs": true,

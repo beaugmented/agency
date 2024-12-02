@@ -3,9 +3,5 @@
 	"include": ["src", "__tests__", "**/*.config.ts", "./vite-env.d.ts"],
 	"compilerOptions": {
 		"types": ["vite/client", "vitest/globals"],
-		"paths": {
-			"safegen": ["./src/index.ts"],
-			"safegen/openai": ["./src/openai/index.ts"]
-		}
 	}
 }
