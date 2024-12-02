@@ -46,17 +46,19 @@
 		},
 		"lint:eslint": {
 			"inputs": [
+				"../../tsconfig.json",
+				"../../eslint.config.js",
 				"**/package.json",
 				"tsconfig.json",
 				"src/**/*.{ts,tsx}",
 				"**/src/**/*.{ts,tsx}",
 				"__tests__/**/*.{ts?x}",
-				"__scripts__/**/*.{ts?x}",
-				"../../eslint.config.js"
+				"__scripts__/**/*.{ts?x}"
 			]
 		},
 		"lint:types": {
 			"inputs": [
+				"../../tsconfig.json",
 				"**/package.json",
 				"tsconfig.json",
 				"src/**/*.{ts,tsx}",
