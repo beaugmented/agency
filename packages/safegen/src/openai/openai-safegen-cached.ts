@@ -1,4 +1,4 @@
-import type { Squirreled, SquirrelMode } from "varmint"
+import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
@@ -13,7 +13,7 @@ export type OpenAiSafeGenOptions = {
 	usdBudget: number
 	usdMinimum: number
 	apiKey: string
-	cachingMode: SquirrelMode
+	cachingMode: CacheMode
 	cacheKey?: string
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
