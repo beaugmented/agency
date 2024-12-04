@@ -63,8 +63,8 @@ importers:
         specifier: 0.30.4
         version: 0.30.4(eslint@9.16.0(jiti@2.4.1))
       varmint:
-        specifier: 0.3.1
-        version: 0.3.1
+        specifier: 0.3.2
+        version: 0.3.2
     devDependencies:
       '@types/node':
         specifier: 22.10.1
@@ -106,8 +106,8 @@ importers:
         specifier: 0.30.4
         version: 0.30.4(eslint@9.16.0(jiti@2.4.1))
       varmint:
-        specifier: 0.3.1
-        version: 0.3.1
+        specifier: 0.3.2
+        version: 0.3.2
       zod:
         specifier: 3.23.8
         version: 3.23.8
@@ -1992,8 +1992,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  varmint@0.3.1:
-    resolution: {integrity: sha512-BAUg+C5MBC6ftJ4/C+bjXAG7hA4DNsJ931PjQ3N74GeoElZiNdv7SqQCTkdYPGYatDL1sSkj892wHEhz1bJt3g==}
+  varmint@0.3.2:
+    resolution: {integrity: sha512-uoUrVdRkSgcDHPLri9EWzAfpQtsiPPxf74DFuzRPL3h0UssW6WUOrj38+U58tQcMYmWLOxdNcWXeYSwF7YWX8A==}
 
   vite-node@2.1.8:
     resolution: {integrity: sha512-uPAwSr57kYjAUux+8E2j0q0Fxpn8M9VoyfGiRI8Kfktz9NcYMCenwY5RnZxnF1WTu3TGiYipirIzacLL3VVGFg==}
@@ -3899,7 +3899,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  varmint@0.3.1: {}
+  varmint@0.3.2: {}
 
   vite-node@2.1.8(@types/node@22.10.1):
     dependencies:
