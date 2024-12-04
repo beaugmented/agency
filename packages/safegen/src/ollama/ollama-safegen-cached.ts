@@ -1,4 +1,4 @@
-import type { Squirreled, SquirrelMode } from "varmint"
+import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
@@ -11,7 +11,7 @@ export type OllamaSafeGenOptions = {
 	model: `llama3.2:1b` | `llama3.2` | (string & {})
 	usdBudget: number
 	usdMinimum: number
-	cachingMode: SquirrelMode
+	cachingMode: CacheMode
 	cacheKey?: string
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
