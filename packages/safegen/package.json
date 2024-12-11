@@ -57,7 +57,7 @@
 		"atom.io": "0.30.5",
 		"varmint": "0.3.3",
 		"zod": "3.24.1",
-		"zod-to-json-schema": "3.23.5"
+		"zod-to-json-schema": "3.24.0"
 	},
 	"devDependencies": {
 		"@anthropic-ai/sdk": "0.32.1",
