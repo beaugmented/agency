@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.2.0
+
+### Minor Changes
+
+- f0c09d1: 💥 BREAKING CHANGE: Safegen now requires `zod` and `zod-to-json-schema` to be installed as peers.
+
 ## 0.1.5
 
 ### Patch Changes
