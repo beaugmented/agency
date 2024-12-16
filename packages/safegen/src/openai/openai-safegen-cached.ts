@@ -1,3 +1,4 @@
+import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
@@ -7,6 +8,8 @@ import { buildOpenAiRequestParams } from "./build-openai-request-params"
 import type { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
 import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-openai-generator"
+
+export const clientCache = new Map<string, OpenAI>()
 
 export type OpenAiSafeGenOptions = {
 	model: keyof typeof OPEN_AI_PRICING_FACTS
@@ -24,6 +27,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromOpenAi: GetUnknownJsonFromOpenAi
 	public getUnknownJsonFromOpenAiSquirreled: Squirreled<GetUnknownJsonFromOpenAi>
 	public squirrel: Squirrel
+	public client: OpenAI
 
 	public constructor({
 		model,
@@ -37,7 +41,16 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
-		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(apiKey)
+		let client = clientCache.get(apiKey)
+		if (!client) {
+			client = new OpenAI({
+				apiKey,
+				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
+			})
+			clientCache.set(apiKey, client)
+		}
+		this.client = client
+		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(client)
 		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromOpenAi,

@@ -1,13 +1,9 @@
-import { createHash } from "node:crypto"
-
 import type { Json } from "atom.io/json"
-import OpenAI from "openai"
+import type OpenAI from "openai"
 import type * as OpenAICore from "openai/core"
 import type OpenAIResources from "openai/resources/index"
 
 import { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
-
-export const clientCache = new Map<string, OpenAI>()
 
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
@@ -15,18 +11,9 @@ export type GetUnknownJsonFromOpenAi = (
 ) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpOpenAiJsonGenerator(
-	apiKey = `NO_API_KEY_PROVIDED`,
+	client: OpenAI,
 ): GetUnknownJsonFromOpenAi {
-	const keyHash = createHash(`sha256`).update(apiKey).digest(`hex`)
 	return async function getUnknownJsonFromOpenAi(body, options) {
-		let client = clientCache.get(keyHash)
-		if (!client) {
-			client = new OpenAI({
-				apiKey,
-				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
-			})
-			clientCache.set(keyHash, client)
-		}
 		const completion = await client.chat.completions.create(
 			{
 				...body,

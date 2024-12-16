@@ -3,6 +3,9 @@ import type { ZodError, ZodSchema } from "zod"
 import type { JsonSchema7Type } from "zod-to-json-schema"
 import zodToJsonSchema from "zod-to-json-schema"
 
+export type GenerateFromSchema = <J extends Json.Object>(
+	dataSpec: DataSpec<J>,
+) => GenerateSafeData<J>
 export interface SafeGenerator {
 	from: GenerateFromSchema
 }
@@ -28,10 +31,6 @@ export type DataSpec<T> = {
 	schema: ZodSchema<T>
 	fallback: T
 }
-
-export type GenerateFromSchema = <J extends Json.Object>(
-	dataSpec: DataSpec<J>,
-) => GenerateSafeData<J>
 
 export function createSafeDataGenerator(
 	gen: GenerateJsonFromLLM,
