@@ -6,8 +6,8 @@ import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
 import type { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
-import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-generator"
-import { setUpOpenAiJsonGenerator } from "./set-up-openai-generator"
+import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-json-generator"
+import { setUpOpenAiJsonGenerator } from "./set-up-openai-json-generator"
 
 export const clientCache = new Map<string, OpenAI>()
 

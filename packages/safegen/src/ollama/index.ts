@@ -1,1 +1,1 @@
-export * from "./ollama-safegen-cached"
+export * from "./ollama-safe-generator"

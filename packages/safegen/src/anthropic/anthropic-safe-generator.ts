@@ -3,41 +3,44 @@ import { Squirrel } from "varmint"
 
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
-import { buildOllamaRequestParams } from "./build-ollama-request-params"
-import type { GetUnknownJsonFromOllama } from "./set-up-ollama-generator"
-import { setUpOllamaJsonGenerator } from "./set-up-ollama-generator"
+import type { ANTHROPIC_PRICING_FACTS } from "./anthropic-pricing-facts"
+import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
+import type { GetUnknownJsonFromAnthropic } from "./set-up-anthropic-json-generator"
+import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
 
-export type OllamaSafeGenOptions = {
-	model: `llama3.2:1b` | `llama3.2` | (string & {})
+export type AnthropicSafeGenOptions = {
+	model: keyof typeof ANTHROPIC_PRICING_FACTS
 	usdBudget: number
 	usdMinimum: number
+	apiKey: string
 	cachingMode: CacheMode
 	cacheKey?: string
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
-export class OllamaSafeGenerator implements SafeGenerator {
+export class AnthropicSafeGenerator implements SafeGenerator {
 	public usdBudget: number
 	public usdMinimum: number
-	public getUnknownJsonFromOllama: GetUnknownJsonFromOllama
-	public getUnknownJsonFromOllamaSquirreled: Squirreled<GetUnknownJsonFromOllama>
+	public getUnknownJsonFromAnthropic: GetUnknownJsonFromAnthropic
+	public getUnknownJsonFromAnthropicSquirreled: Squirreled<GetUnknownJsonFromAnthropic>
 	public squirrel: Squirrel
 
 	public constructor({
 		model,
 		usdBudget,
 		usdMinimum,
+		apiKey,
 		cachingMode,
-		cacheKey = `ollama-safegen`,
+		cacheKey = `anthropic-safegen`,
 		logger,
-	}: OllamaSafeGenOptions) {
+	}: AnthropicSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
-		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator()
-		this.getUnknownJsonFromOllamaSquirreled = this.squirrel.add(
+		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(apiKey)
+		this.getUnknownJsonFromAnthropicSquirreled = this.squirrel.add(
 			cacheKey,
-			this.getUnknownJsonFromOllama,
+			this.getUnknownJsonFromAnthropic,
 		)
 		this.from = createSafeDataGenerator(async (...params) => {
 			if (this.usdBudget < this.usdMinimum) {
@@ -45,14 +48,14 @@ export class OllamaSafeGenerator implements SafeGenerator {
 				const fallback = params[1]
 				return fallback
 			}
-			const ollamaParams = buildOllamaRequestParams(model, ...params)
+			const anthropicParams = buildAnthropicRequestParams(model, ...params)
 			const instruction = params[0]
 			const previouslyFailedResponses = params[3]
-			const response = await this.getUnknownJsonFromOllamaSquirreled
+			const response = await this.getUnknownJsonFromAnthropicSquirreled
 				.for(
 					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
 				)
-				.get(ollamaParams)
+				.get(anthropicParams)
 			this.usdBudget -= response.usdPrice
 			return response.data
 		})
