@@ -42,15 +42,15 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
 		let client = clientCache.get(apiKey)
-		if (!client) {
+		if (!client && cachingMode !== `read`) {
 			client = new Anthropic({
 				apiKey,
 				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
 			})
 			clientCache.set(apiKey, client)
+			this.client = client
 		}
-		this.client = client
-		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(client)
+		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(this.client)
 		this.getUnknownJsonFromAnthropicSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromAnthropic,

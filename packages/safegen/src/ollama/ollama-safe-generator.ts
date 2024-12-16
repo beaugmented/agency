@@ -36,7 +36,9 @@ export class OllamaSafeGenerator implements SafeGenerator {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
-		this.client = new Ollama()
+		if (cachingMode !== `read`) {
+			this.client = new Ollama()
+		}
 		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator(this.client)
 		this.getUnknownJsonFromOllamaSquirreled = this.squirrel.add(
 			cacheKey,

@@ -42,15 +42,15 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
 		let client = clientCache.get(apiKey)
-		if (!client) {
+		if (!client && cachingMode !== `read`) {
 			client = new OpenAI({
 				apiKey,
 				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
 			})
 			clientCache.set(apiKey, client)
+			this.client = client
 		}
-		this.client = client
-		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(client)
+		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(this.client)
 		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromOpenAi,
