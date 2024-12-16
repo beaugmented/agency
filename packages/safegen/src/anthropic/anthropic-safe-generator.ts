@@ -1,3 +1,4 @@
+import Anthropic from "@anthropic-ai/sdk"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
@@ -7,6 +8,8 @@ import type { ANTHROPIC_PRICING_FACTS } from "./anthropic-pricing-facts"
 import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
 import type { GetUnknownJsonFromAnthropic } from "./set-up-anthropic-json-generator"
 import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
+
+export const clientCache = new Map<string, Anthropic>()
 
 export type AnthropicSafeGenOptions = {
 	model: keyof typeof ANTHROPIC_PRICING_FACTS
@@ -24,6 +27,7 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromAnthropic: GetUnknownJsonFromAnthropic
 	public getUnknownJsonFromAnthropicSquirreled: Squirreled<GetUnknownJsonFromAnthropic>
 	public squirrel: Squirrel
+	public client: Anthropic
 
 	public constructor({
 		model,
@@ -37,7 +41,16 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
-		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(apiKey)
+		let client = clientCache.get(apiKey)
+		if (!client) {
+			client = new Anthropic({
+				apiKey,
+				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
+			})
+			clientCache.set(apiKey, client)
+		}
+		this.client = client
+		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(client)
 		this.getUnknownJsonFromAnthropicSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromAnthropic,

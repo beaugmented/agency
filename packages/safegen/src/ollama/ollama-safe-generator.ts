@@ -1,3 +1,4 @@
+import { Ollama } from "ollama"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
@@ -22,6 +23,7 @@ export class OllamaSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromOllama: GetUnknownJsonFromOllama
 	public getUnknownJsonFromOllamaSquirreled: Squirreled<GetUnknownJsonFromOllama>
 	public squirrel: Squirrel
+	public client: Ollama
 
 	public constructor({
 		model,
@@ -34,7 +36,8 @@ export class OllamaSafeGenerator implements SafeGenerator {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
-		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator()
+		this.client = new Ollama()
+		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator(this.client)
 		this.getUnknownJsonFromOllamaSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromOllama,
