@@ -6,9 +6,14 @@ export type GetUnknownJsonFromOllama = (
 ) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpOllamaJsonGenerator(
-	client: Ollama,
+	client?: Ollama,
 ): GetUnknownJsonFromOllama {
 	return async function getUnknownJsonFromOllama(body) {
+		if (!client) {
+			throw new Error(
+				`This is a bug in safegen. Ollama client not available to the json generator.`,
+			)
+		}
 		const completion = await client.generate(body)
 		const { response } = completion
 

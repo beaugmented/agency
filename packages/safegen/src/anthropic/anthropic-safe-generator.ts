@@ -27,7 +27,7 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromAnthropic: GetUnknownJsonFromAnthropic
 	public getUnknownJsonFromAnthropicSquirreled: Squirreled<GetUnknownJsonFromAnthropic>
 	public squirrel: Squirrel
-	public client: Anthropic
+	public client?: Anthropic
 
 	public constructor({
 		model,

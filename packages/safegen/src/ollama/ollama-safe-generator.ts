@@ -23,7 +23,7 @@ export class OllamaSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromOllama: GetUnknownJsonFromOllama
 	public getUnknownJsonFromOllamaSquirreled: Squirreled<GetUnknownJsonFromOllama>
 	public squirrel: Squirrel
-	public client: Ollama
+	public client?: Ollama
 
 	public constructor({
 		model,

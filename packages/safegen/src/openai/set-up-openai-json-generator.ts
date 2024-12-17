@@ -11,9 +11,14 @@ export type GetUnknownJsonFromOpenAi = (
 ) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpOpenAiJsonGenerator(
-	client: OpenAI,
+	client?: OpenAI,
 ): GetUnknownJsonFromOpenAi {
 	return async function getUnknownJsonFromOpenAi(body, options) {
+		if (!client) {
+			throw new Error(
+				`This is a bug in safegen. OpenAI client not available to the json generator.`,
+			)
+		}
 		const completion = await client.chat.completions.create(
 			{
 				...body,

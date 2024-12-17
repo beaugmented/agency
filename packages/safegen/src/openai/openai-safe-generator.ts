@@ -27,7 +27,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromOpenAi: GetUnknownJsonFromOpenAi
 	public getUnknownJsonFromOpenAiSquirreled: Squirreled<GetUnknownJsonFromOpenAi>
 	public squirrel: Squirrel
-	public client: OpenAI
+	public client?: OpenAI
 
 	public constructor({
 		model,

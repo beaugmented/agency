@@ -15,9 +15,14 @@ export type GetUnknownJsonFromAnthropic = (
 ) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpAnthropicJsonGenerator(
-	client: Anthropic,
+	client?: Anthropic,
 ): GetUnknownJsonFromAnthropic {
 	return async function getUnknownJsonFromAnthropic(body, options) {
+		if (!client) {
+			throw new Error(
+				`This is a bug in safegen. Anthropic client not available to the json generator.`,
+			)
+		}
 		const { model } = body
 		const modelIsSupported = isAnthropicModelSupported(model)
 		if (!modelIsSupported) {
