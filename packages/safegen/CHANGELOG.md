@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.2.1
+
+### Patch Changes
+
+- c3a44c8: ✨ `OpenAiSafeGenerator`, `AnthropicSafeGenerator`, and `OllamaSafeGenerator` now each include a `client` property with the type of their respective SDK client.
+
 ## 0.2.0
 
 ### Minor Changes
