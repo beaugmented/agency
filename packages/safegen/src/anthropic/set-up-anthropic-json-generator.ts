@@ -1,5 +1,3 @@
-import { createHash } from "node:crypto"
-
 import type Anthropic from "@anthropic-ai/sdk"
 import type * as AnthropicCore from "@anthropic-ai/sdk/core"
 import type * as AnthropicResources from "@anthropic-ai/sdk/resources/index"
