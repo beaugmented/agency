@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.0.4
+
+### Patch Changes
+
+- 2f81003: 🐛 Include CHANGELOG.md in the package for messages like these!
+
 ## 0.0.3
 
 ### Patch Changes
