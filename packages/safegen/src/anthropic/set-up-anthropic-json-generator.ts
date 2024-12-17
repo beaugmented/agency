@@ -1,6 +1,4 @@
-import { createHash } from "node:crypto"
-
-import Anthropic from "@anthropic-ai/sdk"
+import type Anthropic from "@anthropic-ai/sdk"
 import type * as AnthropicCore from "@anthropic-ai/sdk/core"
 import type * as AnthropicResources from "@anthropic-ai/sdk/resources/index"
 import type { Json } from "atom.io/json"
@@ -11,25 +9,19 @@ import {
 	SAFEGEN_ANTHROPIC_SUPPORTED_MODELS,
 } from "./anthropic-pricing-facts"
 
-export const clientCache = new Map<string, Anthropic>()
-
 export type GetUnknownJsonFromAnthropic = (
 	body: AnthropicResources.MessageCreateParamsNonStreaming,
 	options?: AnthropicCore.RequestOptions,
 ) => Promise<{ data: Json.Object; usdPrice: number }>
 
 export function setUpAnthropicJsonGenerator(
-	apiKey = `NO_API_KEY_PROVIDED`,
+	client?: Anthropic,
 ): GetUnknownJsonFromAnthropic {
-	const keyHash = createHash(`sha256`).update(apiKey).digest(`hex`)
 	return async function getUnknownJsonFromAnthropic(body, options) {
-		let client = clientCache.get(keyHash)
 		if (!client) {
-			client = new Anthropic({
-				apiKey,
-				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
-			})
-			clientCache.set(keyHash, client)
+			throw new Error(
+				`This is a bug in safegen. Anthropic client not available to the json generator.`,
+			)
 		}
 		const { model } = body
 		const modelIsSupported = isAnthropicModelSupported(model)
