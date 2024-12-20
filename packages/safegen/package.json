@@ -1,6 +1,6 @@
 {
 	"name": "safegen",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"license": "MIT",
 	"type": "module",
 	"publishConfig": {
@@ -10,7 +10,11 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/index.js",
-	"files": ["dist", "src", "CHANGELOG.md"],
+	"files": [
+		"dist",
+		"src",
+		"CHANGELOG.md"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
