@@ -28,6 +28,7 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromAnthropicSquirreled: Squirreled<GetUnknownJsonFromAnthropic>
 	public squirrel: Squirrel
 	public client?: Anthropic
+	public lastUsage?: Anthropic.Messages.Usage
 
 	public constructor({
 		model,
@@ -66,13 +67,15 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 			const anthropicParams = buildAnthropicRequestParams(model, ...params)
 			const instruction = params[0]
 			const previouslyFailedResponses = params[3]
-			const response = await this.getUnknownJsonFromAnthropicSquirreled
-				.for(
-					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
-				)
-				.get(anthropicParams)
-			this.usdBudget -= response.usdPrice
-			return response.data
+			const { data, usage, usdPrice } =
+				await this.getUnknownJsonFromAnthropicSquirreled
+					.for(
+						`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
+					)
+					.get(anthropicParams)
+			this.lastUsage = usage
+			this.usdBudget -= usdPrice
+			return data
 		})
 	}
 

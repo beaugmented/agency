@@ -12,7 +12,11 @@ import {
 export type GetUnknownJsonFromAnthropic = (
 	body: AnthropicResources.MessageCreateParamsNonStreaming,
 	options?: AnthropicCore.RequestOptions,
-) => Promise<{ data: Json.Object; usdPrice: number }>
+) => Promise<{
+	data: Json.Object
+	usage: Anthropic.Messages.Usage
+	usdPrice: number
+}>
 
 export function setUpAnthropicJsonGenerator(
 	client?: Anthropic,
@@ -62,6 +66,6 @@ export function setUpAnthropicJsonGenerator(
 		} catch (error) {
 			data = {}
 		}
-		return { data, usdPrice }
+		return { data, usage, usdPrice }
 	}
 }
