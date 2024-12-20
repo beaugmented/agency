@@ -28,6 +28,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	public getUnknownJsonFromOpenAiSquirreled: Squirreled<GetUnknownJsonFromOpenAi>
 	public squirrel: Squirrel
 	public client?: OpenAI
+	public lastUsage?: OpenAI.Completions.CompletionUsage
 
 	public constructor({
 		model,
@@ -66,13 +67,15 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			const openAiParams = buildOpenAiRequestParams(model, ...params)
 			const instruction = params[0]
 			const previouslyFailedResponses = params[3]
-			const response = await this.getUnknownJsonFromOpenAiSquirreled
-				.for(
-					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
-				)
-				.get(openAiParams)
-			this.usdBudget -= response.usdPrice
-			return response.data
+			const { data, usage, usdPrice } =
+				await this.getUnknownJsonFromOpenAiSquirreled
+					.for(
+						`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
+					)
+					.get(openAiParams)
+			this.lastUsage = usage
+			this.usdBudget -= usdPrice
+			return data
 		})
 	}
 

@@ -8,7 +8,11 @@ import { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
 	options?: OpenAICore.RequestOptions,
-) => Promise<{ data: Json.Object; usdPrice: number }>
+) => Promise<{
+	data: Json.Object
+	usage: OpenAI.Completions.CompletionUsage
+	usdPrice: number
+}>
 
 export function setUpOpenAiJsonGenerator(
 	client?: OpenAI,
@@ -41,7 +45,7 @@ export function setUpOpenAiJsonGenerator(
 					OPEN_AI_PRICING_FACTS[body.model].promptPricePerTokenCached +
 				outputTokens * OPEN_AI_PRICING_FACTS[body.model].completionPricePerToken
 			const data = JSON.parse(content)
-			return { data, usdPrice }
+			return { data, usage, usdPrice }
 		}
 		if (!content && !usage) {
 			throw new Error(`No content or usage found in completion`)
