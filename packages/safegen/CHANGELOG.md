@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.2.4
+
+### Patch Changes
+
+- a6bd009: ✨ `OpenAiSafeGenerator` and `AnthropicSafeGenerator` now include usage data in the type of their respective API clients stored as the property `lastUsage`.
+
 ## 0.2.3
 
 ### Patch Changes
