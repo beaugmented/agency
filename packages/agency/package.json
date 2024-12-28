@@ -6,7 +6,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "pnpm@9.15.1",
+	"packageManager": "pnpm@9.15.2",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/index.js",
