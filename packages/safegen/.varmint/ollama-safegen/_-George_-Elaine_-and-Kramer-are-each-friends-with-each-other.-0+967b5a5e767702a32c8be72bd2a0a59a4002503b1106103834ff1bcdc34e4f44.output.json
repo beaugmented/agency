@@ -1,0 +1,22 @@
+{
+	"data": {
+		"facts": [
+			{
+				"subject": "Jerry",
+				"predicate": "friends",
+				"object": "George"
+			},
+			{
+				"subject": "Jerry",
+				"predicate": "friends",
+				"object": "Elaine"
+			},
+			{
+				"subject": "Jerry",
+				"predicate": "friends",
+				"object": "Kramer"
+			}
+		]
+	},
+	"usdPrice": 0
+}

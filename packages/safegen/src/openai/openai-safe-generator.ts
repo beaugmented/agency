@@ -1,6 +1,7 @@
 import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
+import { z } from "zod"
 
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
@@ -81,3 +82,8 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 
 	public from: GenerateFromSchema
 }
+
+const mySchema = z.object({
+	height: z.number(),
+	quality: z.enum([`good`, `bad`, `ugly`]),
+})
