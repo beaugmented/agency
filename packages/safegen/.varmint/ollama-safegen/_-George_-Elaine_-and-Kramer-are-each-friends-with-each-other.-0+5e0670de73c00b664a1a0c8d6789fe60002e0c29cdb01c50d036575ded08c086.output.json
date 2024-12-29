@@ -1,0 +1,26 @@
+{
+	"data": {
+		"$schema": "http://json-schema.org/draft-07/schema#",
+		"type": "object",
+		"properties": {
+			"facts": [
+				{
+					"subject": "Kramer",
+					"predicate": "is a friend of",
+					"object": "Jerry, George, Elaine, and Kramer"
+				},
+				{
+					"subject": "George",
+					"predicate": "is a friend of",
+					"object": "Jerry, Elaine, and Kramer"
+				},
+				{
+					"subject": "Elaine",
+					"predicate": "is a friend of",
+					"object": "Jerry, George, and Kramer"
+				}
+			]
+		}
+	},
+	"usdPrice": 0
+}

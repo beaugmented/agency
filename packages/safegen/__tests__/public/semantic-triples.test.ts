@@ -1,3 +1,5 @@
+import { getState } from "atom.io"
+import { editRelations, findRelations, join } from "atom.io/data"
 import { z } from "zod"
 
 import { OllamaSafeGenerator } from "../../src/ollama"
@@ -37,4 +39,30 @@ describe(`*`, () => {
 		)
 		console.log(res)
 	}, 20000)
+	test(`create a basic graph`, () => {
+		type UserKey = `user:${string}`
+		const isUserKey = (key: string): key is UserKey => key.startsWith(`user:`)
+		const friends = join({
+			key: `friends`,
+			cardinality: `n:n`,
+			between: [`friendA`, `friendB`],
+			isAType: isUserKey,
+			isBType: isUserKey,
+		})
+
+		editRelations(friends, (relations) => {
+			relations.set(`user:Elaine`, `user:Jerry`)
+		})
+
+		const elaineFriends = getState(
+			findRelations(friends, `user:Elaine`).friendBKeysOfFriendA,
+		)
+
+		console.log({ elaineFriends })
+
+		const jerryFriends = getState(
+			findRelations(friends, `user:Jerry`).friendAKeysOfFriendB,
+		)
+		console.log({ jerryFriends })
+	})
 })

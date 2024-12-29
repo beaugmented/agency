@@ -1,0 +1,8 @@
+[
+	{
+		"model": "llama3.2:1b",
+		"prompt": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"facts\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"subject\": {\n            \"type\": \"string\"\n          },\n          \"predicate\": {\n            \"type\": \"string\"\n          },\n          \"object\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"subject\",\n          \"predicate\",\n          \"object\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"facts\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}\n\ndissolve the following sentence into a bunch of semantic triples, where each subject can also be an object depending on order/structure:\nJerry, George, Elaine, and Kramer are each friends with each other.\n\nOops! That didn't work. Here's what was returned last time:\n{\n  \"$ref\": \"http://json-schema.org/draft-07/schema##/additionalProperties\"\n}\nHere's the error message:\n[\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"facts\"\n    ],\n    \"message\": \"Required\"\n  }\n]",
+		"format": "json",
+		"stream": false
+	}
+]
