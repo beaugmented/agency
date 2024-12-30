@@ -34,35 +34,51 @@ describe(`*`, () => {
 		const res = await semanticTriple(
 			[
 				`dissolve the following sentence into a bunch of semantic triples:`,
-				`Jerry, George, Elaine, and Kramer are each friends with each other.`,
+				`Jerry, George, Elaine, and Kramer are each friends with one another.`,
 			].join(`\n`),
 		)
 		console.log(res)
-	}, 20000)
-	test(`create a basic graph`, () => {
 		type UserKey = `user:${string}`
 		const isUserKey = (key: string): key is UserKey => key.startsWith(`user:`)
-		const friends = join({
-			key: `friends`,
-			cardinality: `n:n`,
-			between: [`friendA`, `friendB`],
-			isAType: isUserKey,
-			isBType: isUserKey,
-		})
+		const relationships = join(
+			{
+				key: `friends`,
+				cardinality: `n:n`,
+				between: [`friendA`, `friendB`],
+				isAType: isUserKey,
+				isBType: isUserKey,
+			},
+			{
+				relationship: `acquaintance` as string,
+			},
+		)
 
-		editRelations(friends, (relations) => {
-			relations.set(`user:Elaine`, `user:Jerry`)
+		// editRelations(friends, (relations) => {
+		// 	relations.set(`user:Elaine`, `user:Jerry`)
+		// })
+		editRelations(relationships, (relations) => {
+			for (const fact of res.facts) {
+				relations.set(
+					{
+						friendA: `user:${fact.subject}`,
+						friendB: `user:${fact.object}`,
+					},
+					{
+						relationship: fact.predicate,
+					},
+				)
+			}
 		})
 
 		const elaineFriends = getState(
-			findRelations(friends, `user:Elaine`).friendBKeysOfFriendA,
+			findRelations(relationships, `user:Elaine`).friendBEntriesOfFriendA,
 		)
 
-		console.log({ elaineFriends })
+		console.log(`elaineFriends`, elaineFriends)
 
 		const jerryFriends = getState(
-			findRelations(friends, `user:Jerry`).friendAKeysOfFriendB,
+			findRelations(relationships, `user:Jerry`).friendAEntriesOfFriendB,
 		)
-		console.log({ jerryFriends })
-	})
+		console.log(`jerryFriends`, jerryFriends)
+	}, 20000)
 })

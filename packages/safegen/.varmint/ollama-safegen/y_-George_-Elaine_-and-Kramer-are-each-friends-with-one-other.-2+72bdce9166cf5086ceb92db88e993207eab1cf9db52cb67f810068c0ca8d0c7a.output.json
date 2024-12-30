@@ -1,0 +1,6 @@
+{
+	"data": {
+		"$ref": "./errors.json#x0"
+	},
+	"usdPrice": 0
+}

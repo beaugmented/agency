@@ -1,0 +1,25 @@
+{
+	"data": {
+		"$schema": "http://json-schema.org/draft-07/schema#",
+		"type": "object",
+		"properties": {
+			"facts": [
+				{
+					"subject": "friend",
+					"predicate": "have",
+					"object": "one"
+				},
+				{
+					"subject": "person",
+					"predicate": "are",
+					"object": "friends"
+				}
+			]
+		},
+		"required": [
+			"facts"
+		],
+		"additionalProperties": false
+	},
+	"usdPrice": 0
+}
