@@ -32,7 +32,7 @@
 		"openai": "4.77.4",
 		"tmp": "0.2.3",
 		"tsup": "8.3.5",
-		"typescript": "5.7.2",
+		"typescript": "5.7.3",
 		"vite": "6.0.7",
 		"vitest": "2.1.8",
 		"zod": "3.24.1"
