@@ -57,7 +57,7 @@
 	},
 	"dependencies": {
 		"atom.io": "0.30.7",
-		"varmint": "0.3.4"
+		"varmint": "0.3.5"
 	},
 	"devDependencies": {
 		"@anthropic-ai/sdk": "0.33.1",

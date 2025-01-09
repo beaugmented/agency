@@ -63,8 +63,8 @@ importers:
         specifier: 0.30.7
         version: 0.30.7(eslint@9.17.0(jiti@2.4.2))
       varmint:
-        specifier: 0.3.4
-        version: 0.3.4
+        specifier: 0.3.5
+        version: 0.3.5
     devDependencies:
       '@types/node':
         specifier: 22.10.5
@@ -106,8 +106,8 @@ importers:
         specifier: 0.30.7
         version: 0.30.7(eslint@9.17.0(jiti@2.4.2))
       varmint:
-        specifier: 0.3.4
-        version: 0.3.4
+        specifier: 0.3.5
+        version: 0.3.5
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.33.1
@@ -2178,8 +2178,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  varmint@0.3.4:
-    resolution: {integrity: sha512-92TxxO1nn2vhO76zAznwJGw1biGAxWSrcm5hLXckzUjuE0n7S9FbMTLLWEEfoUqjVNp2xLDvfJH5ZWTh/ON+lg==}
+  varmint@0.3.5:
+    resolution: {integrity: sha512-iKX/UI/S03+/TTw7+3ZzLIAKxliBsZzecpSvQdFLeTabWD25gste6oDvgAhNK8Jrvd8LPOCcqX7Ugz+p7MI3zg==}
 
   vite-node@2.1.8:
     resolution: {integrity: sha512-uPAwSr57kYjAUux+8E2j0q0Fxpn8M9VoyfGiRI8Kfktz9NcYMCenwY5RnZxnF1WTu3TGiYipirIzacLL3VVGFg==}
@@ -4244,7 +4244,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  varmint@0.3.4: {}
+  varmint@0.3.5: {}
 
   vite-node@2.1.8(@types/node@22.10.5):
     dependencies:
