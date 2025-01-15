@@ -2,6 +2,7 @@ import { atom, getState, setState } from "atom.io"
 import { z } from "zod"
 
 import { ACTS, isAct } from "./acts"
+import { spawnBeing } from "./beings"
 import { ollamaGen } from "./ollama"
 import { readline } from "./readline"
 import { nameSelectors } from "./traits"
@@ -21,6 +22,9 @@ const inputModeAtom = atom<`confirm` | `prompt`>({
 // Game logic and user commands
 const handleCommand = async (command: string): Promise<void> => {
 	let act = command.trim().toLowerCase().split(` `)
+	if (act[0] === `spawn`) {
+		spawnBeing()
+	}
 	if (act[0] === `try`) {
 		console.log(`Thinking about that...`)
 		const { examples } = await ollamaGen.from({
@@ -33,7 +37,7 @@ const handleCommand = async (command: string): Promise<void> => {
 			schema: z.object({ interpretation: z.string() }),
 			fallback: { interpretation: `` },
 		})(
-			`Please interpret the following intention as a actions: ${act.slice(1).join(` `)}\n\nHere is the schema describing the possible actions: ${JSON.stringify(
+			`Please interpret the following intention as an action: ${act.slice(1).join(` `)}\n\nHere is the schema describing the possible actions: ${JSON.stringify(
 				ACTS,
 				null,
 				2,

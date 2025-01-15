@@ -1,11 +1,11 @@
 import type { Tree, TreePath } from "treetrunks"
 import { isTreePath, optional, required } from "treetrunks"
 export const ACTS = {
-	go: `"go __": travel in a direction (possible directions: north, east, south, or west)`,
-	take: `"take __": put an item from the environment into the inventory`,
-	look: `"look": observe the environment`,
+	go: `"go <direction>": travel in a direction (possible directions: north, east, south, or west)`,
+	take: `"take <item>": put an item from the environment into the inventory / "take <item> from <being>": put an item from a being into the inventory`,
+	look: `"look": observe the environment / "look <item>": observe an item / "look <being>": observe a being`,
 	exit: `"exit": quit the game`,
-	try: `"try ...": try to do something`,
+	try: `"try <complete sentence>": try to do something`,
 } satisfies Record<keyof (typeof ACT_SPEC)[1], string>
 
 export const ACT_SPEC = required({

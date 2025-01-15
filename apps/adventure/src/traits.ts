@@ -43,20 +43,7 @@ export const QUALITATIVE_ADVERBS = {
 	9: `extraordinarily`,
 }
 
-export const TRAITS = [`hot`, `sharp`, `hard`, `cool`, `weird`] as const
-export const traitSchemas = [
-	z.literal(`hot`),
-	z.literal(`sharp`),
-	z.literal(`hard`),
-	z.literal(`cool`),
-	z.literal(`weird`),
-] as const
-export type Trait = (typeof TRAITS)[number]
-export type TraitScores = Record<Trait, number>
-export const traitScoresSchema = z.record(
-	z.union(traitSchemas),
-	z.number().min(0).max(9),
-)
+export type TraitScores = Record<string, number>
 
 export const qualitativeJudgmentAtoms = atomFamily<
 	Loadable<string>,
@@ -101,13 +88,14 @@ export const traitsRenderedSelectors = selectorFamily<
 				],
 			)
 			const judgments = await Promise.all(judgmentsLoadable)
-			return judgments
-				.map(([trait, judgment]) => `\n\t- ${trait}: ${judgment}`)
-				.join()
+			return judgments.map(([_, judgment]) => `\n\t- ${judgment}`).join()
 		},
 })
 
-export const nameSchema = z.object({ name: z.string() })
+export const nameSchema = z.object({
+	name: z.string(),
+	description: z.string(),
+})
 export const nameSelectors = selectorFamily<Loadable<string>, Canonical>({
 	key: `name`,
 	get:
@@ -119,9 +107,9 @@ export const nameSelectors = selectorFamily<Loadable<string>, Canonical>({
 			const traitScores = await traitScoresLoadable
 			let { name } = await ollamaGen.from({
 				schema: nameSchema,
-				fallback: { name: key },
+				fallback: { name: key, description: `` },
 			})(
-				`--\nThe theme is ${theme}.\n--\n I need the name for a ${typeName}. It has the following traits: ${traitScores}`,
+				`--\nThe theme is ${theme}.\n--\n I need only a name and a very short description for a ${typeName}. It has the following traits: ${traitScores}`,
 			)
 			if (typeof name !== `string`) {
 				name = String(name)

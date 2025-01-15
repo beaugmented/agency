@@ -1,5 +1,8 @@
 import { atom, atomFamily, getState, selector, setState } from "atom.io"
-import { boolean, z } from "zod"
+import { join } from "atom.io/data"
+import type { stringified } from "atom.io/json"
+import { parseJson } from "atom.io/json"
+import { z } from "zod"
 
 import { d } from "./traits"
 
@@ -65,27 +68,29 @@ export function enterZone(coordinates: Coordinates) {
 }
 
 export const listExits = (coordinates: Coordinates) => {
+	const exits: string[] = []
+
 	const nCoords = [
 		coordinates[0],
 		coordinates[1] + 1,
 		coordinates[2],
-	] as Coordinates
+	] satisfies Coordinates
 	const sCoords = [
 		coordinates[0],
 		coordinates[1] - 1,
 		coordinates[2],
-	] as Coordinates
+	] satisfies Coordinates
 	const eCoords = [
 		coordinates[0] + 1,
 		coordinates[1],
 		coordinates[2],
-	] as Coordinates
+	] satisfies Coordinates
 	const wCoords = [
 		coordinates[0] - 1,
 		coordinates[1],
 		coordinates[2],
-	] as Coordinates
-	const exits: string[] = []
+	] satisfies Coordinates
+
 	if (getState(zoneExistsAtoms, nCoords) === true) {
 		exits.push(`north`)
 	}
@@ -100,3 +105,24 @@ export const listExits = (coordinates: Coordinates) => {
 	}
 	return exits
 }
+
+const beingZones = join({
+	key: `beingZones`,
+	cardinality: `1:n`,
+	between: [`zone`, `being`],
+	isAType: (x): x is stringified<Coordinates> => {
+		try {
+			const json = parseJson(x)
+			if (Array.isArray(json) && json.length === 3) {
+				for (const element of json) {
+					if (typeof element !== `number`) {
+						return false
+					}
+				}
+				return true
+			}
+		} catch (_) {}
+		return false
+	},
+	isBType: (x): x is `being:${string}` => x.startsWith(`being:`),
+})
