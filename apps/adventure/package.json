@@ -8,11 +8,11 @@
 		"test": "vitest"
 	},
 	"dependencies": {
-		"atom.io": "0.30.4",
-		"ollama": "0.5.10",
+		"atom.io": "0.30.7",
+		"ollama": "0.5.12",
 		"safegen": "workspace:*",
 		"treetrunks": "0.0.3",
-		"zod": "3.23.8"
+		"zod": "3.24.1"
 	},
 	"devDependencies": {
 		"@types/node": "22.10.0",

@@ -60,11 +60,11 @@ importers:
   apps/adventure:
     dependencies:
       atom.io:
-        specifier: 0.30.4
-        version: 0.30.4(eslint@9.18.0(jiti@2.4.2))
+        specifier: 0.30.7
+        version: 0.30.7(eslint@9.18.0(jiti@2.4.2))
       ollama:
-        specifier: 0.5.10
-        version: 0.5.10
+        specifier: 0.5.12
+        version: 0.5.12
       safegen:
         specifier: workspace:*
         version: link:../../packages/safegen
@@ -72,8 +72,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3
       zod:
-        specifier: 3.23.8
-        version: 3.23.8
+        specifier: 3.24.1
+        version: 3.24.1
     devDependencies:
       '@types/node':
         specifier: 22.10.0
@@ -1142,35 +1142,6 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  atom.io@0.30.4:
-    resolution: {integrity: sha512-EMeQYiMeJZXi+jb+YZPjrz2ZXU95MhsFWXnOzWf96cdUICuRKOWDuQ7DRMWGgMfeq33sObEXeswPJfCkUYic2Q==}
-    peerDependencies:
-      '@floating-ui/react': '>=0.25.0'
-      '@floating-ui/react-dom': '>=2.0.0'
-      '@testing-library/react': '>=14.0.0'
-      eslint: '>=9.0.0'
-      motion: '>=11.0.0'
-      react: '>=18.0.0'
-      socket.io: '>=4.0.0'
-      socket.io-client: '>=4.0.0'
-    peerDependenciesMeta:
-      '@floating-ui/react':
-        optional: true
-      '@floating-ui/react-dom':
-        optional: true
-      '@testing-library/react':
-        optional: true
-      eslint:
-        optional: true
-      motion:
-        optional: true
-      react:
-        optional: true
-      socket.io:
-        optional: true
-      socket.io-client:
-        optional: true
-
   atom.io@0.30.7:
     resolution: {integrity: sha512-HOOERHVU1GujFhay4q+pdEqFkHNU9LGE6JNtaQYqztZ5ClvbljH39dzPR0kJ64a6pi6WQ05so4An46U7/n5Hmw==}
     peerDependencies:
@@ -1812,9 +1783,6 @@ packages:
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
-
-  ollama@0.5.10:
-    resolution: {integrity: sha512-M5O4u6S6yZeeKFrKA7ZfGGLjK54otOVGPrOUc3N64zSTpz9J+x/nh93dmD6Py7YLgXzq9I6Nq+PDDoaqJuV3LQ==}
 
   ollama@0.5.12:
     resolution: {integrity: sha512-flVH1fn1c9NF7VV3bW9kSu0E+bYc40b4DxL/gS2Debhao35osJFRDiPOj9sIWTMvcyj78Paw1OuhfIe7uhDWfQ==}
@@ -3330,10 +3298,6 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  atom.io@0.30.4(eslint@9.18.0(jiti@2.4.2)):
-    optionalDependencies:
-      eslint: 9.18.0(jiti@2.4.2)
-
   atom.io@0.30.7(eslint@9.18.0(jiti@2.4.2)):
     optionalDependencies:
       eslint: 9.18.0(jiti@2.4.2)
@@ -4013,10 +3977,6 @@ snapshots:
       set-blocking: 2.0.0
 
   object-assign@4.1.1: {}
-
-  ollama@0.5.10:
-    dependencies:
-      whatwg-fetch: 3.6.20
 
   ollama@0.5.12:
     dependencies:
