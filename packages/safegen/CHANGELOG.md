@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.2.7
+
+### Patch Changes
+
+- 5959f36: ⬆️ Update dependency varmint to v0.3.7
+
 ## 0.2.6
 
 ### Patch Changes
