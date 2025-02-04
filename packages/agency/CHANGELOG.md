@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.0.5
+
+### Patch Changes
+
+- f66ef78: 🔧 Add repository field to package manifests to support tools like renovate.
+
 ## 0.0.4
 
 ### Patch Changes
