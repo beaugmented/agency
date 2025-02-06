@@ -51,8 +51,6 @@ afterAll(() => {
 	console.info(
 		`💸 spent ${remainingUsdBudgetFormatted}, ${percentageSpent}% of ${initialBudgetFormatted} budget`,
 	)
-	gpt4oMini.squirrel.flush()
-	webSquirrel.flush()
 })
 
 function splitIntoChunks(text: string, chunkSize = 10000): string[] {

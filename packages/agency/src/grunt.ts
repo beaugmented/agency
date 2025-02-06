@@ -118,8 +118,4 @@ export class Grunt<State extends Agenda>
 			content,
 		})
 	}
-
-	public flushTestFiles(): void {
-		this.completions.flush()
-	}
 }
