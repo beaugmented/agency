@@ -21,9 +21,7 @@ const gpt4oMini = new OpenAiSafeGenerator({
 	logger: console,
 })
 
-afterAll(() => {
-	gpt4oMini.squirrel.flush()
-})
+afterAll(() => {})
 
 describe(`safeGen`, () => {
 	test(`safeGen should answer request in the form of data`, async () => {
