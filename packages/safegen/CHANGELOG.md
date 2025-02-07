@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.2.11
+
+### Patch Changes
+
+- cbae408: ⬆️ Upgrade varmint to v0.4.0.
+
 ## 0.2.10
 
 ### Patch Changes
