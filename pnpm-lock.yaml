@@ -80,7 +80,7 @@ importers:
         version: 9.1.2
       openai:
         specifier: 4.83.0
-        version: 4.83.0(zod@3.24.1)
+        version: 4.83.0(zod@3.24.2)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -97,8 +97,8 @@ importers:
         specifier: 3.0.5
         version: 3.0.5(@types/node@22.13.1)(jiti@2.4.2)
       zod:
-        specifier: 3.24.1
-        version: 3.24.1
+        specifier: 3.24.2
+        version: 3.24.2
 
   packages/safegen:
     dependencies:
@@ -126,7 +126,7 @@ importers:
         version: 0.5.13
       openai:
         specifier: 4.83.0
-        version: 4.83.0(zod@3.24.1)
+        version: 4.83.0(zod@3.24.2)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -146,11 +146,11 @@ importers:
         specifier: 3.0.5
         version: 3.0.5(@types/node@22.13.1)(jiti@2.4.2)
       zod:
-        specifier: 3.24.1
-        version: 3.24.1
+        specifier: 3.24.2
+        version: 3.24.2
       zod-to-json-schema:
         specifier: 3.24.1
-        version: 3.24.1(zod@3.24.1)
+        version: 3.24.1(zod@3.24.2)
 
 packages:
 
@@ -2156,6 +2156,9 @@ packages:
   zod@3.24.1:
     resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
 
+  zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+
 snapshots:
 
   '@anthropic-ai/sdk@0.36.3':
@@ -3531,7 +3534,7 @@ snapshots:
     dependencies:
       whatwg-fetch: 3.6.20
 
-  openai@4.83.0(zod@3.24.1):
+  openai@4.83.0(zod@3.24.2):
     dependencies:
       '@types/node': 18.19.59
       '@types/node-fetch': 2.6.11
@@ -3541,7 +3544,7 @@ snapshots:
       formdata-node: 4.4.1
       node-fetch: 2.7.0
     optionalDependencies:
-      zod: 3.24.1
+      zod: 3.24.2
     transitivePeerDependencies:
       - encoding
 
@@ -4093,4 +4096,10 @@ snapshots:
     dependencies:
       zod: 3.24.1
 
+  zod-to-json-schema@3.24.1(zod@3.24.2):
+    dependencies:
+      zod: 3.24.2
+
   zod@3.24.1: {}
+
+  zod@3.24.2: {}
