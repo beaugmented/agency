@@ -41,7 +41,7 @@
 		"lint:types": "tsc --noEmit",
 		"lint": "bun run lint:biome && bun run lint:eslint && bun run lint:types",
 		"test": "vitest",
-		"test:once": "varmint -- track && vitest run; varmint --ci-flag=CI -- clean",
+		"test:once": "varmint track && vitest run; varmint clean --ci-flag=CI",
 		"test:once:public": "vitest run public",
 		"test:coverage": "echo no test coverage yet",
 		"test:semver": "break-check --verbose"
