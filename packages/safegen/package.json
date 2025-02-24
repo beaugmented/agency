@@ -69,7 +69,7 @@
 		"@types/node": "22.13.5",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.6",
-		"ollama": "0.5.13",
+		"ollama": "0.5.14",
 		"openai": "4.85.4",
 		"rimraf": "6.0.1",
 		"tmp": "0.2.3",
