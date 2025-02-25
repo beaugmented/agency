@@ -6,7 +6,7 @@
 	"author": "Augmented AI",
 	"license": "MIT",
 	"private": true,
-	"packageManager": "pnpm@10.4.1",
+	"packageManager": "pnpm@10.5.0",
 	"engines": {
 		"node": "23.8.0"
 	},
