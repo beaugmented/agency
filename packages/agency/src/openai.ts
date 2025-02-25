@@ -1,5 +1,5 @@
+import type { Loadable } from "atom.io"
 import { selectorFamily } from "atom.io"
-import type { Loadable } from "atom.io/data"
 import OpenAI from "openai"
 import type * as OpenAICore from "openai/core"
 import type OpenAIResources from "openai/resources/index"

@@ -1,5 +1,5 @@
+import type { Loadable } from "atom.io"
 import { atomFamily, selectorFamily } from "atom.io"
-import type { Loadable } from "atom.io/data"
 
 import type {
 	AssistantMessage,
