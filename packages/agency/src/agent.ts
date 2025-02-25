@@ -1,4 +1,4 @@
-import type { Loadable } from "atom.io/data"
+import type { Loadable } from "atom.io"
 
 export type AssistantMessage = {
 	role: `assistant`
