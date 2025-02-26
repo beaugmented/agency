@@ -11,7 +11,7 @@
 		"url": "https://github.com/beaugmented/agency.git",
 		"directory": "packages/safegen"
 	},
-	"packageManager": "pnpm@10.5.0",
+	"packageManager": "pnpm@10.5.1",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/index.js",
