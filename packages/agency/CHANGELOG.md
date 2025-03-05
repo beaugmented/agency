@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.0.6
+
+### Patch Changes
+
+- 4abccf3: 🐛 Support superlong cache keys with varmint v0.4.3.
+
 ## 0.0.5
 
 ### Patch Changes
