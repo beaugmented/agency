@@ -79,8 +79,8 @@ importers:
         specifier: 9.1.2
         version: 9.1.2
       openai:
-        specifier: 4.87.1
-        version: 4.87.1(zod@3.24.2)
+        specifier: 4.87.2
+        version: 4.87.2(zod@3.24.2)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -125,8 +125,8 @@ importers:
         specifier: 0.5.14
         version: 0.5.14
       openai:
-        specifier: 4.87.1
-        version: 4.87.1(zod@3.24.2)
+        specifier: 4.87.2
+        version: 4.87.2(zod@3.24.2)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -1475,8 +1475,8 @@ packages:
   ollama@0.5.14:
     resolution: {integrity: sha512-pvOuEYa2WkkAumxzJP0RdEYHkbZ64AYyyUszXVX7ruLvk5L+EiO2G71da2GqEQ4IAk4j6eLoUbGk5arzFT1wJA==}
 
-  openai@4.87.1:
-    resolution: {integrity: sha512-mwZ4N4KKGUE5JSTR4IdQZzuxFyStJFqSR62JuWob7ka286tbFacYkOf+Ypk/2IPAUCmhzft5C3UqzcFYaliVMA==}
+  openai@4.87.2:
+    resolution: {integrity: sha512-6Qh0aMw/QhunY8BSPfLNaQiCXdk0xv7roynLeT7BKHOxM9sFpVke/39EwfpLjWfHeWJbJ2ngMvL88N/3tD6gHQ==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -3411,7 +3411,7 @@ snapshots:
     dependencies:
       whatwg-fetch: 3.6.20
 
-  openai@4.87.1(zod@3.24.2):
+  openai@4.87.2(zod@3.24.2):
     dependencies:
       '@types/node': 18.19.59
       '@types/node-fetch': 2.6.11
