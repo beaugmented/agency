@@ -76,7 +76,7 @@
 		"tsup": "8.4.0",
 		"typescript": "5.8.2",
 		"vite": "6.2.2",
-		"vitest": "3.0.8",
+		"vitest": "3.0.9",
 		"zod": "3.24.2",
 		"zod-to-json-schema": "3.24.4"
 	}
