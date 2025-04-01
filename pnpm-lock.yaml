@@ -73,8 +73,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.8
-        version: 0.6.8
+        specifier: 0.6.9
+        version: 0.6.9
       concurrently:
         specifier: 9.1.2
         version: 9.1.2
@@ -119,8 +119,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.8
-        version: 0.6.8
+        specifier: 0.6.9
+        version: 0.6.9
       ollama:
         specifier: 0.5.14
         version: 0.5.14
@@ -934,8 +934,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  break-check@0.6.8:
-    resolution: {integrity: sha512-E7VwNPreyoY6ccxszHhiNLYi65m8jcJf0wcwLf4Gd2QqSiSnacXn3s9WCFHbKG9aPfeh5yv94O6OENuFf8skWA==}
+  break-check@0.6.9:
+    resolution: {integrity: sha512-SXkP8Z4mx3/8fukQfGP1D3NSzFFCBL2o2uc3THxLCHGr2rjzXqyfpcx7GReL/GCr4fd3ru9QMVJWyAhNKBUg9A==}
     hasBin: true
 
   bundle-require@5.1.0:
@@ -1004,6 +1004,9 @@ packages:
 
   comline@0.2.0:
     resolution: {integrity: sha512-g+J/HInsoSYy+As51yf5d0iC0j/7AG3KGTOmSfIqBqKKxdx2LkXh98cKuKtRL3N7M4CLeD+Ph+hm+eQ2EyPVCA==}
+
+  comline@0.2.1:
+    resolution: {integrity: sha512-9eu2kENS/AY5eipZZ3m0HEwYiHvPUJkC/wFxsEtf/2kYORHiyYuyQNzYGYdUuzdm75XUzpABxXDaePBi5kSl7g==}
 
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -1894,6 +1897,9 @@ packages:
 
   treetrunks@0.1.0:
     resolution: {integrity: sha512-BU63lSbe7w1aeS3fXe3X+EaKOstX9a2A7g6KDQWZOvKePTaJcFUBKVvHJBOoOKfpjGu9zuv+Eo9w3rC0vnGYtg==}
+
+  treetrunks@0.1.1:
+    resolution: {integrity: sha512-D/MQDu6vtoo5FmDRNapQobO/1w0jB1SMgWbm2zAcneZsVYU6UhTcJWpQYMswUpWz4QEI4CXcU0pGnqk8FKPFmw==}
 
   ts-api-utils@2.0.1:
     resolution: {integrity: sha512-dnlgjFSVetynI8nzgJ+qF62efpglpWRk8isUEWZGWlJYySCTD6aKvbUDu+zbPeDakk3bg5H4XpitHukgfL1m9w==}
@@ -2878,9 +2884,9 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  break-check@0.6.8:
+  break-check@0.6.9:
     dependencies:
-      comline: 0.2.0
+      comline: 0.2.1
       minimatch: 10.0.1
       npmlog: 7.0.1
       simple-git: 3.27.0
@@ -2946,6 +2952,13 @@ snapshots:
     dependencies:
       chalk: 5.4.1
       treetrunks: 0.1.0
+      zod: 3.24.2
+      zod-to-json-schema: 3.24.5(zod@3.24.2)
+
+  comline@0.2.1:
+    dependencies:
+      chalk: 5.4.1
+      treetrunks: 0.1.1
       zod: 3.24.2
       zod-to-json-schema: 3.24.5(zod@3.24.2)
 
@@ -3810,6 +3823,8 @@ snapshots:
   tree-kill@1.2.2: {}
 
   treetrunks@0.1.0: {}
+
+  treetrunks@0.1.1: {}
 
   ts-api-utils@2.0.1(typescript@5.8.2):
     dependencies:
