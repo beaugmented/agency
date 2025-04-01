@@ -32,7 +32,7 @@
 	"devDependencies": {
 		"@types/node": "22.13.16",
 		"@types/tmp": "0.2.6",
-		"break-check": "0.6.8",
+		"break-check": "0.6.9",
 		"concurrently": "9.1.2",
 		"openai": "4.91.0",
 		"tmp": "0.2.3",
