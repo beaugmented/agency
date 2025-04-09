@@ -29,9 +29,7 @@ export type AnthropicSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
 	toJsonSchema?: ToJsonSchema<S>
 }
 
-export class AnthropicSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
-	implements SafeGenerator<S>
-{
+export class AnthropicSafeGenerator implements SafeGenerator {
 	public usdBudget: number
 	public usdMinimum: number
 	public getUnknownJsonFromAnthropic: GetUnknownJsonFromAnthropic
@@ -48,8 +46,7 @@ export class AnthropicSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
 		cachingMode,
 		cacheKey = `anthropic-safegen`,
 		logger,
-		toJsonSchema = zodToJsonSchema as unknown as ToJsonSchema<S>,
-	}: AnthropicSafeGenOptions<S>) {
+	}: AnthropicSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
@@ -69,30 +66,26 @@ export class AnthropicSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
 			cacheKey,
 			this.getUnknownJsonFromAnthropic,
 		)
-		this.from = createSafeDataGenerator(
-			async (...params) => {
-				if (this.usdBudget < this.usdMinimum) {
-					logger?.warn(`SafeGen budget exhausted`)
-					const fallback = params[1]
-					return fallback
-				}
-				const anthropicParams = buildAnthropicRequestParams(model, ...params)
-				const instruction = params[0]
-				const previouslyFailedResponses = params[3]
-				const { data, usage, usdPrice } =
-					await this.getUnknownJsonFromAnthropicSquirreled
-						.for(
-							`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
-						)
-						.get(anthropicParams)
-				this.lastUsage = usage
-				this.usdBudget -= usdPrice
-				return data
-			},
-			logger,
-			toJsonSchema as unknown as ToJsonSchema<S>,
-		)
+		this.from = createSafeDataGenerator(async (...params) => {
+			if (this.usdBudget < this.usdMinimum) {
+				logger?.warn(`SafeGen budget exhausted`)
+				const fallback = params[1]
+				return fallback
+			}
+			const anthropicParams = buildAnthropicRequestParams(model, ...params)
+			const instruction = params[0]
+			const previouslyFailedResponses = params[3]
+			const { data, usage, usdPrice } =
+				await this.getUnknownJsonFromAnthropicSquirreled
+					.for(
+						`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
+					)
+					.get(anthropicParams)
+			this.lastUsage = usage
+			this.usdBudget -= usdPrice
+			return data
+		}, logger)
 	}
 
-	public from: GenerateFromSchema<S>
+	public from: GenerateFromSchema
 }

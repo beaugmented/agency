@@ -4,13 +4,14 @@ import type { ZodError, ZodSchema } from "zod"
 import type { JsonSchema7Type } from "zod-to-json-schema"
 import zodToJsonSchema from "zod-to-json-schema"
 
-export type GenerateFromSchema<S extends StandardSchemaV1> = <
+export type GenerateFromSchema = <
 	J extends Json.Object,
+	S extends StandardSchemaV1 = ZodSchema,
 >(
 	dataSpec: DataSpec<J, S>,
 ) => GenerateSafeData<J>
-export interface SafeGenerator<S extends StandardSchemaV1 = ZodSchema> {
-	from: GenerateFromSchema<S>
+export interface SafeGenerator {
+	from: GenerateFromSchema
 }
 
 export type InvalidResponse = {
@@ -37,20 +38,24 @@ export type DataSpec<T, S extends StandardSchemaV1 = ZodSchema> = {
 			"~standard": { vendor: S[`~standard`][`vendor`] }
 		}
 	fallback: T
+	toJsonSchema?: ToJsonSchema<S>
 }
 
 export type ToJsonSchema<S extends StandardSchemaV1> = (
 	schema: S,
 ) => JsonSchema7Type
 
-export function createSafeDataGenerator<S extends StandardSchemaV1 = ZodSchema>(
+export function createSafeDataGenerator(
 	gen: GenerateJsonFromLLM,
 	logger?: Pick<Console, `error` | `info` | `warn`>,
-	toJsonSchema: ToJsonSchema<S> = zodToJsonSchema as unknown as ToJsonSchema<S>,
-): GenerateFromSchema<S> {
-	return function generateFromSchema<J extends Json.Object>({
+): GenerateFromSchema {
+	return function generateFromSchema<
+		J extends Json.Object,
+		S extends StandardSchemaV1 = ZodSchema,
+	>({
 		schema,
 		fallback,
+		toJsonSchema = zodToJsonSchema as unknown as ToJsonSchema<S>,
 	}: DataSpec<J, S>): GenerateSafeData<J> {
 		const jsonSchema = toJsonSchema(schema as S)
 		return async function generateSafeData(

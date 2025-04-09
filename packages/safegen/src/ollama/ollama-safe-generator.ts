@@ -25,9 +25,7 @@ export type OllamaSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
 	toJsonSchema?: ToJsonSchema<S>
 }
 
-export class OllamaSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
-	implements SafeGenerator<S>
-{
+export class OllamaSafeGenerator implements SafeGenerator {
 	public usdBudget: number
 	public usdMinimum: number
 	public getUnknownJsonFromOllama: GetUnknownJsonFromOllama
@@ -42,8 +40,7 @@ export class OllamaSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
 		cachingMode,
 		cacheKey = `ollama-safegen`,
 		logger,
-		toJsonSchema = zodToJsonSchema as unknown as ToJsonSchema<S>,
-	}: OllamaSafeGenOptions<S>) {
+	}: OllamaSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
@@ -55,28 +52,24 @@ export class OllamaSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
 			cacheKey,
 			this.getUnknownJsonFromOllama,
 		)
-		this.from = createSafeDataGenerator(
-			async (...params) => {
-				if (this.usdBudget < this.usdMinimum) {
-					logger?.warn(`SafeGen budget exhausted`)
-					const fallback = params[1]
-					return fallback
-				}
-				const ollamaParams = buildOllamaRequestParams(model, ...params)
-				const instruction = params[0]
-				const previouslyFailedResponses = params[3]
-				const response = await this.getUnknownJsonFromOllamaSquirreled
-					.for(
-						`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
-					)
-					.get(ollamaParams)
-				this.usdBudget -= response.usdPrice
-				return response.data
-			},
-			logger,
-			toJsonSchema,
-		)
+		this.from = createSafeDataGenerator(async (...params) => {
+			if (this.usdBudget < this.usdMinimum) {
+				logger?.warn(`SafeGen budget exhausted`)
+				const fallback = params[1]
+				return fallback
+			}
+			const ollamaParams = buildOllamaRequestParams(model, ...params)
+			const instruction = params[0]
+			const previouslyFailedResponses = params[3]
+			const response = await this.getUnknownJsonFromOllamaSquirreled
+				.for(
+					`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
+				)
+				.get(ollamaParams)
+			this.usdBudget -= response.usdPrice
+			return response.data
+		}, logger)
 	}
 
-	public from: GenerateFromSchema<S>
+	public from: GenerateFromSchema
 }

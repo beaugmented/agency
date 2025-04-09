@@ -18,7 +18,7 @@ import { setUpOpenAiJsonGenerator } from "./set-up-openai-json-generator"
 
 export const clientCache = new Map<string, OpenAI>()
 
-export type OpenAiSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
+export type OpenAiSafeGenOptions = {
 	model: keyof typeof OPEN_AI_PRICING_FACTS
 	usdBudget: number
 	usdMinimum: number
@@ -26,12 +26,9 @@ export type OpenAiSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
 	cachingMode: CacheMode
 	cacheKey?: string
 	logger?: Pick<Console, `error` | `info` | `warn`>
-	toJsonSchema?: ToJsonSchema<S>
 }
 
-export class OpenAiSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
-	implements SafeGenerator<S>
-{
+export class OpenAiSafeGenerator implements SafeGenerator {
 	public usdBudget: number
 	public usdMinimum: number
 	public getUnknownJsonFromOpenAi: GetUnknownJsonFromOpenAi
@@ -48,8 +45,7 @@ export class OpenAiSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
 		cachingMode,
 		cacheKey = `openai-safegen`,
 		logger,
-		toJsonSchema = zodToJsonSchema as unknown as ToJsonSchema<S>,
-	}: OpenAiSafeGenOptions<S>) {
+	}: OpenAiSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
@@ -69,30 +65,26 @@ export class OpenAiSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
 			cacheKey,
 			this.getUnknownJsonFromOpenAi,
 		)
-		this.from = createSafeDataGenerator(
-			async (...params) => {
-				if (this.usdBudget < this.usdMinimum) {
-					logger?.warn(`SafeGen budget exhausted`)
-					const fallback = params[1]
-					return fallback
-				}
-				const openAiParams = buildOpenAiRequestParams(model, ...params)
-				const instruction = params[0]
-				const previouslyFailedResponses = params[3]
-				const { data, usage, usdPrice } =
-					await this.getUnknownJsonFromOpenAiSquirreled
-						.for(
-							`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
-						)
-						.get(openAiParams)
-				this.lastUsage = usage
-				this.usdBudget -= usdPrice
-				return data
-			},
-			logger,
-			toJsonSchema,
-		)
+		this.from = createSafeDataGenerator(async (...params) => {
+			if (this.usdBudget < this.usdMinimum) {
+				logger?.warn(`SafeGen budget exhausted`)
+				const fallback = params[1]
+				return fallback
+			}
+			const openAiParams = buildOpenAiRequestParams(model, ...params)
+			const instruction = params[0]
+			const previouslyFailedResponses = params[3]
+			const { data, usage, usdPrice } =
+				await this.getUnknownJsonFromOpenAiSquirreled
+					.for(
+						`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
+					)
+					.get(openAiParams)
+			this.lastUsage = usage
+			this.usdBudget -= usdPrice
+			return data
+		}, logger)
 	}
 
-	public from: GenerateFromSchema<NoInfer<S>>
+	public from: GenerateFromSchema
 }
