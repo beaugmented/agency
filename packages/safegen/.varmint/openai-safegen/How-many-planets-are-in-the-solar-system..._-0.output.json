@@ -1,11 +1,12 @@
 {
 	"data": {
-		"count": 8
+		"count": 8,
+		"countable": true
 	},
 	"usage": {
-		"prompt_tokens": 94,
-		"completion_tokens": 10,
-		"total_tokens": 104,
+		"prompt_tokens": 169,
+		"completion_tokens": 11,
+		"total_tokens": 180,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -17,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00002715
+	"usdPrice": 0.000044625
 }
