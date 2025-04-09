@@ -1,9 +1,8 @@
-import type { Type } from "arktype"
 import { type } from "arktype"
-import { arktypeToJsonSchema } from "packages/safegen/src/arktype"
 import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
+import { arktypeToJsonSchema } from "../../src/arktype"
 import { OpenAiSafeGenerator } from "../../src/openai"
 import type { DataSpec } from "../../src/safegen"
 

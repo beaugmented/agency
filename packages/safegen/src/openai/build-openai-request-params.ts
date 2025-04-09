@@ -30,7 +30,7 @@ export function buildOpenAiRequestParams(
 				`Oops! That didn't work. Here's what was returned last time:`,
 				JSON.stringify(lastFailedResponse.response, null, 2),
 				`Here's the error message:`,
-				lastFailedResponse.error.toString(),
+				JSON.stringify(lastFailedResponse.error.issues, null, 2),
 			].join(`\n`),
 		})
 	}

@@ -25,6 +25,10 @@
 			"types": "./dist/anthropic/index.d.ts",
 			"import": "./dist/anthropic/index.js"
 		},
+		"./arktype": {
+			"types": "./dist/arktype/index.d.ts",
+			"import": "./dist/arktype/index.js"
+		},
 		"./ollama": {
 			"types": "./dist/ollama/index.d.ts",
 			"import": "./dist/ollama/index.js"
