@@ -120,18 +120,23 @@ describe(`with arktype`, () => {
 				? `off`
 				: `read-write`,
 		logger: console,
-		toJsonSchema: arktypeToJsonSchema,
 	})
 	test(`safeGen should answer request in the form of data`, async () => {
 		const counter = gpt4oMini.from({
-			schema: type({ count: `number` }),
-			fallback: { count: 0 },
+			schema: type([
+				{ countable: `false` },
+				`|`,
+				{ countable: `true`, count: `number` },
+			]),
+			toJsonSchema: arktypeToJsonSchema,
+			fallback: { countable: false },
 		})
 
-		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
+		const countResult = await counter(
 			`How many planets are in the solar system...?`,
 		)
-		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
+		assert(countResult.countable)
+		expect(countResult.count).toBe(8)
 		expect(gpt4oMini.usdBudget).toBeGreaterThan(0.0099)
 	})
 })
