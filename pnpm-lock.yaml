@@ -102,8 +102,11 @@ importers:
 
   packages/safegen:
     dependencies:
+      '@standard-schema/spec':
+        specifier: 1.0.0
+        version: 1.0.0
       arktype:
-        specifier: 2.1.19
+        specifier: '>=2.1.0'
         version: 2.1.19
       atom.io:
         specifier: 0.32.3
@@ -115,9 +118,6 @@ importers:
       '@anthropic-ai/sdk':
         specifier: 0.39.0
         version: 0.39.0
-      '@standard-schema/spec':
-        specifier: 1.0.0
-        version: 1.0.0
       '@types/node':
         specifier: 22.14.0
         version: 22.14.0
