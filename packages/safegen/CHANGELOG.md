@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.2.15
+
+### Patch Changes
+
+- ecf9d4a: 🐛 Add `standard-schema/spec` to dependencies, in order to fix type issues.
+- ecf9d4a: 🐛 Add optional peer dependencies for `arktype`, `ollama`, `zod`, and `zod-to-json-schema`.
+
 ## 0.2.14
 
 ### Patch Changes
