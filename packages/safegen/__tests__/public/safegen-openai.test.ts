@@ -129,7 +129,7 @@ describe(`with arktype`, () => {
 		})
 
 		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
-			`How many planets are in the solar system?`,
+			`How many planets are in the solar system...?`,
 		)
 		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
 		expect(gpt4oMini.usdBudget).toBeGreaterThan(0.0099)
