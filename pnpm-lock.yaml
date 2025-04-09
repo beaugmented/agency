@@ -102,6 +102,9 @@ importers:
 
   packages/safegen:
     dependencies:
+      arktype:
+        specifier: 2.1.19
+        version: 2.1.19
       atom.io:
         specifier: 0.32.3
         version: 0.32.3(eslint@9.24.0(jiti@2.4.2))
@@ -112,6 +115,9 @@ importers:
       '@anthropic-ai/sdk':
         specifier: 0.39.0
         version: 0.39.0
+      '@standard-schema/spec':
+        specifier: 1.0.0
+        version: 1.0.0
       '@types/node':
         specifier: 22.14.0
         version: 22.14.0
@@ -156,6 +162,12 @@ packages:
 
   '@anthropic-ai/sdk@0.39.0':
     resolution: {integrity: sha512-eMyDIPRZbt1CCLErRCi3exlAvNkBtRe+kW5vvJyef93PmNr/clstYgHhtvmkxN82nlKgzyGPCyGxrm0JQ1ZIdg==}
+
+  '@ark/schema@0.45.9':
+    resolution: {integrity: sha512-rG0v/JI0sibn/0wERAHTYVLCtEqoMP2IIlxnb+S5DrEjCI5wpubbZSWMDW50tZ8tV6FANu6zzHDeeKbp6lsZdg==}
+
+  '@ark/util@0.45.9':
+    resolution: {integrity: sha512-0WYNAb8aRGp7dNt6xIvIrRzL7V1XL3u3PK2vcklhtTrdaP235DjC9qJhzidrxtWr68mA5ySSjUrgrXk622bKkw==}
 
   '@babel/runtime@7.26.0':
     resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
@@ -638,6 +650,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@standard-schema/spec@1.0.0':
+    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
+
   '@tybys/wasm-util@0.9.0':
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
 
@@ -901,6 +916,9 @@ packages:
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  arktype@2.1.19:
+    resolution: {integrity: sha512-notORSuTSpfLV7rq0kYC4mTgIVlVR0xQuvtFxOaE9aKiXyON/kgoIBwZZcKeSSb4BebNcfJoGlxJicAUl/HMdw==}
 
   array-union@2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
@@ -2172,6 +2190,12 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@ark/schema@0.45.9':
+    dependencies:
+      '@ark/util': 0.45.9
+
+  '@ark/util@0.45.9': {}
+
   '@babel/runtime@7.26.0':
     dependencies:
       regenerator-runtime: 0.14.1
@@ -2632,6 +2656,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.34.8':
     optional: true
 
+  '@standard-schema/spec@1.0.0': {}
+
   '@tybys/wasm-util@0.9.0':
     dependencies:
       tslib: 2.8.1
@@ -2910,6 +2936,11 @@ snapshots:
       sprintf-js: 1.0.3
 
   argparse@2.0.1: {}
+
+  arktype@2.1.19:
+    dependencies:
+      '@ark/schema': 0.45.9
+      '@ark/util': 0.45.9
 
   array-union@2.1.0: {}
 

@@ -1,8 +1,15 @@
 import Anthropic from "@anthropic-ai/sdk"
+import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
+import type { ZodSchema } from "zod"
+import zodToJsonSchema from "zod-to-json-schema"
 
-import type { GenerateFromSchema, SafeGenerator } from "../safegen"
+import type {
+	GenerateFromSchema,
+	SafeGenerator,
+	ToJsonSchema,
+} from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import type { ANTHROPIC_PRICING_FACTS } from "./anthropic-pricing-facts"
 import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
@@ -11,7 +18,7 @@ import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
 
 export const clientCache = new Map<string, Anthropic>()
 
-export type AnthropicSafeGenOptions = {
+export type AnthropicSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
 	model: keyof typeof ANTHROPIC_PRICING_FACTS
 	usdBudget: number
 	usdMinimum: number
@@ -19,9 +26,12 @@ export type AnthropicSafeGenOptions = {
 	cachingMode: CacheMode
 	cacheKey?: string
 	logger?: Pick<Console, `error` | `info` | `warn`>
+	toJsonSchema?: ToJsonSchema<S>
 }
 
-export class AnthropicSafeGenerator implements SafeGenerator {
+export class AnthropicSafeGenerator<S extends StandardSchemaV1 = ZodSchema>
+	implements SafeGenerator<S>
+{
 	public usdBudget: number
 	public usdMinimum: number
 	public getUnknownJsonFromAnthropic: GetUnknownJsonFromAnthropic
@@ -38,7 +48,8 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 		cachingMode,
 		cacheKey = `anthropic-safegen`,
 		logger,
-	}: AnthropicSafeGenOptions) {
+		toJsonSchema = zodToJsonSchema as unknown as ToJsonSchema<S>,
+	}: AnthropicSafeGenOptions<S>) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
 		this.squirrel = new Squirrel(cachingMode)
@@ -58,26 +69,30 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 			cacheKey,
 			this.getUnknownJsonFromAnthropic,
 		)
-		this.from = createSafeDataGenerator(async (...params) => {
-			if (this.usdBudget < this.usdMinimum) {
-				logger?.warn(`SafeGen budget exhausted`)
-				const fallback = params[1]
-				return fallback
-			}
-			const anthropicParams = buildAnthropicRequestParams(model, ...params)
-			const instruction = params[0]
-			const previouslyFailedResponses = params[3]
-			const { data, usage, usdPrice } =
-				await this.getUnknownJsonFromAnthropicSquirreled
-					.for(
-						`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
-					)
-					.get(anthropicParams)
-			this.lastUsage = usage
-			this.usdBudget -= usdPrice
-			return data
-		})
+		this.from = createSafeDataGenerator(
+			async (...params) => {
+				if (this.usdBudget < this.usdMinimum) {
+					logger?.warn(`SafeGen budget exhausted`)
+					const fallback = params[1]
+					return fallback
+				}
+				const anthropicParams = buildAnthropicRequestParams(model, ...params)
+				const instruction = params[0]
+				const previouslyFailedResponses = params[3]
+				const { data, usage, usdPrice } =
+					await this.getUnknownJsonFromAnthropicSquirreled
+						.for(
+							`${instruction.replace(/[^a-zA-Z0-9-_. ]/g, `_`)}-${previouslyFailedResponses.length}`,
+						)
+						.get(anthropicParams)
+				this.lastUsage = usage
+				this.usdBudget -= usdPrice
+				return data
+			},
+			logger,
+			toJsonSchema as unknown as ToJsonSchema<S>,
+		)
 	}
 
-	public from: GenerateFromSchema
+	public from: GenerateFromSchema<S>
 }
