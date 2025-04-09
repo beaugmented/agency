@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.2.14
+
+### Patch Changes
+
+- 6e32b44: 💥 Technically, there is a very small breaking change in this release to the standard schema functionality. Now, instead of passing a property `toJsonSchema` to the constructor of your `SafeGenerator`, pass the same property to the `.from()` method on a generator alongside `fallback` and `schema`.
+- 6e32b44: 🐛 Fix issue where due to incorrect application of generic typing in the `GenerateFromSchema` type, safegen would only infer the type of a generator from its `fallback` value, not its `schema` value.
+
 ## 0.2.13
 
 ### Patch Changes
