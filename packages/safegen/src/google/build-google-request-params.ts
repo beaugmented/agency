@@ -27,5 +27,5 @@ export function buildGoogleRequestParams(
 			].join(`\n`),
 		})
 	}
-	return { model, contents }
+	return { model, contents, config: { responseMimeType: `application/json` } }
 }
