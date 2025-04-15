@@ -15,6 +15,7 @@ export const OPTIONS = {
 		`src/index.ts`,
 		`src/anthropic/index.ts`,
 		`src/arktype/index.ts`,
+		`src/google/index.ts`,
 		`src/ollama/index.ts`,
 		`src/openai/index.ts`,
 	],

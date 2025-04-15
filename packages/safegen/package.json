@@ -29,6 +29,10 @@
 			"types": "./dist/arktype/index.d.ts",
 			"import": "./dist/arktype/index.js"
 		},
+		"./google": {
+			"types": "./dist/google/index.d.ts",
+			"import": "./dist/google/index.js"
+		},
 		"./ollama": {
 			"types": "./dist/ollama/index.d.ts",
 			"import": "./dist/ollama/index.js"
@@ -53,6 +57,7 @@
 	"peerDependencies": {
 		"@anthropic-ai/sdk": ">=0.32.0",
 		"arktype": ">=2.1.0",
+		"@google/genai": ">=0.8.0",
 		"ollama": ">=0.5.0",
 		"openai": ">=4.0.0",
 		"zod": ">=3.0.0",
