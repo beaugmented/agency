@@ -11,6 +11,9 @@
 					"text": "How many planets are in the solar system?"
 				}
 			]
+		},
+		"config": {
+			"responseMimeType": "application/json"
 		}
 	}
 ]

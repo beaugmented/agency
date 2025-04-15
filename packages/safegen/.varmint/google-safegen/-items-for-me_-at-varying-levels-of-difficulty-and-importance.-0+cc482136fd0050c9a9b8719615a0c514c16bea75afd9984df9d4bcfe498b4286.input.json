@@ -11,6 +11,9 @@
 					"text": "Please create a list of todo items for me, at varying levels of difficulty and importance."
 				}
 			]
+		},
+		"config": {
+			"responseMimeType": "application/json"
 		}
 	}
 ]
