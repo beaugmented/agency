@@ -1,18 +1,18 @@
 import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
-import { AnthropicSafeGenerator } from "../../src/anthropic"
+import { GoogleSafeGenerator } from "../../src/google"
 import type { DataSpec } from "../../src/safegen"
 
 beforeAll(() => {
 	vitest.spyOn(console, `warn`)
 })
 
-const claudeSonnet = new AnthropicSafeGenerator({
+const gemini2Flash = new GoogleSafeGenerator({
 	usdBudget: 0.01,
 	usdMinimum: 0.00_01,
-	model: `claude-3-5-sonnet-latest`,
-	apiKey: import.meta.env.VITE_ANTHROPIC_API_KEY,
+	model: `gemini-2.0-flash-001`,
+	apiKey: import.meta.env.VITE_GOOGLEAI_API_KEY,
 	cachingMode: process.env.CI
 		? `read`
 		: process.env.NODE_ENV === `production`
@@ -30,13 +30,13 @@ describe(`safeGen`, () => {
 			fallback: { count: 0 },
 		}
 
-		const counter = claudeSonnet.from(countSpec)
+		const counter = gemini2Flash.from(countSpec)
 
 		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
 			`How many planets are in the solar system?`,
 		)
 		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
-		expect(claudeSonnet.usdBudget).toBeGreaterThan(0.0094)
+		expect(gemini2Flash.usdBudget).toBeGreaterThan(0.0094)
 	})
 	test(`safeGen should answer request in the form of data`, async () => {
 		const todoListSpec = {
@@ -56,7 +56,7 @@ describe(`safeGen`, () => {
 			items: { id: number; title: string; completed: boolean }[]
 		}>
 
-		const todoListGenerator = claudeSonnet.from(todoListSpec)
+		const todoListGenerator = gemini2Flash.from(todoListSpec)
 
 		const todoList = await todoListGenerator(
 			[
@@ -79,7 +79,7 @@ describe(`safeGen`, () => {
 			},
 		}
 
-		const prioritizationGenerator = claudeSonnet.from(prioritizationSpec)
+		const prioritizationGenerator = gemini2Flash.from(prioritizationSpec)
 
 		const prioritization = await prioritizationGenerator(
 			[

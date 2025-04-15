@@ -1,6 +1,8 @@
 {
 	"editor.wordSeparators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
 	"cSpell.words": [
+		"genai",
+		"GOOGLEAI",
 		"metafile",
 		"Ollama",
 		"openai",
