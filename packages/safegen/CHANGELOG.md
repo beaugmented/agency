@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.2.16
+
+### Patch Changes
+
+- 089a88c: ✨ Add `safegen/google` module for using gemini. For now, we support only `gemini-2.0-flash-001`.
+
 ## 0.2.15
 
 ### Patch Changes
