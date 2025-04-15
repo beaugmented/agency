@@ -1,0 +1,21 @@
+{
+	"data": {},
+	"usage": {
+		"promptTokenCount": 221,
+		"candidatesTokenCount": 195,
+		"totalTokenCount": 416,
+		"promptTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 221
+			}
+		],
+		"candidatesTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 195
+			}
+		]
+	},
+	"usdPrice": 0.00010010000000000002
+}
