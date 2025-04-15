@@ -8,7 +8,7 @@ beforeAll(() => {
 	vitest.spyOn(console, `warn`)
 })
 
-const gpt4oMini = new AnthropicSafeGenerator({
+const claudeSonnet = new AnthropicSafeGenerator({
 	usdBudget: 0.01,
 	usdMinimum: 0.00_01,
 	model: `claude-3-5-sonnet-latest`,
@@ -30,13 +30,13 @@ describe(`safeGen`, () => {
 			fallback: { count: 0 },
 		}
 
-		const counter = gpt4oMini.from(countSpec)
+		const counter = claudeSonnet.from(countSpec)
 
 		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
 			`How many planets are in the solar system?`,
 		)
 		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
-		expect(gpt4oMini.usdBudget).toBeGreaterThan(0.0094)
+		expect(claudeSonnet.usdBudget).toBeGreaterThan(0.0094)
 	})
 	test(`safeGen should answer request in the form of data`, async () => {
 		const todoListSpec = {
@@ -56,7 +56,7 @@ describe(`safeGen`, () => {
 			items: { id: number; title: string; completed: boolean }[]
 		}>
 
-		const todoListGenerator = gpt4oMini.from(todoListSpec)
+		const todoListGenerator = claudeSonnet.from(todoListSpec)
 
 		const todoList = await todoListGenerator(
 			[
@@ -79,7 +79,7 @@ describe(`safeGen`, () => {
 			},
 		}
 
-		const prioritizationGenerator = gpt4oMini.from(prioritizationSpec)
+		const prioritizationGenerator = claudeSonnet.from(prioritizationSpec)
 
 		const prioritization = await prioritizationGenerator(
 			[
