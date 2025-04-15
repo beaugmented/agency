@@ -1,15 +1,3 @@
-// import { GoogleGenAI } from "@google/genai"
-
-// const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLEAI_API_KEY })
-
-// test(`demo`, async () => {
-// 	const response = await ai.models.generateContent({
-// 		model: `gemini-2.0-flash-001`,
-// 		contents: `Why is the sky blue?`,
-// 	})
-// 	console.log(response.text)
-// })
-
 import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
