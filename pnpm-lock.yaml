@@ -80,7 +80,7 @@ importers:
         version: 9.1.2
       openai:
         specifier: 4.95.0
-        version: 4.95.0(ws@8.18.1)(zod@3.24.2)
+        version: 4.95.0(ws@8.18.1)(zod@3.24.3)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -97,8 +97,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/node@22.14.1)(jiti@2.4.2)
       zod:
-        specifier: 3.24.2
-        version: 3.24.2
+        specifier: 3.24.3
+        version: 3.24.3
 
   packages/safegen:
     dependencies:
@@ -135,7 +135,7 @@ importers:
         version: 0.5.15
       openai:
         specifier: 4.95.0
-        version: 4.95.0(ws@8.18.1)(zod@3.24.2)
+        version: 4.95.0(ws@8.18.1)(zod@3.24.3)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -155,11 +155,11 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/node@22.14.1)(jiti@2.4.2)
       zod:
-        specifier: 3.24.2
-        version: 3.24.2
+        specifier: 3.24.3
+        version: 3.24.3
       zod-to-json-schema:
         specifier: 3.24.5
-        version: 3.24.5(zod@3.24.2)
+        version: 3.24.5(zod@3.24.3)
 
 packages:
 
@@ -2341,6 +2341,9 @@ packages:
   zod@3.24.2:
     resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
 
+  zod@3.24.3:
+    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
+
 snapshots:
 
   '@anthropic-ai/sdk@0.39.0':
@@ -3870,7 +3873,7 @@ snapshots:
     dependencies:
       whatwg-fetch: 3.6.20
 
-  openai@4.95.0(ws@8.18.1)(zod@3.24.2):
+  openai@4.95.0(ws@8.18.1)(zod@3.24.3):
     dependencies:
       '@types/node': 18.19.59
       '@types/node-fetch': 2.6.11
@@ -3881,7 +3884,7 @@ snapshots:
       node-fetch: 2.7.0
     optionalDependencies:
       ws: 8.18.1
-      zod: 3.24.2
+      zod: 3.24.3
     transitivePeerDependencies:
       - encoding
 
@@ -4461,4 +4464,10 @@ snapshots:
     dependencies:
       zod: 3.24.2
 
+  zod-to-json-schema@3.24.5(zod@3.24.3):
+    dependencies:
+      zod: 3.24.3
+
   zod@3.24.2: {}
+
+  zod@3.24.3: {}
