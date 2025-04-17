@@ -86,7 +86,7 @@
 	"dependencies": {
 		"@standard-schema/spec": "1.0.0",
 		"atom.io": "0.32.4",
-		"varmint": "0.4.7"
+		"varmint": "0.4.8"
 	},
 	"devDependencies": {
 		"@anthropic-ai/sdk": "0.39.0",
