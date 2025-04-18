@@ -63,8 +63,8 @@ importers:
         specifier: 0.32.4
         version: 0.32.4(eslint@9.24.0(jiti@2.4.2))
       varmint:
-        specifier: 0.4.8
-        version: 0.4.8(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
+        specifier: 0.4.9
+        version: 0.4.9(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
     devDependencies:
       '@types/node':
         specifier: 22.14.1
@@ -112,8 +112,8 @@ importers:
         specifier: 0.32.4
         version: 0.32.4(eslint@9.24.0(jiti@2.4.2))
       varmint:
-        specifier: 0.4.8
-        version: 0.4.8(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
+        specifier: 0.4.9
+        version: 0.4.9(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.39.0
@@ -1110,10 +1110,6 @@ packages:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
 
-  chalk@5.4.1:
-    resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
-    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
-
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
@@ -1147,12 +1143,6 @@ packages:
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
-
-  comline@0.2.3:
-    resolution: {integrity: sha512-ZMZdaMUjTQZ2vxAaqM9uwT1M/mglptU/vLQzxTqQ2mxAo+RcAd/5HxBqL88MYXkUnxHVaF2Pw409VrvjWNTeyQ==}
-    peerDependencies:
-      zod: ^3.0.0
-      zod-to-json-schema: ^3.0.0
 
   comline@0.2.4:
     resolution: {integrity: sha512-AoDLQj9v/V1NdqwrVMEEqHFZ2DcUM53RPdSW5RRQAldWbSw/uQnvfbR4qldr5ftveowjUlxwodL8eC+yjgI4oQ==}
@@ -2193,8 +2183,8 @@ packages:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
 
-  varmint@0.4.8:
-    resolution: {integrity: sha512-PCwVHGbEhYNR4FZ7sRdLLbT10rX+X1UrslG2UHx6QVsSF0Ul/yDuxJoJdj/1pFz0cBi2wJ2HGYW2MR96qiw0VQ==}
+  varmint@0.4.9:
+    resolution: {integrity: sha512-g00TNFmGn0n2mLM0SUG0XgSYAI69ee6d1LordMAsUQzePfxJP2Kc0+LPGsRW802myrYF3opd3mz0avnE8kReLw==}
     hasBin: true
 
   vite-node@3.1.1:
@@ -3228,8 +3218,6 @@ snapshots:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
 
-  chalk@5.4.1: {}
-
   chardet@0.7.0: {}
 
   check-error@2.1.1: {}
@@ -3257,13 +3245,6 @@ snapshots:
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
-
-  comline@0.2.3(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
-    dependencies:
-      chalk: 5.4.1
-      treetrunks: 0.1.2
-      zod: 3.24.3
-      zod-to-json-schema: 3.24.5(zod@3.24.3)
 
   comline@0.2.4(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
     dependencies:
@@ -4334,10 +4315,10 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  varmint@0.4.8(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
+  varmint@0.4.9(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
     dependencies:
       cachedir: 2.4.0
-      comline: 0.2.3(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
+      comline: 0.2.4(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
       safedeposit: 0.1.0
     transitivePeerDependencies:
       - zod
