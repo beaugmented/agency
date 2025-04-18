@@ -166,8 +166,7 @@ describe(`advanced data types`, () => {
 		}
 		const currentDateString = await dateGenerator(`What is the date?`)
 		const currentDate = parseDate(currentDateString.date)
-		expect(currentDate.getFullYear()).toBe(2023)
-		expect(currentDate.getMonth()).toBe(9)
-		expect(currentDate.getDate()).toBe(9)
+		expect(currentDate).toBeInstanceOf(Date)
+		expect(currentDate).toEqual(new Date(`2023-10-10`))
 	})
 })
