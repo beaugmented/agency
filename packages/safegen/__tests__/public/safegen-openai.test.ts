@@ -1,5 +1,6 @@
 import { type } from "arktype"
 import { describe, expect, test } from "vitest"
+import type { ZodBranded, ZodString } from "zod"
 import { z } from "zod"
 
 import { arktypeToJsonSchema } from "../../src/arktype"
@@ -138,5 +139,35 @@ describe(`with arktype`, () => {
 		assert(countResult.countable)
 		expect(countResult.count).toBe(8)
 		expect(gpt4oMini.usdBudget).toBeGreaterThan(0.0099)
+	})
+})
+
+describe(`advanced data types`, () => {
+	const gpt4oMini = new OpenAiSafeGenerator({
+		usdBudget: 0.01,
+		usdMinimum: 0.00_01,
+		model: `gpt-4o-mini`,
+		apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+		cachingMode: process.env.CI
+			? `read`
+			: process.env.NODE_ENV === `production`
+				? `off`
+				: `read-write`,
+		logger: console,
+	})
+	test(`dates`, async () => {
+		const dateGenerator = gpt4oMini.from({
+			schema: z.object({ date: z.string().date().brand(`date`) }),
+			fallback: { date: `2023-01-01` as z.BRAND<`date`> & string },
+		})
+
+		const parseDate = (dateString: z.BRAND<`date`> & string): Date => {
+			return new Date(dateString)
+		}
+		const currentDateString = await dateGenerator(`What is the date?`)
+		const currentDate = parseDate(currentDateString.date)
+		expect(currentDate.getFullYear()).toBe(2023)
+		expect(currentDate.getMonth()).toBe(9)
+		expect(currentDate.getDate()).toBe(9)
 	})
 })
