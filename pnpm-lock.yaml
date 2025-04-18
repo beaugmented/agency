@@ -73,8 +73,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.11
-        version: 0.6.11(zod-to-json-schema@3.24.5(zod@3.24.3))
+        specifier: 0.6.12
+        version: 0.6.12(zod-to-json-schema@3.24.5(zod@3.24.3))
       concurrently:
         specifier: 9.1.2
         version: 9.1.2
@@ -128,8 +128,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.11
-        version: 0.6.11(zod-to-json-schema@3.24.5(zod@3.24.3))
+        specifier: 0.6.12
+        version: 0.6.12(zod-to-json-schema@3.24.5(zod@3.24.3))
       ollama:
         specifier: 0.5.15
         version: 0.5.15
@@ -1077,8 +1077,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  break-check@0.6.11:
-    resolution: {integrity: sha512-pNB7aNlZ926w0FjghhxmSQz+VMUfJTYgNpvmWfT8WDlkwNeNNdXM4RmHCJVj7/mkQI+6OZrAhm4R/xiB+pw4Gg==}
+  break-check@0.6.12:
+    resolution: {integrity: sha512-QeT0/m6KGEG/wcSdnklJEPtRqnCWTJfZbzYaTt/YxdTNztam1iXrqtzvC4cBN1JrSod09UlVgXI4iFDHkBWXMA==}
     hasBin: true
 
   buffer-equal-constant-time@1.0.1:
@@ -1150,6 +1150,12 @@ packages:
 
   comline@0.2.3:
     resolution: {integrity: sha512-ZMZdaMUjTQZ2vxAaqM9uwT1M/mglptU/vLQzxTqQ2mxAo+RcAd/5HxBqL88MYXkUnxHVaF2Pw409VrvjWNTeyQ==}
+    peerDependencies:
+      zod: ^3.0.0
+      zod-to-json-schema: ^3.0.0
+
+  comline@0.2.4:
+    resolution: {integrity: sha512-AoDLQj9v/V1NdqwrVMEEqHFZ2DcUM53RPdSW5RRQAldWbSw/uQnvfbR4qldr5ftveowjUlxwodL8eC+yjgI4oQ==}
     peerDependencies:
       zod: ^3.0.0
       zod-to-json-schema: ^3.0.0
@@ -3185,9 +3191,9 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  break-check@0.6.11(zod-to-json-schema@3.24.5(zod@3.24.3)):
+  break-check@0.6.12(zod-to-json-schema@3.24.5(zod@3.24.3)):
     dependencies:
-      comline: 0.2.3(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
+      comline: 0.2.4(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
       minimatch: 10.0.1
       npmlog: 7.0.1
       simple-git: 3.27.0
@@ -3255,6 +3261,13 @@ snapshots:
   comline@0.2.3(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
     dependencies:
       chalk: 5.4.1
+      treetrunks: 0.1.2
+      zod: 3.24.3
+      zod-to-json-schema: 3.24.5(zod@3.24.3)
+
+  comline@0.2.4(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
+    dependencies:
+      picocolors: 1.1.1
       treetrunks: 0.1.2
       zod: 3.24.3
       zod-to-json-schema: 3.24.5(zod@3.24.3)
