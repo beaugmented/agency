@@ -119,8 +119,8 @@ importers:
         specifier: 0.39.0
         version: 0.39.0
       '@google/genai':
-        specifier: 0.8.0
-        version: 0.8.0
+        specifier: 0.9.0
+        version: 0.9.0
       '@types/node':
         specifier: 22.14.1
         version: 22.14.1
@@ -481,8 +481,8 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@google/genai@0.8.0':
-    resolution: {integrity: sha512-Zs+OGyZKyMbFofGJTR9/jTQSv8kITh735N3tEuIZj4VlMQXTC0soCFahysJ9NaeenRlD7xGb6fyqmX+FwrpU6Q==}
+  '@google/genai@0.9.0':
+    resolution: {integrity: sha512-FD2RizYGInsvfjeaN6O+wQGpRnGVglS1XWrGQr8K7D04AfMmvPodDSw94U9KyFtsVLzWH9kmlPyFM+G4jbmkqg==}
     engines: {node: '>=18.0.0'}
 
   '@humanfs/core@0.19.1':
@@ -2680,10 +2680,12 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
-  '@google/genai@0.8.0':
+  '@google/genai@0.9.0':
     dependencies:
       google-auth-library: 9.15.1
       ws: 8.18.1
+      zod: 3.24.3
+      zod-to-json-schema: 3.24.5(zod@3.24.3)
     transitivePeerDependencies:
       - bufferutil
       - encoding
