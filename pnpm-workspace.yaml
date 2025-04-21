@@ -2,6 +2,7 @@ packages:
   - packages/*
 
 onlyBuiltDependencies:
-  - '@biomejs/biome'
+  - "@biomejs/biome"
   - esbuild
   - protobufjs
+  - unrs-resolver
