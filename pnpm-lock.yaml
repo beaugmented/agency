@@ -63,8 +63,8 @@ importers:
         specifier: 0.32.4
         version: 0.32.4(eslint@9.25.1(jiti@2.4.2))
       varmint:
-        specifier: 0.4.10
-        version: 0.4.10(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
+        specifier: 0.5.0
+        version: 0.5.0(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
     devDependencies:
       '@types/node':
         specifier: 22.15.2
@@ -112,8 +112,8 @@ importers:
         specifier: 0.32.4
         version: 0.32.4(eslint@9.25.1(jiti@2.4.2))
       varmint:
-        specifier: 0.4.10
-        version: 0.4.10(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
+        specifier: 0.5.0
+        version: 0.5.0(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.40.0
@@ -2130,8 +2130,8 @@ packages:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
 
-  varmint@0.4.10:
-    resolution: {integrity: sha512-rXiWJHYaIMY6VIi2OH2Rq35ujvpR10/qxU0PEHMFColet2Xml7SxrXPYJVw5iNS82sNcrajD4ahDz1TYqHTC7g==}
+  varmint@0.5.0:
+    resolution: {integrity: sha512-j2K+Edti7G+htZ3lAe00Di8SUxOzFB2WXJ0lBpqz0nezcc4mhlpMq6Vy8uU20+z4oOGHBrMwDX68BOmOJDRmdw==}
     hasBin: true
 
   vite-node@3.1.2:
@@ -4229,7 +4229,7 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  varmint@0.4.10(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
+  varmint@0.5.0(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3):
     dependencies:
       cachedir: 2.4.0
       comline: 0.2.5(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
