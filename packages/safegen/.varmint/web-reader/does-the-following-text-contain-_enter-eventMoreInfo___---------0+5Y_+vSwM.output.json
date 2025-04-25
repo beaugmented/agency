@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Upcoming live music events include: 1. Brother Ali with Ant on Fri 11/15 at Wonder Ballroom. More info at https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/. Buy tickets at https://www.etix.com/ticket/p/94362414/brother-ali-with-ant-portland-wonder-ballroom?partner_id=100. 2. The Dear Hunter – Celebrating 20 Years on Sat Nov 16 at Wonder Ballroom. More info at https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/. Buy tickets at https://www.etix.com/ticket/p/73037499/the-dear-hunter-celebrating-20-years-portland-wonder-ballroom?partner_id=100."
+	},
+	"usage": {
+		"prompt_tokens": 2711,
+		"completion_tokens": 197,
+		"total_tokens": 2908,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.000728175
+}

@@ -1,0 +1,43 @@
+{
+	"data": {
+		"eventUrls": [
+			"https://monqui.com/event/jack-white-no-name-tour/mcmenamins-edgefield/troutdale-oregon/",
+			"https://monqui.com/event/jessica-baio/mission-theater/portland-oregon/",
+			"https://monqui.com/event/dawn-richard-spencer-zahn/the-old-church/portland-oregon/",
+			"https://monqui.com/event/dwllrs-cameraman-tour/holocene/portland-oregon/",
+			"https://monqui.com/event/baynk-senescence-usa-canada-tour-2025/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/daily-bread-flash-flood-tour/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/",
+			"https://monqui.com/event/shallou-2/the-get-down/portland-oregon/",
+			"https://monqui.com/event/tr-st/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/jd-mcpherson/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/katie-gavin-2/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/",
+			"https://monqui.com/event/over-the-rhine-2/the-old-church/portland-oregon/",
+			"https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/the-brothers-comatose/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/ashley-kutcher/holocene/portland-oregon/",
+			"https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/",
+			"https://monqui.com/event/better-lovers-the-highly-irresponsible-tour/wonder-ballroom/portland-oregon/"
+		]
+	},
+	"usage": {
+		"prompt_tokens": 2738,
+		"completion_tokens": 576,
+		"total_tokens": 3314,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.0009616500000000001
+}

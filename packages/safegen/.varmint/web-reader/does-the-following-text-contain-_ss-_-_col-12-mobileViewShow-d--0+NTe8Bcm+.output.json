@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Upcoming live music event: Over the Rhine at The Old Church, Portland, Oregon on Thu 11/21. More info: https://monqui.com/event/over-the-rhine-2/the-old-church/portland-oregon/. Buy tickets: https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100. Another event: Richy Mitch & The Coal Miners - The October Moon Tour at Wonder Ballroom, Portland, Oregon on Thu 11/21. More info: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/"
+	},
+	"usage": {
+		"prompt_tokens": 2753,
+		"completion_tokens": 168,
+		"total_tokens": 2921,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.0007202249999999999
+}

@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "For details of upcoming live music events, please follow Monqui Presents on social media: Instagram - https://www.instagram.com/monqui_presents/, TikTok - https://www.tiktok.com/@monqui_presents."
+	},
+	"usage": {
+		"prompt_tokens": 6277,
+		"completion_tokens": 64,
+		"total_tokens": 6341,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.001450725
+}

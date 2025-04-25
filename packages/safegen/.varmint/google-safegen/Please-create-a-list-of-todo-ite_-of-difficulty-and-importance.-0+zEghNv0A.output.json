@@ -1,0 +1,59 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"title": "Grocery Shopping",
+				"completed": false
+			},
+			{
+				"id": 2,
+				"title": "Pay Bills",
+				"completed": false
+			},
+			{
+				"id": 3,
+				"title": "Learn a new programming language",
+				"completed": false
+			},
+			{
+				"id": 4,
+				"title": "Book Doctor Appointment",
+				"completed": true
+			},
+			{
+				"id": 5,
+				"title": "Finish Project Proposal",
+				"completed": false
+			},
+			{
+				"id": 6,
+				"title": "Walk the Dog",
+				"completed": false
+			},
+			{
+				"id": 7,
+				"title": "Research investment options",
+				"completed": false
+			}
+		]
+	},
+	"usage": {
+		"promptTokenCount": 221,
+		"candidatesTokenCount": 222,
+		"totalTokenCount": 443,
+		"promptTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 221
+			}
+		],
+		"candidatesTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 222
+			}
+		]
+	},
+	"usdPrice": 0.00011090000000000001
+}

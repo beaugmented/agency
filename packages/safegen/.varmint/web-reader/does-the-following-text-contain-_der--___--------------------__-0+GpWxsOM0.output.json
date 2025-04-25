@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Upcoming live music events: 1. Ashley Kutcher on Sat Nov 23 at Holocene. More info: https://monqui.com/event/ashley-kutcher/holocene/portland-oregon/. Buy Tickets: https://www.etix.com/ticket/p/60071179/ashley-kutcher-portland-holocene-monqui-presents?partner_id=100. 2. Mac Sabbath with Supersuckers on Sat Nov 23 at Wonder Ballroom. More info: https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/"
+	},
+	"usage": {
+		"prompt_tokens": 2757,
+		"completion_tokens": 150,
+		"total_tokens": 2907,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.000710325
+}

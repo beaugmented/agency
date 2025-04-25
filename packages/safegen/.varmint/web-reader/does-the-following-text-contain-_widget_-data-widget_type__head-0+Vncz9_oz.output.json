@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Find details about upcoming live music events at Monqui's official events page: https://monqui.com/events/"
+	},
+	"usage": {
+		"prompt_tokens": 3202,
+		"completion_tokens": 41,
+		"total_tokens": 3243,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.0007450499999999999
+}

@@ -1,0 +1,52 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"title": "Buy groceries",
+				"completed": false
+			},
+			{
+				"id": 2,
+				"title": "Complete project report",
+				"completed": false
+			},
+			{
+				"id": 3,
+				"title": "Schedule dentist appointment",
+				"completed": true
+			},
+			{
+				"id": 4,
+				"title": "Read a chapter of the book",
+				"completed": false
+			},
+			{
+				"id": 5,
+				"title": "Start exercising for 30 minutes",
+				"completed": false
+			},
+			{
+				"id": 6,
+				"title": "Plan weekend trip",
+				"completed": false
+			}
+		]
+	},
+	"usage": {
+		"prompt_tokens": 197,
+		"completion_tokens": 171,
+		"total_tokens": 368,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.000146925
+}

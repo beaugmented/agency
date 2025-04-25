@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Better Lovers is performing at Wonder Ballroom, Portland, Oregon, on Wed Nov 27. Show starts at 7pm, doors open at 6pm. Special guests include Full of Hell, Spy, and Cloakroom. For more details, visit https://monqui.com/event/better-lovers-the-highly-irresponsible-tour/wonder-ballroom/portland-oregon/. Buy tickets here: https://www.etix.com/ticket/p/64150342/better-lovers-the-highly-irresponsible-tour-portland-wonder-ballroom?partner_id=100."
+	},
+	"usage": {
+		"prompt_tokens": 2741,
+		"completion_tokens": 138,
+		"total_tokens": 2879,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.000699525
+}

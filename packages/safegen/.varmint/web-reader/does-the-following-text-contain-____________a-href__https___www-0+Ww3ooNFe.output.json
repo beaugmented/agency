@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "For more information on upcoming live music events, visit Monqui Presents' social media pages on Instagram (https://www.instagram.com/monqui_presents/) and TikTok (https://www.tiktok.com/@monqui_presents). Additionally, check their venue page for the latest updates: https://monqui.com/venues/oregon/. You can also explore events in Washington and Canada by visiting this link: https://monqui.com/washington-canada and the Edgefield venue page at https://monqui.com/venue/mcmenamins-edgefield/."
+	},
+	"usage": {
+		"prompt_tokens": 5370,
+		"completion_tokens": 134,
+		"total_tokens": 5504,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.0012886500000000001
+}
