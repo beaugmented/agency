@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.3.0
+
+### Minor Changes
+
+- 80a2ae4: 💥 BREAKING CHANGE: Update to varmint 0.5.0, which shortens the filenames used to cache inputs and outputs.
+
 ## 0.2.16
 
 ### Patch Changes
