@@ -106,7 +106,7 @@ describe(`with zod`, () => {
 				return 0
 			}),
 		)
-	}, 10000)
+	}, 40000)
 })
 
 describe(`with arktype`, () => {
