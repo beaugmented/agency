@@ -1,0 +1,63 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"title": "Buy groceries for the week",
+				"completed": false
+			},
+			{
+				"id": 2,
+				"title": "Complete annual tax returns",
+				"completed": false
+			},
+			{
+				"id": 3,
+				"title": "Water the plants",
+				"completed": true
+			},
+			{
+				"id": 4,
+				"title": "Write PhD thesis introduction",
+				"completed": false
+			},
+			{
+				"id": 5,
+				"title": "Schedule dentist appointment",
+				"completed": false
+			},
+			{
+				"id": 6,
+				"title": "Change phone wallpaper",
+				"completed": true
+			},
+			{
+				"id": 7,
+				"title": "Learn quantum computing basics",
+				"completed": false
+			},
+			{
+				"id": 8,
+				"title": "Take out trash",
+				"completed": true
+			},
+			{
+				"id": 9,
+				"title": "Plan summer vacation",
+				"completed": false
+			},
+			{
+				"id": 10,
+				"title": "Fix leaking kitchen faucet",
+				"completed": false
+			}
+		]
+	},
+	"usage": {
+		"input_tokens": 233,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 327
+	},
+	"usdPrice": 0.0056040000000000005
+}

@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Just Announced: Jack White - No Name Tour on 05/24 at McMenamins Edgefield (https://monqui.com/event/jack-white-no-name-tour/mcmenamins-edgefield/troutdale-oregon/), Jessica Baio on 03/22 at Mission Theater (https://monqui.com/event/jessica-baio/mission-theater/portland-oregon/), Dawn Richard & Spencer Zahn on 02/28 at The Old Church (https://monqui.com/event/dawn-richard-spencer-zahn/the-old-church/portland-oregon/), DWLLRS: Cameraman Tour on 03/15 at Holocene (https://monqui.com/event/dwllrs-cameraman-tour/holocene/portland-oregon/), BAYNK - 'Senescence' USA/Canada Tour 2025 on 02/26 at Wonder Ballroom (https://monqui.com/event/baynk-senescence-usa-canada-tour-2025/wonder-ballroom/portland-oregon/), Daily Bread - Flash Flood Tour on 03/22 at Wonder Ballroom (https://monqui.com/event/daily-bread-flash-flood-tour/wonder-ballroom/portland-oregon/)"
+	},
+	"usage": {
+		"prompt_tokens": 3166,
+		"completion_tokens": 281,
+		"total_tokens": 3447,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.00088095
+}

@@ -1,0 +1,22 @@
+{
+	"data": {
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Rainbow Kitten Surprise will perform on Wed 11/20 at the Theater Of The Clouds. More info can be found at https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/ and tickets can be bought at https://www.ticketmaster.com/event/0F0060B7910051A9."
+	},
+	"usage": {
+		"prompt_tokens": 2761,
+		"completion_tokens": 97,
+		"total_tokens": 2858,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.000679425
+}

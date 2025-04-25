@@ -1,0 +1,52 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"rationale": "Buying groceries is essential for family meals and harmony.",
+				"priority": 90
+			},
+			{
+				"id": 6,
+				"rationale": "Planning a weekend trip can enhance family bonding and create joyful memories.",
+				"priority": 85
+			},
+			{
+				"id": 2,
+				"rationale": "Completing the project report is important for work, but it should come after family-oriented tasks.",
+				"priority": 70
+			},
+			{
+				"id": 5,
+				"rationale": "Exercising is essential for personal health, which ultimately benefits family wellness.",
+				"priority": 65
+			},
+			{
+				"id": 4,
+				"rationale": "Reading a book can provide personal enjoyment and relaxation, but is less urgent.",
+				"priority": 50
+			},
+			{
+				"id": 3,
+				"rationale": "Scheduling a dentist appointment is important for health but has already been completed.",
+				"priority": 0
+			}
+		]
+	},
+	"usage": {
+		"prompt_tokens": 384,
+		"completion_tokens": 240,
+		"total_tokens": 624,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.00023040000000000002
+}
