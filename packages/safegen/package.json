@@ -95,7 +95,7 @@
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.13",
 		"ollama": "0.5.15",
-		"openai": "4.96.0",
+		"openai": "4.96.1",
 		"rimraf": "6.0.1",
 		"tmp": "0.2.3",
 		"tsup": "8.4.0",
