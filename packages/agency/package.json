@@ -34,7 +34,7 @@
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.13",
 		"concurrently": "9.1.2",
-		"openai": "4.96.1",
+		"openai": "4.96.2",
 		"tmp": "0.2.3",
 		"tsup": "8.4.0",
 		"typescript": "5.8.3",
