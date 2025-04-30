@@ -119,8 +119,8 @@ importers:
         specifier: 0.40.1
         version: 0.40.1
       '@google/genai':
-        specifier: 0.10.0
-        version: 0.10.0
+        specifier: 0.11.0
+        version: 0.11.0
       '@types/node':
         specifier: 22.15.3
         version: 22.15.3
@@ -481,8 +481,8 @@ packages:
     resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@google/genai@0.10.0':
-    resolution: {integrity: sha512-LAbp0em5A+wRtQR2+r5ckRBg2U2cBy8cJHgyTHa9PUbK8zucApw6A93HWyom/qlUQBNCpnIHFp20RiJuYMQwAw==}
+  '@google/genai@0.11.0':
+    resolution: {integrity: sha512-N27hhfDx0l9epUYoQr4tRKJ+ZvVEaru7VaPcjIdbQrn6hukiHFhzVv9dD/Rt7jYR7uLQF4rjIKoNYNtzeFY4rQ==}
     engines: {node: '>=18.0.0'}
 
   '@humanfs/core@0.19.1':
@@ -2648,7 +2648,7 @@ snapshots:
       '@eslint/core': 0.13.0
       levn: 0.4.1
 
-  '@google/genai@0.10.0':
+  '@google/genai@0.11.0':
     dependencies:
       google-auth-library: 9.15.1
       ws: 8.18.1
