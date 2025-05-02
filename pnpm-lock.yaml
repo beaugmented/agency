@@ -30,8 +30,8 @@ importers:
         specifier: 8.31.1
         version: 8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
       atom.io:
-        specifier: 0.32.4
-        version: 0.32.4(eslint@9.25.1(jiti@2.4.2))
+        specifier: 0.33.1
+        version: 0.33.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -60,8 +60,8 @@ importers:
   packages/agency:
     dependencies:
       atom.io:
-        specifier: 0.32.4
-        version: 0.32.4(eslint@9.25.1(jiti@2.4.2))
+        specifier: 0.33.1
+        version: 0.33.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))
       varmint:
         specifier: 0.5.0
         version: 0.5.0(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
@@ -109,8 +109,8 @@ importers:
         specifier: '>=2.1.0'
         version: 2.1.20
       atom.io:
-        specifier: 0.32.4
-        version: 0.32.4(eslint@9.25.1(jiti@2.4.2))
+        specifier: 0.33.1
+        version: 0.33.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))
       varmint:
         specifier: 0.5.0
         version: 0.5.0(zod-to-json-schema@3.24.5(zod@3.24.3))(zod@3.24.3)
@@ -950,13 +950,15 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  atom.io@0.32.4:
-    resolution: {integrity: sha512-U/8MXtnmpq+0pIaxOzj4sRgWrSYlgyH4Zz2Ky5ez/eE8rWsNka3zFOzjbt2aal2v5oFAdjh44u0tA+Izd1xUSw==}
+  atom.io@0.33.1:
+    resolution: {integrity: sha512-IYBURCg3QwNUCd+r2Sx2FXSczcipdpaDO5nnTiWSUzyMl6RHy4L7/Abz7sxVmOng4/vT6RE62ol6U/cFJA/OFg==}
     peerDependencies:
       '@floating-ui/react': '>=0.25.0'
       '@floating-ui/react-dom': '>=2.0.0'
       '@testing-library/react': '>=14.0.0'
+      '@typescript-eslint/parser': '>=9.0.0'
       eslint: '>=9.0.0'
+      happy-dom: '>=17.4.4'
       motion: '>=11.0.0'
       react: ^18.0.0 || ^19.0.0
       socket.io: '>=4.0.0'
@@ -968,7 +970,11 @@ packages:
         optional: true
       '@testing-library/react':
         optional: true
+      '@typescript-eslint/parser':
+        optional: true
       eslint:
+        optional: true
+      happy-dom:
         optional: true
       motion:
         optional: true
@@ -3103,8 +3109,9 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  atom.io@0.32.4(eslint@9.25.1(jiti@2.4.2)):
+  atom.io@0.33.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2)):
     optionalDependencies:
+      '@typescript-eslint/parser': 8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.25.1(jiti@2.4.2)
 
   balanced-match@1.0.2: {}
