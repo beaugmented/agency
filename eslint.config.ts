@@ -114,6 +114,7 @@ const config = {
 		"@typescript-eslint/no-unnecessary-type-arguments": 0,
 		"@typescript-eslint/no-unnecessary-type-assertion": ERROR,
 		"@typescript-eslint/no-unnecessary-type-constraint": ERROR,
+		"@typescript-eslint/no-unnecessary-type-conversion": ERROR,
 		"@typescript-eslint/no-unsafe-argument": 0,
 		"@typescript-eslint/no-unsafe-assignment": 0,
 		"@typescript-eslint/no-unsafe-call": 0,
