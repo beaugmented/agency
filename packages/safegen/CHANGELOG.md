@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.3.1
+
+### Patch Changes
+
+- 58b7244: ✨ Updated price sheet for OpenAI with new models. Future updates to the OpenAI SDK that include new models will result in updates to SafeGen.
+
 ## 0.3.0
 
 ### Minor Changes
