@@ -1,25 +1,18 @@
-import type { StandardSchemaV1 } from "@standard-schema/spec"
 import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
-import type { ZodSchema } from "zod"
-import zodToJsonSchema from "zod-to-json-schema"
 
-import type {
-	GenerateFromSchema,
-	SafeGenerator,
-	ToJsonSchema,
-} from "../safegen"
+import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
-import type { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
+import type { NonPreviewTextModel } from "./openai-pricing-facts"
 import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-json-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-openai-json-generator"
 
 export const clientCache = new Map<string, OpenAI>()
 
 export type OpenAiSafeGenOptions = {
-	model: keyof typeof OPEN_AI_PRICING_FACTS
+	model: NonPreviewTextModel
 	usdBudget: number
 	usdMinimum: number
 	apiKey: string

@@ -1,10 +1,13 @@
 import { type } from "arktype"
 import { describe, expect, test } from "vitest"
-import type { ZodBranded, ZodString } from "zod"
 import { z } from "zod"
 
 import { arktypeToJsonSchema } from "../../src/arktype"
 import { OpenAiSafeGenerator } from "../../src/openai"
+import {
+	getModelPrices,
+	OPEN_AI_PRICING_FACTS,
+} from "../../src/openai/openai-pricing-facts"
 import type { DataSpec } from "../../src/safegen"
 
 beforeAll(() => {
@@ -12,6 +15,23 @@ beforeAll(() => {
 })
 
 afterAll(() => {})
+
+describe(`model pricing retrieval`, () => {
+	test(`getModelPrices should return the correct pricing for a model`, () => {
+		expect(getModelPrices(`gpt-4o-mini`)).toEqual(
+			OPEN_AI_PRICING_FACTS[`gpt-4o-mini`],
+		)
+		expect(getModelPrices(`gpt-4o-mini-2024-07-18`)).toEqual(
+			OPEN_AI_PRICING_FACTS[`gpt-4o-mini`],
+		)
+		expect(getModelPrices(`o1`)).toEqual(OPEN_AI_PRICING_FACTS[`o1`])
+		expect(getModelPrices(`o1-2024-07-18`)).toEqual(OPEN_AI_PRICING_FACTS[`o1`])
+		expect(getModelPrices(`gpt-4-32k`)).toEqual(
+			OPEN_AI_PRICING_FACTS[`gpt-4-32k`],
+		)
+		expect(getModelPrices(`gpt-4`)).toEqual(OPEN_AI_PRICING_FACTS[`gpt-4`])
+	})
+})
 
 describe(`with zod`, () => {
 	const gpt4oMini = new OpenAiSafeGenerator({
