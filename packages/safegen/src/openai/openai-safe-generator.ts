@@ -5,9 +5,9 @@ import { Squirrel } from "varmint"
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
+import type { NonPreviewTextModel } from "./openai-pricing-facts"
 import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-json-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-openai-json-generator"
-import { NonPreviewTextModel } from "./openai-pricing-facts"
 
 export const clientCache = new Map<string, OpenAI>()
 

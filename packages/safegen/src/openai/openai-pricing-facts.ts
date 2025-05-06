@@ -100,7 +100,7 @@ export const OPEN_AI_PRICING_FACTS: Record<
 
 export function getModelPrices(
 	model: ChatModel | (string & {}),
-): undefined | PricingFacts {
+): PricingFacts | undefined {
 	const pricingFactsKeys = Object.keys(OPEN_AI_PRICING_FACTS)
 	const maybeFacts = pricingFactsKeys
 		.filter((key) => key.startsWith(model))
@@ -118,10 +118,10 @@ export type SimpleSnapshottedChatModel = `${ChatModel}-${number}`
 export type DatedSnapshottedChatModel =
 	`${ChatModel}-${number}-${number}-${number}`
 export type SnapshottedChatModel =
-	| SimpleSnapshottedChatModel
 	| DatedSnapshottedChatModel
-export type AudioChatModel = `${string}-${"audio"}${string}`
-export type PreviewChatModel = `${string}-${"preview"}${string}`
+	| SimpleSnapshottedChatModel
+export type AudioChatModel = `${string}-${`audio`}${string}`
+export type PreviewChatModel = `${string}-${`preview`}${string}`
 export type NonPreviewTextModel = Exclude<ChatModel, PreviewChatModel>
 
 export type NonPreviewNonSnapshottedTextModel = Exclude<
