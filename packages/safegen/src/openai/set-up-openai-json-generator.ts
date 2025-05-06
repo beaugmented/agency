@@ -3,7 +3,7 @@ import type OpenAI from "openai"
 import type * as OpenAICore from "openai/core"
 import type OpenAIResources from "openai/resources/index"
 
-import { OPEN_AI_PRICING_FACTS } from "./openai-pricing-facts"
+import { getModelPrices } from "./openai-pricing-facts"
 
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
@@ -38,12 +38,18 @@ export function setUpOpenAiJsonGenerator(
 			const promptTokensCached = usage.prompt_tokens_details?.cached_tokens ?? 0
 			const promptTokensFresh = promptTokensTotal - promptTokensCached
 			const outputTokens = usage.completion_tokens
-			const usdPrice =
-				promptTokensTotal *
-					OPEN_AI_PRICING_FACTS[body.model].promptPricePerToken +
-				promptTokensFresh *
-					OPEN_AI_PRICING_FACTS[body.model].promptPricePerTokenCached +
-				outputTokens * OPEN_AI_PRICING_FACTS[body.model].completionPricePerToken
+			const prices = getModelPrices(body.model)
+			let usdPrice = 0
+			if (prices) {
+				usdPrice =
+					promptTokensTotal * prices.promptPricePerToken +
+					promptTokensFresh * prices.promptPricePerTokenCached +
+					outputTokens * prices.completionPricePerToken
+			} else {
+				console.warn(
+					`No pricing facts found for model ${body.model}. Giving a price of 0.`,
+				)
+			}
 			const data = JSON.parse(content)
 			return { data, usage, usdPrice }
 		}
