@@ -103,7 +103,7 @@ export function getModelPrices(
 ): PricingFacts | undefined {
 	const pricingFactsKeys = Object.keys(OPEN_AI_PRICING_FACTS)
 	const maybeFacts = pricingFactsKeys
-		.filter((key) => key.startsWith(model))
+		.filter((key) => model.startsWith(key))
 		.sort((a, b) => b.length - a.length)[0]
 
 	if (!maybeFacts) {
