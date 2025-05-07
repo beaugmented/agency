@@ -19,13 +19,13 @@ export type ModelName =
 	| `gemini-2.5-pro-preview-03-25`
 	| `gemini-2.5-pro`
 
-export const MILLION = 10 ** 6
+export const MILLION: number = 10 ** 6
 /**
  * Pricing facts from https://cloud.google.com/vertex-ai/generative-ai/pricing
  *
  * @jeremybanka May 7 2025
  */
-export const GOOGLE_PRICING_FACTS = {
+export const GOOGLE_PRICING_FACTS: Record<SupportedModelName, PricingFacts> = {
 	"gemini-2.0-flash": {
 		promptPricePerToken: 0.15 / MILLION,
 		completionPricePerToken: 0.6 / MILLION,
@@ -50,7 +50,7 @@ export const GOOGLE_PRICING_FACTS = {
 		promptPricePerToken: 0.15 / MILLION,
 		completionPricePerToken: 0.6 / MILLION,
 	},
-} satisfies Record<SupportedModelName, PricingFacts>
+}
 
 export type StripModel<T extends string> =
 	T extends `gemini-2.0-flash-thinking${string}`

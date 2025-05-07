@@ -16,7 +16,7 @@ import type { ModelName } from "./google-pricing-facts"
 import type { GetUnknownJsonFromGoogle } from "./set-up-google-json-generator"
 import { setUpGoogleJsonGenerator } from "./set-up-google-json-generator"
 
-export const clientCache = new Map<string, GoogleGenAI>()
+export const clientCache: Map<string, GoogleGenAI> = new Map()
 
 export type GoogleSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
 	model: ModelName

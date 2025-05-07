@@ -9,7 +9,7 @@ import type { NonPreviewTextModel } from "./openai-pricing-facts"
 import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-json-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-openai-json-generator"
 
-export const clientCache = new Map<string, OpenAI>()
+export const clientCache: Map<string, OpenAI> = new Map()
 
 export type OpenAiSafeGenOptions = {
 	model: NonPreviewTextModel

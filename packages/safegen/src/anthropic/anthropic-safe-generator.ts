@@ -15,7 +15,7 @@ import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
 import type { GetUnknownJsonFromAnthropic } from "./set-up-anthropic-json-generator"
 import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
 
-export const clientCache = new Map<string, Anthropic>()
+export const clientCache: Map<string, Anthropic> = new Map()
 
 export type AnthropicSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
 	model: SupportedModel

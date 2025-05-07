@@ -5,7 +5,7 @@ import type { Model } from "@anthropic-ai/sdk/resources/index"
 
 import type { PricingFacts } from "../safegen"
 
-export const MILLION = 10 ** 6
+export const MILLION: number = 10 ** 6
 
 export const ANTHROPIC_PRICING_FACTS: Record<SupportedModelName, PricingFacts> =
 	{
