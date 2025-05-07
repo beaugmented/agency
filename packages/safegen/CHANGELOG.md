@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.3.3
+
+### Patch Changes
+
+- 923125c: ✨ Updated price sheet for Google with new models. Future updates to the the Google SDK that include new models will result in updates to SafeGen.
+
 ## 0.3.2
 
 ### Patch Changes
