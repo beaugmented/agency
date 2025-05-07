@@ -3,7 +3,6 @@ import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 import type { ZodSchema } from "zod"
-import zodToJsonSchema from "zod-to-json-schema"
 
 import type {
 	GenerateFromSchema,
@@ -11,7 +10,7 @@ import type {
 	ToJsonSchema,
 } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
-import type { ANTHROPIC_PRICING_FACTS } from "./anthropic-pricing-facts"
+import type { SupportedModel } from "./anthropic-pricing-facts"
 import { buildAnthropicRequestParams } from "./build-anthropic-request-params"
 import type { GetUnknownJsonFromAnthropic } from "./set-up-anthropic-json-generator"
 import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
@@ -19,7 +18,7 @@ import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
 export const clientCache = new Map<string, Anthropic>()
 
 export type AnthropicSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
-	model: keyof typeof ANTHROPIC_PRICING_FACTS
+	model: SupportedModel
 	usdBudget: number
 	usdMinimum: number
 	apiKey: string

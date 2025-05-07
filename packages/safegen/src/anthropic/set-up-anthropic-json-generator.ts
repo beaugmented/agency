@@ -5,8 +5,8 @@ import type { Json } from "atom.io/json"
 
 import {
 	ANTHROPIC_PRICING_FACTS,
+	getModelPrices,
 	isAnthropicModelSupported,
-	SAFEGEN_ANTHROPIC_SUPPORTED_MODELS,
 } from "./anthropic-pricing-facts"
 
 export type GetUnknownJsonFromAnthropic = (
@@ -31,7 +31,7 @@ export function setUpAnthropicJsonGenerator(
 		const modelIsSupported = isAnthropicModelSupported(model)
 		if (!modelIsSupported) {
 			throw new Error(
-				`Model ${body.model} is not supported. Supported models are [${SAFEGEN_ANTHROPIC_SUPPORTED_MODELS.join(`, `)}]`,
+				`Model ${body.model} is not supported. Supported models are [${Object.keys(ANTHROPIC_PRICING_FACTS).join(`, `)}]`,
 			)
 		}
 		const completion = await client.messages.create(
@@ -51,10 +51,17 @@ export function setUpAnthropicJsonGenerator(
 		const { content, usage } = completion
 		const promptTokensTotal = usage.input_tokens
 		const outputTokens = usage.output_tokens
-		const usdPrice =
-			promptTokensTotal *
-				ANTHROPIC_PRICING_FACTS[model].promptUsdPricePerToken +
-			outputTokens * ANTHROPIC_PRICING_FACTS[model].completionUsdPricePerToken
+		const prices = getModelPrices(model)
+		let usdPrice = 0
+		if (prices) {
+			usdPrice =
+				promptTokensTotal * prices.promptPricePerToken +
+				outputTokens * prices.completionPricePerToken
+		} else {
+			console.warn(
+				`No pricing facts found for model ${model}. Giving a price of 0.`,
+			)
+		}
 		let data: Json.Object
 		try {
 			const textMessage = content.find((message) => message.type === `text`)

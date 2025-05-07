@@ -43,7 +43,7 @@ export function setUpOpenAiJsonGenerator(
 			if (prices) {
 				usdPrice =
 					promptTokensTotal * prices.promptPricePerToken +
-					promptTokensFresh * prices.promptPricePerTokenCached +
+					promptTokensFresh * (prices.promptPricePerTokenCached ?? 0) +
 					outputTokens * prices.completionPricePerToken
 			} else {
 				console.warn(

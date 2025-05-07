@@ -3,11 +3,7 @@
 
 import type { ChatModel } from "openai/resources/index"
 
-export type PricingFacts = {
-	promptPricePerToken: number
-	promptPricePerTokenCached: number
-	completionPricePerToken: number
-}
+import type { PricingFacts } from "../safegen"
 
 const MILLION = 10 ** 6
 export const OPEN_AI_PRICING_FACTS: Record<
@@ -111,8 +107,6 @@ export function getModelPrices(
 	}
 	return OPEN_AI_PRICING_FACTS[maybeFacts]
 }
-
-const A = `0125` satisfies `${number}`
 
 export type SimpleSnapshottedChatModel = `${ChatModel}-${number}`
 export type DatedSnapshottedChatModel =
