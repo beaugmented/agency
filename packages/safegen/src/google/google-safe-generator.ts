@@ -12,14 +12,14 @@ import type {
 } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildGoogleRequestParams } from "./build-google-request-params"
-import type { GOOGLE_PRICING_FACTS } from "./google-pricing-facts"
+import type { ModelName } from "./google-pricing-facts"
 import type { GetUnknownJsonFromGoogle } from "./set-up-google-json-generator"
 import { setUpGoogleJsonGenerator } from "./set-up-google-json-generator"
 
 export const clientCache = new Map<string, GoogleGenAI>()
 
 export type GoogleSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
-	model: keyof typeof GOOGLE_PRICING_FACTS
+	model: ModelName
 	usdBudget: number
 	usdMinimum: number
 	apiKey: string
