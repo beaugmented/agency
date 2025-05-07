@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.3.2
+
+### Patch Changes
+
+- 72e1c2c: ✨ Updated price sheet for Anthropic with new models. Future updates to the the Anthropic SDK that include new models will result in updates to SafeGen.
+
 ## 0.3.1
 
 ### Patch Changes
