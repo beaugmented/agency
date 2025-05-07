@@ -102,7 +102,7 @@ export function createSafeDataGenerator(
 	}
 }
 
-export function jsonSchemaToInstruction(jsonSchema: JsonSchema7Type) {
+export function jsonSchemaToInstruction(jsonSchema: JsonSchema7Type): string {
 	return [
 		`Please generate a response in JSON that conforms to the following JSON Schema:`,
 		JSON.stringify(jsonSchema, null, 2),
