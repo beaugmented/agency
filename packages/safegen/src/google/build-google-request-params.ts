@@ -2,10 +2,10 @@ import type { Content, GenerateContentParameters } from "@google/genai"
 
 import type { GenerateJsonFromLLM } from "../safegen"
 import { jsonSchemaToInstruction } from "../safegen"
-import type { SafegenGoogleSupportedModel } from "./google-pricing-facts"
+import type { ModelName } from "./google-pricing-facts"
 
 export function buildGoogleRequestParams(
-	model: SafegenGoogleSupportedModel,
+	model: ModelName,
 	...params: Parameters<GenerateJsonFromLLM>
 ): GenerateContentParameters {
 	const [instruction, jsonSchema, _, previouslyFailedResponses] = params

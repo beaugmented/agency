@@ -2,6 +2,10 @@ import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
 import { GoogleSafeGenerator } from "../../src/google"
+import {
+	getModelPrices,
+	GOOGLE_PRICING_FACTS,
+} from "../../src/google/google-pricing-facts"
 import type { DataSpec } from "../../src/safegen"
 
 beforeAll(() => {
@@ -22,6 +26,23 @@ const gemini2Flash = new GoogleSafeGenerator({
 })
 
 afterAll(() => {})
+
+describe(`model pricing retrieval`, () => {
+	test(`getModelPrices should return the correct pricing for a model`, () => {
+		expect(getModelPrices(`gemini-2.0-flash`)).toEqual(
+			GOOGLE_PRICING_FACTS[`gemini-2.0-flash`],
+		)
+		expect(getModelPrices(`gemini-2.0-flash-001`)).toEqual(
+			GOOGLE_PRICING_FACTS[`gemini-2.0-flash`],
+		)
+		expect(getModelPrices(`gemini-2.0-flash-lite-001`)).toEqual(
+			GOOGLE_PRICING_FACTS[`gemini-2.0-flash-lite`],
+		)
+		expect(getModelPrices(`gemini-2.0-flash-live-preview-04-09`)).toEqual(
+			GOOGLE_PRICING_FACTS[`gemini-2.0-flash-live`],
+		)
+	})
+})
 
 describe(`safeGen`, () => {
 	test(`safeGen should answer request in the form of data`, async () => {
