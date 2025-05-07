@@ -1,47 +1,68 @@
-// 21 November 2023
-// https://www.anthropic.com/pricing#anthropic-api
+// 6 May 2025
+// https://docs.anthropic.com/en/docs/about-claude/models/all-models#model-pricing
 
 import type { Model } from "@anthropic-ai/sdk/resources/index"
 
-export const SAFEGEN_ANTHROPIC_SUPPORTED_MODELS = [
-	`claude-3-haiku-latest`,
-	`claude-3-5-haiku-latest`,
-	`claude-3-5-sonnet-latest`,
-	`claude-3-opus-latest`,
-] as const satisfies Model[]
-export type SafegenAnthropicSupportedModel =
-	(typeof SAFEGEN_ANTHROPIC_SUPPORTED_MODELS)[number]
+import type { PricingFacts } from "../safegen"
+
 export const MILLION = 10 ** 6
 
+export const ANTHROPIC_PRICING_FACTS: Record<SupportedModelName, PricingFacts> =
+	{
+		"claude-3-7-sonnet": {
+			promptPricePerToken: 3 / MILLION,
+			completionPricePerToken: 15 / MILLION,
+		},
+		"claude-3-5-haiku": {
+			promptPricePerToken: 0.8 / MILLION,
+			completionPricePerToken: 4 / MILLION,
+		},
+		"claude-3-5-sonnet": {
+			promptPricePerToken: 3 / MILLION,
+			completionPricePerToken: 15 / MILLION,
+		},
+		"claude-3-haiku": {
+			promptPricePerToken: 0.25 / MILLION,
+			completionPricePerToken: 1.25 / MILLION,
+		},
+		"claude-3-opus": {
+			promptPricePerToken: 15 / MILLION,
+			completionPricePerToken: 75 / MILLION,
+		},
+	}
+
+export type StripModel<T extends string> = T extends `${infer U}-latest`
+	? U
+	: T extends `claude-2.${number}`
+		? never
+		: T extends `claude-3-haiku-${number}`
+			? `claude-3-haiku`
+			: never
+
+export type SupportedModelName = StripModel<Model>
+export type SupportedModel = Exclude<Model, `claude-2.${number}`>
+
 export function isAnthropicModelSupported(
-	model: string,
-): model is SafegenAnthropicSupportedModel {
-	return SAFEGEN_ANTHROPIC_SUPPORTED_MODELS.includes(
-		model as SafegenAnthropicSupportedModel,
-	)
+	model: Model,
+): model is SupportedModel {
+	for (const supportedModelName of Object.keys(ANTHROPIC_PRICING_FACTS)) {
+		if (model.startsWith(supportedModelName)) {
+			return true
+		}
+	}
+	return false
 }
 
-export const ANTHROPIC_PRICING_FACTS = {
-	"claude-3-haiku-latest": {
-		promptUsdPricePerToken: 0.25 / MILLION,
-		completionUsdPricePerToken: 1.25 / MILLION,
-	},
-	"claude-3-5-haiku-latest": {
-		promptUsdPricePerToken: 1 / MILLION,
-		completionUsdPricePerToken: 5 / MILLION,
-	},
-	"claude-3-5-sonnet-latest": {
-		promptUsdPricePerToken: 3 / MILLION,
-		completionUsdPricePerToken: 15 / MILLION,
-	},
-	"claude-3-opus-latest": {
-		promptUsdPricePerToken: 15 / MILLION,
-		completionUsdPricePerToken: 75 / MILLION,
-	},
-} satisfies Record<
-	SafegenAnthropicSupportedModel,
-	{
-		promptUsdPricePerToken: number
-		completionUsdPricePerToken: number
+export function getModelPrices(
+	model: Model | (string & {}),
+): PricingFacts | undefined {
+	const pricingFactsKeys = Object.keys(ANTHROPIC_PRICING_FACTS)
+	const maybeFacts = pricingFactsKeys
+		.filter((key) => model.startsWith(key))
+		.sort((a, b) => b.length - a.length)[0]
+
+	if (!maybeFacts) {
+		return undefined
 	}
->
+	return ANTHROPIC_PRICING_FACTS[maybeFacts]
+}

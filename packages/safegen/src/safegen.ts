@@ -1,8 +1,14 @@
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { Json } from "atom.io/json"
-import type { ZodError, ZodSchema } from "zod"
+import type { ZodSchema } from "zod"
 import type { JsonSchema7Type } from "zod-to-json-schema"
 import zodToJsonSchema from "zod-to-json-schema"
+
+export type PricingFacts = {
+	promptPricePerToken: number
+	promptPricePerTokenCached?: number
+	completionPricePerToken: number
+}
 
 export type GenerateFromSchema = <
 	J extends Json.Object,

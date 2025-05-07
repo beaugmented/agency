@@ -2,6 +2,10 @@ import { describe, expect, test } from "vitest"
 import { z } from "zod"
 
 import { AnthropicSafeGenerator } from "../../src/anthropic"
+import {
+	ANTHROPIC_PRICING_FACTS,
+	getModelPrices,
+} from "../../src/anthropic/anthropic-pricing-facts"
 import type { DataSpec } from "../../src/safegen"
 
 beforeAll(() => {
@@ -22,6 +26,24 @@ const claudeSonnet = new AnthropicSafeGenerator({
 })
 
 afterAll(() => {})
+
+describe(`model pricing retrieval`, () => {
+	test(`getModelPrices should return the correct pricing for a model`, () => {
+		expect(getModelPrices(`claude-3-5-haiku-20241022`)).toEqual(
+			ANTHROPIC_PRICING_FACTS[`claude-3-5-haiku`],
+		)
+		expect(getModelPrices(`claude-2.1`)).toBeUndefined()
+		expect(getModelPrices(`claude-3-5-sonnet-20241022`)).toEqual(
+			ANTHROPIC_PRICING_FACTS[`claude-3-5-sonnet`],
+		)
+		expect(getModelPrices(`claude-3-opus-20241022`)).toEqual(
+			ANTHROPIC_PRICING_FACTS[`claude-3-opus`],
+		)
+		expect(getModelPrices(`claude-3-7-sonnet-20241022`)).toEqual(
+			ANTHROPIC_PRICING_FACTS[`claude-3-7-sonnet`],
+		)
+	})
+})
 
 describe(`safeGen`, () => {
 	test(`safeGen should answer request in the form of data`, async () => {
