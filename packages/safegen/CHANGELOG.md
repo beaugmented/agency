@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.3.4
+
+### Patch Changes
+
+- 999cacc: ♻️ Replaced build vendor `tsup` with `tsdown`.
+
 ## 0.3.3
 
 ### Patch Changes
