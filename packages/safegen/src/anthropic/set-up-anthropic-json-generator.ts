@@ -1,5 +1,4 @@
 import type Anthropic from "@anthropic-ai/sdk"
-import type * as AnthropicCore from "@anthropic-ai/sdk/core"
 import type * as AnthropicResources from "@anthropic-ai/sdk/resources/index"
 import type { Json } from "atom.io/json"
 
@@ -11,7 +10,7 @@ import {
 
 export type GetUnknownJsonFromAnthropic = (
 	body: AnthropicResources.MessageCreateParamsNonStreaming,
-	options?: AnthropicCore.RequestOptions,
+	options?: Anthropic.RequestOptions,
 ) => Promise<{
 	data: Json.Object
 	usage: Anthropic.Messages.Usage
