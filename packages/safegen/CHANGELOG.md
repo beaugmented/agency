@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.3.5
+
+### Patch Changes
+
+- 3950c08: 🐛 Replaced reference to internal type in the Anthropic SDK with a reference to the public export of that same type.
+
 ## 0.3.4
 
 ### Patch Changes
