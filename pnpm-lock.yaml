@@ -149,8 +149,8 @@ importers:
         specifier: 0.2.3
         version: 0.2.3
       tsdown:
-        specifier: 0.11.7
-        version: 0.11.7(typescript@5.8.3)
+        specifier: 0.11.8
+        version: 0.11.8(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -2446,8 +2446,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tsdown@0.11.7:
-    resolution: {integrity: sha512-6scSP7TKDnBJu0R8EgX3ry2xYoyUOnPbpNQIeN1zN/fgKTtiqvV9Ij4W/AnSxC0NVXxcg7SZyu5Ycnk15/LdMA==}
+  tsdown@0.11.8:
+    resolution: {integrity: sha512-rks863d/+VT513hX6O9kGgp3ohRI/rc7bzgtMVACyOJLfMTvNLc6KpjwyLvpo0hm/3PfMyU5GghBIixmHwOlHQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -3386,7 +3386,7 @@ snapshots:
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.1
+      semver: 7.7.2
       ts-api-utils: 2.1.0(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -3400,7 +3400,7 @@ snapshots:
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.1
+      semver: 7.7.2
       ts-api-utils: 2.1.0(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -4990,7 +4990,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsdown@0.11.7(typescript@5.8.3):
+  tsdown@0.11.8(typescript@5.8.3):
     dependencies:
       ansis: 4.0.0
       cac: 6.7.14
