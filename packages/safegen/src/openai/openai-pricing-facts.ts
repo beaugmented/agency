@@ -60,6 +60,11 @@ export const OPEN_AI_PRICING_FACTS: Record<
 		promptPricePerTokenCached: 0.275 / MILLION,
 		completionPricePerToken: 4.4 / MILLION,
 	},
+	"codex-mini-latest": {
+		promptPricePerToken: 1.5 / MILLION,
+		promptPricePerTokenCached: 0.375 / MILLION,
+		completionPricePerToken: 6 / MILLION,
+	},
 
 	// "OTHER MODELS -- bottom of the page"
 	"chatgpt-4o-latest": {
