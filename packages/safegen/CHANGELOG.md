@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.3.6
+
+### Patch Changes
+
+- bb338c5: ⬆️ Set minimum version of `openai` to `4.99.0`.
+- bb338c5: ✨ Added pricing facts for `codex-mini-latest`.
+
 ## 0.3.5
 
 ### Patch Changes
