@@ -63,8 +63,8 @@ importers:
         specifier: 0.33.4
         version: 0.33.4(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))
       varmint:
-        specifier: 0.5.1
-        version: 0.5.1(zod@3.25.7)
+        specifier: 0.5.2
+        version: 0.5.2(zod@3.25.7)
     devDependencies:
       '@types/node':
         specifier: 22.15.20
@@ -2571,10 +2571,6 @@ packages:
 
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
-    hasBin: true
-
-  varmint@0.5.1:
-    resolution: {integrity: sha512-N1oEo6FnhMVXCZALOmGXdNbiwYgE83qDbfFBkYa0U21vIfGEmm+xiM0pjAYNPQrNkih7mc+K2ww+/vOE4mmpiw==}
     hasBin: true
 
   varmint@0.5.2:
@@ -5143,14 +5139,6 @@ snapshots:
       punycode: 2.3.1
 
   uuid@9.0.1: {}
-
-  varmint@0.5.1(zod@3.25.7):
-    dependencies:
-      cachedir: 2.4.0
-      comline: 0.3.0(zod@3.25.7)
-      safedeposit: 0.1.1
-    transitivePeerDependencies:
-      - zod
 
   varmint@0.5.2(zod@3.25.7):
     dependencies:
