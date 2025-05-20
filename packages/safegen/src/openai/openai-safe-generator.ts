@@ -61,7 +61,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		this.from = createSafeDataGenerator(async (...params) => {
 			if (this.usdBudget < this.usdMinimum) {
 				logger?.warn(`SafeGen budget exhausted`)
-				const fallback = params[1]
+				const fallback = params[2]
 				return fallback
 			}
 			const openAiParams = buildOpenAiRequestParams(model, ...params)

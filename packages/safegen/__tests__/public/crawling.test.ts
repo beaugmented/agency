@@ -1,6 +1,6 @@
 import { Squirrel } from "varmint"
-import { describe, expect, test } from "vitest"
-import { z } from "zod"
+import { describe, test } from "vitest"
+import { z } from "zod/v4"
 
 import { OpenAiSafeGenerator } from "../../src/openai"
 import type { DataSpec } from "../../src/safegen"
