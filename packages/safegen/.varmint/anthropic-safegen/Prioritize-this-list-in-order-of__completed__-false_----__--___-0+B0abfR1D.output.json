@@ -1,0 +1,63 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"rationale": "Groceries are essential for family meals and bonding time together. Having food available prevents stress and maintains household harmony.",
+				"priority": 95
+			},
+			{
+				"id": 2,
+				"rationale": "Tax returns are legally required and affect family financial stability. Late filing could result in penalties that impact family resources.",
+				"priority": 90
+			},
+			{
+				"id": 10,
+				"rationale": "Planning vacation together creates family bonding opportunities and gives everyone something to look forward to.",
+				"priority": 85
+			},
+			{
+				"id": 4,
+				"rationale": "Work responsibilities affect income security, which is crucial for family stability, but shouldn't overshadow family time.",
+				"priority": 80
+			},
+			{
+				"id": 6,
+				"rationale": "Cleaning garage is a family project that can involve everyone and improve shared living space.",
+				"priority": 70
+			},
+			{
+				"id": 5,
+				"rationale": "Health maintenance is important but can be scheduled at convenience. Dental health affects overall wellbeing.",
+				"priority": 65
+			},
+			{
+				"id": 3,
+				"rationale": "Plant care maintains home atmosphere but is already completed and less critical to family functioning.",
+				"priority": 40
+			},
+			{
+				"id": 7,
+				"rationale": "Already completed. While communication is important, urgent emails are handled.",
+				"priority": 35
+			},
+			{
+				"id": 8,
+				"rationale": "Personal development is good but shouldn't come at the expense of family time.",
+				"priority": 30
+			},
+			{
+				"id": 9,
+				"rationale": "Already completed. Regular household maintenance task with low urgency.",
+				"priority": 25
+			}
+		]
+	},
+	"usage": {
+		"input_tokens": 560,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 472
+	},
+	"usdPrice": 0.00876
+}

@@ -1,11 +1,11 @@
 {
 	"data": {
-		"date": "2023-10-10"
+		"date": "2023-10-01"
 	},
 	"usage": {
-		"prompt_tokens": 102,
-		"completion_tokens": 15,
-		"total_tokens": 117,
+		"prompt_tokens": 222,
+		"completion_tokens": 14,
+		"total_tokens": 236,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -17,5 +17,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00003195
+	"usdPrice": 0.000058349999999999995
 }

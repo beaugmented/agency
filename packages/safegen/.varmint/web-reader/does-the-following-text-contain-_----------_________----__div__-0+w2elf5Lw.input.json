@@ -4,7 +4,7 @@
 		"messages": [
 			{
 				"role": "user",
-				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"anyOf\": [\n    {\n      \"type\": \"object\",\n      \"properties\": {\n        \"isRelevant\": {\n          \"type\": \"boolean\",\n          \"const\": false\n        }\n      },\n      \"required\": [\n        \"isRelevant\"\n      ],\n      \"additionalProperties\": false\n    },\n    {\n      \"type\": \"object\",\n      \"properties\": {\n        \"isRelevant\": {\n          \"type\": \"boolean\",\n          \"const\": true\n        },\n        \"allRelevantTextIncludingURLs\": {\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"isRelevant\",\n        \"allRelevantTextIncludingURLs\"\n      ],\n      \"additionalProperties\": false\n    }\n  ],\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}"
+				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"anyOf\": [\n    {\n      \"type\": \"object\",\n      \"properties\": {\n        \"isRelevant\": {\n          \"const\": false\n        }\n      },\n      \"required\": [\n        \"isRelevant\"\n      ]\n    },\n    {\n      \"type\": \"object\",\n      \"properties\": {\n        \"isRelevant\": {\n          \"const\": true\n        },\n        \"allRelevantTextIncludingURLs\": {\n          \"type\": \"string\"\n        }\n      },\n      \"required\": [\n        \"isRelevant\",\n        \"allRelevantTextIncludingURLs\"\n      ]\n    }\n  ],\n  \"$schema\": \"https://json-schema.org/draft-2020-12/schema\"\n}"
 			},
 			{
 				"role": "user",

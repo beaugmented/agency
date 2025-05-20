@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming Events: Kate Bollinger at Wonder Ballroom in Portland, Oregon on Thu Nov 14. More info: https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/. Buy Tickets: https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100"
+		"allRelevantTextIncludingURLs": "Upcoming live music event: Kate Bollinger at Wonder Ballroom, Portland, Oregon on Thu Nov 14. More info at https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/. Buy tickets at https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100."
 	},
 	"usage": {
-		"prompt_tokens": 2742,
-		"completion_tokens": 96,
-		"total_tokens": 2838,
+		"prompt_tokens": 2716,
+		"completion_tokens": 97,
+		"total_tokens": 2813,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00067455
+	"usdPrice": 0.0006693
 }

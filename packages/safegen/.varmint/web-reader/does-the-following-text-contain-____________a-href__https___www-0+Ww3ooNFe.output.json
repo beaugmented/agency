@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "For more information on upcoming live music events, visit Monqui Presents' social media pages on Instagram (https://www.instagram.com/monqui_presents/) and TikTok (https://www.tiktok.com/@monqui_presents). Additionally, check their venue page for the latest updates: https://monqui.com/venues/oregon/. You can also explore events in Washington and Canada by visiting this link: https://monqui.com/washington-canada and the Edgefield venue page at https://monqui.com/venue/mcmenamins-edgefield/."
+		"allRelevantTextIncludingURLs": "The text contains multiple relevant references to upcoming live music events, including mentions of venues and links to social media pages where more information can be found: 1. Instagram - https://www.instagram.com/monqui_presents/ 2. TikTok - https://www.tiktok.com/@monqui_presents 3. Oregon Venue - https://monqui.com/venues/oregon/ 4. Washington Venue - https://monqui.com/washington-canada 5. Edgefield Venue - https://monqui.com/venue/mcmenamins-edgefield/"
 	},
 	"usage": {
-		"prompt_tokens": 5370,
+		"prompt_tokens": 5344,
 		"completion_tokens": 134,
-		"total_tokens": 5504,
+		"total_tokens": 5478,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0012886500000000001
+	"usdPrice": 0.0012828
 }
