@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.4.1
+
+### Patch Changes
+
+- 8d001b2: ⬆️ Upgrade varmint, fixing possible bug with invalid filenames.
+
 ## 0.4.0
 
 ### Minor Changes
