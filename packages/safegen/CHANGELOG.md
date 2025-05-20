@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.4.0
+
+### Minor Changes
+
+- 4347f94: ⬆️ Require `zod/v4`. (Included in `zod@^3.25.0`.)
+
 ## 0.3.6
 
 ### Patch Changes
