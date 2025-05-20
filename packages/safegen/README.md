@@ -17,7 +17,7 @@ npm install safegen
 ## Quick Start
 
 ```typescript
-import { z } from "zod";
+import { z } from "zod/v4";
 import { OpenAiSafeGenerator } from "safegen/openai";
 
 // Initialize the generator with your OpenAI API key and budget

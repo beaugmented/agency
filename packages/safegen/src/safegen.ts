@@ -1,8 +1,7 @@
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { Json } from "atom.io/json"
-import type { ZodSchema } from "zod"
-import type { JsonSchema7Type } from "zod-to-json-schema"
-import zodToJsonSchema from "zod-to-json-schema"
+import type { ZodType } from "zod/v4"
+import { z } from "zod/v4"
 
 export type PricingFacts = {
 	promptPricePerToken: number
@@ -10,9 +9,11 @@ export type PricingFacts = {
 	completionPricePerToken: number
 }
 
+export type WhateverJsonSchema = unknown
+
 export type GenerateFromSchema = <
 	J extends Json.Object,
-	S extends StandardSchemaV1 = ZodSchema,
+	S extends StandardSchemaV1 = ZodType,
 >(
 	dataSpec: DataSpec<J, S>,
 ) => GenerateSafeData<J>
@@ -27,8 +28,8 @@ export type InvalidResponse = {
 
 export type GenerateJsonFromLLM = (
 	instruction: string,
-	jsonSchema: JsonSchema7Type,
-	example: Json.Object,
+	jsonSchema: WhateverJsonSchema,
+	fallback: Json.Object,
 	previouslyFailedResponses: InvalidResponse[],
 ) => Promise<Json.Object>
 
@@ -37,7 +38,7 @@ export type GenerateSafeData<T> = (
 	maxAttempts?: number,
 ) => Promise<T>
 
-export type DataSpec<T, S extends StandardSchemaV1 = ZodSchema> = {
+export type DataSpec<T, S extends StandardSchemaV1 = ZodType> = {
 	schema: Omit<S, `~standard`> &
 		StandardSchemaV1<unknown, T> & {
 			// eslint-disable-next-line quotes
@@ -49,7 +50,7 @@ export type DataSpec<T, S extends StandardSchemaV1 = ZodSchema> = {
 
 export type ToJsonSchema<S extends StandardSchemaV1> = (
 	schema: S,
-) => JsonSchema7Type
+) => WhateverJsonSchema
 
 export function createSafeDataGenerator(
 	gen: GenerateJsonFromLLM,
@@ -57,11 +58,11 @@ export function createSafeDataGenerator(
 ): GenerateFromSchema {
 	return function generateFromSchema<
 		J extends Json.Object,
-		S extends StandardSchemaV1 = ZodSchema,
+		S extends StandardSchemaV1 = ZodType,
 	>({
 		schema,
 		fallback,
-		toJsonSchema = zodToJsonSchema as unknown as ToJsonSchema<S>,
+		toJsonSchema = z.toJSONSchema as unknown as ToJsonSchema<S>,
 	}: DataSpec<J, S>): GenerateSafeData<J> {
 		const jsonSchema = toJsonSchema(schema as S)
 		return async function generateSafeData(
@@ -102,7 +103,9 @@ export function createSafeDataGenerator(
 	}
 }
 
-export function jsonSchemaToInstruction(jsonSchema: JsonSchema7Type): string {
+export function jsonSchemaToInstruction(
+	jsonSchema: WhateverJsonSchema,
+): string {
 	return [
 		`Please generate a response in JSON that conforms to the following JSON Schema:`,
 		JSON.stringify(jsonSchema, null, 2),

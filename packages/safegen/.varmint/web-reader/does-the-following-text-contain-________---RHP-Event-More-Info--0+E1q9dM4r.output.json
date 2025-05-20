@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "The Dear Hunter – Celebrating 20 Years at Wonder Ballroom\nDate: Sat 11/16\nMore Info: https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/\nBuy Tickets: https://www.etix.com/ticket/p/73037499/the-dear-hunter-celebrating-20-years-portland-wonder-ballroom?partner_id=100\n\nDrinking Boys and Girls Choir at Mission Theater\nDate: Sat Nov 16\nMore Info: https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/"
+		"allRelevantTextIncludingURLs": "The Dear Hunter – Celebrating 20 Years on Sat 11/16 at Wonder Ballroom, with special guests Gatsbys American Dream and Redwood. More Info: https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/. Buy Tickets: https://www.etix.com/ticket/p/73037499/the-dear-hunter-celebrating-20-years-portland-wonder-ballroom?partner_id=100. Also, Drinking Boys and Girls Choir on Sat Nov 16 at Mission Theater, with The Fauxs. More Info: https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/"
 	},
 	"usage": {
-		"prompt_tokens": 2704,
-		"completion_tokens": 152,
-		"total_tokens": 2856,
+		"prompt_tokens": 2678,
+		"completion_tokens": 167,
+		"total_tokens": 2845,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0006996000000000001
+	"usdPrice": 0.00070275
 }

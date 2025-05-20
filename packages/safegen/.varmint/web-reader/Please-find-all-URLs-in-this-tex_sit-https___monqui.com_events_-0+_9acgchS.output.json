@@ -1,6 +1,7 @@
 {
 	"data": {
 		"eventUrls": [
+			"https://monqui.com/events/",
 			"https://monqui.com/event/jack-white-no-name-tour/mcmenamins-edgefield/troutdale-oregon/",
 			"https://monqui.com/event/jessica-baio/mission-theater/portland-oregon/",
 			"https://monqui.com/event/dawn-richard-spencer-zahn/the-old-church/portland-oregon/",
@@ -25,9 +26,9 @@
 		]
 	},
 	"usage": {
-		"prompt_tokens": 2738,
-		"completion_tokens": 576,
-		"total_tokens": 3314,
+		"prompt_tokens": 2525,
+		"completion_tokens": 584,
+		"total_tokens": 3109,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -39,5 +40,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0009616500000000001
+	"usdPrice": 0.0009185249999999999
 }

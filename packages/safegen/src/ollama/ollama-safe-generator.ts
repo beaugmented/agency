@@ -2,8 +2,7 @@ import type { StandardSchemaV1 } from "@standard-schema/spec"
 import { Ollama } from "ollama"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
-import type { ZodSchema } from "zod"
-import zodToJsonSchema from "zod-to-json-schema"
+import type { ZodType } from "zod/v4"
 
 import type {
 	GenerateFromSchema,
@@ -15,7 +14,7 @@ import { buildOllamaRequestParams } from "./build-ollama-request-params"
 import type { GetUnknownJsonFromOllama } from "./set-up-ollama-json-generator"
 import { setUpOllamaJsonGenerator } from "./set-up-ollama-json-generator"
 
-export type OllamaSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
+export type OllamaSafeGenOptions<S extends StandardSchemaV1 = ZodType> = {
 	model: `llama3.2:1b` | `llama3.2` | (string & {})
 	usdBudget: number
 	usdMinimum: number
@@ -55,7 +54,7 @@ export class OllamaSafeGenerator implements SafeGenerator {
 		this.from = createSafeDataGenerator(async (...params) => {
 			if (this.usdBudget < this.usdMinimum) {
 				logger?.warn(`SafeGen budget exhausted`)
-				const fallback = params[1]
+				const fallback = params[2]
 				return fallback
 			}
 			const ollamaParams = buildOllamaRequestParams(model, ...params)

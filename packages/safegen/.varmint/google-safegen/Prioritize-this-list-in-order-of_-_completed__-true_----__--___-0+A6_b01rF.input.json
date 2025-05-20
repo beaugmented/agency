@@ -1,0 +1,19 @@
+[
+	{
+		"model": "gemini-2.0-flash-001",
+		"contents": {
+			"role": "user",
+			"parts": [
+				{
+					"text": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"number\"\n          },\n          \"rationale\": {\n            \"type\": \"string\"\n          },\n          \"priority\": {\n            \"type\": \"number\"\n          }\n        },\n        \"required\": [\n          \"id\",\n          \"rationale\",\n          \"priority\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"items\"\n  ],\n  \"$schema\": \"https://json-schema.org/draft-2020-12/schema\"\n}"
+				},
+				{
+					"text": "Prioritize this list in order of importance, giving each item a priority number between 1 and 100.\nConsider the fact that family harmony is important to me.\n{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"title\": \"Buy groceries\",\n      \"completed\": false\n    },\n    {\n      \"id\": 2,\n      \"title\": \"Pay bills\",\n      \"completed\": false\n    },\n    {\n      \"id\": 3,\n      \"title\": \"Call John\",\n      \"completed\": true\n    },\n    {\n      \"id\": 4,\n      \"title\": \"Write report\",\n      \"completed\": false\n    },\n    {\n      \"id\": 5,\n      \"title\": \"Learn advanced Javascript concepts\",\n      \"completed\": false\n    },\n    {\n      \"id\": 6,\n      \"title\": \"Schedule dentist appointment\",\n      \"completed\": false\n    },\n    {\n      \"id\": 7,\n      \"title\": \"Organize the garage\",\n      \"completed\": false\n    },\n    {\n      \"id\": 8,\n      \"title\": \"Read a book\",\n      \"completed\": true\n    }\n  ]\n}"
+				}
+			]
+		},
+		"config": {
+			"responseMimeType": "application/json"
+		}
+	}
+]

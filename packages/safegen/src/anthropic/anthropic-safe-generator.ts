@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
-import type { ZodSchema } from "zod"
+import type { ZodType } from "zod/v4"
 
 import type {
 	GenerateFromSchema,
@@ -17,7 +17,7 @@ import { setUpAnthropicJsonGenerator } from "./set-up-anthropic-json-generator"
 
 export const clientCache: Map<string, Anthropic> = new Map()
 
-export type AnthropicSafeGenOptions<S extends StandardSchemaV1 = ZodSchema> = {
+export type AnthropicSafeGenOptions<S extends StandardSchemaV1 = ZodType> = {
 	model: SupportedModel
 	usdBudget: number
 	usdMinimum: number
@@ -68,7 +68,7 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 		this.from = createSafeDataGenerator(async (...params) => {
 			if (this.usdBudget < this.usdMinimum) {
 				logger?.warn(`SafeGen budget exhausted`)
-				const fallback = params[1]
+				const fallback = params[2]
 				return fallback
 			}
 			const anthropicParams = buildAnthropicRequestParams(model, ...params)

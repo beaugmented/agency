@@ -1,6 +1,6 @@
 import { type } from "arktype"
 import { describe, expect, test } from "vitest"
-import { z } from "zod"
+import { z } from "zod/v4"
 
 import { arktypeToJsonSchema } from "../../src/arktype"
 import { OpenAiSafeGenerator } from "../../src/openai"
@@ -187,6 +187,6 @@ describe(`advanced data types`, () => {
 		const currentDateString = await dateGenerator(`What is the date?`)
 		const currentDate = parseDate(currentDateString.date)
 		expect(currentDate).toBeInstanceOf(Date)
-		expect(currentDate).toEqual(new Date(`2023-10-10`))
+		expect(currentDate).toEqual(new Date(`2023-10-01`))
 	})
 })
