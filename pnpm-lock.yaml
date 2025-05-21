@@ -82,8 +82,8 @@ importers:
         specifier: 9.27.0
         version: 9.27.0(jiti@2.4.2)
       openai:
-        specifier: 4.100.0
-        version: 4.100.0(ws@8.18.2)(zod@3.25.17)
+        specifier: 4.102.0
+        version: 4.102.0(ws@8.18.2)(zod@3.25.17)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -140,8 +140,8 @@ importers:
         specifier: 0.5.15
         version: 0.5.15
       openai:
-        specifier: 4.100.0
-        version: 4.100.0(ws@8.18.2)(zod@3.25.17)
+        specifier: 4.102.0
+        version: 4.102.0(ws@8.18.2)(zod@3.25.17)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -1981,8 +1981,8 @@ packages:
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
-  openai@4.100.0:
-    resolution: {integrity: sha512-9soq/wukv3utxcuD7TWFqKdKp0INWdeyhUCvxwrne5KwnxaCp4eHL4GdT/tMFhYolxgNhxFzg5GFwM331Z5CZg==}
+  openai@4.102.0:
+    resolution: {integrity: sha512-CWk15CMhPSHNZnjz+6rwVYV551xaC8CwOd7/zxImrC1btEo37dX/Ii5tBKWfqqxqyzpJ6p3Y4bICzzKhW03WhQ==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -4542,7 +4542,7 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  openai@4.100.0(ws@8.18.2)(zod@3.25.17):
+  openai@4.102.0(ws@8.18.2)(zod@3.25.17):
     dependencies:
       '@types/node': 18.19.100
       '@types/node-fetch': 2.6.12
