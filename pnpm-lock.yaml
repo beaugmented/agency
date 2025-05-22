@@ -64,7 +64,7 @@ importers:
         version: 0.33.4(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))
       varmint:
         specifier: 0.5.2
-        version: 0.5.2(zod@3.25.20)
+        version: 0.5.2(zod@3.25.21)
     devDependencies:
       '@types/node':
         specifier: 22.15.21
@@ -83,7 +83,7 @@ importers:
         version: 9.27.0(jiti@2.4.2)
       openai:
         specifier: 4.103.0
-        version: 4.103.0(ws@8.18.2)(zod@3.25.20)
+        version: 4.103.0(ws@8.18.2)(zod@3.25.21)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -100,8 +100,8 @@ importers:
         specifier: 3.1.4
         version: 3.1.4(@types/node@22.15.21)(jiti@2.4.2)
       zod:
-        specifier: 3.25.20
-        version: 3.25.20
+        specifier: 3.25.21
+        version: 3.25.21
 
   packages/safegen:
     dependencies:
@@ -116,7 +116,7 @@ importers:
         version: 0.33.4(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))
       varmint:
         specifier: 0.5.2
-        version: 0.5.2(zod@3.25.20)
+        version: 0.5.2(zod@3.25.21)
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.52.0
@@ -141,7 +141,7 @@ importers:
         version: 0.5.15
       openai:
         specifier: 4.103.0
-        version: 4.103.0(ws@8.18.2)(zod@3.25.20)
+        version: 4.103.0(ws@8.18.2)(zod@3.25.21)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -161,8 +161,8 @@ importers:
         specifier: 3.1.4
         version: 3.1.4(@types/node@22.15.21)(jiti@2.4.2)
       zod:
-        specifier: 3.25.20
-        version: 3.25.20
+        specifier: 3.25.21
+        version: 3.25.21
 
 packages:
 
@@ -2737,8 +2737,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.20:
-    resolution: {integrity: sha512-z03fqpTMDF1G02VLKUMt6vyACE7rNWkh3gpXVHgPTw28NPtDFRGvcpTtPwn2kMKtQ0idtYJUTxchytmnqYswcw==}
+  zod@3.25.21:
+    resolution: {integrity: sha512-k3MXcS5jrVo00Irs53CngVH4gHL1LgcCfOd9fOmZ7Pq/BP8eBop0P5RJDX5SsKchuxTMewJI0/AuK7MdD6ePXw==}
 
   zod@3.25.5:
     resolution: {integrity: sha512-ualArhgJydGAKkSdtxQyu6RXFW8nHFKWaw20jey8UFXU9uzkHYqWXJ93Iz+hUVVJb37VpF4LCCsOOfj6xaCVRQ==}
@@ -3093,8 +3093,8 @@ snapshots:
       '@modelcontextprotocol/sdk': 1.11.4
       google-auth-library: 9.15.1
       ws: 8.18.2
-      zod: 3.25.20
-      zod-to-json-schema: 3.24.5(zod@3.25.20)
+      zod: 3.25.21
+      zod-to-json-schema: 3.24.5(zod@3.25.21)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -3175,8 +3175,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.25.20
-      zod-to-json-schema: 3.24.5(zod@3.25.20)
+      zod: 3.25.21
+      zod-to-json-schema: 3.24.5(zod@3.25.21)
     transitivePeerDependencies:
       - supports-color
 
@@ -3708,11 +3708,11 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  comline@0.3.0(zod@3.25.20):
+  comline@0.3.0(zod@3.25.21):
     dependencies:
       picocolors: 1.1.1
       treetrunks: 0.1.3
-      zod: 3.25.20
+      zod: 3.25.21
 
   comline@0.3.0(zod@3.25.5):
     dependencies:
@@ -4542,7 +4542,7 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  openai@4.103.0(ws@8.18.2)(zod@3.25.20):
+  openai@4.103.0(ws@8.18.2)(zod@3.25.21):
     dependencies:
       '@types/node': 18.19.100
       '@types/node-fetch': 2.6.12
@@ -4553,7 +4553,7 @@ snapshots:
       node-fetch: 2.7.0
     optionalDependencies:
       ws: 8.18.2
-      zod: 3.25.20
+      zod: 3.25.21
     transitivePeerDependencies:
       - encoding
 
@@ -5147,10 +5147,10 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  varmint@0.5.2(zod@3.25.20):
+  varmint@0.5.2(zod@3.25.21):
     dependencies:
       cachedir: 2.4.0
-      comline: 0.3.0(zod@3.25.20)
+      comline: 0.3.0(zod@3.25.21)
       safedeposit: 0.1.1
     transitivePeerDependencies:
       - zod
@@ -5296,10 +5296,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.20):
+  zod-to-json-schema@3.24.5(zod@3.25.21):
     dependencies:
-      zod: 3.25.20
+      zod: 3.25.21
 
-  zod@3.25.20: {}
+  zod@3.25.21: {}
 
   zod@3.25.5: {}
