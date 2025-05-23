@@ -1,11 +1,12 @@
 {
 	"data": {
-		"isRelevant": false
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "IMPORTERS OF FINE LIVE MUSIC SINCE 1983. For more details, visit the following links: 1. Doug Fir Lounge - [https://monqui.com/venue/doug-fir-lounge/](https://monqui.com/venue/doug-fir-lounge/) 2. McMenamins Grand Lodge Concerts - [https://monqui.com/mcmenamins-grand-lodge/](https://monqui.com/mcmenamins-grand-lodge/) 3. Wonder Ballroom - [https://monqui.com/venue/wonder-ballroom/](https://monqui.com/venue/wonder-ballroom/)"
 	},
 	"usage": {
 		"prompt_tokens": 3405,
-		"completion_tokens": 6,
-		"total_tokens": 3411,
+		"completion_tokens": 149,
+		"total_tokens": 3554,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -17,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0007697250000000001
+	"usdPrice": 0.0008555250000000001
 }

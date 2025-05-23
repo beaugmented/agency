@@ -177,11 +177,11 @@ describe(`advanced data types`, () => {
 	})
 	test(`dates`, async () => {
 		const dateGenerator = gpt4oMini.from({
-			schema: z.object({ date: z.string().date().brand(`date`) }),
-			fallback: { date: `2023-01-01` as z.BRAND<`date`> & string },
+			schema: z.object({ date: z.iso.date().brand(`date`) }),
+			fallback: { date: `2023-01-01` as z.$brand<`date`> & string },
 		})
 
-		const parseDate = (dateString: z.BRAND<`date`> & string): Date => {
+		const parseDate = (dateString: z.$brand<`date`> & string): Date => {
 			return new Date(dateString)
 		}
 		const currentDateString = await dateGenerator(`What is the date?`)

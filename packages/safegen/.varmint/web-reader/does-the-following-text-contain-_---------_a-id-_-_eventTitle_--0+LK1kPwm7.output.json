@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "The text contains details about an upcoming live music event: 'Mac Sabbath with Supersuckers' scheduled for Sat, Nov 23, at the Wonder Ballroom. The show starts at 8 pm with doors opening at 7 pm. Tickets are priced at $40.94, and more information can be found at https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/. Tickets can be purchased at https://www.etix.com/ticket/p/84223981/mac-sabbath-with-supersuckers-portland-wonder-ballroom?partner_id=100."
+		"allRelevantTextIncludingURLs": "Upcoming live music events: 1) Mac Sabbath with Supersuckers on Sat Nov 23 at 8pm at Wonder Ballroom. Buy Tickets: https://www.etix.com/ticket/p/84223981/mac-sabbath-with-supersuckers-portland-wonder-ballroom?partner_id=100. More Info: https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/. 2) Better Lovers on Wed Nov 27 at Wonder Ballroom. More Info: https://monqui.com/event/better-lovers-the-highly-irresponsible-tour/wonder-ballroom/portland-oregon/"
 	},
 	"usage": {
 		"prompt_tokens": 2718,
-		"completion_tokens": 149,
-		"total_tokens": 2867,
+		"completion_tokens": 159,
+		"total_tokens": 2877,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00070095
+	"usdPrice": 0.00070695
 }

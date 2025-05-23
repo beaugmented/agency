@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events include: 1. Richy Mitch & The Coal Miners on Thu 11/21 at Wonder Ballroom (More Info: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/; Buy Tickets: https://www.etix.com/ticket/p/55106870/richy-mitch-the-coal-miners-the-october-moon-tour-portland-wonder-ballroom?partner_id=100) 2. The Brothers Comatose on Fri Nov 22 at Wonder Ballroom (More Info: https://monqui.com/event/the-brothers-comatose/wonder-ballroom/portland-oregon/)"
+		"allRelevantTextIncludingURLs": "Upcoming live music events include Richy Mitch & The Coal Miners at Wonder Ballroom on Thu 11/21. More Info: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/. Buy Tickets: https://www.etix.com/ticket/p/55106870/richy-mitch-the-coal-miners-the-october-moon-tour-portland-wonder-ballroom?partner_id=100. Another event is The Brothers Comatose at Wonder Ballroom on Fri Nov 22. More Info: https://monqui.com/event/the-brothers-comatose/wonder-ballroom/portland-oregon/"
 	},
 	"usage": {
 		"prompt_tokens": 2735,
-		"completion_tokens": 171,
-		"total_tokens": 2906,
+		"completion_tokens": 165,
+		"total_tokens": 2900,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0007179749999999999
+	"usdPrice": 0.000714375
 }

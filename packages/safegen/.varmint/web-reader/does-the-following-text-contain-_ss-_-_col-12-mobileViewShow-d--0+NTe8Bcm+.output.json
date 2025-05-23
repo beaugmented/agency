@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music event: Richy Mitch & The Coal Miners - The October Moon Tour on Thu Nov 21 at Wonder Ballroom, Portland, Oregon. Tickets available at https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100. More info at https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/"
+		"allRelevantTextIncludingURLs": "Event Name: OVER THE RHINE, Event Date: Thu 11/21, Venue: The Old Church, Link: https://monqui.com/event/over-the-rhine-2/the-old-church/portland-oregon/, Ticket Purchase Link: https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100"
 	},
 	"usage": {
 		"prompt_tokens": 2727,
-		"completion_tokens": 118,
-		"total_tokens": 2845,
+		"completion_tokens": 101,
+		"total_tokens": 2828,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000684375
+	"usdPrice": 0.000674175
 }

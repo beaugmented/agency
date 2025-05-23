@@ -1,0 +1,15 @@
+[
+	{
+		"model": "gpt-4o-mini",
+		"messages": [
+			{
+				"role": "user",
+				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"items\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"number\"\n          },\n          \"rationale\": {\n            \"type\": \"string\"\n          },\n          \"priority\": {\n            \"type\": \"number\"\n          }\n        },\n        \"required\": [\n          \"id\",\n          \"rationale\",\n          \"priority\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"items\"\n  ],\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\"\n}"
+			},
+			{
+				"role": "user",
+				"content": "Prioritize this list in order of importance, giving each item a priority number between 1 and 100.\nConsider the fact that family harmony is important to me.\n{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"title\": \"Grocery shopping\",\n      \"completed\": false\n    },\n    {\n      \"id\": 2,\n      \"title\": \"Complete project report\",\n      \"completed\": false\n    },\n    {\n      \"id\": 3,\n      \"title\": \"Workout at the gym\",\n      \"completed\": true\n    },\n    {\n      \"id\": 4,\n      \"title\": \"Read a chapter of a book\",\n      \"completed\": false\n    },\n    {\n      \"id\": 5,\n      \"title\": \"Learn a new programming language\",\n      \"completed\": false\n    },\n    {\n      \"id\": 6,\n      \"title\": \"Organize workspace\",\n      \"completed\": true\n    },\n    {\n      \"id\": 7,\n      \"title\": \"Prepare for the upcoming presentation\",\n      \"completed\": false\n    },\n    {\n      \"id\": 8,\n      \"title\": \"Meditate for 10 minutes\",\n      \"completed\": true\n    },\n    {\n      \"id\": 9,\n      \"title\": \"Plan a weekend trip\",\n      \"completed\": false\n    },\n    {\n      \"id\": 10,\n      \"title\": \"Volunteer at local shelter\",\n      \"completed\": false\n    }\n  ]\n}"
+			}
+		]
+	}
+]

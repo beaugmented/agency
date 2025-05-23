@@ -4,7 +4,7 @@
 		"messages": [
 			{
 				"role": "user",
-				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"count\"\n  ],\n  \"$schema\": \"https://json-schema.org/draft-2020-12/schema\"\n}"
+				"content": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"count\"\n  ],\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\"\n}"
 			},
 			{
 				"role": "user",

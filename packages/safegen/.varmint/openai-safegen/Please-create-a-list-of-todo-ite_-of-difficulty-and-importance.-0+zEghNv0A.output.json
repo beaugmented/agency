@@ -3,43 +3,43 @@
 		"items": [
 			{
 				"id": 1,
-				"title": "Buy groceries",
+				"title": "Grocery shopping",
 				"completed": false
 			},
 			{
 				"id": 2,
-				"title": "Finish project report",
+				"title": "Complete project report",
 				"completed": false
 			},
 			{
 				"id": 3,
-				"title": "Schedule dentist appointment",
+				"title": "Workout at the gym",
 				"completed": true
 			},
 			{
 				"id": 4,
-				"title": "Exercise for 30 minutes",
+				"title": "Read a chapter of a book",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Read two chapters of a book",
+				"title": "Learn a new programming language",
 				"completed": false
 			},
 			{
 				"id": 6,
-				"title": "Organize the home office",
-				"completed": false
-			},
-			{
-				"id": 7,
-				"title": "Prepare for upcoming presentation",
+				"title": "Organize workspace",
 				"completed": true
 			},
 			{
-				"id": 8,
-				"title": "Learn a new programming language",
+				"id": 7,
+				"title": "Prepare for the upcoming presentation",
 				"completed": false
+			},
+			{
+				"id": 8,
+				"title": "Meditate for 10 minutes",
+				"completed": true
 			},
 			{
 				"id": 9,
@@ -55,8 +55,8 @@
 	},
 	"usage": {
 		"prompt_tokens": 185,
-		"completion_tokens": 280,
-		"total_tokens": 465,
+		"completion_tokens": 282,
+		"total_tokens": 467,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -68,5 +68,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00020962499999999999
+	"usdPrice": 0.000210825
 }

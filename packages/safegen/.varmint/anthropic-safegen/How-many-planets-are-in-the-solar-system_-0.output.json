@@ -6,7 +6,8 @@
 		"input_tokens": 108,
 		"cache_creation_input_tokens": 0,
 		"cache_read_input_tokens": 0,
-		"output_tokens": 12
+		"output_tokens": 12,
+		"service_tier": "standard"
 	},
 	"usdPrice": 0.000504
 }

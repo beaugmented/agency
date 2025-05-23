@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Monqui Presents - Importers of Fine Live Music Since 1983. You can find more information at https://monqui.com/."
+		"allRelevantTextIncludingURLs": "Details about various live music events can be found on the Monqui Presents website. The organization has been importing fine live music since 1983, and their site includes a variety of performances and events. For more information, visit https://monqui.com/"
 	},
 	"usage": {
 		"prompt_tokens": 3452,
-		"completion_tokens": 46,
-		"total_tokens": 3498,
+		"completion_tokens": 69,
+		"total_tokens": 3521,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0008043
+	"usdPrice": 0.0008181
 }

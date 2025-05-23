@@ -4,8 +4,8 @@
 	},
 	"usage": {
 		"prompt_tokens": 222,
-		"completion_tokens": 14,
-		"total_tokens": 236,
+		"completion_tokens": 10,
+		"total_tokens": 232,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -17,5 +17,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000058349999999999995
+	"usdPrice": 0.00005594999999999999
 }

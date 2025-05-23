@@ -1,11 +1,12 @@
 {
 	"data": {
-		"isRelevant": false
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "The text contains links to venues like OREGON, WASHINGTON, EDGEFIELD CONCERTS, DOUG FIR, GRAND LODGE CONCERTS, and WONDER BALLROOM, which are related to live music events."
 	},
 	"usage": {
 		"prompt_tokens": 4399,
-		"completion_tokens": 9,
-		"total_tokens": 4408,
+		"completion_tokens": 64,
+		"total_tokens": 4463,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -17,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000995175
+	"usdPrice": 0.001028175
 }
