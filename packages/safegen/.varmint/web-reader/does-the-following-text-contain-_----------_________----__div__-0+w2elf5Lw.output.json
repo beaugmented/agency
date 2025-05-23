@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Katie Gavin will be performing at the Wonder Ballroom in Portland, Oregon on Wed 11/20. For more information visit: https://monqui.com/event/katie-gavin-2/wonder-ballroom/portland-oregon/. Tickets can be purchased here: https://www.etix.com/ticket/p/32502579/katie-gavin-portland-wonder-ballroom?partner_id=100. Additionally, Rainbow Kitten Surprise will be at the Theater of the Clouds in Portland, Oregon on the same date, with more details available at: https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/."
+		"allRelevantTextIncludingURLs": "Upcoming live music event: Katie Gavin with Nana Adjoa at Wonder Ballroom on Wed 11/20. For more info, visit: https://monqui.com/event/katie-gavin-2/wonder-ballroom/portland-oregon/. Buy tickets here: https://www.etix.com/ticket/p/32502579/katie-gavin-portland-wonder-ballroom?partner_id=100. Another event: Rainbow Kitten Surprise at Theater Of The Clouds on Wed 11/20. More info at: https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/"
 	},
 	"usage": {
-		"prompt_tokens": 2715,
-		"completion_tokens": 159,
-		"total_tokens": 2874,
+		"prompt_tokens": 2729,
+		"completion_tokens": 153,
+		"total_tokens": 2882,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000706275
+	"usdPrice": 0.000705825
 }

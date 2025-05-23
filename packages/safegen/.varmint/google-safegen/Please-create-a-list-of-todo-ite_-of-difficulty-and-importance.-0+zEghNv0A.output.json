@@ -8,57 +8,42 @@
 			},
 			{
 				"id": 2,
-				"title": "Schedule Doctor Appointment",
-				"completed": false
-			},
-			{
-				"id": 3,
 				"title": "Pay Bills",
 				"completed": false
 			},
 			{
+				"id": 3,
+				"title": "Book Doctor Appointment",
+				"completed": true
+			},
+			{
 				"id": 4,
-				"title": "Clean the house",
+				"title": "Research Investment Options",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Finish report for work",
-				"completed": false
-			},
-			{
-				"id": 6,
-				"title": "Research new investment opportunities",
-				"completed": false
-			},
-			{
-				"id": 7,
-				"title": "Plan Vacation",
-				"completed": false
-			},
-			{
-				"id": 8,
-				"title": "Read War and Peace",
+				"title": "Learn a new programming language",
 				"completed": false
 			}
 		]
 	},
 	"usage": {
-		"promptTokenCount": 211,
-		"candidatesTokenCount": 252,
-		"totalTokenCount": 463,
+		"promptTokenCount": 226,
+		"candidatesTokenCount": 162,
+		"totalTokenCount": 388,
 		"promptTokensDetails": [
 			{
 				"modality": "TEXT",
-				"tokenCount": 211
+				"tokenCount": 226
 			}
 		],
 		"candidatesTokensDetails": [
 			{
 				"modality": "TEXT",
-				"tokenCount": 252
+				"tokenCount": 162
 			}
 		]
 	},
-	"usdPrice": 0.00018284999999999997
+	"usdPrice": 0.0001311
 }

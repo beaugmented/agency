@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events include Kate Bollinger on Thu 11/14 at Wonder Ballroom (More Info: https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/). Also, Brother Ali with Ant is scheduled for Fri 11/15 at Wonder Ballroom (More Info: https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/). Tickets are available for both events at https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100 and https://www.etix.com/ticket/p/94362414/brother-ali-with-ant-portland-wonder-ballroom?partner_id=100."
+		"allRelevantTextIncludingURLs": "Upcoming Live Music Events: 1. Kate Bollinger at Wonder Ballroom on Thu 11/14. [Buy Tickets](https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100) [More Info](https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/). 2. Brother Ali with Ant at Wonder Ballroom on Fri Nov 15. [Buy Tickets](https://www.etix.com/ticket/p/94362414/brother-ali-with-ant-portland-wonder-ballroom?partner_id=100) [More Info](https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/)."
 	},
 	"usage": {
-		"prompt_tokens": 2701,
-		"completion_tokens": 177,
-		"total_tokens": 2878,
+		"prompt_tokens": 2715,
+		"completion_tokens": 182,
+		"total_tokens": 2897,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0007139249999999999
+	"usdPrice": 0.0007200749999999999
 }

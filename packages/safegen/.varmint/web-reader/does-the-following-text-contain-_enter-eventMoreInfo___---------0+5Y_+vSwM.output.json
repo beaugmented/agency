@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events: 1) Brother Ali with Ant on Fri 11/15 at Wonder Ballroom. Buy Tickets: https://www.etix.com/ticket/p/94362414/brother-ali-with-ant-portland-wonder-ballroom?partner_id=100. More Info: https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/. 2) The Dear Hunter – Celebrating 20 Years on Sat Nov 16 at Wonder Ballroom. Buy Tickets: https://www.etix.com/ticket/p/73037499/the-dear-hunter-celebrating-20-years-portland-wonder-ballroom?partner_id=100. More Info: https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/."
+		"allRelevantTextIncludingURLs": "Upcoming live music events include: 1. **Brother Ali with Ant** on Fri 11/15 at Wonder Ballroom. Buy Tickets: https://www.etix.com/ticket/p/94362414/brother-ali-with-ant-portland-wonder-ballroom?partner_id=100. More Info: https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/. 2. **The Dear Hunter - Celebrating 20 Years** on Sat 11/16 at Wonder Ballroom. Buy Tickets: https://www.etix.com/ticket/p/73037499/the-dear-hunter-celebrating-20-years-portland-wonder-ballroom?partner_id=100. More Info: https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/."
 	},
 	"usage": {
-		"prompt_tokens": 2685,
-		"completion_tokens": 196,
-		"total_tokens": 2881,
+		"prompt_tokens": 2699,
+		"completion_tokens": 202,
+		"total_tokens": 2901,
 		"prompt_tokens_details": {
-			"cached_tokens": 0,
+			"cached_tokens": 2560,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0007217250000000001
+	"usdPrice": 0.000536475
 }

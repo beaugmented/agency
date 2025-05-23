@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "The text contains links to venues like OREGON, WASHINGTON, EDGEFIELD CONCERTS, DOUG FIR, GRAND LODGE CONCERTS, and WONDER BALLROOM, which are related to live music events."
+		"allRelevantTextIncludingURLs": "Upcoming live music events can be found at various venues, including OREGON, WASHINGTON, EDGEFIELD CONCERTS, DOUG FIR, GRAND LODGE CONCERTS, and WONDER BALLROOM. For more information, visit: https://monqui.com/venues/oregon/, https://monqui.com/washington-canada, https://monqui.com/venue/mcmenamins-edgefield/, https://www.dougfirlounge.com/, https://monqui.com/mcmenamins-grand-lodge/, https://monqui.com/venue/wonder-ballroom/"
 	},
 	"usage": {
-		"prompt_tokens": 4399,
-		"completion_tokens": 64,
-		"total_tokens": 4463,
+		"prompt_tokens": 4413,
+		"completion_tokens": 138,
+		"total_tokens": 4551,
 		"prompt_tokens_details": {
-			"cached_tokens": 0,
+			"cached_tokens": 4352,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.001028175
+	"usdPrice": 0.000749325
 }

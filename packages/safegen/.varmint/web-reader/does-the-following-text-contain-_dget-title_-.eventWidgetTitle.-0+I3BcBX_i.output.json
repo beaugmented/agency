@@ -3,11 +3,11 @@
 		"isRelevant": false
 	},
 	"usage": {
-		"prompt_tokens": 3019,
+		"prompt_tokens": 3033,
 		"completion_tokens": 9,
-		"total_tokens": 3028,
+		"total_tokens": 3042,
 		"prompt_tokens_details": {
-			"cached_tokens": 0,
+			"cached_tokens": 2944,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -17,5 +17,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000684675
+	"usdPrice": 0.000467025
 }

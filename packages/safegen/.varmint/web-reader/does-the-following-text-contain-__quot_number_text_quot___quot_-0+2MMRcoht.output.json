@@ -1,13 +1,14 @@
 {
 	"data": {
-		"isRelevant": false
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Visit https://monqui.com/events/ for all upcoming live music events."
 	},
 	"usage": {
-		"prompt_tokens": 2835,
-		"completion_tokens": 9,
-		"total_tokens": 2844,
+		"prompt_tokens": 2849,
+		"completion_tokens": 33,
+		"total_tokens": 2882,
 		"prompt_tokens_details": {
-			"cached_tokens": 0,
+			"cached_tokens": 2816,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -17,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000643275
+	"usdPrice": 0.000449625
 }
