@@ -1,0 +1,122 @@
+{
+	"data": {
+		"facts": [
+			{
+				"subject": "Kramer",
+				"predicate": "are",
+				"object": "friends",
+				"tuples": [
+					[
+						"Jerry",
+						"George",
+						"Elaine"
+					],
+					[
+						"Kramer",
+						"Jerry",
+						"George"
+					],
+					[
+						"Kramer",
+						"Jerry",
+						"Elaine"
+					],
+					[
+						"Kramer",
+						"George",
+						"Elaine"
+					]
+				]
+			},
+			{
+				"subject": "George",
+				"predicate": "are",
+				"object": "friends",
+				"tuples": [
+					[
+						"Jerry",
+						"George",
+						"Elaine"
+					],
+					[
+						"George",
+						"Jerry",
+						"Elaine"
+					],
+					[
+						"Kramer",
+						"George",
+						"Elaine"
+					]
+				]
+			},
+			{
+				"subject": "Elaine",
+				"predicate": "are",
+				"object": "friends",
+				"tuples": [
+					[
+						"Jerry",
+						"George",
+						"Kramer"
+					],
+					[
+						"Jerry",
+						"George",
+						"Elaine"
+					],
+					[
+						"Jerry",
+						"Kramer",
+						"Elaine"
+					]
+				]
+			},
+			{
+				"subject": "Jerry",
+				"predicate": "are",
+				"object": "friends",
+				"tuples": [
+					[
+						"George",
+						"Jerry",
+						"Kramer"
+					],
+					[
+						"George",
+						"Jerry",
+						"Elaine"
+					],
+					[
+						"Kramer",
+						"Jerry",
+						"Elaine"
+					]
+				]
+			},
+			{
+				"subject": "Kramer",
+				"predicate": "are",
+				"object": "friends",
+				"tuples": [
+					[
+						"George",
+						"Kramer",
+						"Elaine"
+					],
+					[
+						"George",
+						"Kramer",
+						"Jerry"
+					],
+					[
+						"Elaine",
+						"Kramer",
+						"Jerry"
+					]
+				]
+			}
+		]
+	},
+	"usdPrice": 0
+}
