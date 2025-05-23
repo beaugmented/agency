@@ -3,13 +3,13 @@
 		"count": 8
 	},
 	"usage": {
-		"promptTokenCount": 101,
+		"promptTokenCount": 109,
 		"candidatesTokenCount": 10,
-		"totalTokenCount": 111,
+		"totalTokenCount": 119,
 		"promptTokensDetails": [
 			{
 				"modality": "TEXT",
-				"tokenCount": 101
+				"tokenCount": 109
 			}
 		],
 		"candidatesTokensDetails": [
@@ -19,5 +19,5 @@
 			}
 		]
 	},
-	"usdPrice": 0.00002115
+	"usdPrice": 0.000022349999999999998
 }

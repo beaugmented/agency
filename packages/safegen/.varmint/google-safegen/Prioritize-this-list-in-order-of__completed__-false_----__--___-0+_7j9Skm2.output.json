@@ -1,0 +1,49 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 2,
+				"rationale": "Paying bills is essential to avoid late fees and maintain good credit, directly impacting family finances and stability. This is paramount for household harmony.",
+				"priority": 95
+			},
+			{
+				"id": 1,
+				"rationale": "Ensuring the family has food is a primary need. Avoiding stress and ensuring the house is well stocked is critical for good spirits and morale.",
+				"priority": 90
+			},
+			{
+				"id": 3,
+				"rationale": "Completed tasks are important, but they do not need reprioritization. Maintaining health through appointments is important, but is completed.",
+				"priority": 50
+			},
+			{
+				"id": 4,
+				"rationale": "Researching investment options can contribute to long-term financial security, benefiting the family, but it is not as urgent as immediate needs.",
+				"priority": 40
+			},
+			{
+				"id": 5,
+				"rationale": "Learning a new programming language is a personal goal that has limited impact on immediate family needs. Personal enrichment activities are nice but should not impact household priorities.",
+				"priority": 15
+			}
+		]
+	},
+	"usage": {
+		"promptTokenCount": 409,
+		"candidatesTokenCount": 294,
+		"totalTokenCount": 703,
+		"promptTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 409
+			}
+		],
+		"candidatesTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 294
+			}
+		]
+	},
+	"usdPrice": 0.00023775
+}

@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Event Name: OVER THE RHINE, Event Date: Thu 11/21, Venue: The Old Church, Link: https://monqui.com/event/over-the-rhine-2/the-old-church/portland-oregon/, Ticket Purchase Link: https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100"
+		"allRelevantTextIncludingURLs": "Upcoming live music event: Richy Mitch & The Coal Miners on Thu Nov 21 at The Old Church, Portland. More info: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/ Buy Tickets: https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100"
 	},
 	"usage": {
-		"prompt_tokens": 2727,
-		"completion_tokens": 101,
-		"total_tokens": 2828,
+		"prompt_tokens": 2741,
+		"completion_tokens": 112,
+		"total_tokens": 2853,
 		"prompt_tokens_details": {
-			"cached_tokens": 0,
+			"cached_tokens": 2688,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000674175
+	"usdPrice": 0.000482325
 }

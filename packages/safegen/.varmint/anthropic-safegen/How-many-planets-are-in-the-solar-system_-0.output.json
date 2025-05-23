@@ -3,11 +3,11 @@
 		"count": 8
 	},
 	"usage": {
-		"input_tokens": 108,
+		"input_tokens": 117,
 		"cache_creation_input_tokens": 0,
 		"cache_read_input_tokens": 0,
 		"output_tokens": 12,
 		"service_tier": "standard"
 	},
-	"usdPrice": 0.000504
+	"usdPrice": 0.000531
 }

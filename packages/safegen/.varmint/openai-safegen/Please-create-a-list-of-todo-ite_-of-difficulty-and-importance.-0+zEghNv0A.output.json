@@ -8,55 +8,55 @@
 			},
 			{
 				"id": 2,
-				"title": "Complete project report",
-				"completed": false
-			},
-			{
-				"id": 3,
-				"title": "Workout at the gym",
+				"title": "Finish reading the book",
 				"completed": true
 			},
 			{
+				"id": 3,
+				"title": "Complete the project report",
+				"completed": false
+			},
+			{
 				"id": 4,
-				"title": "Read a chapter of a book",
+				"title": "Schedule a dentist appointment",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Learn a new programming language",
+				"title": "Start working on the coding assignment",
 				"completed": false
 			},
 			{
 				"id": 6,
-				"title": "Organize workspace",
-				"completed": true
+				"title": "Practice for the upcoming presentation",
+				"completed": false
 			},
 			{
 				"id": 7,
-				"title": "Prepare for the upcoming presentation",
+				"title": "Clean the garage",
 				"completed": false
 			},
 			{
 				"id": 8,
-				"title": "Meditate for 10 minutes",
-				"completed": true
-			},
-			{
-				"id": 9,
 				"title": "Plan a weekend trip",
 				"completed": false
 			},
 			{
+				"id": 9,
+				"title": "Take the dog for a walk",
+				"completed": true
+			},
+			{
 				"id": 10,
-				"title": "Volunteer at local shelter",
+				"title": "Organize the filing cabinet",
 				"completed": false
 			}
 		]
 	},
 	"usage": {
-		"prompt_tokens": 185,
-		"completion_tokens": 282,
-		"total_tokens": 467,
+		"prompt_tokens": 199,
+		"completion_tokens": 283,
+		"total_tokens": 482,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -68,5 +68,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000210825
+	"usdPrice": 0.00021457499999999997
 }

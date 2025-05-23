@@ -18,12 +18,12 @@
 			},
 			{
 				"id": 4,
-				"title": "Write thesis proposal",
+				"title": "Prepare presentation for board meeting",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Schedule dentist appointment",
+				"title": "Schedule dental checkup",
 				"completed": false
 			},
 			{
@@ -33,32 +33,32 @@
 			},
 			{
 				"id": 7,
-				"title": "Reply to urgent work emails",
+				"title": "Reply to urgent emails",
 				"completed": true
 			},
 			{
 				"id": 8,
-				"title": "Fix leaky faucet",
+				"title": "Update resume",
 				"completed": false
 			},
 			{
 				"id": 9,
-				"title": "Plan birthday party",
+				"title": "Fix leaking faucet",
 				"completed": false
 			},
 			{
 				"id": 10,
-				"title": "Update resume",
-				"completed": false
+				"title": "Meditate for 10 minutes",
+				"completed": true
 			}
 		]
 	},
 	"usage": {
-		"input_tokens": 218,
+		"input_tokens": 235,
 		"cache_creation_input_tokens": 0,
 		"cache_read_input_tokens": 0,
-		"output_tokens": 322,
+		"output_tokens": 329,
 		"service_tier": "standard"
 	},
-	"usdPrice": 0.005484
+	"usdPrice": 0.00564
 }
