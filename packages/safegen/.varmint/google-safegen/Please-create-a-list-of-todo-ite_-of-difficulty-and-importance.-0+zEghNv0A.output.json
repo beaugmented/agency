@@ -3,50 +3,50 @@
 		"items": [
 			{
 				"id": 1,
-				"title": "Buy groceries",
+				"title": "Grocery Shopping",
 				"completed": false
 			},
 			{
 				"id": 2,
-				"title": "Pay bills",
+				"title": "Schedule Doctor Appointment",
 				"completed": false
 			},
 			{
 				"id": 3,
-				"title": "Call John",
-				"completed": true
+				"title": "Pay Bills",
+				"completed": false
 			},
 			{
 				"id": 4,
-				"title": "Write report",
+				"title": "Clean the house",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Learn advanced Javascript concepts",
+				"title": "Finish report for work",
 				"completed": false
 			},
 			{
 				"id": 6,
-				"title": "Schedule dentist appointment",
+				"title": "Research new investment opportunities",
 				"completed": false
 			},
 			{
 				"id": 7,
-				"title": "Organize the garage",
+				"title": "Plan Vacation",
 				"completed": false
 			},
 			{
 				"id": 8,
-				"title": "Read a book",
-				"completed": true
+				"title": "Read War and Peace",
+				"completed": false
 			}
 		]
 	},
 	"usage": {
 		"promptTokenCount": 211,
-		"candidatesTokenCount": 249,
-		"totalTokenCount": 460,
+		"candidatesTokenCount": 252,
+		"totalTokenCount": 463,
 		"promptTokensDetails": [
 			{
 				"modality": "TEXT",
@@ -56,9 +56,9 @@
 		"candidatesTokensDetails": [
 			{
 				"modality": "TEXT",
-				"tokenCount": 249
+				"tokenCount": 252
 			}
 		]
 	},
-	"usdPrice": 0.00018104999999999998
+	"usdPrice": 0.00018284999999999997
 }

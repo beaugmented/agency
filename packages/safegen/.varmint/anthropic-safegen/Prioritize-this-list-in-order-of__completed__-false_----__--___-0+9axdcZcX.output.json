@@ -1,0 +1,64 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"rationale": "Groceries are essential for family meals and bonding time. Having food available prevents stress and ensures everyone's basic needs are met.",
+				"priority": 95
+			},
+			{
+				"id": 9,
+				"rationale": "Birthday celebrations are crucial for family bonding and creating lasting memories. This strengthens family relationships.",
+				"priority": 85
+			},
+			{
+				"id": 2,
+				"rationale": "Tax returns are legally required and affect family financial stability. Late submission can cause stress and penalties.",
+				"priority": 80
+			},
+			{
+				"id": 8,
+				"rationale": "A leaky faucet can damage the home and increase water bills, affecting family resources and living conditions.",
+				"priority": 75
+			},
+			{
+				"id": 5,
+				"rationale": "Dental health is important for overall well-being and preventing future health issues that could impact family life.",
+				"priority": 70
+			},
+			{
+				"id": 7,
+				"rationale": "Work communications affect income security, but this is already completed and shouldn't create family stress.",
+				"priority": 65
+			},
+			{
+				"id": 4,
+				"rationale": "While important for personal development, thesis work should be balanced with family needs.",
+				"priority": 60
+			},
+			{
+				"id": 6,
+				"rationale": "Cleaning the garage improves living space and family organization, but isn't urgent.",
+				"priority": 45
+			},
+			{
+				"id": 3,
+				"rationale": "Plant care is already completed and while important for home atmosphere, isn't critical to family functioning.",
+				"priority": 30
+			},
+			{
+				"id": 10,
+				"rationale": "Resume updates are important for career growth but can be done gradually without impacting current family stability.",
+				"priority": 25
+			}
+		]
+	},
+	"usage": {
+		"input_tokens": 559,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 490,
+		"service_tier": "standard"
+	},
+	"usdPrice": 0.009027
+}

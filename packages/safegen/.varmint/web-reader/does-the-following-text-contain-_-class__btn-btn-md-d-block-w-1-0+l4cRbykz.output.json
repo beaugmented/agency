@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events: Shallou at The Get Down in Portland, Oregon on Sat 11/16. More info: https://monqui.com/event/shallou-2/the-get-down/portland-oregon/. Buy tickets at https://www.tixr.com/groups/thegetdownpdx/events/shallou-113412. Another event: TR/ST at Wonder Ballroom on Sun Nov 17. More info: https://monqui.com/event/tr-st/wonder-ballroom/portland-oregon/"
+		"allRelevantTextIncludingURLs": "Shallou event on Sat 11/16 at The Get Down, Portland. For more information visit: https://monqui.com/event/shallou-2/the-get-down/portland-oregon/ and buy tickets at https://www.tixr.com/groups/thegetdownpdx/events/shallou-113412."
 	},
 	"usage": {
 		"prompt_tokens": 2711,
-		"completion_tokens": 124,
-		"total_tokens": 2835,
+		"completion_tokens": 86,
+		"total_tokens": 2797,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000684375
+	"usdPrice": 0.000661575
 }

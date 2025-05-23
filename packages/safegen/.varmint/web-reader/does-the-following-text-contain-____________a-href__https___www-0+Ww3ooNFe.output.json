@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "The text contains multiple relevant references to upcoming live music events, including mentions of venues and links to social media pages where more information can be found: 1. Instagram - https://www.instagram.com/monqui_presents/ 2. TikTok - https://www.tiktok.com/@monqui_presents 3. Oregon Venue - https://monqui.com/venues/oregon/ 4. Washington Venue - https://monqui.com/washington-canada 5. Edgefield Venue - https://monqui.com/venue/mcmenamins-edgefield/"
+		"allRelevantTextIncludingURLs": "Monqui Presents is promoting several upcoming live music events. You can find more details about the events, venues, and social media links on their website. For further information, visit the following URLs: https://www.instagram.com/monqui_presents/, https://www.tiktok.com/@monqui_presents, https://monqui.com/venues/oregon/, https://monqui.com/washington-canada, and https://monqui.com/venue/mcmenamins-edgefield/"
 	},
 	"usage": {
 		"prompt_tokens": 5344,
-		"completion_tokens": 134,
-		"total_tokens": 5478,
+		"completion_tokens": 117,
+		"total_tokens": 5461,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0012828
+	"usdPrice": 0.0012726
 }

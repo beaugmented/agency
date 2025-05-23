@@ -1,0 +1,8 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"count\"\n  ],\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\"\n}\n\nHow many planets are in the solar system?\n\nOops! That didn't work. Here's what was returned last time:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"count\": {\n      \"type\": \"number\"\n    }\n  }\n}\nHere's the error message:\n[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"count\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]",
+		"format": "json",
+		"stream": false
+	}
+]

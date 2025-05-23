@@ -1,6 +1,15 @@
 {
 	"data": {
-		"count": 8
+		"type": "object",
+		"properties": {
+			"count": {
+				"type": "number"
+			}
+		},
+		"required": [
+			"count"
+		],
+		"$schema": "https://json-schema.org/draft/2020-12/schema"
 	},
 	"usdPrice": 0
 }

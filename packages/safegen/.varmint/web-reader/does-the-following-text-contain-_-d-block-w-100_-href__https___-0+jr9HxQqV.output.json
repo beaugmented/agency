@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Drinking Boys and Girls Choir event on Sat 11/16 at Mission Theater. Buy Tickets at https://www.etix.com/ticket/p/41479390/drinking-boys-and-girls-choirall-ages-portland-mcmenamins-mission-theater?partner_id=100. More Info at https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/"
+		"allRelevantTextIncludingURLs": "Details for upcoming live music events include: 'Drinking Boys and Girls Choir' performing on Sat 11/16 at Mission Theater. More info can be found at https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/ and tickets can be purchased at https://www.etix.com/ticket/p/41479390/drinking-boys-and-girls-choirall-ages-portland-mcmenamins-mission-theater?partner_id=100."
 	},
 	"usage": {
 		"prompt_tokens": 2701,
-		"completion_tokens": 106,
-		"total_tokens": 2807,
+		"completion_tokens": 122,
+		"total_tokens": 2823,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000671325
+	"usdPrice": 0.000680925
 }
