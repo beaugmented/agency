@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "For details on upcoming live music events, visit [Monqui Presents](https://monqui.com) and follow them on social media platforms like [Instagram](https://www.instagram.com/monqui_presents/) and [TikTok](https://www.tiktok.com/@monqui_presents). You can find specific venues such as [Oregon](https://monqui.com/venues/oregon/), [Washington](https://monqui.com/washington-canada), and [McMenamins Edgefield](https://monqui.com/venue/mcmenamins-edgefield/) for upcoming shows."
+		"allRelevantTextIncludingURLs": "For details on upcoming live music events, visit [Monqui Presents on Instagram](https://www.instagram.com/monqui_presents/) or check out their TikTok [@monqui_presents](https://www.tiktok.com/@monqui_presents). You can find more information about venues in Oregon and Washington, and specific events at [Monqui's official website](https://monqui.com/venues/oregon/) and [McMenamins Edgefield](https://monqui.com/venue/mcmenamins-edgefield/)."
 	},
 	"usage": {
 		"prompt_tokens": 5358,
-		"completion_tokens": 140,
-		"total_tokens": 5498,
+		"completion_tokens": 122,
+		"total_tokens": 5480,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00128955
+	"usdPrice": 0.00127875
 }

@@ -7,7 +7,7 @@
 		"completion_tokens": 9,
 		"total_tokens": 3042,
 		"prompt_tokens_details": {
-			"cached_tokens": 2944,
+			"cached_tokens": 0,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -17,5 +17,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000467025
+	"usdPrice": 0.000687825
 }

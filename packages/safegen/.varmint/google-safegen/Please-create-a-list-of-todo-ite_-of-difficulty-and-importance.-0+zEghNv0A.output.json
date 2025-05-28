@@ -13,37 +13,42 @@
 			},
 			{
 				"id": 3,
-				"title": "Book Doctor Appointment",
-				"completed": true
+				"title": "Schedule Doctor Appointment",
+				"completed": false
 			},
 			{
 				"id": 4,
-				"title": "Research Investment Options",
+				"title": "Read 'War and Peace'",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Learn a new programming language",
+				"title": "Learn Quantum Physics",
 				"completed": false
+			},
+			{
+				"id": 6,
+				"title": "Walk the dog",
+				"completed": true
 			}
 		]
 	},
 	"usage": {
-		"promptTokenCount": 226,
-		"candidatesTokenCount": 162,
-		"totalTokenCount": 388,
+		"promptTokenCount": 225,
+		"candidatesTokenCount": 192,
+		"totalTokenCount": 417,
 		"promptTokensDetails": [
 			{
 				"modality": "TEXT",
-				"tokenCount": 226
+				"tokenCount": 225
 			}
 		],
 		"candidatesTokensDetails": [
 			{
 				"modality": "TEXT",
-				"tokenCount": 162
+				"tokenCount": 192
 			}
 		]
 	},
-	"usdPrice": 0.0001311
+	"usdPrice": 0.00014895
 }

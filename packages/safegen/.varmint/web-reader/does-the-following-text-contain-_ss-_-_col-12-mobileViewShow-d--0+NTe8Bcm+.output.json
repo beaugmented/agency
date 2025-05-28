@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music event: Richy Mitch & The Coal Miners on Thu Nov 21 at The Old Church, Portland. More info: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/ Buy Tickets: https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100"
+		"allRelevantTextIncludingURLs": "The upcoming live music event is 'Richy Mitch & The Coal Miners' on Thu, Nov 21, at The Old Church in Portland, Oregon. For more information, visit https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/. Buy tickets at https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100."
 	},
 	"usage": {
 		"prompt_tokens": 2741,
-		"completion_tokens": 112,
-		"total_tokens": 2853,
+		"completion_tokens": 121,
+		"total_tokens": 2862,
 		"prompt_tokens_details": {
-			"cached_tokens": 2688,
+			"cached_tokens": 0,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000482325
+	"usdPrice": 0.0006893250000000001
 }
