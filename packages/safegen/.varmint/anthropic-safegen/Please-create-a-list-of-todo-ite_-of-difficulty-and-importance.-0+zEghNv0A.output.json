@@ -3,62 +3,62 @@
 		"items": [
 			{
 				"id": 1,
-				"title": "Buy groceries for the week",
+				"title": "Pay monthly utility bills",
 				"completed": false
 			},
 			{
 				"id": 2,
-				"title": "Complete annual tax return",
+				"title": "Schedule annual medical checkup",
 				"completed": false
 			},
 			{
 				"id": 3,
-				"title": "Water the plants",
+				"title": "Buy groceries for the week",
 				"completed": true
 			},
 			{
 				"id": 4,
-				"title": "Prepare presentation for board meeting",
+				"title": "Complete work presentation for client meeting",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Schedule dental checkup",
+				"title": "Clean garage and organize tools",
 				"completed": false
 			},
 			{
 				"id": 6,
-				"title": "Clean garage",
-				"completed": false
-			},
-			{
-				"id": 7,
-				"title": "Reply to urgent emails",
+				"title": "Call mom for her birthday",
 				"completed": true
 			},
 			{
+				"id": 7,
+				"title": "Fix leaking kitchen faucet",
+				"completed": false
+			},
+			{
 				"id": 8,
-				"title": "Update resume",
+				"title": "Submit tax documents",
 				"completed": false
 			},
 			{
 				"id": 9,
-				"title": "Fix leaking faucet",
-				"completed": false
+				"title": "Water the plants",
+				"completed": true
 			},
 			{
 				"id": 10,
-				"title": "Meditate for 10 minutes",
-				"completed": true
+				"title": "Learn new programming language",
+				"completed": false
 			}
 		]
 	},
 	"usage": {
-		"input_tokens": 235,
+		"input_tokens": 234,
 		"cache_creation_input_tokens": 0,
 		"cache_read_input_tokens": 0,
-		"output_tokens": 329,
+		"output_tokens": 332,
 		"service_tier": "standard"
 	},
-	"usdPrice": 0.00564
+	"usdPrice": 0.005682
 }

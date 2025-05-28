@@ -1,0 +1,64 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 6,
+				"rationale": "Family relationships, especially with parents, are crucial for family harmony. A birthday call to mom is a high priority as it maintains emotional bonds.",
+				"priority": 95
+			},
+			{
+				"id": 8,
+				"rationale": "Tax compliance is legally required and avoiding penalties keeps family finances stable, which is essential for family harmony.",
+				"priority": 90
+			},
+			{
+				"id": 1,
+				"rationale": "Utility bills are essential for maintaining a comfortable home environment for the family, and avoiding service interruptions.",
+				"priority": 85
+			},
+			{
+				"id": 3,
+				"rationale": "Regular groceries ensure the family has proper nutrition and can enjoy meals together, fostering family bonding.",
+				"priority": 80
+			},
+			{
+				"id": 2,
+				"rationale": "Health maintenance is important for long-term family stability and well-being.",
+				"priority": 75
+			},
+			{
+				"id": 7,
+				"rationale": "A leaking faucet can disrupt daily family routines and cause water damage if left unattended.",
+				"priority": 65
+			},
+			{
+				"id": 4,
+				"rationale": "Work responsibilities are important for financial stability, but shouldn't overshadow family time.",
+				"priority": 60
+			},
+			{
+				"id": 5,
+				"rationale": "Organizing the garage improves home functionality but isn't time-sensitive.",
+				"priority": 40
+			},
+			{
+				"id": 9,
+				"rationale": "Plant maintenance contributes to a pleasant home environment but isn't crucial for family harmony.",
+				"priority": 30
+			},
+			{
+				"id": 10,
+				"rationale": "Personal development is valuable but should be balanced with family time and responsibilities.",
+				"priority": 25
+			}
+		]
+	},
+	"usage": {
+		"input_tokens": 585,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 485,
+		"service_tier": "standard"
+	},
+	"usdPrice": 0.00903
+}

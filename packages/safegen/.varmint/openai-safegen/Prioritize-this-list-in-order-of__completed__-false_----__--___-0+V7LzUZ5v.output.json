@@ -1,0 +1,72 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"rationale": "Essential for daily living and ensuring the family's needs are met.",
+				"priority": 90
+			},
+			{
+				"id": 5,
+				"rationale": "Maintaining family relationships is crucial for overall well-being.",
+				"priority": 85
+			},
+			{
+				"id": 2,
+				"rationale": "Important for professional development and meeting work obligations.",
+				"priority": 80
+			},
+			{
+				"id": 8,
+				"rationale": "Planning meals in advance can help with family harmony and nutrition.",
+				"priority": 75
+			},
+			{
+				"id": 10,
+				"rationale": "Engaging with the community can strengthen family bonds and social networks.",
+				"priority": 70
+			},
+			{
+				"id": 4,
+				"rationale": "Personal development and relaxation can contribute to family harmony.",
+				"priority": 60
+			},
+			{
+				"id": 6,
+				"rationale": "Learning new skills can be beneficial, but less urgent than other tasks.",
+				"priority": 50
+			},
+			{
+				"id": 9,
+				"rationale": "Networking can be important, but it's a secondary priority given family focus.",
+				"priority": 45
+			},
+			{
+				"id": 7,
+				"rationale": "Organizing the workspace can enhance productivity, but less immediate than others.",
+				"priority": 40
+			},
+			{
+				"id": 3,
+				"rationale": "Exercise is important for health, though already completed.",
+				"priority": 35
+			}
+		]
+	},
+	"usage": {
+		"prompt_tokens": 493,
+		"completion_tokens": 368,
+		"total_tokens": 861,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.000331725
+}

@@ -3,60 +3,60 @@
 		"items": [
 			{
 				"id": 1,
-				"title": "Grocery shopping",
+				"title": "Buy groceries",
 				"completed": false
 			},
 			{
 				"id": 2,
-				"title": "Finish reading the book",
-				"completed": true
-			},
-			{
-				"id": 3,
-				"title": "Complete the project report",
+				"title": "Finish project report",
 				"completed": false
 			},
 			{
+				"id": 3,
+				"title": "Exercise for 30 minutes",
+				"completed": true
+			},
+			{
 				"id": 4,
-				"title": "Schedule a dentist appointment",
+				"title": "Read a chapter of a book",
 				"completed": false
 			},
 			{
 				"id": 5,
-				"title": "Start working on the coding assignment",
-				"completed": false
+				"title": "Call mom",
+				"completed": true
 			},
 			{
 				"id": 6,
-				"title": "Practice for the upcoming presentation",
+				"title": "Learn a new programming language",
 				"completed": false
 			},
 			{
 				"id": 7,
-				"title": "Clean the garage",
+				"title": "Organize workspace",
 				"completed": false
 			},
 			{
 				"id": 8,
-				"title": "Plan a weekend trip",
+				"title": "Plan weekly meals",
 				"completed": false
 			},
 			{
 				"id": 9,
-				"title": "Take the dog for a walk",
-				"completed": true
+				"title": "Attend a networking event",
+				"completed": false
 			},
 			{
 				"id": 10,
-				"title": "Organize the filing cabinet",
+				"title": "Volunteer at the community center",
 				"completed": false
 			}
 		]
 	},
 	"usage": {
 		"prompt_tokens": 199,
-		"completion_tokens": 283,
-		"total_tokens": 482,
+		"completion_tokens": 277,
+		"total_tokens": 476,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -68,5 +68,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00021457499999999997
+	"usdPrice": 0.000210975
 }

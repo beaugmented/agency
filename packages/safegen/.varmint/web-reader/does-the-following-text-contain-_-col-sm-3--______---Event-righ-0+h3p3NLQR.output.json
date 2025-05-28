@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events include TR/ST at Wonder Ballroom on Sun 11/17 and JD McPherson at Wonder Ballroom on Mon 11/18. More info for TR/ST: https://monqui.com/event/tr-st/wonder-ballroom/portland-oregon/ and for JD McPherson: https://monqui.com/event/jd-mcpherson/wonder-ballroom/portland-oregon/"
+		"allRelevantTextIncludingURLs": "Upcoming live music event: TR/ST at Wonder Ballroom, Portland, Oregon on Sun 11/17. More info at https://monqui.com/event/tr-st/wonder-ballroom/portland-oregon/. Special guest: Provoker. The following day, JD McPherson will perform at the same venue on Mon Nov 18. More info at https://monqui.com/event/jd-mcpherson/wonder-ballroom/portland-oregon/."
 	},
 	"usage": {
 		"prompt_tokens": 2715,
-		"completion_tokens": 104,
-		"total_tokens": 2819,
+		"completion_tokens": 114,
+		"total_tokens": 2829,
 		"prompt_tokens_details": {
-			"cached_tokens": 2688,
+			"cached_tokens": 0,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000471675
+	"usdPrice": 0.000679275
 }

@@ -1,14 +1,13 @@
 {
 	"data": {
-		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Monqui Presents - Importers of Fine Live Music Since 1983. For more information, visit [Monqui Presents](https://monqui.com/)."
+		"isRelevant": false
 	},
 	"usage": {
 		"prompt_tokens": 3466,
-		"completion_tokens": 51,
-		"total_tokens": 3517,
+		"completion_tokens": 9,
+		"total_tokens": 3475,
 		"prompt_tokens_details": {
-			"cached_tokens": 3328,
+			"cached_tokens": 0,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +17,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00056085
+	"usdPrice": 0.00078525
 }

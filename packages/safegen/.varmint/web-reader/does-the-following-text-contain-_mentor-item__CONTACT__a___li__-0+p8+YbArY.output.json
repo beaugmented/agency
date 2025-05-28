@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Just Announced:\n- [Jack White - No Name Tour](https://monqui.com/event/jack-white-no-name-tour/mcmenamins-edgefield/troutdale-oregon/) on 05/24 at McMenamins Edgefield\n- [Jessica Baio](https://monqui.com/event/jessica-baio/mission-theater/portland-oregon/) on 03/22 at Mission Theater\n- [Dawn Richard & Spencer Zahn](https://monqui.com/event/dawn-richard-spencer-zahn/the-old-church/portland-oregon/) on 02/28 at The Old Church\n- [DWLLRS: Cameraman Tour](https://monqui.com/event/dwllrs-cameraman-tour/holocene/portland-oregon/) on 03/15 at Holocene\n- [BAYNK - 'Senescence' USA/Canada Tour 2025](https://monqui.com/event/baynk-senescence-usa-canada-tour-2025/wonder-ballroom/portland-oregon/) on 02/26 at Wonder Ballroom\n- [Daily Bread - Flash Flood Tour](https://monqui.com/event/daily-bread-flash-flood-tour/wonder-ballroom/portland-oregon/) on 03/22 at Wonder Ballroom"
+		"allRelevantTextIncludingURLs": "Just Announced: Jack White - No Name Tour on 05/24 at McMenamins Edgefield. Jessica Baio on 03/22 at Mission Theater. Dawn Richard & Spencer Zahn on 02/28 at The Old Church. DWLLRS: Cameraman Tour on 03/15 at Holocene. BAYNK - 'Senescence' USA/Canada Tour 2025 on 02/26 at Wonder Ballroom. Daily Bread - Flash Flood Tour on 03/22 at Wonder Ballroom. For more details, visit: https://monqui.com/event/jack-white-no-name-tour/mcmenamins-edgefield/troutdale-oregon/ https://monqui.com/event/jessica-baio/mission-theater/portland-oregon/ https://monqui.com/event/dawn-richard-spencer-zahn/the-old-church/portland-oregon/ https://monqui.com/event/dwllrs-cameraman-tour/holocene/portland-oregon/ https://monqui.com/event/baynk-senescence-usa-canada-tour-2025/wonder-ballroom/portland-oregon/ https://monqui.com/event/daily-bread-flash-flood-tour/wonder-ballroom/portland-oregon/"
 	},
 	"usage": {
 		"prompt_tokens": 3154,
-		"completion_tokens": 295,
-		"total_tokens": 3449,
+		"completion_tokens": 280,
+		"total_tokens": 3434,
 		"prompt_tokens_details": {
-			"cached_tokens": 3072,
+			"cached_tokens": 0,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0006562499999999999
+	"usdPrice": 0.0008776499999999999
 }

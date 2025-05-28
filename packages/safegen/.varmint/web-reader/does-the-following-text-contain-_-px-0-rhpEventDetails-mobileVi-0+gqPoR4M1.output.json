@@ -1,14 +1,14 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Richy Mitch & The Coal Miners will be performing at Wonder Ballroom on Thu 11/21. For more information, visit: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/. You can also buy tickets here: https://www.etix.com/ticket/p/55106870/richy-mitch-the-coal-miners-the-october-moon-tour-portland-wonder-ballroom?partner_id=100."
+		"allRelevantTextIncludingURLs": "Upcoming event: Richy Mitch & The Coal Miners with special guest Will Paquin at Wonder Ballroom on Thu 11/21. More info: https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/. Buy tickets: https://www.etix.com/ticket/p/55106870/richy-mitch-the-coal-miners-the-october-moon-tour-portland-wonder-ballroom?partner_id=100."
 	},
 	"usage": {
 		"prompt_tokens": 2749,
-		"completion_tokens": 126,
-		"total_tokens": 2875,
+		"completion_tokens": 125,
+		"total_tokens": 2874,
 		"prompt_tokens_details": {
-			"cached_tokens": 2688,
+			"cached_tokens": 0,
 			"audio_tokens": 0
 		},
 		"completion_tokens_details": {
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000492525
+	"usdPrice": 0.000693525
 }
