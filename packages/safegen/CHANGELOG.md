@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 0008fc5: 💥 Requires `openai@^5.0.0`."
+- 0008fc5: 💥 Requires `openai@^5.0.0`.
 
 ## 0.4.1
 
