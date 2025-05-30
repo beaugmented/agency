@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.5.0
+
+### Minor Changes
+
+- 0008fc5: 💥 Requires `openai@^5.0.0`.
+
 ## 0.4.1
 
 ### Patch Changes
