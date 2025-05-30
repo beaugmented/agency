@@ -1,13 +1,12 @@
 import type { Json } from "atom.io/json"
 import type OpenAI from "openai"
-import type * as OpenAICore from "openai/core"
-import type OpenAIResources from "openai/resources/index"
+import type * as OpenAIResources from "openai/resources"
 
 import { getModelPrices } from "./openai-pricing-facts"
 
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
-	options?: OpenAICore.RequestOptions,
+	options?: OpenAI.RequestOptions,
 ) => Promise<{
 	data: Json.Object
 	usage: OpenAI.Completions.CompletionUsage

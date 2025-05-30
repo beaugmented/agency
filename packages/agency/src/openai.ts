@@ -1,8 +1,8 @@
 import type { Loadable } from "atom.io"
 import { selectorFamily } from "atom.io"
+import type { APIPromise } from "openai"
 import OpenAI from "openai"
-import type * as OpenAICore from "openai/core"
-import type OpenAIResources from "openai/resources/index"
+import type * as OpenAIResources from "openai/resources"
 import { Squirrel } from "varmint"
 
 import { agendaSystemMessageSelectors } from "./agenda"
@@ -12,8 +12,8 @@ import { orientationAtoms } from "./orientation"
 let openAiClient: OpenAI
 export function aiComplete(
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
-	options?: OpenAICore.RequestOptions,
-): OpenAICore.APIPromise<OpenAIResources.ChatCompletion> {
+	options?: OpenAI.RequestOptions,
+): APIPromise<OpenAIResources.ChatCompletion> {
 	if (!openAiClient) {
 		openAiClient = new OpenAI({
 			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
