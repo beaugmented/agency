@@ -64,7 +64,7 @@ importers:
         version: 0.33.4(@typescript-eslint/parser@8.33.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.28.0(jiti@2.4.2))
       varmint:
         specifier: 0.5.2
-        version: 0.5.2(zod@3.25.45)
+        version: 0.5.2(zod@3.25.46)
     devDependencies:
       '@types/node':
         specifier: 22.15.29
@@ -83,7 +83,7 @@ importers:
         version: 9.28.0(jiti@2.4.2)
       openai:
         specifier: 5.0.1
-        version: 5.0.1(ws@8.18.2)(zod@3.25.45)
+        version: 5.0.1(ws@8.18.2)(zod@3.25.46)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -100,8 +100,8 @@ importers:
         specifier: 3.1.4
         version: 3.1.4(@types/node@22.15.29)(jiti@2.4.2)
       zod:
-        specifier: 3.25.45
-        version: 3.25.45
+        specifier: 3.25.46
+        version: 3.25.46
 
   packages/safegen:
     dependencies:
@@ -116,7 +116,7 @@ importers:
         version: 0.33.4(@typescript-eslint/parser@8.33.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.28.0(jiti@2.4.2))
       varmint:
         specifier: 0.5.2
-        version: 0.5.2(zod@3.25.45)
+        version: 0.5.2(zod@3.25.46)
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.52.0
@@ -141,7 +141,7 @@ importers:
         version: 0.5.16
       openai:
         specifier: 5.0.1
-        version: 5.0.1(ws@8.18.2)(zod@3.25.45)
+        version: 5.0.1(ws@8.18.2)(zod@3.25.46)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -161,8 +161,8 @@ importers:
         specifier: 3.1.4
         version: 3.1.4(@types/node@22.15.29)(jiti@2.4.2)
       zod:
-        specifier: 3.25.45
-        version: 3.25.45
+        specifier: 3.25.46
+        version: 3.25.46
 
 packages:
 
@@ -2692,8 +2692,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.45:
-    resolution: {integrity: sha512-kv1swJBZqv98NQibL0oVvkQE8rXT+6qGNM1FpZkFcJG2jnz4vbtu48bgaitp85CaBPLSKXibrEsU7MzJoVoZAA==}
+  zod@3.25.46:
+    resolution: {integrity: sha512-IqRxcHEIjqLd4LNS/zKffB3Jzg3NwqJxQQ0Ns7pdrvgGkwQsEBdEQcOHaBVqvvZArShRzI39+aMST3FBGmTrLQ==}
 
   zod@3.25.5:
     resolution: {integrity: sha512-ualArhgJydGAKkSdtxQyu6RXFW8nHFKWaw20jey8UFXU9uzkHYqWXJ93Iz+hUVVJb37VpF4LCCsOOfj6xaCVRQ==}
@@ -3048,8 +3048,8 @@ snapshots:
       '@modelcontextprotocol/sdk': 1.11.4
       google-auth-library: 9.15.1
       ws: 8.18.2
-      zod: 3.25.45
-      zod-to-json-schema: 3.24.5(zod@3.25.45)
+      zod: 3.25.46
+      zod-to-json-schema: 3.24.5(zod@3.25.46)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -3130,8 +3130,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.25.45
-      zod-to-json-schema: 3.24.5(zod@3.25.45)
+      zod: 3.25.46
+      zod-to-json-schema: 3.24.5(zod@3.25.46)
     transitivePeerDependencies:
       - supports-color
 
@@ -3655,11 +3655,11 @@ snapshots:
 
   color-support@1.1.3: {}
 
-  comline@0.3.0(zod@3.25.45):
+  comline@0.3.0(zod@3.25.46):
     dependencies:
       picocolors: 1.1.1
       treetrunks: 0.1.3
-      zod: 3.25.45
+      zod: 3.25.46
 
   comline@0.3.0(zod@3.25.5):
     dependencies:
@@ -4454,10 +4454,10 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  openai@5.0.1(ws@8.18.2)(zod@3.25.45):
+  openai@5.0.1(ws@8.18.2)(zod@3.25.46):
     optionalDependencies:
       ws: 8.18.2
-      zod: 3.25.45
+      zod: 3.25.46
 
   optionator@0.9.4:
     dependencies:
@@ -5055,10 +5055,10 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  varmint@0.5.2(zod@3.25.45):
+  varmint@0.5.2(zod@3.25.46):
     dependencies:
       cachedir: 2.4.0
-      comline: 0.3.0(zod@3.25.45)
+      comline: 0.3.0(zod@3.25.46)
       safedeposit: 0.1.1
     transitivePeerDependencies:
       - zod
@@ -5202,10 +5202,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.45):
+  zod-to-json-schema@3.24.5(zod@3.25.46):
     dependencies:
-      zod: 3.25.45
+      zod: 3.25.46
 
-  zod@3.25.45: {}
+  zod@3.25.46: {}
 
   zod@3.25.5: {}
