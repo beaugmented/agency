@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming Live Music Events: The Brothers Comatose at Wonder Ballroom on Fri 11/22. More Info: https://monqui.com/event/the-brothers-comatose/wonder-ballroom/portland-oregon/ Buy Tickets: https://www.etix.com/ticket/p/48229913/the-brothers-comatose-portland-wonder-ballroom?partner_id=100. Also, Ashley Kutcher at Holocene on Sat Nov 23. More Info: https://monqui.com/event/ashley-kutcher/holocene/portland-oregon/"
+		"allRelevantTextIncludingURLs": "The Brothers Comatose will be performing live on Fri 11/22 at Wonder Ballroom. More info can be found at https://monqui.com/event/the-brothers-comatose/wonder-ballroom/portland-oregon/. Tickets are available for purchase at https://www.etix.com/ticket/p/48229913/the-brothers-comatose-portland-wonder-ballroom?partner_id=100."
 	},
 	"usage": {
-		"prompt_tokens": 2728,
-		"completion_tokens": 139,
-		"total_tokens": 2867,
+		"prompt_tokens": 2742,
+		"completion_tokens": 105,
+		"total_tokens": 2847,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0006971999999999999
+	"usdPrice": 0.00067995
 }

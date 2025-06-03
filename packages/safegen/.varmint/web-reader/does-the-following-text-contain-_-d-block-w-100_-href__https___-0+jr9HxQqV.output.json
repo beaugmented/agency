@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events include the 'Drinking Boys and Girls Choir' on Saturday, November 16 at the Mission Theater in Portland. More information can be found at https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/. Tickets can be purchased at https://www.etix.com/ticket/p/41479390/drinking-boys-and-girls-choirall-ages-portland-mcmenamins-mission-theater?partner_id=100."
+		"allRelevantTextIncludingURLs": "The upcoming live music event is the 'Drinking Boys and Girls Choir' on Sat 11/16 at the Mission Theater. More info can be found at https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/ and tickets can be purchased at https://www.etix.com/ticket/p/41479390/drinking-boys-and-girls-choirall-ages-portland-mcmenamins-mission-theater?partner_id=100."
 	},
 	"usage": {
-		"prompt_tokens": 2715,
+		"prompt_tokens": 2729,
 		"completion_tokens": 121,
-		"total_tokens": 2836,
+		"total_tokens": 2850,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000683475
+	"usdPrice": 0.0006866250000000001
 }

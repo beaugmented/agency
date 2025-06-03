@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "IMPORTERS OF FINE LIVE MUSIC SINCE 1983. Visit [Doug Fir Lounge](https://monqui.com/dougfirlounge.com/) for upcoming events. Check out the concerts at [McMenamins Grand Lodge](https://monqui.com/mcmenamins-grand-lodge/) and [Wonder Ballroom](https://monqui.com/venue/wonder-ballroom/)."
+		"allRelevantTextIncludingURLs": "IMPORTERS OF FINE LIVE MUSIC SINCE 1983. Visit us at: https://monqui.com/mcmenamins-grand-lodge/, https://monqui.com/venue/wonder-ballroom/"
 	},
 	"usage": {
-		"prompt_tokens": 3419,
-		"completion_tokens": 97,
-		"total_tokens": 3516,
+		"prompt_tokens": 3433,
+		"completion_tokens": 60,
+		"total_tokens": 3493,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000827475
+	"usdPrice": 0.000808425
 }

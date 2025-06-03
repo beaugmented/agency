@@ -1,11 +1,12 @@
 {
 	"data": {
-		"isRelevant": false
+		"isRelevant": true,
+		"allRelevantTextIncludingURLs": "Monqui Presents | Live Music & Events"
 	},
 	"usage": {
-		"prompt_tokens": 1400,
-		"completion_tokens": 6,
-		"total_tokens": 1406,
+		"prompt_tokens": 1414,
+		"completion_tokens": 27,
+		"total_tokens": 1441,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -17,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00031859999999999994
+	"usdPrice": 0.00033434999999999997
 }

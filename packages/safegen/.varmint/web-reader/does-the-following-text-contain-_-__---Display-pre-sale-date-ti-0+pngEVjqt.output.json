@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music events include JD McPherson at Wonder Ballroom on Mon 11/18. More info: https://monqui.com/event/jd-mcpherson/wonder-ballroom/portland-oregon/. Buy Tickets: https://www.etix.com/ticket/p/95841402/jd-mcpherson-portland-wonder-ballroom?partner_id=100. Another event is Katie Gavin at Wonder Ballroom on Wed Nov 20. More info: https://monqui.com/event/katie-gavin-2/wonder-ballroom/portland-oregon/"
+		"allRelevantTextIncludingURLs": "Upcoming live music events:\n1. JD McPherson at Wonder Ballroom, Portland, Oregon on Mon 11/18. More info: https://monqui.com/event/jd-mcpherson/wonder-ballroom/portland-oregon/\n2. Katie Gavin at Wonder Ballroom, Portland, Oregon on Wed Nov 20. More info: https://monqui.com/event/katie-gavin-2/wonder-ballroom/portland-oregon/."
 	},
 	"usage": {
-		"prompt_tokens": 2751,
-		"completion_tokens": 137,
-		"total_tokens": 2888,
+		"prompt_tokens": 2765,
+		"completion_tokens": 110,
+		"total_tokens": 2875,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0007011749999999998
+	"usdPrice": 0.0006881249999999999
 }

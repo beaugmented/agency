@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming live music event: Shallou at The Get Down, Portland, Oregon. Event Date: Sat 11/16. More Info: https://monqui.com/event/shallou-2/the-get-down/portland-oregon/. Buy Tickets: https://www.tixr.com/groups/thegetdownpdx/events/shallou-113412."
+		"allRelevantTextIncludingURLs": "Shallou live performance at The Get Down in Portland, Oregon on Sat 11/16. More info can be found at https://monqui.com/event/shallou-2/the-get-down/portland-oregon/ and tickets can be purchased at https://www.tixr.com/groups/thegetdownpdx/events/shallou-113412."
 	},
 	"usage": {
-		"prompt_tokens": 2725,
-		"completion_tokens": 91,
-		"total_tokens": 2816,
+		"prompt_tokens": 2739,
+		"completion_tokens": 92,
+		"total_tokens": 2831,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000667725
+	"usdPrice": 0.000671475
 }

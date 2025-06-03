@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "There are upcoming live music events. One of them is 'Ashley Kutcher' on Sat Nov 23 at Holocene. For more details, visit: https://monqui.com/event/ashley-kutcher/holocene/portland-oregon/. The event starts at 6pm with doors opening at 5pm. Tickets are available for $31.16. You can buy tickets at: https://www.etix.com/ticket/p/60071179/ashley-kutcher-portland-holocene-monqui-presents?partner_id=100. Additionally, there is another event 'Mac Sabbath with Supersuckers' also scheduled for Sat Nov 23. More information can be found at: https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/"
+		"allRelevantTextIncludingURLs": "Upcoming live music event: Ashley Kutcher on Sat Nov 23 at Holocene. Show starts at 6 PM, doors open at 5 PM. Tickets are priced at $31.16. For further information, visit: https://monqui.com/event/ashley-kutcher/holocene/portland-oregon/ and to buy tickets, go to: https://www.etix.com/ticket/p/60071179/ashley-kutcher-portland-holocene-monqui-presents?partner_id=100."
 	},
 	"usage": {
-		"prompt_tokens": 2745,
-		"completion_tokens": 192,
-		"total_tokens": 2937,
+		"prompt_tokens": 2759,
+		"completion_tokens": 128,
+		"total_tokens": 2887,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.000732825
+	"usdPrice": 0.0006975750000000001
 }

@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Rainbow Kitten Surprise will perform at the Theater Of The Clouds in Portland, Oregon on Wed 11/20. More info: https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/. Buy Tickets: https://www.ticketmaster.com/event/0F0060B7910051A9."
+		"allRelevantTextIncludingURLs": "The text contains details about upcoming live music events, including a performance by Rainbow Kitten Surprise on November 20 at the Theater of the Clouds in Portland, Oregon. More information can be found at https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/ and tickets can be purchased at https://www.ticketmaster.com/event/0F0060B7910051A9. Additionally, there is an event featuring OVER THE RHINE on November 21 at The Old Church, with further details available at https://monqui.com/event/over-the-rhine-2/the-old-church/portland-oregon/."
 	},
 	"usage": {
-		"prompt_tokens": 2749,
-		"completion_tokens": 94,
-		"total_tokens": 2843,
+		"prompt_tokens": 2763,
+		"completion_tokens": 160,
+		"total_tokens": 2923,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0006749249999999999
+	"usdPrice": 0.0007176749999999999
 }

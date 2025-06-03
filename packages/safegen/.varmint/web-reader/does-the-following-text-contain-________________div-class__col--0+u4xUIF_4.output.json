@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Upcoming Events:\n\n1. **Kate Bollinger**\n   - Date: Thu Nov 14\n   - Venue: [Wonder Ballroom](https://monqui.com/venue/wonder-ballroom/)\n   - More Info: [Link](https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/)\n   - Buy Tickets: [Link](https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100)"
+		"allRelevantTextIncludingURLs": "Upcoming Events:\nKate Bollinger - Show: 8pm / Doors: 7pm on Thu Nov 14 at Wonder Ballroom. More info available at https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/. Tickets can be purchased at https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100."
 	},
 	"usage": {
-		"prompt_tokens": 2730,
-		"completion_tokens": 133,
-		"total_tokens": 2863,
+		"prompt_tokens": 2744,
+		"completion_tokens": 107,
+		"total_tokens": 2851,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00069405
+	"usdPrice": 0.0006816
 }
