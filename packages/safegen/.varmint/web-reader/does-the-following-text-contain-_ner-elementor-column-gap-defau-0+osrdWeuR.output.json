@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "For more information about upcoming live music events, you can follow us on Instagram at https://www.instagram.com/monqui_presents/ and on TikTok at https://www.tiktok.com/@monqui_presents."
+		"allRelevantTextIncludingURLs": "Check out Monqui Presents for upcoming live music events! Follow them on Instagram [https://www.instagram.com/monqui_presents/] and TikTok [https://www.tiktok.com/@monqui_presents] for more updates and information on performances."
 	},
 	"usage": {
-		"prompt_tokens": 6265,
-		"completion_tokens": 62,
-		"total_tokens": 6327,
+		"prompt_tokens": 6279,
+		"completion_tokens": 69,
+		"total_tokens": 6348,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0014468249999999999
+	"usdPrice": 0.0014541749999999998
 }

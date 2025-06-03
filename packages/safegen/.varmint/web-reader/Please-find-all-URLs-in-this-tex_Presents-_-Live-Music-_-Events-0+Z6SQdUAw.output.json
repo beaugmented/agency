@@ -8,38 +8,25 @@
 			"https://monqui.com/event/baynk-senescence-usa-canada-tour-2025/wonder-ballroom/portland-oregon/",
 			"https://monqui.com/event/daily-bread-flash-flood-tour/wonder-ballroom/portland-oregon/",
 			"https://monqui.com/event/kate-bollinger/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/87148750/kate-bollinger-portland-wonder-ballroom?partner_id=100",
 			"https://monqui.com/event/brother-ali-with-ant/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/94362414/brother-ali-with-ant-portland-wonder-ballroom?partner_id=100",
 			"https://monqui.com/event/the-dear-hunter-celebrating-20-years/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/73037499/the-dear-hunter-celebrating-20-years-portland-wonder-ballroom?partner_id=100",
 			"https://monqui.com/event/drinkingboysandgirlsclub/mission-theater/portland-oregon/",
-			"https://www.etix.com/ticket/p/41479390/drinking-boys-and-girls-choirall-ages-portland-mcmenamins-mission-theater?partner_id=100",
 			"https://monqui.com/event/shallou-2/the-get-down/portland-oregon/",
-			"https://www.tixr.com/groups/thegetdownpdx/events/shallou-113412",
-			"https://monqui.com/event/tr-st/wonder-ballroom/portland-oregon/",
 			"https://monqui.com/event/jd-mcpherson/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/95841402/jd-mcpherson-portland-wonder-ballroom?partner_id=100",
 			"https://monqui.com/event/katie-gavin-2/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/32502579/katie-gavin-portland-wonder-ballroom?partner_id=100",
 			"https://monqui.com/event/rainbow-kitten-surprise-4/theater-of-the-clouds/portland-oregon/",
-			"https://www.ticketmaster.com/event/0F0060B7910051A9",
+			"https://monqui.com/event/over-the-rhine-2/the-old-church/portland-oregon/",
 			"https://monqui.com/event/richy-mitch-the-coal-miners-the-october-moon-tour/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/65050464/over-the-rhine-portland-the-old-church?partner_id=100",
 			"https://monqui.com/event/the-brothers-comatose/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/48229913/the-brothers-comatose-portland-wonder-ballroom?partner_id=100",
 			"https://monqui.com/event/ashley-kutcher/holocene/portland-oregon/",
-			"https://www.etix.com/ticket/p/60071179/ashley-kutcher-portland-holocene-monqui-presents?partner_id=100",
-			"https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/84223981/mac-sabbath-with-supersuckers-portland-wonder-ballroom?partner_id=100",
-			"https://monqui.com/event/better-lovers-the-highly-irresponsible-tour/wonder-ballroom/portland-oregon/",
-			"https://www.etix.com/ticket/p/64150342/better-lovers-the-highly-irresponsible-tour-portland-wonder-ballroom?partner_id=100"
+			"https://monqui.com/event/mac-sabbath-with-supersuckers-portland-wonder-ballroom/",
+			"https://monqui.com/event/better-lovers-the-highly-irresponsible-tour/wonder-ballroom/portland-oregon/"
 		]
 	},
 	"usage": {
-		"prompt_tokens": 2796,
-		"completion_tokens": 983,
-		"total_tokens": 3779,
+		"prompt_tokens": 2642,
+		"completion_tokens": 550,
+		"total_tokens": 3192,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -51,5 +38,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0012189000000000002
+	"usdPrice": 0.00092445
 }

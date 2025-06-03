@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Details regarding upcoming live music events can be found at https://monqui.com/events/"
+		"allRelevantTextIncludingURLs": "This text contains information regarding upcoming live music events. For details, visit the website at https://monqui.com/events/"
 	},
 	"usage": {
-		"prompt_tokens": 3190,
-		"completion_tokens": 35,
-		"total_tokens": 3225,
+		"prompt_tokens": 3204,
+		"completion_tokens": 42,
+		"total_tokens": 3246,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0007387499999999999
+	"usdPrice": 0.0007461
 }

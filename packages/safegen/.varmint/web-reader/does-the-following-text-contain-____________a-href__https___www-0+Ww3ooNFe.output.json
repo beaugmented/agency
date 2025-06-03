@@ -1,12 +1,11 @@
 {
 	"data": {
-		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "For details on upcoming live music events, visit [Monqui Presents on Instagram](https://www.instagram.com/monqui_presents/) or check out their TikTok [@monqui_presents](https://www.tiktok.com/@monqui_presents). You can find more information about venues in Oregon and Washington, and specific events at [Monqui's official website](https://monqui.com/venues/oregon/) and [McMenamins Edgefield](https://monqui.com/venue/mcmenamins-edgefield/)."
+		"isRelevant": false
 	},
 	"usage": {
-		"prompt_tokens": 5358,
-		"completion_tokens": 122,
-		"total_tokens": 5480,
+		"prompt_tokens": 5372,
+		"completion_tokens": 9,
+		"total_tokens": 5381,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +17,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.00127875
+	"usdPrice": 0.0012141
 }

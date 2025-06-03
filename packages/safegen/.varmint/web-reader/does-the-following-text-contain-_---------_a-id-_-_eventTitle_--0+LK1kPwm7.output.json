@@ -1,12 +1,12 @@
 {
 	"data": {
 		"isRelevant": true,
-		"allRelevantTextIncludingURLs": "Live Music Event: Mac Sabbath with Supersuckers on Sat, Nov 23. Venue: [Wonder Ballroom](https://monqui.com/venue/wonder-ballroom/). Tickets: [Buy Here](https://www.etix.com/ticket/p/84223981/mac-sabbath-with-supersuckers-portland-wonder-ballroom?partner_id=100). More Info: [Click Here](https://monqui.com/event/mac-sabbath-with-supersuckers/wonder-ballroom/portland-oregon/)."
+		"allRelevantTextIncludingURLs": "Upcoming live music events: \n1. Event: Mac Sabbath with Supersuckers \n   Date: Sat Nov 23 \n   Time: Show: 8pm / Doors: 7pm \n   Venue: [Wonder Ballroom](https://monqui.com/venue/wonder-ballroom/) \n   Buy Tickets: [Link](https://www.etix.com/ticket/p/84223981/mac-sabbath-with-supersuckers-portland-wonder-ballroom?partner_id=100) \n2. Event: Better Lovers - The Highly Irresponsible Tour \n   Date: Wed Nov 27 \n   Venue: [Wonder Ballroom](https://monqui.com/venue/wonder-ballroom/) \n   More Info: [Link](https://monqui.com/event/better-lovers-the-highly-irresponsible-tour/wonder-ballroom/portland-oregon/)"
 	},
 	"usage": {
-		"prompt_tokens": 2732,
-		"completion_tokens": 132,
-		"total_tokens": 2864,
+		"prompt_tokens": 2746,
+		"completion_tokens": 209,
+		"total_tokens": 2955,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0
@@ -18,5 +18,5 @@
 			"rejected_prediction_tokens": 0
 		}
 	},
-	"usdPrice": 0.0006938999999999999
+	"usdPrice": 0.00074325
 }
