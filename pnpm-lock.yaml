@@ -82,8 +82,8 @@ importers:
         specifier: 9.28.0
         version: 9.28.0(jiti@2.4.2)
       openai:
-        specifier: 5.2.0
-        version: 5.2.0(ws@8.18.2)(zod@3.25.57)
+        specifier: 5.3.0
+        version: 5.3.0(ws@8.18.2)(zod@3.25.57)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -140,8 +140,8 @@ importers:
         specifier: 0.5.16
         version: 0.5.16
       openai:
-        specifier: 5.2.0
-        version: 5.2.0(ws@8.18.2)(zod@3.25.57)
+        specifier: 5.3.0
+        version: 5.3.0(ws@8.18.2)(zod@3.25.57)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -1959,8 +1959,8 @@ packages:
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
-  openai@5.2.0:
-    resolution: {integrity: sha512-b+Sf2Yk2eApDkhqHr7C4d5hux9gkHUvyqQ7RrdSfLsjrXkCZpJPqkME0u5Py7RPB28Ozz+RkJZpW7YPTOoChew==}
+  openai@5.3.0:
+    resolution: {integrity: sha512-VIKmoF7y4oJCDOwP/oHXGzM69+x0dpGFmN9QmYO+uPbLFOmmnwO+x1GbsgUtI+6oraxomGZ566Y421oYVu191w==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -4493,7 +4493,7 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  openai@5.2.0(ws@8.18.2)(zod@3.25.57):
+  openai@5.3.0(ws@8.18.2)(zod@3.25.57):
     optionalDependencies:
       ws: 8.18.2
       zod: 3.25.57
