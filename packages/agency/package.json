@@ -44,7 +44,7 @@
 		"zod": "3.25.64"
 	},
 	"dependencies": {
-		"atom.io": "0.33.4",
+		"atom.io": "0.33.5",
 		"varmint": "0.5.2"
 	}
 }
