@@ -20,7 +20,7 @@ export function setUpOllamaJsonGenerator(
 		let data: Json.Object
 		try {
 			data = JSON.parse(response)
-		} catch (error) {
+		} catch (_) {
 			data = {}
 		}
 		return { data, usdPrice: 0 }

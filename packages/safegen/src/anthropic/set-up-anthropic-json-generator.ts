@@ -69,7 +69,7 @@ export function setUpAnthropicJsonGenerator(
 			}
 			const stringifiedData = `{${textMessage.text}`
 			data = JSON.parse(stringifiedData)
-		} catch (error) {
+		} catch (_) {
 			data = {}
 		}
 		return { data, usage, usdPrice }

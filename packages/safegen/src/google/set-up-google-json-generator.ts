@@ -56,7 +56,7 @@ export function setUpGoogleJsonGenerator(
 				throw new Error(`No text message found in completion`)
 			}
 			data = JSON.parse(text)
-		} catch (error) {
+		} catch (_) {
 			data = {}
 		}
 		return { data, usage, usdPrice }
