@@ -1,3 +1,4 @@
+import type { Json } from "atom.io/json"
 import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
@@ -35,6 +36,26 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	public lastUsage?: OpenAI.Completions.CompletionUsage
 	public logger: Pick<Console, `error` | `info` | `warn`>
 
+	public formatIssue(
+		prompt: string,
+		actual: Json.Serializable,
+		issue: string,
+		consequence?: string,
+	): string {
+		const lines = [
+			`SafeGen saw that invalid data was produced for the prompt:`,
+			`\t${prompt}`,
+			`The actual data is:`,
+			`\t${JSON.stringify(actual, null, 2)}`,
+			`The issue that makes it invalid is:`,
+			`\t${issue}`,
+		]
+		if (consequence) {
+			lines.push(`The consequence of this issue is:`, `\t${consequence}`)
+		}
+		return lines.join(`\n`)
+	}
+
 	public constructor({
 		model,
 		usdBudget,
@@ -50,16 +71,14 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		this.squirrel = new Squirrel(cachingMode)
 		this.logger = logger
 		let client = clientCache.get(apiKey)
-		if (cachingMode !== `read`) {
-			if (!client) {
-				client = new OpenAI({
-					apiKey,
-					dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
-				})
-				clientCache.set(apiKey, client)
-			}
-			this.client = client
+		if (!client) {
+			client = new OpenAI({
+				apiKey,
+				dangerouslyAllowBrowser: process.env.NODE_ENV === `test`,
+			})
+			clientCache.set(apiKey, client)
 		}
+		this.client = client
 		this.getCompletionSquirreled = this.squirrel.add(
 			`openai-safegen`,
 			this.client.completions.create.bind(this.client.completions),
@@ -92,7 +111,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 
 	public from: GenerateFromSchema
 
-	public async boolean(prompt: string): Promise<boolean> {
+	public async boolean(prompt: string): Promise<Error | boolean> {
 		const response = await this.getCompletionSquirreled
 			.for(`boolean-${prompt}`)
 			.get({
@@ -107,17 +126,25 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		if (text === `n`) {
 			return false
 		}
-		this.logger.error(`Invalid response: ${text}`)
-		return false
+		return new Error(
+			this.formatIssue(
+				prompt,
+				text,
+				`Expected 'y' or 'n'`,
+				`Cannot be parsed as a boolean.`,
+			),
+		)
 	}
 
 	public async number(
 		prompt: string,
 		min: number,
 		max: number,
-	): Promise<number> {
+	): Promise<Error | number> {
 		if (min > max) {
-			throw new Error(`min must be less than max`)
+			return new Error(
+				`For prompt "${prompt}", a minimum number ${min} was specified, but a maximum number ${max} was specified. This is unachievable.`,
+			)
 		}
 		const response = await this.getCompletionSquirreled
 			.for(`number-${prompt}`)
@@ -129,8 +156,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		const text = response.choices[0].text.trim()
 		const number = Number(text)
 		if (Number.isNaN(number)) {
-			this.logger.error(`Invalid response: ${text}`)
-			return 0
+			return new Error(this.formatIssue(prompt, text, `Expected a number.`))
 		}
 		return number
 	}
@@ -140,28 +166,37 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		options: T,
 		min?: 1,
 		max?: 1,
-	): Promise<T[number]>
+	): Promise<Error | T[number]>
 	public async choose<T extends (number | string)[]>(
 		prompt: string,
 		options: T,
 		min: number,
 		max?: number,
-	): Promise<T[number][]>
+	): Promise<Error | T[number][]>
 	public async choose<T extends (number | string)[]>(
 		prompt: string,
 		options: T,
 		min = 1,
 		max = min,
-	): Promise<T[number] | T[number][]> {
+	): Promise<Error | T[number] | T[number][]> {
+		const isSingleChoice = min === 1 && max === 1
 		if (options.length === 0) {
-			throw new Error(`options must not be empty`)
+			if (isSingleChoice) {
+				return new Error(
+					`For prompt "${prompt}", exactly one option was required to be chosen, but no options were provided.`,
+				)
+			}
 		}
 		if (options.length === 1) {
-			this.logger.warn(`options has only one option`)
+			this.logger.warn(
+				`For prompt: ${prompt}, options has only one option: "${options[0]}". Returning it.`,
+			)
 			return [options[0]]
 		}
 		if (min > max) {
-			throw new Error(`min must be less than max`)
+			return new Error(
+				`For prompt "${prompt}", a minimum of ${min} options must be chosen, but a maximum of ${max} options was specified. This is unachievable.`,
+			)
 		}
 		const optionsString = options
 			.map((option) => `- ${String(option)}`)
@@ -198,33 +233,56 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				max_tokens: 100,
 			})
 
-		console.log({ choices: response.choices })
+		console.log({ formattingInstruction, choices: response.choices })
 		const text = response.choices[0].text.trim()
-		if (min === 1 && max === 1) {
+		if (isSingleChoice) {
 			if (options.includes(text)) {
 				return text
 			}
 			if (options.includes(Number(text))) {
 				return Number(text)
 			}
-			this.logger.warn(`Invalid response: ${text}`)
-			return options[0]
+			return new Error(
+				this.formatIssue(
+					prompt,
+					text,
+					`"${text}" is not found among [${options.join(`, `)}]`,
+				),
+			)
 		}
 		if (text.toLowerCase() === `none`) {
 			return []
 		}
 		const lines = text.split(`\n`)
+		const filteredLines = lines.filter((line) => line.match(/^\d+\. /))
+		console.log({ lines, filteredLines })
 		const selections: T[number][] = []
-		for (const line of lines) {
+		for (const line of filteredLines) {
 			const cleanedLine = line.trim().split(`. `)[1]
-			console.log({ cleanedLine })
 			if (options.includes(cleanedLine)) {
 				selections.push(cleanedLine)
 			} else if (options.includes(Number(cleanedLine))) {
 				selections.push(Number(cleanedLine))
+			} else if (cleanedLine === `none`) {
 			} else {
-				this.logger.warn(`Invalid response: ${text}`)
+				this.formatIssue(
+					prompt,
+					cleanedLine,
+					`"${cleanedLine}" is not found among [${options.join(`, `)}]`,
+					`This element will not be included in the final result.`,
+				)
 			}
+		}
+		if (selections.length < min) {
+			return new Error(
+				`For prompt "${prompt}", at least ${min} options must be chosen, but ${selections.length} options were chosen.`,
+			)
+		}
+		if (selections.length > max) {
+			this.logger.warn(
+				`For prompt "${prompt}", at most ${max} options must be chosen, but ${selections.length} options were chosen.`,
+			)
+			return selections.slice(0, max)
 		}
 		return selections
 	}
