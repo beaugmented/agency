@@ -1,7 +1,7 @@
 [
 	{
 		"model": "gpt-4o-mini",
-		"prompt": "Is the sky blue? [respond either 'y' or 'n' only]",
+		"prompt": "Is the sky blue? [respond either 'y' or 'n' only]/n/nAnswer: ",
 		"max_tokens": 1
 	}
 ]

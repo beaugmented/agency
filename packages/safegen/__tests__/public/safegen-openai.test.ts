@@ -17,7 +17,7 @@ beforeAll(() => {
 afterAll(() => {})
 
 describe(`model pricing retrieval`, () => {
-	test(`getModelPrices should return the correct pricing for a model`, () => {
+	test(`prices for various models`, () => {
 		expect(getModelPrices(`gpt-4o-mini`)).toEqual(
 			OPEN_AI_PRICING_FACTS[`gpt-4o-mini`],
 		)
@@ -228,45 +228,97 @@ describe(`primitive data types`, () => {
 		)
 		expect(answer).toBe(42)
 	})
-	test(`choose generation`, async () => {
-		const gpt4oMini = new OpenAiSafeGenerator({
-			usdBudget: 0.01,
-			usdMinimum: 0.00_01,
-			model: `gpt-4o-mini`,
-			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-			cachingMode: process.env.CI
-				? `read`
-				: process.env.NODE_ENV === `production`
-					? `off`
-					: `read-write`,
-			logger: console,
-		})
-		const answer = await gpt4oMini.choose(
-			`Which of the following animals are mammals?`,
-			[`dog`, `cat`, `eagle`, `lion`, `tuna`],
-			0,
-			3,
-		)
 
-		expect(answer).toEqual([`dog`, `cat`, `lion`])
-	})
-	test(`choose generation (single choice)`, async () => {
-		const gpt4oMini = new OpenAiSafeGenerator({
-			usdBudget: 0.01,
-			usdMinimum: 0.00_01,
-			model: `gpt-4o-mini`,
-			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-			cachingMode: process.env.CI
-				? `read`
-				: process.env.NODE_ENV === `production`
-					? `off`
-					: `read-write`,
-			logger: console,
+	describe(`choose generation`, () => {
+		test(`single choice`, async () => {
+			const gpt4oMini = new OpenAiSafeGenerator({
+				usdBudget: 0.01,
+				usdMinimum: 0.00_01,
+				model: `gpt-4o-mini`,
+				apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+				cachingMode: process.env.CI
+					? `read`
+					: process.env.NODE_ENV === `production`
+						? `off`
+						: `read-write`,
+				logger: console,
+			})
+			const answer = await gpt4oMini.choose(
+				`Which dish is considered most gourmet?`,
+				[`mcdonald's`, `sushi`, `hot pocket`, `hot dog`] as const,
+			)
+			expect(answer).toEqual(`sushi`)
 		})
-		const answer = await gpt4oMini.choose(
-			`Which dish is considered most gourmet?`,
-			[`mcdonald's`, `sushi`, `hot pocket`, `hot dog`],
-		)
-		expect(answer).toEqual(`sushi`)
+		test(`multi choice`, async () => {
+			const gpt4oMini = new OpenAiSafeGenerator({
+				usdBudget: 0.01,
+				usdMinimum: 0.00_01,
+				model: `gpt-4o-mini`,
+				apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+				cachingMode: process.env.CI
+					? `read`
+					: process.env.NODE_ENV === `production`
+						? `off`
+						: `read-write`,
+				logger: console,
+			})
+			const answer = await gpt4oMini.choose(
+				`Which dishes are considered more gourmet?`,
+				[`mcdonald's`, `sushi`, `hot pocket`, `hot dog`, `risotto`] as const,
+				2,
+			)
+
+			expect(answer).toEqual([`sushi`, `risotto`])
+		})
+		test(`min max choices`, async () => {
+			const gpt4oMini = new OpenAiSafeGenerator({
+				usdBudget: 0.01,
+				usdMinimum: 0.00_01,
+				model: `gpt-4o-mini`,
+				apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+				cachingMode: process.env.CI
+					? `read`
+					: process.env.NODE_ENV === `production`
+						? `off`
+						: `read-write`,
+				logger: console,
+			})
+
+			// one
+			let answer = await gpt4oMini.choose(
+				`Which of the following animals are mammals?`,
+				[`python`, `mayfly`, `eagle`, `lion`, `tuna`],
+				0,
+				3,
+			)
+			expect(answer).toEqual([`lion`])
+
+			// two
+			answer = await gpt4oMini.choose(
+				`Which of the following animals are mammals?`,
+				[`python`, `cat`, `eagle`, `lion`, `tuna`],
+				0,
+				3,
+			)
+			expect(answer).toEqual([`cat`, `lion`])
+
+			// three
+			answer = await gpt4oMini.choose(
+				`Which of the following animals are mammals?`,
+				[`dog`, `cat`, `eagle`, `lion`, `tuna`],
+				0,
+				3,
+			)
+			expect(answer).toEqual([`dog`, `cat`, `lion`])
+
+			// none
+			answer = await gpt4oMini.choose(
+				`Which of the following animals are mammals?`,
+				[`python`, `mayfly`, `eagle`, `duck`, `tuna`],
+				0,
+				3,
+			)
+			expect(answer).toEqual([])
+		})
 	})
 })

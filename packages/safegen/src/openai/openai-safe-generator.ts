@@ -97,7 +97,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			.for(`boolean-${prompt}`)
 			.get({
 				model: this.model,
-				prompt: `${prompt} [respond either 'y' or 'n' only]`,
+				prompt: `${prompt} [respond either 'y' or 'n' only]/n/nAnswer: `,
 				max_tokens: 1,
 			})
 		const text = response.choices[0].text.trim().toLowerCase()
@@ -145,7 +145,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		prompt: string,
 		options: T,
 		min: number,
-		max: number,
+		max?: number,
 	): Promise<T[number][]>
 	public async choose<T extends (number | string)[]>(
 		prompt: string,
@@ -182,22 +182,25 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			if (min !== max) {
 				formattingInstruction += `\n\nremember, you can choose as few as ${min} option${min === 1 ? `` : `s`}, or as many as ${max} option${max === 1 ? `` : `s`}`
 			}
+			if (min === 0) {
+				formattingInstruction += `\n\nto choose 0 options, only say "none"`
+			}
 			formattingInstruction += `\n\n--\n\n`
 		} else {
-			formattingInstruction += `\n\nAnswer: `
+			formattingInstruction += `\n\nANSWER: `
 		}
 
 		const response = await this.getCompletionSquirreled
-			.for(`choose-${prompt}`)
+			.for(`choose-${prompt}-FROM-${options.join(`-`)}`)
 			.get({
 				model: this.model,
 				prompt: `${prompt}\n\n${formattingInstruction}`,
 				max_tokens: 100,
 			})
 
-		console.log({ response })
+		console.log({ choices: response.choices })
+		const text = response.choices[0].text.trim()
 		if (min === 1 && max === 1) {
-			const text = response.choices[0].text.trim()
 			if (options.includes(text)) {
 				return text
 			}
@@ -207,7 +210,9 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			this.logger.warn(`Invalid response: ${text}`)
 			return options[0]
 		}
-		const text = response.choices[0].text.trim()
+		if (text.toLowerCase() === `none`) {
+			return []
+		}
 		const lines = text.split(`\n`)
 		const selections: T[number][] = []
 		for (const line of lines) {
