@@ -1,19 +1,19 @@
 {
-	"id": "cmpl-Bji43lv4OPHoLqw4jnqpFImDIwvJB",
+	"id": "cmpl-BjrpQtw2PqhyGTBbNyhCy0zn974CI",
 	"object": "completion",
-	"created": 1750233843,
+	"created": 1750271376,
 	"model": "gpt-4o-mini-2024-07-18",
 	"choices": [
 		{
 			"index": 0,
-			"text": " sushi",
+			"text": "sushi",
 			"finish_reason": "stop"
 		}
 	],
 	"usage": {
-		"prompt_tokens": 38,
-		"completion_tokens": 2,
-		"total_tokens": 40,
+		"prompt_tokens": 49,
+		"completion_tokens": 3,
+		"total_tokens": 52,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0

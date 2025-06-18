@@ -1,19 +1,19 @@
 {
-	"id": "cmpl-BjrpQxv8NQKJCdUtdnd5MkVIyAZPm",
+	"id": "cmpl-Bjs33xYgH9Aab6Bh1L9e9Lpj4y3FV",
 	"object": "completion",
-	"created": 1750271376,
+	"created": 1750272221,
 	"model": "gpt-4o-mini-2024-07-18",
 	"choices": [
 		{
 			"index": 0,
-			"text": "1. sushi\n2. risotto",
+			"text": "$NONE",
 			"finish_reason": "stop"
 		}
 	],
 	"usage": {
-		"prompt_tokens": 61,
-		"completion_tokens": 9,
-		"total_tokens": 70,
+		"prompt_tokens": 87,
+		"completion_tokens": 3,
+		"total_tokens": 90,
 		"prompt_tokens_details": {
 			"cached_tokens": 0,
 			"audio_tokens": 0

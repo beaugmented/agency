@@ -2,6 +2,7 @@ import type { Json } from "atom.io/json"
 import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
+import { lowercase } from "zod/v4"
 
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
@@ -198,44 +199,63 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				`For prompt "${prompt}", a minimum of ${min} options must be chosen, but a maximum of ${max} options was specified. This is unachievable.`,
 			)
 		}
+		if (max === 0) {
+			this.logger.warn(
+				`For prompt "${prompt}", a maximum of 0 options was specified; returning an empty array.`,
+			)
+			return []
+		}
 		const optionsString = options
 			.map((option) => `- ${String(option)}`)
 			.join(`\n`)
-		let formattingInstruction: string
-		if (min === max) {
-			formattingInstruction = `choose exactly ${min} option${min === 1 ? `` : `s`} from the following list:`
+		let formattingInstruction = optionsString
+		let maxTokens: number
+		if (min === 0 && max === 1) {
+			formattingInstruction += `\n\respond with the best option given.`
+			formattingInstruction += `\n\nif none of the options are good, respond with just the phase "$NONE".`
+			maxTokens = 12
+		} else if (min === 1 && max === 1) {
+			formattingInstruction += `\n\nrespond with only the best option given.`
+			formattingInstruction += `\n\nif none of the options are good, just say one anyway.`
+			maxTokens = 12
 		} else {
-			formattingInstruction = `choose between ${min} and ${max} options from the following list:`
-		}
-		formattingInstruction += `\n\n${optionsString}`
-		if (max === 1) {
-			formattingInstruction += `\n\nANSWER: `
-		} else {
-			formattingInstruction += `\n\nformat your response as a numbered list, like this:`
+			formattingInstruction += `\n\n`
+			if (min === 0) {
+				formattingInstruction += `if none of the options apply, respond "$NONE". otherwise, `
+			}
+			formattingInstruction += `format your response as a numbered list, like this:`
 			formattingInstruction += `\n`
 			formattingInstruction += Array.from(
 				{ length: max },
 				(_, i) => `${i + 1}. choice ${i + 1}`,
 			).join(`\n`)
-			if (min !== max) {
-				formattingInstruction += `\n\nremember, you can choose as few as ${min} option${min === 1 ? `` : `s`}, or as many as ${max} option${max === 1 ? `` : `s`}`
+
+			if (min === max) {
+				formattingInstruction += `\n\nchoose exactly ${min} options`
+			} else {
+				formattingInstruction += `\n\nchoose as few as ${min} options, or as many as ${max} options`
 			}
-			if (min === 0) {
-				formattingInstruction += `\n\nto choose 0 options, only say "none"`
-			}
-			formattingInstruction += `\n\nRESPONSE:\n`
+
+			maxTokens = 12 * max
 		}
+		formattingInstruction += `\n\nRESPONSE:\n`
 
 		const response = await this.getCompletionSquirreled
 			.for(`choose-${prompt}-FROM-${options.join(`-`)}`)
 			.get({
 				model: this.model,
 				prompt: `${prompt}\n\n${formattingInstruction}`,
-				max_tokens: 100,
+				max_tokens: maxTokens,
 			})
 
-		console.log({ prompt, formattingInstruction, choices: response.choices })
 		const text = response.choices[0].text.trim()
+		console.log({
+			prompt,
+			formattingInstruction,
+			choices: response.choices,
+			text,
+			lowercaseText: text.toLowerCase(),
+		})
 		if (isSingleChoice) {
 			if (options.includes(text)) {
 				return text
@@ -251,7 +271,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				),
 			)
 		}
-		if (text.toLowerCase() === `none`) {
+		if (text.toLowerCase() === `$none`) {
 			return []
 		}
 		const lines = text.split(`\n`)
@@ -264,7 +284,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				selections.push(cleanedLine)
 			} else if (options.includes(Number(cleanedLine))) {
 				selections.push(Number(cleanedLine))
-			} else if (cleanedLine === `none`) {
+			} else if (cleanedLine === `$none`) {
 			} else {
 				this.formatIssue(
 					prompt,
