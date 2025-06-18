@@ -104,6 +104,8 @@ jobs:
         run: bun run build
 
       - name: Test
-        run: bun run test
+        run: |
+          printenv > packages/safegen/.env
+          bun run test
         env:
           OPENAI_API_KEY: fake-key
