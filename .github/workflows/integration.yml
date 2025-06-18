@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 # env:
-  # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  # TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+# TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+# TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
 defaults:
   run:
@@ -36,12 +36,12 @@ jobs:
         with:
           node-version-file: .node-version
           cache: pnpm
-          
+
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2.0.2
         with:
           bun-version-file: .bun-version
-    
+
       - name: Install Dependencies
         run: pnpm i
 
@@ -58,7 +58,7 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     timeout-minutes: 7
-    
+
     services:
       postgres:
         image: postgres:17.2-alpine3.19
@@ -70,7 +70,6 @@ jobs:
           - 5432:5432
         options: >-
           --health-cmd pg_isready --health-interval 1s --health-timeout 0.5s --health-retries 30
-
 
     steps:
       - name: Checkout
@@ -86,7 +85,7 @@ jobs:
         with:
           node-version-file: .node-version
           cache: pnpm
-          
+
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2.0.2
         with:
@@ -106,3 +105,5 @@ jobs:
 
       - name: Test
         run: bun run test
+        env:
+          OPENAI_API_KEY: fake-key
