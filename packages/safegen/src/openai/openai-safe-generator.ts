@@ -2,7 +2,7 @@ import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
-import { formatIssue, numberGen } from "../primitives"
+import { booleanGen, formatIssue, numberGen } from "../primitives"
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
@@ -91,29 +91,16 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 
 	public from: GenerateFromSchema
 
-	public async boolean(prompt: string): Promise<Error | boolean> {
-		const response = await this.getCompletionSquirreled
-			.for(`boolean-${prompt}`)
-			.get({
+	public async boolean(instruction: string): Promise<Error | boolean> {
+		return booleanGen(instruction, async (prompt, filename) => {
+			const response = await this.getCompletionSquirreled.for(filename).get({
 				model: this.model,
-				prompt: `${prompt} [respond either 'y' or 'n' only]/n/nAnswer: `,
+				prompt,
 				max_tokens: 1,
 			})
-		const text = response.choices[0].text.trim().toLowerCase()
-		if (text === `y`) {
-			return true
-		}
-		if (text === `n`) {
-			return false
-		}
-		return new Error(
-			formatIssue(
-				prompt,
-				text,
-				`Expected 'y' or 'n'`,
-				`Cannot be parsed as a boolean.`,
-			),
-		)
+			const text = response.choices[0].text.trim().toLowerCase()
+			return text
+		})
 	}
 
 	public async number(
@@ -121,14 +108,12 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		min: number,
 		max: number,
 	): Promise<Error | number> {
-		return numberGen(instruction, min, max, async (prompt) => {
-			const response = await this.getCompletionSquirreled
-				.for(`number-${prompt}`)
-				.get({
-					model: this.model,
-					prompt,
-					max_tokens: 6,
-				})
+		return numberGen(instruction, min, max, async (prompt, filename) => {
+			const response = await this.getCompletionSquirreled.for(filename).get({
+				model: this.model,
+				prompt,
+				max_tokens: 6,
+			})
 			const text = response.choices[0].text.trim()
 			return text
 		})

@@ -20,11 +20,35 @@ export function formatIssue(
 	return lines.join(`\n`)
 }
 
+export async function booleanGen(
+	instruction: string,
+	getCompletion: (prompt: string, filename: string) => Promise<string>,
+): Promise<Error | boolean> {
+	const prompt = `${instruction} [respond either 'y' or 'n' only]/n/nAnswer: `
+	const filename = `boolean-${instruction}`
+	const text = await getCompletion(prompt, filename)
+	const lowerText = text.toLowerCase()
+	if (lowerText === `y`) {
+		return true
+	}
+	if (lowerText === `n`) {
+		return false
+	}
+	return new Error(
+		formatIssue(
+			instruction,
+			text,
+			`Expected 'y' or 'n'`,
+			`Cannot be parsed as a boolean.`,
+		),
+	)
+}
+
 export async function numberGen(
 	instruction: string,
 	min: number,
 	max: number,
-	getCompletion: (prompt: string) => Promise<string>,
+	getCompletion: (prompt: string, filename: string) => Promise<string>,
 ): Promise<Error | number> {
 	if (min > max) {
 		return new Error(
@@ -32,7 +56,8 @@ export async function numberGen(
 		)
 	}
 	const prompt = `Q: ${instruction} [answer with only a number from ${min} to ${max}]\nA: `
-	const text = await getCompletion(prompt)
+	const filename = `number-${instruction}-${min}-${max}`
+	const text = await getCompletion(prompt, filename)
 	const number = Number.parseInt(text, 10)
 	if (Number.isNaN(number)) {
 		return new Error(formatIssue(instruction, text, `Expected a number.`))

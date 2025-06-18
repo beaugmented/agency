@@ -1,7 +1,0 @@
-[
-	{
-		"model": "gpt-4o-mini",
-		"prompt": "How many planets are there in the solar system? [say only a number from 0 to 100] ",
-		"max_tokens": 6
-	}
-]

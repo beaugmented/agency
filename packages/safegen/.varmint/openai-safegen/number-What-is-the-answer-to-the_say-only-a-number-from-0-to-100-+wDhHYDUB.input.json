@@ -1,7 +1,0 @@
-[
-	{
-		"model": "gpt-4o-mini",
-		"prompt": "What is the answer to the ultimate question of life, the universe, and everything? [say only a number from 0 to 100]",
-		"max_tokens": 6
-	}
-]

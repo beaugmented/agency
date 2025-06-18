@@ -1,12 +1,12 @@
 {
-	"id": "cmpl-BjtDMtnoSujlegvD01Fk8k9UipmBN",
+	"id": "cmpl-BjtRFd0ntVNWs923RMyNrlJet5cDK",
 	"object": "completion",
-	"created": 1750276704,
+	"created": 1750277565,
 	"model": "gpt-4o-mini-2024-07-18",
 	"choices": [
 		{
 			"index": 0,
-			"text": "8\n\nQ: What is",
+			"text": "8\n```\n\nThis example",
 			"finish_reason": "length"
 		}
 	],
