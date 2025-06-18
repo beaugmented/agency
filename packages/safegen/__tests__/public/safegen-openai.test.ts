@@ -190,3 +190,83 @@ describe(`advanced data types`, () => {
 		expect(currentDate).toEqual(new Date(`2023-10-01`))
 	})
 })
+
+describe(`primitive data types`, () => {
+	test(`boolean generation`, async () => {
+		const gpt4oMini = new OpenAiSafeGenerator({
+			usdBudget: 0.01,
+			usdMinimum: 0.00_01,
+			model: `gpt-4o-mini`,
+			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+			cachingMode: process.env.CI
+				? `read`
+				: process.env.NODE_ENV === `production`
+					? `off`
+					: `read-write`,
+			logger: console,
+		})
+		const answer = await gpt4oMini.boolean(`Is the sky blue?`)
+		expect(answer).toBe(true)
+	})
+	test(`number generation`, async () => {
+		const gpt4oMini = new OpenAiSafeGenerator({
+			usdBudget: 0.01,
+			usdMinimum: 0.00_01,
+			model: `gpt-4o-mini`,
+			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+			cachingMode: process.env.CI
+				? `read`
+				: process.env.NODE_ENV === `production`
+					? `off`
+					: `read-write`,
+			logger: console,
+		})
+		const answer = await gpt4oMini.number(
+			`What is the answer to the ultimate question of life, the universe, and everything?`,
+			0,
+			100,
+		)
+		expect(answer).toBe(42)
+	})
+	test(`choose generation`, async () => {
+		const gpt4oMini = new OpenAiSafeGenerator({
+			usdBudget: 0.01,
+			usdMinimum: 0.00_01,
+			model: `gpt-4o-mini`,
+			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+			cachingMode: process.env.CI
+				? `read`
+				: process.env.NODE_ENV === `production`
+					? `off`
+					: `read-write`,
+			logger: console,
+		})
+		const answer = await gpt4oMini.choose(
+			`Which of the following animals are mammals?`,
+			[`dog`, `cat`, `eagle`, `lion`, `tuna`],
+			0,
+			3,
+		)
+
+		expect(answer).toEqual([`dog`, `cat`, `lion`])
+	})
+	test(`choose generation (single choice)`, async () => {
+		const gpt4oMini = new OpenAiSafeGenerator({
+			usdBudget: 0.01,
+			usdMinimum: 0.00_01,
+			model: `gpt-4o-mini`,
+			apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+			cachingMode: process.env.CI
+				? `read`
+				: process.env.NODE_ENV === `production`
+					? `off`
+					: `read-write`,
+			logger: console,
+		})
+		const answer = await gpt4oMini.choose(
+			`Which dish is considered most gourmet?`,
+			[`mcdonald's`, `sushi`, `hot pocket`, `hot dog`],
+		)
+		expect(answer).toEqual(`sushi`)
+	})
+})

@@ -1,0 +1,7 @@
+[
+	{
+		"model": "gpt-4o-mini",
+		"prompt": "Which of the following animals are mammals?\n\nchoose between 0 and 3 options from the following list:\n\n- dog\n- cat\n- eagle\n- lion\n- tuna\n\nformat your response as a numbered list, like this:1. choice 1\n2. choice 2\n3. choice 3\n\nremember, you can choose as few as 0 options, or as many as 3 options\n\n--\n\n",
+		"max_tokens": 100
+	}
+]
