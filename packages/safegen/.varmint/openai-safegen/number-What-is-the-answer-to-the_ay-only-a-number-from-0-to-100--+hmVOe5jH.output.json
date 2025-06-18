@@ -1,0 +1,29 @@
+{
+	"id": "cmpl-BjtAC9aeYYu2iphDGZbGzzNrORu9l",
+	"object": "completion",
+	"created": 1750276508,
+	"model": "gpt-4o-mini-2024-07-18",
+	"choices": [
+		{
+			"index": 0,
+			"text": "42\n\n42\n\nThe answer",
+			"finish_reason": "length"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 30,
+		"completion_tokens": 6,
+		"total_tokens": 36,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_34a54ae93c"
+}

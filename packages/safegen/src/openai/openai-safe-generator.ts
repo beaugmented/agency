@@ -1,9 +1,8 @@
-import type { Json } from "atom.io/json"
 import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
-import { lowercase } from "zod/v4"
 
+import { formatIssue, numberGen } from "../primitives"
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
@@ -36,26 +35,6 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	public client: OpenAI
 	public lastUsage?: OpenAI.Completions.CompletionUsage
 	public logger: Pick<Console, `error` | `info` | `warn`>
-
-	public formatIssue(
-		prompt: string,
-		actual: Json.Serializable,
-		issue: string,
-		consequence?: string,
-	): string {
-		const lines = [
-			`SafeGen saw that invalid data was produced for the prompt:`,
-			`\t${prompt}`,
-			`The actual data is:`,
-			`\t${JSON.stringify(actual, null, 2)}`,
-			`The issue that makes it invalid is:`,
-			`\t${issue}`,
-		]
-		if (consequence) {
-			lines.push(`The consequence of this issue is:`, `\t${consequence}`)
-		}
-		return lines.join(`\n`)
-	}
 
 	public constructor({
 		model,
@@ -128,7 +107,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			return false
 		}
 		return new Error(
-			this.formatIssue(
+			formatIssue(
 				prompt,
 				text,
 				`Expected 'y' or 'n'`,
@@ -138,28 +117,21 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	}
 
 	public async number(
-		prompt: string,
+		instruction: string,
 		min: number,
 		max: number,
 	): Promise<Error | number> {
-		if (min > max) {
-			return new Error(
-				`For prompt "${prompt}", a minimum number ${min} was specified, but a maximum number ${max} was specified. This is unachievable.`,
-			)
-		}
-		const response = await this.getCompletionSquirreled
-			.for(`number-${prompt}`)
-			.get({
-				model: this.model,
-				prompt: `${prompt} [say only a number from ${min} to ${max}]`,
-				max_tokens: 10,
-			})
-		const text = response.choices[0].text.trim()
-		const number = Number(text)
-		if (Number.isNaN(number)) {
-			return new Error(this.formatIssue(prompt, text, `Expected a number.`))
-		}
-		return number
+		return numberGen(instruction, min, max, async (prompt) => {
+			const response = await this.getCompletionSquirreled
+				.for(`number-${prompt}`)
+				.get({
+					model: this.model,
+					prompt,
+					max_tokens: 6,
+				})
+			const text = response.choices[0].text.trim()
+			return text
+		})
 	}
 
 	public async choose<T extends (number | string)[]>(
@@ -264,7 +236,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				return Number(text)
 			}
 			return new Error(
-				this.formatIssue(
+				formatIssue(
 					prompt,
 					text,
 					`"${text}" is not found among [${options.join(`, `)}]`,
@@ -286,7 +258,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				selections.push(Number(cleanedLine))
 			} else if (cleanedLine === `$none`) {
 			} else {
-				this.formatIssue(
+				formatIssue(
 					prompt,
 					cleanedLine,
 					`"${cleanedLine}" is not found among [${options.join(`, `)}]`,
