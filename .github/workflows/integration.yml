@@ -108,4 +108,4 @@ jobs:
           printenv > packages/safegen/.env
           bun run test
         env:
-          OPENAI_API_KEY: fake-key
+          VITE_OPENAI_API_KEY: fake-key
