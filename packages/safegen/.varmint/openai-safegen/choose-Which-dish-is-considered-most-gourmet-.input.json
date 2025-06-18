@@ -1,0 +1,7 @@
+[
+	{
+		"model": "gpt-4o-mini",
+		"prompt": "Which dish is considered most gourmet?\n\nchoose exactly 1 option from the following list:\n\n- mcdonald's\n- sushi\n- hot pocket\n- hot dog\n\nAnswer: ",
+		"max_tokens": 100
+	}
+]
