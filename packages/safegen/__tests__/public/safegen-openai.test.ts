@@ -191,7 +191,7 @@ describe(`advanced data types`, () => {
 	})
 })
 
-describe.only(`primitive data types`, () => {
+describe(`primitive data types`, () => {
 	const gpt4oMini = new OpenAiSafeGenerator({
 		usdBudget: 0.01,
 		usdMinimum: 0.00_01,
@@ -237,7 +237,7 @@ describe.only(`primitive data types`, () => {
 		})
 
 		describe(`min max choices`, () => {
-			test(`choose 1`, async () => {
+			test.only(`choose 1`, async () => {
 				const answer = await gpt4oMini.choose(
 					`Which of the following animals are mammals?`,
 					[`python`, `mayfly`, `eagle`, `lion`, `tuna`],

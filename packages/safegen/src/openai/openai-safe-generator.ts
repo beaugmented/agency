@@ -208,8 +208,11 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			formattingInstruction = `choose between ${min} and ${max} options from the following list:`
 		}
 		formattingInstruction += `\n\n${optionsString}`
-		if (max > 1) {
+		if (max === 1) {
+			formattingInstruction += `\n\nANSWER: `
+		} else {
 			formattingInstruction += `\n\nformat your response as a numbered list, like this:`
+			formattingInstruction += `\n`
 			formattingInstruction += Array.from(
 				{ length: max },
 				(_, i) => `${i + 1}. choice ${i + 1}`,
@@ -220,9 +223,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			if (min === 0) {
 				formattingInstruction += `\n\nto choose 0 options, only say "none"`
 			}
-			formattingInstruction += `\n\n--\n\n`
-		} else {
-			formattingInstruction += `\n\nANSWER: `
+			formattingInstruction += `\n\nRESPONSE:\n`
 		}
 
 		const response = await this.getCompletionSquirreled
@@ -233,7 +234,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 				max_tokens: 100,
 			})
 
-		console.log({ formattingInstruction, choices: response.choices })
+		console.log({ prompt, formattingInstruction, choices: response.choices })
 		const text = response.choices[0].text.trim()
 		if (isSingleChoice) {
 			if (options.includes(text)) {

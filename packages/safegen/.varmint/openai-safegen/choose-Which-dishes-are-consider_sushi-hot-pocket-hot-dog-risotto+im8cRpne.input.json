@@ -1,7 +1,7 @@
 [
 	{
 		"model": "gpt-4o-mini",
-		"prompt": "Which dishes are considered more gourmet?\n\nchoose exactly 2 options from the following list:\n\n- mcdonald's\n- sushi\n- hot pocket\n- hot dog\n- risotto\n\nformat your response as a numbered list, like this:1. choice 1\n2. choice 2\n\n--\n\n",
+		"prompt": "Which dishes are considered more gourmet?\n\nchoose exactly 2 options from the following list:\n\n- mcdonald's\n- sushi\n- hot pocket\n- hot dog\n- risotto\n\nformat your response as a numbered list, like this:\n1. choice 1\n2. choice 2\n\n--\n\n",
 		"max_tokens": 100
 	}
 ]
