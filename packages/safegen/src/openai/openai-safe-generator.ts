@@ -2,7 +2,7 @@ import OpenAI from "openai"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
-import { booleanGen, formatIssue, numberGen } from "../primitives"
+import { booleanGen, chooseGen, numberGen } from "../primitives"
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
@@ -120,148 +120,44 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	}
 
 	public async choose<T extends (number | string)[]>(
-		prompt: string,
+		instruction: string,
 		options: T,
 		min?: 1,
 		max?: 1,
 	): Promise<Error | T[number]>
 	public async choose<T extends (number | string)[]>(
-		prompt: string,
+		instruction: string,
 		options: T,
 		min: number,
 		max?: number,
 	): Promise<Error | T[number][]>
 	public async choose<T extends (number | string)[]>(
-		prompt: string,
+		instruction: string,
 		options: T,
 		min = 1,
 		max = min,
 	): Promise<Error | T[number] | T[number][]> {
-		const isSingleChoice = min === 1 && max === 1
-		if (options.length === 0) {
-			if (isSingleChoice) {
-				return new Error(
-					`For prompt "${prompt}", exactly one option was required to be chosen, but no options were provided.`,
-				)
-			}
-		}
-		if (options.length === 1) {
-			this.logger.warn(
-				`For prompt: ${prompt}, options has only one option: "${options[0]}". Returning it.`,
-			)
-			return [options[0]]
-		}
-		if (min > max) {
-			return new Error(
-				`For prompt "${prompt}", a minimum of ${min} options must be chosen, but a maximum of ${max} options was specified. This is unachievable.`,
-			)
-		}
-		if (max === 0) {
-			this.logger.warn(
-				`For prompt "${prompt}", a maximum of 0 options was specified; returning an empty array.`,
-			)
-			return []
-		}
-		const optionsString = options
-			.map((option) => `- ${String(option)}`)
-			.join(`\n`)
-		let formattingInstruction = optionsString
-		let maxTokens: number
-		if (min === 0 && max === 1) {
-			formattingInstruction += `\n\respond with the best option given.`
-			formattingInstruction += `\n\nif none of the options are good, respond with just the phase "$NONE".`
-			maxTokens = 12
-		} else if (min === 1 && max === 1) {
-			formattingInstruction += `\n\nrespond with only the best option given.`
-			formattingInstruction += `\n\nif none of the options are good, just say one anyway.`
-			maxTokens = 12
-		} else {
-			formattingInstruction += `\n\n`
-			if (min === 0) {
-				formattingInstruction += `if none of the options apply, respond "$NONE". otherwise, `
-			}
-			formattingInstruction += `format your response as a numbered list, like this:`
-			formattingInstruction += `\n`
-			formattingInstruction += Array.from(
-				{ length: max },
-				(_, i) => `${i + 1}. choice ${i + 1}`,
-			).join(`\n`)
-
-			if (min === max) {
-				formattingInstruction += `\n\nchoose exactly ${min} options`
-			} else {
-				formattingInstruction += `\n\nchoose as few as ${min} options, or as many as ${max} options`
-			}
-
-			maxTokens = 12 * max
-		}
-		formattingInstruction += `\n\nRESPONSE:\n`
-
-		const response = await this.getCompletionSquirreled
-			.for(`choose-${prompt}-FROM-${options.join(`-`)}`)
-			.get({
-				model: this.model,
-				prompt: `${prompt}\n\n${formattingInstruction}`,
-				max_tokens: maxTokens,
-			})
-
-		const text = response.choices[0].text.trim()
-		console.log({
-			prompt,
-			formattingInstruction,
-			choices: response.choices,
-			text,
-			lowercaseText: text.toLowerCase(),
-		})
-		if (isSingleChoice) {
-			if (options.includes(text)) {
-				return text
-			}
-			if (options.includes(Number(text))) {
-				return Number(text)
-			}
-			return new Error(
-				formatIssue(
+		return chooseGen(
+			instruction,
+			options,
+			min,
+			max,
+			async (prompt, filename, maxTokens) => {
+				const response = await this.getCompletionSquirreled.for(filename).get({
+					model: this.model,
 					prompt,
+					max_tokens: maxTokens,
+				})
+				const text = response.choices[0].text.trim()
+				console.log({
+					prompt,
+					choices: response.choices,
 					text,
-					`"${text}" is not found among [${options.join(`, `)}]`,
-				),
-			)
-		}
-		if (text.toLowerCase() === `$none`) {
-			return []
-		}
-		const lines = text.split(`\n`)
-		const filteredLines = lines.filter((line) => line.match(/^\d+\. /))
-		console.log({ lines, filteredLines })
-		const selections: T[number][] = []
-		for (const line of filteredLines) {
-			const cleanedLine = line.trim().split(`. `)[1]
-			if (options.includes(cleanedLine)) {
-				selections.push(cleanedLine)
-			} else if (options.includes(Number(cleanedLine))) {
-				selections.push(Number(cleanedLine))
-			} else if (cleanedLine === `$none`) {
-			} else {
-				formatIssue(
-					prompt,
-					cleanedLine,
-					`"${cleanedLine}" is not found among [${options.join(`, `)}]`,
-					`This element will not be included in the final result.`,
-				)
-			}
-		}
-		if (selections.length < min) {
-			return new Error(
-				`For prompt "${prompt}", at least ${min} options must be chosen, but ${selections.length} options were chosen.`,
-			)
-		}
-		if (selections.length > max) {
-			this.logger.warn(
-				`For prompt "${prompt}", at most ${max} options must be chosen, but ${selections.length} options were chosen.`,
-			)
-			return selections.slice(0, max)
-		}
-		return selections
+					lowercaseText: text.toLowerCase(),
+				})
+				return text
+			},
+			this.logger,
+		)
 	}
 }
