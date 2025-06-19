@@ -1,0 +1,34 @@
+{
+	"candidates": [
+		{
+			"content": {
+				"parts": [
+					{
+						"text": "y"
+					}
+				],
+				"role": "model"
+			},
+			"finishReason": "MAX_TOKENS",
+			"avgLogprobs": -0.0019682012498378754
+		}
+	],
+	"modelVersion": "gemini-2.0-flash",
+	"usageMetadata": {
+		"promptTokenCount": 23,
+		"candidatesTokenCount": 1,
+		"totalTokenCount": 24,
+		"promptTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 23
+			}
+		],
+		"candidatesTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 1
+			}
+		]
+	}
+}

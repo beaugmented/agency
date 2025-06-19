@@ -1,0 +1,16 @@
+[
+	{
+		"model": "gemini-2.0-flash",
+		"contents": {
+			"role": "user",
+			"parts": [
+				{
+					"text": "Q: How many planets are there in the solar system? [answer with only a number from 0 to 100]\nA: "
+				}
+			]
+		},
+		"config": {
+			"maxOutputTokens": 6
+		}
+	}
+]

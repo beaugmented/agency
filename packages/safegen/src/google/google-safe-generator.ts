@@ -107,15 +107,17 @@ export class GoogleSafeGenerator implements SafeGenerator {
 			return ``
 		}
 		const completion = await this.getCompletionSquirreled.for(key).get(body)
-		const { text, usageMetadata: usage } = completion
+		const { candidates, usageMetadata: usage } = completion
 		if (usage) {
 			const usdPrice = calculateInferencePrice(usage, body.model)
 			this.usdBudget -= usdPrice
 		}
+		console.log({ completion, candidates: completion.candidates })
+		const text = candidates?.[0].content?.parts?.[0]?.text
 		if (!text) {
 			throw new Error(`No text message found in completion`)
 		}
-		return text
+		return text.trim()
 	}
 
 	/** @deprecated Use `SafeGenerator.object()` instead */

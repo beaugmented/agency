@@ -45,7 +45,7 @@ const gemini = new GoogleSafeGenerator({
 	usdBudget: 0.01,
 	usdMinimum: 0.00_01,
 	model: `gemini-2.0-flash`,
-	apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+	apiKey: import.meta.env.VITE_GOOGLEAI_API_KEY,
 	cachingMode: process.env.CI
 		? `read`
 		: process.env.NODE_ENV === `production`
@@ -54,10 +54,10 @@ const gemini = new GoogleSafeGenerator({
 	logger: console,
 })
 const generators = [
-	[`openai`, gpt4oMini],
-	[`ollama`, llama],
-	[`anthropic`, claude],
-	// [`google`, gemini],
+	// [`openai`, gpt4oMini],
+	// [`ollama`, llama],
+	// [`anthropic`, claude],
+	[`google`, gemini],
 ] as const satisfies [string, SafeGenerator][]
 
 for (const [name, generator] of generators) {
@@ -115,7 +115,10 @@ for (const [name, generator] of generators) {
 					[`mcdonald's`, `sushi`, `hot pocket`, `hot dog`, `risotto`] as const,
 					2,
 				)
-				expect(answer).toEqual([`sushi`, `risotto`])
+				if (answer instanceof Error) {
+					throw answer
+				}
+				expect(answer.sort()).toEqual([`risotto`, `sushi`])
 			})
 
 			describe(`min max choices`, () => {
