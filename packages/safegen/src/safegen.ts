@@ -18,7 +18,24 @@ export type GenerateFromSchema = <
 	dataSpec: DataSpec<J, S>,
 ) => GenerateSafeData<J>
 export interface SafeGenerator {
+	/**
+	 * @deprecated
+	 * Use `SafeGenerator.object()` instead
+	 */
 	from: GenerateFromSchema
+	object: GenerateFromSchema
+	boolean: (instruction: string) => Promise<Error | boolean>
+	number: (
+		instruction: string,
+		min: number,
+		max: number,
+	) => Promise<Error | number>
+	choose: <T extends (number | string)[]>(
+		instruction: string,
+		options: T,
+		min?: number,
+		max?: number,
+	) => Promise<Error | T[number] | T[number][]>
 }
 
 export type InvalidResponse = {

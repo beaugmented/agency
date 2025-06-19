@@ -87,9 +87,12 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			this.usdBudget -= usdPrice
 			return data
 		}, logger)
+		this.object = this.from
 	}
 
+	/** @deprecated Use `SafeGenerator.object()` instead */
 	public from: GenerateFromSchema
+	public object: GenerateFromSchema
 
 	public async boolean(instruction: string): Promise<Error | boolean> {
 		return booleanGen(instruction, async (prompt, filename) => {
