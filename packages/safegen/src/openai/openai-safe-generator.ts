@@ -98,7 +98,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		this.object = this.from
 	}
 
-	protected getCompletion = async (
+	public getCompletion = async (
 		key: string,
 		body: CompletionCreateParamsNonStreaming,
 	): Promise<string> => {

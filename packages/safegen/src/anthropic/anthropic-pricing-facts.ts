@@ -1,6 +1,7 @@
 // 6 May 2025
 // https://docs.anthropic.com/en/docs/about-claude/models/all-models#model-pricing
 
+import type Anthropic from "@anthropic-ai/sdk"
 import type { Model } from "@anthropic-ai/sdk/resources/index"
 
 import type { PricingFacts } from "../safegen"
@@ -65,4 +66,24 @@ export function getModelPrices(
 		return undefined
 	}
 	return ANTHROPIC_PRICING_FACTS[maybeFacts]
+}
+
+export function calculateInferencePrice(
+	usage: Anthropic.Messages.Usage,
+	model: string,
+): number {
+	const promptTokensTotal = usage.input_tokens
+	const outputTokens = usage.output_tokens
+	const prices = getModelPrices(model)
+	let usdPrice = 0
+	if (prices) {
+		usdPrice =
+			promptTokensTotal * prices.promptPricePerToken +
+			outputTokens * prices.completionPricePerToken
+	} else {
+		console.warn(
+			`No pricing facts found for model ${model}. Giving a price of 0.`,
+		)
+	}
+	return usdPrice
 }

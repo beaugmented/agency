@@ -4,7 +4,7 @@ import type { Json } from "atom.io/json"
 
 import {
 	ANTHROPIC_PRICING_FACTS,
-	getModelPrices,
+	calculateInferencePrice,
 	isAnthropicModelSupported,
 } from "./anthropic-pricing-facts"
 
@@ -48,19 +48,8 @@ export function setUpAnthropicJsonGenerator(
 			options,
 		)
 		const { content, usage } = completion
-		const promptTokensTotal = usage.input_tokens
-		const outputTokens = usage.output_tokens
-		const prices = getModelPrices(model)
-		let usdPrice = 0
-		if (prices) {
-			usdPrice =
-				promptTokensTotal * prices.promptPricePerToken +
-				outputTokens * prices.completionPricePerToken
-		} else {
-			console.warn(
-				`No pricing facts found for model ${model}. Giving a price of 0.`,
-			)
-		}
+
+		const usdPrice = calculateInferencePrice(usage, body.model)
 		let data: Json.Object
 		try {
 			const textMessage = content.find((message) => message.type === `text`)
