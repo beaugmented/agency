@@ -1,0 +1,6 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Is the sky blue? [respond either 'y' or 'n' only]/n/nAnswer: "
+	}
+]

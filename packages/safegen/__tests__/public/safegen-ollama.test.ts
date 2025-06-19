@@ -7,7 +7,7 @@ beforeAll(() => {
 	vitest.spyOn(console, `warn`)
 })
 
-const gpt4oMini = new OllamaSafeGenerator({
+const llama = new OllamaSafeGenerator({
 	usdBudget: 0.01,
 	usdMinimum: 0.00_01,
 	model: `llama3.2`,
@@ -28,12 +28,12 @@ describe(`safeGen`, () => {
 			fallback: { count: 0 },
 		}
 
-		const counter = gpt4oMini.from(countSpec)
+		const counter = llama.from(countSpec)
 
 		const { count: numberOfPlanetsInTheSolarSystem } = await counter(
 			`How many planets are in the solar system?`,
 		)
 		expect(numberOfPlanetsInTheSolarSystem).toBe(8)
-		expect(gpt4oMini.usdBudget).toBe(0.01)
+		expect(llama.usdBudget).toBe(0.01)
 	})
 })

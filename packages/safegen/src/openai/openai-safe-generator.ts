@@ -94,7 +94,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 	public from: GenerateFromSchema
 	public object: GenerateFromSchema
 
-	public async boolean(instruction: string): Promise<Error | boolean> {
+	public boolean(instruction: string): Promise<Error | boolean> {
 		return booleanGen(instruction, async (prompt, filename) => {
 			const response = await this.getCompletionSquirreled.for(filename).get({
 				model: this.model,
@@ -106,7 +106,7 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		})
 	}
 
-	public async number(
+	public number(
 		instruction: string,
 		min: number,
 		max: number,
@@ -122,19 +122,19 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		})
 	}
 
-	public async choose<T extends (number | string)[]>(
+	public choose<T extends (number | string)[]>(
 		instruction: string,
 		options: T,
 		min?: 1,
 		max?: 1,
 	): Promise<Error | T[number]>
-	public async choose<T extends (number | string)[]>(
+	public choose<T extends (number | string)[]>(
 		instruction: string,
 		options: T,
 		min: number,
 		max?: number,
 	): Promise<Error | T[number][]>
-	public async choose<T extends (number | string)[]>(
+	public choose<T extends (number | string)[]>(
 		instruction: string,
 		options: T,
 		min = 1,

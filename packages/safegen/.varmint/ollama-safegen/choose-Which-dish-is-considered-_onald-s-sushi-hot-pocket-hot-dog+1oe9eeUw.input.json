@@ -1,0 +1,6 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Which dish is considered most gourmet?\n\n- mcdonald's\n- sushi\n- hot pocket\n- hot dog\n\nrespond with only the best option given.\n\nif none of the options are good, just say one anyway.\n\nRESPONSE:\n"
+	}
+]
