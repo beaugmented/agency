@@ -1,0 +1,6 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Which dishes are considered more gourmet?\n\n- mcdonald's\n- sushi\n- hot pocket\n- hot dog\n- risotto\n\nformat your response as a numbered list, like this:\n1. choice 1\n2. choice 2\n\nchoose exactly 2 options\n\nRESPONSE:\n"
+	}
+]

@@ -1,3 +1,5 @@
+import type { GenerateContentResponseUsageMetadata } from "@google/genai"
+
 import type { PricingFacts } from "../safegen"
 
 /**
@@ -88,4 +90,24 @@ export function getModelPrices(
 		return undefined
 	}
 	return GOOGLE_PRICING_FACTS[maybeFacts]
+}
+
+export function calculateInferencePrice(
+	usage: GenerateContentResponseUsageMetadata | undefined,
+	model: string,
+): number {
+	const promptTokensTotal = usage?.promptTokenCount ?? 0
+	const outputTokens = usage?.candidatesTokenCount ?? 0
+	const prices = getModelPrices(model)
+	let usdPrice = 0
+	if (prices) {
+		usdPrice =
+			promptTokensTotal * prices.promptPricePerToken +
+			outputTokens * prices.completionPricePerToken
+	} else {
+		console.warn(
+			`No pricing facts found for model ${model}. Giving a price of 0.`,
+		)
+	}
+	return usdPrice
 }

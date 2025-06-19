@@ -1,0 +1,6 @@
+[
+	{
+		"model": "llama3.2",
+		"prompt": "Which of the following animals are mammals?\n\n- python\n- mayfly\n- eagle\n- lion\n- tuna\n\nif none of the options apply, respond \"$NONE\". otherwise, format your response as a numbered list, like this:\n1. choice 1\n2. choice 2\n3. choice 3\n\nchoose as few as 0 options, or as many as 3 options\n\nRESPONSE:\n"
+	}
+]

@@ -1,0 +1,16 @@
+[
+	{
+		"model": "gemini-2.0-flash",
+		"contents": {
+			"role": "user",
+			"parts": [
+				{
+					"text": "Which animal belongs to the same family as the human?\n\n- worm\n- insect\n- dinosaur\n\respond with the best option given.\n\nif none of the options are good, respond with just the phase \"$NONE\".\n\nRESPONSE:\n"
+				}
+			]
+		},
+		"config": {
+			"maxOutputTokens": 12
+		}
+	}
+]

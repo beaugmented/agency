@@ -1,0 +1,29 @@
+{
+	"id": "cmpl-Bjs4JRCSe1RPy52LfRu4dhMkIMsoX",
+	"object": "completion",
+	"created": 1750272299,
+	"model": "gpt-4o-mini-2024-07-18",
+	"choices": [
+		{
+			"index": 0,
+			"text": "1. dog\n2. cat\n3. lion",
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 84,
+		"completion_tokens": 12,
+		"total_tokens": 96,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_62a23a81ef"
+}

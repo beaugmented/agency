@@ -1,0 +1,72 @@
+{
+	"data": {
+		"items": [
+			{
+				"id": 1,
+				"rationale": "Buying groceries is essential for daily sustenance and affects family harmony by ensuring everyone's needs are met.",
+				"priority": 90
+			},
+			{
+				"id": 4,
+				"rationale": "Scheduling a doctor's appointment is important for health, which is crucial for family well-being.",
+				"priority": 85
+			},
+			{
+				"id": 9,
+				"rationale": "Planning a weekend trip helps enhance family bonding and happiness, which is vital for harmony.",
+				"priority": 80
+			},
+			{
+				"id": 10,
+				"rationale": "Volunteering can foster a sense of community and altruism, benefiting family relationships indirectly.",
+				"priority": 75
+			},
+			{
+				"id": 5,
+				"rationale": "Preparing a work presentation is important for professional development but has a lower immediate impact on family life.",
+				"priority": 70
+			},
+			{
+				"id": 2,
+				"rationale": "Finishing math homework is important for personal education but less critical than other family-oriented tasks.",
+				"priority": 60
+			},
+			{
+				"id": 7,
+				"rationale": "Organizing office files can help improve work efficiency but does not directly impact family harmony.",
+				"priority": 50
+			},
+			{
+				"id": 8,
+				"rationale": "Learning a new programming language is beneficial for personal growth but is lower priority compared to family needs.",
+				"priority": 40
+			},
+			{
+				"id": 3,
+				"rationale": "Reading is a personal leisure activity that doesn't have a strong impact on family dynamics.",
+				"priority": 30
+			},
+			{
+				"id": 6,
+				"rationale": "Cleaning the house has been completed, improving the environment for family members but no longer requires attention.",
+				"priority": 0
+			}
+		]
+	},
+	"usage": {
+		"prompt_tokens": 496,
+		"completion_tokens": 428,
+		"total_tokens": 924,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"usdPrice": 0.0003684
+}

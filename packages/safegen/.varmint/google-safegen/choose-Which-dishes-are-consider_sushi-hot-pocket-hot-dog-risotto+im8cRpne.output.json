@@ -1,0 +1,34 @@
+{
+	"candidates": [
+		{
+			"content": {
+				"parts": [
+					{
+						"text": "Here are two dishes considered more gourmet:\n\n1. Risotto\n2. Sushi\n"
+					}
+				],
+				"role": "model"
+			},
+			"finishReason": "STOP",
+			"avgLogprobs": -0.15844968954722086
+		}
+	],
+	"modelVersion": "gemini-2.0-flash",
+	"usageMetadata": {
+		"promptTokenCount": 60,
+		"candidatesTokenCount": 18,
+		"totalTokenCount": 78,
+		"promptTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 60
+			}
+		],
+		"candidatesTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 18
+			}
+		]
+	}
+}

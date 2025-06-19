@@ -1,7 +1,7 @@
 // 5 May 2025
 // https://platform.openai.com/docs/pricing
 
-import type { ChatModel } from "openai/resources/index"
+import type { ChatModel, CompletionUsage } from "openai/resources"
 
 import type { PricingFacts } from "../safegen"
 
@@ -111,6 +111,29 @@ export function getModelPrices(
 		return undefined
 	}
 	return OPEN_AI_PRICING_FACTS[maybeFacts]
+}
+
+export function calculateInferencePrice(
+	usage: CompletionUsage,
+	model: string,
+): number {
+	const promptTokensTotal = usage.prompt_tokens
+	const promptTokensCached = usage.prompt_tokens_details?.cached_tokens ?? 0
+	const promptTokensFresh = promptTokensTotal - promptTokensCached
+	const outputTokens = usage.completion_tokens
+	const prices = getModelPrices(model)
+	let usdPrice = 0
+	if (prices) {
+		usdPrice =
+			promptTokensTotal * prices.promptPricePerToken +
+			promptTokensFresh * (prices.promptPricePerTokenCached ?? 0) +
+			outputTokens * prices.completionPricePerToken
+	} else {
+		console.warn(
+			`No pricing facts found for model ${model}. Giving a price of 0.`,
+		)
+	}
+	return usdPrice
 }
 
 export type SimpleSnapshottedChatModel = `${ChatModel}-${number}`

@@ -1,0 +1,34 @@
+{
+	"candidates": [
+		{
+			"content": {
+				"parts": [
+					{
+						"text": "1. lion\n"
+					}
+				],
+				"role": "model"
+			},
+			"finishReason": "STOP",
+			"avgLogprobs": -0.0004788365913555026
+		}
+	],
+	"modelVersion": "gemini-2.0-flash",
+	"usageMetadata": {
+		"promptTokenCount": 87,
+		"candidatesTokenCount": 4,
+		"totalTokenCount": 91,
+		"promptTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 87
+			}
+		],
+		"candidatesTokensDetails": [
+			{
+				"modality": "TEXT",
+				"tokenCount": 4
+			}
+		]
+	}
+}

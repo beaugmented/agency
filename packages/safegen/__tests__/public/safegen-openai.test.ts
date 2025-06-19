@@ -17,7 +17,7 @@ beforeAll(() => {
 afterAll(() => {})
 
 describe(`model pricing retrieval`, () => {
-	test(`getModelPrices should return the correct pricing for a model`, () => {
+	test(`prices for various models`, () => {
 		expect(getModelPrices(`gpt-4o-mini`)).toEqual(
 			OPEN_AI_PRICING_FACTS[`gpt-4o-mini`],
 		)

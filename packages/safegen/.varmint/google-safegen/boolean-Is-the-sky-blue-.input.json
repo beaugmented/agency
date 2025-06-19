@@ -1,0 +1,16 @@
+[
+	{
+		"model": "gemini-2.0-flash",
+		"contents": {
+			"role": "user",
+			"parts": [
+				{
+					"text": "Is the sky blue? [respond either 'y' or 'n' only]/n/nAnswer: "
+				}
+			]
+		},
+		"config": {
+			"maxOutputTokens": 1
+		}
+	}
+]

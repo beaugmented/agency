@@ -1,0 +1,29 @@
+{
+	"id": "cmpl-BjtRGmgvNejBzLu6NPccz4xPAhtuU",
+	"object": "completion",
+	"created": 1750277566,
+	"model": "gpt-4o-mini-2024-07-18",
+	"choices": [
+		{
+			"index": 0,
+			"text": "8",
+			"finish_reason": "stop"
+		}
+	],
+	"usage": {
+		"prompt_tokens": 32,
+		"completion_tokens": 2,
+		"total_tokens": 34,
+		"prompt_tokens_details": {
+			"cached_tokens": 0,
+			"audio_tokens": 0
+		},
+		"completion_tokens_details": {
+			"reasoning_tokens": 0,
+			"audio_tokens": 0,
+			"accepted_prediction_tokens": 0,
+			"rejected_prediction_tokens": 0
+		}
+	},
+	"system_fingerprint": "fp_34a54ae93c"
+}

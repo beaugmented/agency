@@ -6,7 +6,7 @@ import type {
 import type { Json } from "atom.io/json"
 
 import {
-	getModelPrices,
+	calculateInferencePrice,
 	GOOGLE_PRICING_FACTS,
 	isGoogleModelSupported,
 } from "./google-pricing-facts"
@@ -37,19 +37,7 @@ export function setUpGoogleJsonGenerator(
 		}
 		const completion = await client.models.generateContent(params)
 		const { text, usageMetadata: usage } = completion
-		const promptTokensTotal = usage?.promptTokenCount ?? 0
-		const outputTokens = usage?.candidatesTokenCount ?? 0
-		const prices = getModelPrices(model)
-		let usdPrice = 0
-		if (prices) {
-			usdPrice =
-				promptTokensTotal * prices.promptPricePerToken +
-				outputTokens * prices.completionPricePerToken
-		} else {
-			console.warn(
-				`No pricing facts found for model ${model}. Giving a price of 0.`,
-			)
-		}
+		const usdPrice = calculateInferencePrice(usage, params.model)
 		let data: Json.Object
 		try {
 			if (!text) {

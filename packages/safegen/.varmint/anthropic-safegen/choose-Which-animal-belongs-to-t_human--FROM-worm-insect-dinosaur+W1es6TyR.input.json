@@ -1,0 +1,12 @@
+[
+	{
+		"model": "claude-3-5-haiku-latest",
+		"messages": [
+			{
+				"role": "user",
+				"content": "Which animal belongs to the same family as the human?\n\n- worm\n- insect\n- dinosaur\n\respond with the best option given.\n\nif none of the options are good, respond with just the phase \"$NONE\".\n\nRESPONSE:\n"
+			}
+		],
+		"max_tokens": 12
+	}
+]
