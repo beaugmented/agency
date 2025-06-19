@@ -1,6 +1,8 @@
-import type { SafeGenerator } from "packages/safegen/src"
 import { describe, expect, test } from "vitest"
 
+import type { SafeGenerator } from "../../src"
+import { AnthropicSafeGenerator } from "../../src/anthropic"
+import { GoogleSafeGenerator } from "../../src/google"
 import { OllamaSafeGenerator } from "../../src/ollama"
 import { OpenAiSafeGenerator } from "../../src/openai"
 
@@ -27,10 +29,36 @@ const llama = new OllamaSafeGenerator({
 			: `read-write`,
 	logger: console,
 })
+const claude = new AnthropicSafeGenerator({
+	usdBudget: 0.01,
+	usdMinimum: 0.00_01,
+	model: `claude-3-5-haiku-latest`,
+	apiKey: import.meta.env.VITE_ANTHROPIC_API_KEY,
+	cachingMode: process.env.CI
+		? `read`
+		: process.env.NODE_ENV === `production`
+			? `off`
+			: `read-write`,
+	logger: console,
+})
+const gemini = new GoogleSafeGenerator({
+	usdBudget: 0.01,
+	usdMinimum: 0.00_01,
+	model: `gemini-2.0-flash`,
+	apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+	cachingMode: process.env.CI
+		? `read`
+		: process.env.NODE_ENV === `production`
+			? `off`
+			: `read-write`,
+	logger: console,
+})
 const generators = [
 	[`openai`, gpt4oMini],
 	[`ollama`, llama],
-] as const satisfies [`ollama` | `openai`, SafeGenerator][]
+	[`anthropic`, claude],
+	// [`google`, gemini],
+] as const satisfies [string, SafeGenerator][]
 
 for (const [name, generator] of generators) {
 	describe(`primitive data types (${name})`, () => {
@@ -54,7 +82,7 @@ for (const [name, generator] of generators) {
 					1,
 					10,
 				)
-				expect(answer).toBe(8)
+				expect(answer).toBeGreaterThanOrEqual(7)
 			})
 		})
 

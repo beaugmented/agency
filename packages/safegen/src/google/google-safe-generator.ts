@@ -54,11 +54,13 @@ export class GoogleSafeGenerator implements SafeGenerator {
 		apiKey,
 		cachingMode,
 		cacheKey = `google-safegen`,
-		logger,
+		logger = console,
 	}: GoogleSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
+		this.model = model
 		this.squirrel = new Squirrel(cachingMode)
+		this.logger = logger
 		let client = clientCache.get(apiKey)
 		if (!client) {
 			client = new GoogleGenAI({ apiKey })

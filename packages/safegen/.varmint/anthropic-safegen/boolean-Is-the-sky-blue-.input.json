@@ -1,0 +1,12 @@
+[
+	{
+		"model": "claude-3-5-haiku-latest",
+		"messages": [
+			{
+				"role": "user",
+				"content": "Is the sky blue? [respond either 'y' or 'n' only]/n/nAnswer: "
+			}
+		],
+		"max_tokens": 1
+	}
+]

@@ -54,11 +54,13 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 		apiKey,
 		cachingMode,
 		cacheKey = `anthropic-safegen`,
-		logger,
+		logger = console,
 	}: AnthropicSafeGenOptions) {
 		this.usdBudget = usdBudget
 		this.usdMinimum = usdMinimum
+		this.model = model
 		this.squirrel = new Squirrel(cachingMode)
+		this.logger = logger
 		let client = clientCache.get(apiKey)
 		// if (cachingMode !== `read`) {
 		if (!client) {

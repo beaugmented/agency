@@ -1,0 +1,21 @@
+{
+	"id": "msg_01S9Lps6sQxzhPGSpprMYmna",
+	"type": "message",
+	"role": "assistant",
+	"model": "claude-3-5-haiku-20241022",
+	"content": [
+		{
+			"type": "text",
+			"text": "$NONE\n\nExplanation: Humans are primates"
+		}
+	],
+	"stop_reason": "max_tokens",
+	"stop_sequence": null,
+	"usage": {
+		"input_tokens": 61,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 12,
+		"service_tier": "standard"
+	}
+}

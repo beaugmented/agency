@@ -1,0 +1,21 @@
+{
+	"id": "msg_01T6qG9VDGBtXHAEY4Pd4kxY",
+	"type": "message",
+	"role": "assistant",
+	"model": "claude-3-5-haiku-20241022",
+	"content": [
+		{
+			"type": "text",
+			"text": "sushi"
+		}
+	],
+	"stop_reason": "end_turn",
+	"stop_sequence": null,
+	"usage": {
+		"input_tokens": 62,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 5,
+		"service_tier": "standard"
+	}
+}

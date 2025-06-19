@@ -1,0 +1,21 @@
+{
+	"id": "msg_01GpQWHAZTC1cUkfaETZJ2uY",
+	"type": "message",
+	"role": "assistant",
+	"model": "claude-3-5-haiku-20241022",
+	"content": [
+		{
+			"type": "text",
+			"text": "y"
+		}
+	],
+	"stop_reason": "max_tokens",
+	"stop_sequence": null,
+	"usage": {
+		"input_tokens": 32,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 1,
+		"service_tier": "standard"
+	}
+}

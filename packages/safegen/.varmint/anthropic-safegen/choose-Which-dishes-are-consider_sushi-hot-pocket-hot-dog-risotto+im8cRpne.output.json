@@ -1,0 +1,21 @@
+{
+	"id": "msg_01XjBTK5jUQo3KWfUFyTHfcx",
+	"type": "message",
+	"role": "assistant",
+	"model": "claude-3-5-haiku-20241022",
+	"content": [
+		{
+			"type": "text",
+			"text": "1. sushi\n2. risotto"
+		}
+	],
+	"stop_reason": "end_turn",
+	"stop_sequence": null,
+	"usage": {
+		"input_tokens": 73,
+		"cache_creation_input_tokens": 0,
+		"cache_read_input_tokens": 0,
+		"output_tokens": 13,
+		"service_tier": "standard"
+	}
+}
