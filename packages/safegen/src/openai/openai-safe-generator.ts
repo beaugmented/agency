@@ -1,4 +1,7 @@
+import type { APIPromise } from "openai"
 import OpenAI from "openai"
+import type { CompletionCreateParamsNonStreaming } from "openai/resources"
+import type { Completion } from "openai/resources.js"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
 
@@ -6,7 +9,10 @@ import { booleanGen, chooseGen, numberGen } from "../primitives"
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
 import { createSafeDataGenerator } from "../safegen"
 import { buildOpenAiRequestParams } from "./build-openai-request-params"
-import type { NonPreviewTextModel } from "./openai-pricing-facts"
+import {
+	calculateInferencePrice,
+	type NonPreviewTextModel,
+} from "./openai-pricing-facts"
 import type { GetUnknownJsonFromOpenAi } from "./set-up-openai-json-generator"
 import { setUpOpenAiJsonGenerator } from "./set-up-openai-json-generator"
 
@@ -22,7 +28,9 @@ export type OpenAiSafeGenOptions = {
 	logger?: Pick<Console, `error` | `info` | `warn`>
 }
 
-export type GetCompletion = typeof OpenAI.prototype.completions.create
+export type GetCompletion = (
+	body: CompletionCreateParamsNonStreaming,
+) => APIPromise<Completion>
 
 export class OpenAiSafeGenerator implements SafeGenerator {
 	public usdBudget: number
@@ -90,19 +98,35 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		this.object = this.from
 	}
 
+	protected getCompletion = async (
+		key: string,
+		body: CompletionCreateParamsNonStreaming,
+	): Promise<string> => {
+		if (this.usdBudget < this.usdMinimum) {
+			this.logger.warn(`SafeGen budget exhausted`)
+			return ``
+		}
+		const completion = await this.getCompletionSquirreled.for(key).get(body)
+		const { usage } = completion
+		if (usage) {
+			const usdPrice = calculateInferencePrice(usage, body.model)
+			this.usdBudget -= usdPrice
+		}
+		return completion.choices[0].text.trim()
+	}
+
 	/** @deprecated Use `SafeGenerator.object()` instead */
 	public from: GenerateFromSchema
 	public object: GenerateFromSchema
 
 	public boolean(instruction: string): Promise<Error | boolean> {
 		return booleanGen(instruction, async (prompt, filename) => {
-			const response = await this.getCompletionSquirreled.for(filename).get({
+			const completion = await this.getCompletion(filename, {
 				model: this.model,
 				prompt,
 				max_tokens: 1,
 			})
-			const text = response.choices[0].text.trim().toLowerCase()
-			return text
+			return completion.toLowerCase()
 		})
 	}
 
@@ -111,15 +135,13 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		min: number,
 		max: number,
 	): Promise<Error | number> {
-		return numberGen(instruction, min, max, async (prompt, filename) => {
-			const response = await this.getCompletionSquirreled.for(filename).get({
+		return numberGen(instruction, min, max, async (prompt, filename) =>
+			this.getCompletion(filename, {
 				model: this.model,
 				prompt,
 				max_tokens: 6,
-			})
-			const text = response.choices[0].text.trim()
-			return text
-		})
+			}),
+		)
 	}
 
 	public choose<T extends (number | string)[]>(
@@ -145,21 +167,12 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			options,
 			min,
 			max,
-			async (prompt, filename, maxTokens) => {
-				const response = await this.getCompletionSquirreled.for(filename).get({
+			async (prompt, filename, maxTokens) =>
+				this.getCompletion(filename, {
 					model: this.model,
 					prompt,
 					max_tokens: maxTokens,
-				})
-				const text = response.choices[0].text.trim()
-				console.log({
-					prompt,
-					choices: response.choices,
-					text,
-					lowercaseText: text.toLowerCase(),
-				})
-				return text
-			},
+				}),
 			this.logger,
 		)
 	}
