@@ -112,8 +112,8 @@ export async function chooseGen<T extends (number | string)[]>(
 		formattingInstruction += `\n\nif none of the options are good, respond with just the phase "$NONE".`
 		maxTokens = 12
 	} else if (min === 1 && max === 1) {
-		formattingInstruction += `\n\nrespond with only the best option given.`
-		formattingInstruction += `\n\nif none of the options are good, just say one anyway.`
+		formattingInstruction += `\n\nrespond with only the best option given`
+		formattingInstruction += `\n\nif none of the options are good, just say the one that fits best`
 		maxTokens = 12
 	} else {
 		formattingInstruction += `\n\n`
@@ -147,8 +147,13 @@ export async function chooseGen<T extends (number | string)[]>(
 		if (options.includes(text)) {
 			return text
 		}
-		if (options.includes(Number(text))) {
-			return Number(text)
+		const lowercase = text.toLowerCase()
+		if (options.includes(lowercase)) {
+			return lowercase
+		}
+		const number = Number(text)
+		if (options.includes(number)) {
+			return number
 		}
 		return new Error(
 			formatIssue(
@@ -168,6 +173,8 @@ export async function chooseGen<T extends (number | string)[]>(
 		const cleanedLine = line.trim().split(`. `)[1]
 		if (options.includes(cleanedLine)) {
 			selections.push(cleanedLine)
+		} else if (options.includes(cleanedLine.toLowerCase())) {
+			selections.push(cleanedLine.toLowerCase())
 		} else if (options.includes(Number(cleanedLine))) {
 			selections.push(Number(cleanedLine))
 		} else if (cleanedLine === `$none`) {

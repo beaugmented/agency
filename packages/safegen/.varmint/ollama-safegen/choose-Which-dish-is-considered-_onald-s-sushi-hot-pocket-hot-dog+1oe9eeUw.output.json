@@ -1,6 +1,6 @@
 {
 	"model": "llama3.2",
-	"created_at": "2025-06-19T06:07:13.341763Z",
+	"created_at": "2025-06-19T06:25:34.909493Z",
 	"response": "Sushi",
 	"done": true,
 	"done_reason": "stop",
@@ -55,7 +55,7 @@
 		1888,
 		3072,
 		2728,
-		382,
+		271,
 		333,
 		7000,
 		315,
@@ -66,9 +66,12 @@
 		11,
 		1120,
 		2019,
+		279,
 		832,
-		13971,
-		382,
+		430,
+		18809,
+		1888,
+		271,
 		68883,
 		26289,
 		512,
@@ -80,10 +83,10 @@
 		50,
 		38174
 	],
-	"total_duration": 122512042,
-	"load_duration": 22488167,
-	"prompt_eval_count": 73,
-	"prompt_eval_duration": 76645750,
+	"total_duration": 254034875,
+	"load_duration": 44475292,
+	"prompt_eval_count": 76,
+	"prompt_eval_duration": 177391583,
 	"eval_count": 3,
-	"eval_duration": 22807208
+	"eval_duration": 31586917
 }

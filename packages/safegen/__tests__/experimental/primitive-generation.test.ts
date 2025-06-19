@@ -28,7 +28,7 @@ const llama = new OllamaSafeGenerator({
 	logger: console,
 })
 const generators = [
-	// [`openai`, gpt4oMini],
+	[`openai`, gpt4oMini],
 	[`ollama`, llama],
 ] as const satisfies [`ollama` | `openai`, SafeGenerator][]
 
@@ -123,7 +123,7 @@ for (const [name, generator] of generators) {
 
 				test(`choose 0 (min)`, async () => {
 					const answer = await generator.choose(
-						`Which of the following animals are mammals?`,
+						`Which of the following animals are insane?`,
 						[`python`, `mayfly`, `eagle`, `centipede`, `tuna`],
 						0,
 						3,

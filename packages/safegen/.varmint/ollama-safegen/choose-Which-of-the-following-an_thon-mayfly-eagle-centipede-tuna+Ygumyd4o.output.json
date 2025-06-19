@@ -1,7 +1,7 @@
 {
 	"model": "llama3.2",
-	"created_at": "2025-06-19T06:07:14.702046Z",
-	"response": "1. eagle \n2. tuna",
+	"created_at": "2025-06-19T06:27:38.749486Z",
+	"response": "$NONE",
 	"done": true,
 	"done_reason": "stop",
 	"context": [
@@ -30,7 +30,7 @@
 		2768,
 		10099,
 		527,
-		56669,
+		35118,
 		1980,
 		12,
 		10344,
@@ -116,18 +116,13 @@
 		78191,
 		128007,
 		271,
-		16,
-		13,
-		60989,
-		720,
-		17,
-		13,
-		75057
+		3,
+		46525
 	],
-	"total_duration": 194776041,
-	"load_duration": 12616708,
+	"total_duration": 295428958,
+	"load_duration": 25480875,
 	"prompt_eval_count": 112,
-	"prompt_eval_duration": 103824208,
-	"eval_count": 8,
-	"eval_duration": 77955250
+	"prompt_eval_duration": 239901584,
+	"eval_count": 3,
+	"eval_duration": 29268833
 }
