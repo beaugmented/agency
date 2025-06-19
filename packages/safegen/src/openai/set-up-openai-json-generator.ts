@@ -2,7 +2,7 @@ import type { Json } from "atom.io/json"
 import type OpenAI from "openai"
 import type * as OpenAIResources from "openai/resources"
 
-import { getModelPrices } from "./openai-pricing-facts"
+import { calculateInferencePrice } from "./openai-pricing-facts"
 
 export type GetUnknownJsonFromOpenAi = (
 	body: OpenAIResources.ChatCompletionCreateParamsNonStreaming,
@@ -28,22 +28,7 @@ export function setUpOpenAiJsonGenerator(
 		const content = completion.choices[0].message?.content
 		const { usage } = completion
 		if (content && usage) {
-			const promptTokensTotal = usage.prompt_tokens
-			const promptTokensCached = usage.prompt_tokens_details?.cached_tokens ?? 0
-			const promptTokensFresh = promptTokensTotal - promptTokensCached
-			const outputTokens = usage.completion_tokens
-			const prices = getModelPrices(body.model)
-			let usdPrice = 0
-			if (prices) {
-				usdPrice =
-					promptTokensTotal * prices.promptPricePerToken +
-					promptTokensFresh * (prices.promptPricePerTokenCached ?? 0) +
-					outputTokens * prices.completionPricePerToken
-			} else {
-				console.warn(
-					`No pricing facts found for model ${body.model}. Giving a price of 0.`,
-				)
-			}
+			const usdPrice = calculateInferencePrice(usage, body.model)
 			const data = JSON.parse(content)
 			return { data, usage, usdPrice }
 		}

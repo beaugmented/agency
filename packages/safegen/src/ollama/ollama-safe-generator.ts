@@ -80,6 +80,7 @@ export class OllamaSafeGenerator implements SafeGenerator {
 			this.usdBudget -= response.usdPrice
 			return response.data
 		}, logger)
+		this.object = this.from
 	}
 
 	/** @deprecated Use `SafeGenerator.object()` instead */
