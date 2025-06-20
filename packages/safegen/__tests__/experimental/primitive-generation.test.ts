@@ -54,9 +54,9 @@ const gemini = new GoogleSafeGenerator({
 	logger: console,
 })
 const generators = [
-	// [`openai`, gpt4oMini],
-	// [`ollama`, llama],
-	// [`anthropic`, claude],
+	[`openai`, gpt4oMini],
+	[`ollama`, llama],
+	[`anthropic`, claude],
 	[`google`, gemini],
 ] as const satisfies [string, SafeGenerator][]
 
