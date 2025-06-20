@@ -126,7 +126,7 @@ export class OllamaSafeGenerator implements SafeGenerator {
 	public choose<T extends (number | string)[]>(
 		instruction: string,
 		options: T,
-		min: number,
+		min?: number,
 		max?: number,
 	): Promise<Error | T[number][]>
 	public choose<T extends (number | string)[]>(
