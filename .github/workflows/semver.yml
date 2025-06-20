@@ -34,7 +34,6 @@ jobs:
         options: >-
           --health-cmd pg_isready --health-interval 1s --health-timeout 0.5s --health-retries 30
 
-
     outputs:
       atom.io: ${{ steps.break-check.outputs.atom.io }}
 
@@ -50,15 +49,19 @@ jobs:
         with:
           node-version-file: .node-version
           cache: pnpm
-          
+
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2.0.2
         with:
           bun-version-file: .bun-version
-    
+
       - name: Install Dependencies
         run: pnpm i
 
       - name: Break Check
         id: break-check
-        run: pnpm run test:semver
+        run: |
+          printenv > packages/safegen/.env
+          pnpm run test:semver
+        env:
+          VITE_OPENAI_API_KEY: fake-key
