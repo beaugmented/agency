@@ -96,7 +96,7 @@
 		"break-check": "0.6.14",
 		"eslint": "9.29.0",
 		"ollama": "0.5.16",
-		"openai": "5.8.0",
+		"openai": "5.8.1",
 		"rimraf": "6.0.1",
 		"tmp": "0.2.3",
 		"tsdown": "0.12.9",
