@@ -4,6 +4,7 @@ import type { CompletionCreateParamsNonStreaming } from "openai/resources"
 import type { Completion } from "openai/resources.js"
 import type { CacheMode, Squirreled } from "varmint"
 import { Squirrel } from "varmint"
+import { z } from "zod"
 
 import { booleanGen, chooseGen, numberGen } from "../primitives"
 import type { GenerateFromSchema, SafeGenerator } from "../safegen"
@@ -177,3 +178,8 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 		)
 	}
 }
+
+const mySchema = z.object({
+	height: z.number(),
+	quality: z.enum([`good`, `bad`, `ugly`]),
+})
