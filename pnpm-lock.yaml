@@ -64,7 +64,7 @@ importers:
         version: 0.33.8(@typescript-eslint/parser@8.37.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.31.0(jiti@2.4.2))
       varmint:
         specifier: 0.5.2
-        version: 0.5.2(zod@3.25.76)
+        version: 0.5.2(zod@4.0.5)
     devDependencies:
       '@types/node':
         specifier: 24.0.14
@@ -83,7 +83,7 @@ importers:
         version: 9.31.0(jiti@2.4.2)
       openai:
         specifier: 5.10.0
-        version: 5.10.0(ws@8.18.2)(zod@3.25.76)
+        version: 5.10.0(ws@8.18.2)(zod@4.0.5)
       tmp:
         specifier: 0.2.3
         version: 0.2.3
@@ -100,8 +100,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(@types/node@24.0.14)(jiti@2.4.2)
       zod:
-        specifier: 3.25.76
-        version: 3.25.76
+        specifier: 4.0.5
+        version: 4.0.5
 
   packages/safegen:
     dependencies:
@@ -116,7 +116,7 @@ importers:
         version: 0.33.8(@typescript-eslint/parser@8.37.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.31.0(jiti@2.4.2))
       varmint:
         specifier: 0.5.2
-        version: 0.5.2(zod@3.25.76)
+        version: 0.5.2(zod@4.0.5)
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.56.0
@@ -141,7 +141,7 @@ importers:
         version: 0.5.16
       openai:
         specifier: 5.10.0
-        version: 5.10.0(ws@8.18.2)(zod@3.25.76)
+        version: 5.10.0(ws@8.18.2)(zod@4.0.5)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -161,8 +161,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(@types/node@24.0.14)(jiti@2.4.2)
       zod:
-        specifier: 3.25.76
-        version: 3.25.76
+        specifier: 4.0.5
+        version: 4.0.5
 
 packages:
 
@@ -2755,6 +2755,9 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
+  zod@4.0.5:
+    resolution: {integrity: sha512-/5UuuRPStvHXu7RS+gmvRf4NXrNxpSllGwDnCBcJZtQsKrviYXm54yDGV2KYNLT5kq0lHGcl7lqWJLgSaG+tgA==}
+
 snapshots:
 
   '@anthropic-ai/sdk@0.56.0': {}
@@ -3753,11 +3756,11 @@ snapshots:
       treetrunks: 0.1.3
       zod: 3.25.5
 
-  comline@0.3.0(zod@3.25.76):
+  comline@0.3.0(zod@4.0.5):
     dependencies:
       picocolors: 1.1.1
       treetrunks: 0.1.3
-      zod: 3.25.76
+      zod: 4.0.5
 
   commander@4.1.1: {}
 
@@ -4603,10 +4606,10 @@ snapshots:
       wrappy: 1.0.2
     optional: true
 
-  openai@5.10.0(ws@8.18.2)(zod@3.25.76):
+  openai@5.10.0(ws@8.18.2)(zod@4.0.5):
     optionalDependencies:
       ws: 8.18.2
-      zod: 3.25.76
+      zod: 4.0.5
 
   optionator@0.9.4:
     dependencies:
@@ -5229,10 +5232,10 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  varmint@0.5.2(zod@3.25.76):
+  varmint@0.5.2(zod@4.0.5):
     dependencies:
       cachedir: 2.4.0
-      comline: 0.3.0(zod@3.25.76)
+      comline: 0.3.0(zod@4.0.5)
       safedeposit: 0.1.1
     transitivePeerDependencies:
       - zod
@@ -5387,4 +5390,7 @@ snapshots:
 
   zod@3.25.5: {}
 
-  zod@3.25.76: {}
+  zod@3.25.76:
+    optional: true
+
+  zod@4.0.5: {}
