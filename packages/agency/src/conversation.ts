@@ -31,10 +31,10 @@ export const conversationSelectors = selectorFamily<
 	key: `conversationMessages`,
 	get:
 		(conversationKey) =>
-		({ find, get }) => {
-			const messageIds = get(find(messageIndices, conversationKey))
+		({ get }) => {
+			const messageIds = get(messageIndices, conversationKey)
 			const allMessages = Promise.all(
-				messageIds.map((messageId) => get(find(chatMessageAtoms, messageId))),
+				messageIds.map((messageId) => get(chatMessageAtoms, messageId)),
 			)
 			return allMessages
 		},
