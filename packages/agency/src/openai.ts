@@ -45,22 +45,22 @@ export const openAiParamsSelectors = selectorFamily<
 	key: `openAIParams`,
 	get:
 		(key) =>
-		async ({ find, get }) => {
-			const conversationMessages = get(find(conversationSelectors, key))
-			const orientation = get(find(orientationAtoms, key))
-			const agendaMessage = get(find(agendaSystemMessageSelectors, key))
-			const messages = await conversationMessages
-			messages.push({
+		async ({ get }) => {
+			const conversationMessagesLoadable = get(conversationSelectors, key)
+			const orientation = get(orientationAtoms, key)
+			const agendaMessage = get(agendaSystemMessageSelectors, key)
+			const conversationMessages = [...(await conversationMessagesLoadable)]
+			conversationMessages.push({
 				role: `system`,
 				content: `${orientation}\n\nKeep messages short.`, // ❗
 			})
 			if (agendaMessage) {
-				messages.push(agendaMessage)
+				conversationMessages.push(agendaMessage)
 			}
 
 			const params = {
 				model: `gpt-4-turbo`,
-				messages,
+				messages: conversationMessages,
 			}
 			return params
 		},
