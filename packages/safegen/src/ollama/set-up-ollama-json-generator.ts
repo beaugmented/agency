@@ -7,22 +7,24 @@ export type GetUnknownJsonFromOllama = (
 
 export function setUpOllamaJsonGenerator(
 	client?: Ollama,
+	logger?: Pick<Console, `error` | `info` | `warn`>,
 ): GetUnknownJsonFromOllama {
 	return async function getUnknownJsonFromOllama(body) {
-		if (!client) {
-			throw new Error(
-				`This is a bug in safegen. Ollama client not available to the json generator.`,
-			)
-		}
-		const completion = await client.generate(body)
-		const { response } = completion
-
 		let data: Json.Object
 		try {
+			if (!client) {
+				throw new Error(
+					`This is a bug in safegen. Ollama client not available to the json generator.`,
+				)
+			}
+			const completion = await client.generate(body)
+			const { response } = completion
+
 			data = JSON.parse(response)
-		} catch (_) {
-			data = {}
+		} catch (thrown) {
+			logger?.error(thrown)
 		}
+		data ??= {}
 		return { data, usdPrice: 0 }
 	}
 }
