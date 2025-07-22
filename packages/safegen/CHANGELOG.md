@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.6.2
+
+### Patch Changes
+
+- 1f351a6: 🐛 Safegen just got even safer. Previously, when errors occurred with model providers like OpenAI, Anthropic, or Google, those errors would be propagated (thrown). Now, they are caught and logged, and will resultin fallback data.
+
 ## 0.6.1
 
 ### Patch Changes
