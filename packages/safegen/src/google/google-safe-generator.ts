@@ -71,7 +71,10 @@ export class GoogleSafeGenerator implements SafeGenerator {
 			`google-safegen`,
 			this.client.models.generateContent.bind(this.client.models),
 		)
-		this.getUnknownJsonFromGoogle = setUpGoogleJsonGenerator(this.client)
+		this.getUnknownJsonFromGoogle = setUpGoogleJsonGenerator(
+			this.client,
+			this.logger,
+		)
 		this.getUnknownJsonFromGoogleSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromGoogle,

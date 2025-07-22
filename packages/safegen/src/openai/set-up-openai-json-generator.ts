@@ -44,12 +44,12 @@ export function setUpOpenAiJsonGenerator(
 		} catch (thrown) {
 			logger?.error(thrown)
 		}
+		data ??= {}
 		usage ??= {
 			completion_tokens: 0,
 			prompt_tokens: 0,
 			total_tokens: 0,
 		}
-		data ??= {}
 		return { data, usage, usdPrice }
 	}
 }

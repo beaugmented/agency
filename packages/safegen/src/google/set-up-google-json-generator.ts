@@ -21,32 +21,38 @@ export type GetUnknownJsonFromGoogle = (
 
 export function setUpGoogleJsonGenerator(
 	client?: GoogleGenAI,
+	logger?: Pick<Console, `error` | `info` | `warn`>,
 ): GetUnknownJsonFromGoogle {
 	return async function getUnknownJsonFromGoogle(params) {
-		if (!client) {
-			throw new Error(
-				`This is a bug in safegen. Google client not available to the json generator.`,
-			)
-		}
-		const { model } = params
-		const modelIsSupported = isGoogleModelSupported(model)
-		if (!modelIsSupported) {
-			throw new Error(
-				`Model ${params.model} is not supported. Supported models are [${Object.keys(GOOGLE_PRICING_FACTS).join(`, `)}]`,
-			)
-		}
-		const completion = await client.models.generateContent(params)
-		const { text, usageMetadata: usage } = completion
-		const usdPrice = calculateInferencePrice(usage, params.model)
 		let data: Json.Object
+		let usage: GenerateContentResponseUsageMetadata | undefined
+		let usdPrice = 0
 		try {
+			if (!client) {
+				throw new Error(
+					`This is a bug in safegen. Google client not available to the json generator.`,
+				)
+			}
+			const { model } = params
+			const modelIsSupported = isGoogleModelSupported(model)
+			if (!modelIsSupported) {
+				throw new Error(
+					`Model ${params.model} is not supported. Supported models are [${Object.keys(GOOGLE_PRICING_FACTS).join(`, `)}]`,
+				)
+			}
+			const completion = await client.models.generateContent(params)
+			const { text, usageMetadata } = completion
+			usage = usageMetadata
+			usdPrice = calculateInferencePrice(usage, params.model)
 			if (!text) {
 				throw new Error(`No text message found in completion`)
 			}
 			data = JSON.parse(text)
-		} catch (_) {
-			data = {}
+		} catch (thrown) {
+			logger?.error(thrown)
 		}
+		data ??= {}
+		usage ??= {}
 		return { data, usage, usdPrice }
 	}
 }
