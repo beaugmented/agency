@@ -76,7 +76,10 @@ export class AnthropicSafeGenerator implements SafeGenerator {
 			`anthropic-safegen`,
 			this.client.messages.create.bind(this.client.messages),
 		)
-		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(this.client)
+		this.getUnknownJsonFromAnthropic = setUpAnthropicJsonGenerator(
+			this.client,
+			this.logger,
+		)
 		this.getUnknownJsonFromAnthropicSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromAnthropic,
