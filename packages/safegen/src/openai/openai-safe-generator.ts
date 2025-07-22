@@ -71,7 +71,10 @@ export class OpenAiSafeGenerator implements SafeGenerator {
 			`openai-safegen`,
 			this.client.completions.create.bind(this.client.completions),
 		)
-		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(this.client)
+		this.getUnknownJsonFromOpenAi = setUpOpenAiJsonGenerator(
+			this.client,
+			this.logger,
+		)
 		this.getUnknownJsonFromOpenAiSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromOpenAi,
