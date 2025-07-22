@@ -58,7 +58,10 @@ export class OllamaSafeGenerator implements SafeGenerator {
 			`ollama-safegen`,
 			this.client.generate.bind(this.client),
 		)
-		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator(this.client)
+		this.getUnknownJsonFromOllama = setUpOllamaJsonGenerator(
+			this.client,
+			this.logger,
+		)
 		this.getUnknownJsonFromOllamaSquirreled = this.squirrel.add(
 			cacheKey,
 			this.getUnknownJsonFromOllama,

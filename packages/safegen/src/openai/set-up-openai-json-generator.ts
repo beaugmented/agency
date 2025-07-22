@@ -15,29 +15,41 @@ export type GetUnknownJsonFromOpenAi = (
 
 export function setUpOpenAiJsonGenerator(
 	client: OpenAI,
+	logger?: Pick<Console, `error` | `info` | `warn`>,
 ): GetUnknownJsonFromOpenAi {
 	return async function getUnknownJsonFromOpenAi(body, options) {
-		const completion = await client.chat.completions.create(
-			{
-				...body,
-				stream: false,
-				response_format: { type: `json_object` },
-			},
-			options,
-		)
-		const content = completion.choices[0].message?.content
-		const { usage } = completion
-		if (content && usage) {
-			const usdPrice = calculateInferencePrice(usage, body.model)
-			const data = JSON.parse(content)
-			return { data, usage, usdPrice }
+		let data: Json.Object
+		let usage: OpenAI.Completions.CompletionUsage | undefined
+		let usdPrice = 0
+		try {
+			const completion = await client.chat.completions.create(
+				{
+					...body,
+					stream: false,
+					response_format: { type: `json_object` },
+				},
+				options,
+			)
+			const { content, refusal } = completion.choices[0].message
+			usage = completion.usage
+			if (content && usage) {
+				usdPrice = calculateInferencePrice(usage, body.model)
+				data = JSON.parse(content)
+			}
+			if (!content) {
+				throw new Error(
+					`No content${usage ? `` : ` or usage`} was given in the completion from OpenAI.${refusal ? ` Instead, OpenAI gave the following refusal: "${refusal}"` : ``}`,
+				)
+			}
+		} catch (thrown) {
+			logger?.error(thrown)
 		}
-		if (!content && !usage) {
-			throw new Error(`No content or usage found in completion`)
+		data ??= {}
+		usage ??= {
+			completion_tokens: 0,
+			prompt_tokens: 0,
+			total_tokens: 0,
 		}
-		if (!content) {
-			throw new Error(`No content found in completion`)
-		}
-		throw new Error(`No usage found in completion`)
+		return { data, usage, usdPrice }
 	}
 }
