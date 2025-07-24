@@ -45,7 +45,7 @@
 		"typescript": "5.8.3",
 		"vite": "7.0.5",
 		"vitest": "3.2.4",
-		"zod": "4.0.5"
+		"zod": "4.0.7"
 	},
 	"dependencies": {
 		"atom.io": "0.33.14",
