@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.6.3
+
+### Patch Changes
+
+- 3de660b: ✨ Add GPT-5 pricing; update pricing for other models.
+
 ## 0.6.2
 
 ### Patch Changes
