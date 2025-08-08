@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.6.4
+
+### Patch Changes
+
+- b77e90d: ⬆️ Upgrade `varmint`.
+
 ## 0.6.3
 
 ### Patch Changes
