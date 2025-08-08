@@ -1,5 +1,0 @@
----
-"safegen": patch
----
-
-⬆️ Upgrade `varmint`.
