@@ -164,7 +164,6 @@ const config = {
 		"@typescript-eslint/unified-signatures": ERROR,
 
 		"atom.io/explicit-state-types": ERROR,
-		"atom.io/synchronous-selector-dependencies": ERROR,
 
 		"import/first": ERROR,
 		"import/no-duplicates": ERROR,
