@@ -149,8 +149,8 @@ importers:
         specifier: 0.2.5
         version: 0.2.5
       tsdown:
-        specifier: 0.13.4
-        version: 0.13.4(typescript@5.9.2)
+        specifier: 0.13.5
+        version: 0.13.5(typescript@5.9.2)
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -2621,8 +2621,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tsdown@0.13.4:
-    resolution: {integrity: sha512-2uf0Xo170gmxwJEOgfb7V9y3k+Uq/dQJx4xfXYova7pqqTw9ZjxSvEeq7Y6l+Ys54GlBrRKvxKoEyNhuUcoCTg==}
+  tsdown@0.13.5:
+    resolution: {integrity: sha512-lagBtBSdm1yWBFvAbg3+a2/x7eRNqsf5fv34doXXOGnxRIBlfzYCEVfK6cwOgkTNhORMhdWvaqtXZV3h2x1ojQ==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -5377,7 +5377,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsdown@0.13.4(typescript@5.9.2):
+  tsdown@0.13.5(typescript@5.9.2):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
