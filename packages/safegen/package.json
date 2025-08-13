@@ -59,8 +59,8 @@
 		"test:semver": "break-check --verbose"
 	},
 	"peerDependencies": {
-		"@anthropic-ai/sdk": ">=0.32.0",
-		"@google/genai": ">=0.8.0",
+		"@anthropic-ai/sdk": ">=0.60.0",
+		"@google/genai": "^1.13.0",
 		"arktype": ">=2.1.0",
 		"ollama": ">=0.5.0",
 		"openai": "^5.0.0",
