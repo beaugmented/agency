@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.7.0
+
+### Minor Changes
+
+- 652858c: ⬆️ Set the version requirement for `@anthropic-ai/sdk` to `>=0.60.0`.
+- 652858c: ⬆️ Set the version requirement for `@google/genai` to `^1.13.0`.
+
 ## 0.6.4
 
 ### Patch Changes
