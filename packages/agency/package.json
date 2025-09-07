@@ -49,6 +49,6 @@
 	},
 	"dependencies": {
 		"atom.io": "0.40.7",
-		"varmint": "0.5.4"
+		"varmint": "0.5.5"
 	}
 }
