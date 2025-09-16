@@ -99,7 +99,7 @@
 		"openai": "5.20.3",
 		"rimraf": "6.0.1",
 		"tmp": "0.2.5",
-		"tsdown": "0.15.1",
+		"tsdown": "0.15.2",
 		"typescript": "5.9.2",
 		"vite": "7.1.5",
 		"vitest": "3.2.4",
