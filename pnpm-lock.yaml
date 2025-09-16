@@ -137,8 +137,8 @@ importers:
         specifier: 9.35.0
         version: 9.35.0(jiti@2.5.1)
       ollama:
-        specifier: 0.5.17
-        version: 0.5.17
+        specifier: 0.5.18
+        version: 0.5.18
       openai:
         specifier: 5.20.2
         version: 5.20.2(ws@8.18.2)(zod@4.1.8)
@@ -2148,8 +2148,8 @@ packages:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
     engines: {node: '>= 0.4'}
 
-  ollama@0.5.17:
-    resolution: {integrity: sha512-q5LmPtk6GLFouS+3aURIVl+qcAOPC4+Msmx7uBb3pd+fxI55WnGjmLZ0yijI/CYy79x0QPGx3BwC3u5zv9fBvQ==}
+  ollama@0.5.18:
+    resolution: {integrity: sha512-lTFqTf9bo7Cd3hpF6CviBe/DEhewjoZYd9N/uCe7O20qYTvGqrNOFOBDj3lbZgFWHUgDv5EeyusYxsZSLS8nvg==}
 
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
@@ -4877,7 +4877,7 @@ snapshots:
   object-inspect@1.13.4:
     optional: true
 
-  ollama@0.5.17:
+  ollama@0.5.18:
     dependencies:
       whatwg-fetch: 3.6.20
 
