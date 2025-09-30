@@ -63,7 +63,7 @@
 		"@google/genai": "^1.13.0",
 		"arktype": ">=2.1.0",
 		"ollama": ">=0.5.0",
-		"openai": "^5.0.0",
+		"openai": "^5.0.0 || ^6.0.0",
 		"zod": ">=3.25.0"
 	},
 	"peerDependenciesMeta": {
@@ -96,7 +96,7 @@
 		"break-check": "0.6.16",
 		"eslint": "9.36.0",
 		"ollama": "0.6.0",
-		"openai": "5.23.2",
+		"openai": "6.0.0",
 		"rimraf": "6.0.1",
 		"tmp": "0.2.5",
 		"tsdown": "0.15.6",
