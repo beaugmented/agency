@@ -122,8 +122,8 @@ importers:
         specifier: 0.65.0
         version: 0.65.0(zod@4.1.11)
       '@google/genai':
-        specifier: 1.21.0
-        version: 1.21.0(@modelcontextprotocol/sdk@1.11.4)
+        specifier: 1.22.0
+        version: 1.22.0(@modelcontextprotocol/sdk@1.11.4)
       '@types/node':
         specifier: 24.6.2
         version: 24.6.2
@@ -514,8 +514,8 @@ packages:
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@google/genai@1.21.0':
-    resolution: {integrity: sha512-k47DECR8BF9z7IJxQd3reKuH2eUnOH5NlJWSe+CKM6nbXx+wH3hmtWQxUQR9M8gzWW1EvFuRVgjQssEIreNZsw==}
+  '@google/genai@1.22.0':
+    resolution: {integrity: sha512-siETS3zTm3EGpTT4+BFc1z20xXBYfueD3gCYfxkOjuAKRk8lt8TJevDHi3zepn1oSI6NhG/LZvy0i+Q3qheObg==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@modelcontextprotocol/sdk': ^1.11.4
@@ -3292,7 +3292,7 @@ snapshots:
       '@eslint/core': 0.15.2
       levn: 0.4.1
 
-  '@google/genai@1.21.0(@modelcontextprotocol/sdk@1.11.4)':
+  '@google/genai@1.22.0(@modelcontextprotocol/sdk@1.11.4)':
     dependencies:
       google-auth-library: 9.15.1
       ws: 8.18.2
