@@ -42,6 +42,9 @@ describe(`model pricing retrieval`, () => {
 		expect(getModelPrices(`claude-3-7-sonnet-20241022`)).toEqual(
 			ANTHROPIC_PRICING_FACTS[`claude-3-7-sonnet`],
 		)
+		expect(getModelPrices(`claude-sonnet-4-5-20250929`)).toEqual(
+			ANTHROPIC_PRICING_FACTS[`claude-sonnet-4-5`],
+		)
 	})
 })
 
