@@ -1,4 +1,4 @@
-// 6 May 2025
+// 22 October 2025
 // https://docs.anthropic.com/en/docs/about-claude/models/all-models#model-pricing
 
 import type Anthropic from "@anthropic-ai/sdk"
@@ -8,37 +8,47 @@ import type { PricingFacts } from "../safegen"
 
 export const MILLION: number = 10 ** 6
 
-export const ANTHROPIC_PRICING_FACTS: Record<SupportedModelName, PricingFacts> =
-	{
-		"claude-3-7-sonnet": {
-			promptPricePerToken: 3 / MILLION,
-			completionPricePerToken: 15 / MILLION,
-		},
-		"claude-3-5-haiku": {
-			promptPricePerToken: 0.8 / MILLION,
-			completionPricePerToken: 4 / MILLION,
-		},
-		"claude-3-5-sonnet": {
-			promptPricePerToken: 3 / MILLION,
-			completionPricePerToken: 15 / MILLION,
-		},
-		"claude-3-haiku": {
-			promptPricePerToken: 0.25 / MILLION,
-			completionPricePerToken: 1.25 / MILLION,
-		},
-		"claude-3-opus": {
-			promptPricePerToken: 15 / MILLION,
-			completionPricePerToken: 75 / MILLION,
-		},
-	}
+export const ANTHROPIC_PRICING_FACTS: Partial<
+	Record<SupportedModelName, PricingFacts>
+> = {
+	"claude-sonnet-4-5": {
+		promptPricePerToken: 3 / MILLION,
+		completionPricePerToken: 15 / MILLION,
+	},
+	"claude-3-7-sonnet": {
+		promptPricePerToken: 3 / MILLION,
+		completionPricePerToken: 15 / MILLION,
+	},
+	"claude-3-5-haiku": {
+		promptPricePerToken: 0.8 / MILLION,
+		completionPricePerToken: 4 / MILLION,
+	},
+	"claude-3-5-sonnet": {
+		promptPricePerToken: 3 / MILLION,
+		completionPricePerToken: 15 / MILLION,
+	},
+	"claude-3-haiku": {
+		promptPricePerToken: 0.25 / MILLION,
+		completionPricePerToken: 1.25 / MILLION,
+	},
+	"claude-3-opus": {
+		promptPricePerToken: 15 / MILLION,
+		completionPricePerToken: 75 / MILLION,
+	},
+}
+
+type DateSuffix =
+	`${number}${number}${number}${number}${number}${number}${number}${number}`
 
 export type StripModel<T extends string> = T extends `${infer U}-latest`
 	? U
 	: T extends `claude-2.${number}`
 		? never
-		: T extends `claude-3-haiku-${number}`
-			? `claude-3-haiku`
-			: never
+		: T extends `${infer Prefix}-${infer Suffix}`
+			? Suffix extends DateSuffix
+				? Prefix
+				: T
+			: T
 
 export type SupportedModelName = StripModel<Model>
 export type SupportedModel = Exclude<Model, `claude-2.${number}`>
