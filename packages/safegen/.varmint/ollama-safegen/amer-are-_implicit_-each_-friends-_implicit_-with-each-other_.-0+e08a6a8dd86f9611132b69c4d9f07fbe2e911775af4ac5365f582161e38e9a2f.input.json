@@ -1,0 +1,8 @@
+[
+	{
+		"model": "llama3.2:1b",
+		"prompt": "Please generate a response in JSON that conforms to the following JSON Schema:\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"facts\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"subject\": {\n            \"type\": \"string\"\n          },\n          \"predicate\": {\n            \"type\": \"string\"\n          },\n          \"object\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"subject\",\n          \"predicate\",\n          \"object\"\n        ],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\n    \"facts\"\n  ],\n  \"additionalProperties\": false,\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n}\n\ndissolve the following sentence into a bunch of semantic triples:\nJerry, George, Elaine, and Kramer are (implicit: each) friends (implicit: with each other).",
+		"format": "json",
+		"stream": false
+	}
+]
