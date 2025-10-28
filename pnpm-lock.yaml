@@ -63,8 +63,8 @@ importers:
         specifier: 0.44.0
         version: 0.44.0(@typescript-eslint/parser@8.46.2(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.38.0(jiti@2.6.1))
       varmint:
-        specifier: 0.5.7
-        version: 0.5.7(zod@4.1.12)
+        specifier: 0.5.8
+        version: 0.5.8(zod@4.1.12)
     devDependencies:
       '@types/node':
         specifier: 24.9.2
@@ -115,8 +115,8 @@ importers:
         specifier: 0.44.0
         version: 0.44.0(@typescript-eslint/parser@8.46.2(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.38.0(jiti@2.6.1))
       varmint:
-        specifier: 0.5.7
-        version: 0.5.7(zod@4.1.12)
+        specifier: 0.5.8
+        version: 0.5.8(zod@4.1.12)
     devDependencies:
       '@anthropic-ai/sdk':
         specifier: 0.68.0
@@ -1437,11 +1437,6 @@ packages:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
 
-  comline@0.3.3:
-    resolution: {integrity: sha512-66QMd8h96k1oVJsYfsiid8cAkF/GEIXgfm6s3zDUZ/LCGt31y1+XBBZ3r3skaF//mDTPUtuuJGAnerKGNz3N1A==}
-    peerDependencies:
-      zod: ^3.25.0
-
   comline@0.4.0:
     resolution: {integrity: sha512-0sbjY46ZFbb/+hw79irJVt5A9RHBZ85hN5YrvVjTxMT820lzHK5EZ5XEPQOlx1aD2kuI2WxBILFt2sSyQ2hUMw==}
     peerDependencies:
@@ -2609,8 +2604,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  varmint@0.5.7:
-    resolution: {integrity: sha512-ZM45EJj9Xj4RBrOz54GSLCd8DsLktTwOvZxAJ1OwJQjjzyRf89Y6mXhhKPUQ9HBhOsRwIprpOj1XnAJSwvr+FQ==}
+  varmint@0.5.8:
+    resolution: {integrity: sha512-1dqyxnEaHe0ucs7HBXB1IfwRJ4C1MDSMtIcwbaOBTtPEzjxBStqshjCm21Jqx+kzR1NjhM1aQarDaAiRr9/inQ==}
     hasBin: true
 
   vite@7.1.12:
@@ -3845,12 +3840,6 @@ snapshots:
 
   color-support@1.1.3: {}
 
-  comline@0.3.3(zod@4.1.12):
-    dependencies:
-      picocolors: 1.1.1
-      treetrunks: 0.1.5
-      zod: 4.1.12
-
   comline@0.4.0(arktype@2.1.25)(zod@4.1.12):
     dependencies:
       picocolors: 1.1.1
@@ -5059,10 +5048,11 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  varmint@0.5.7(zod@4.1.12):
+  varmint@0.5.8(zod@4.1.12):
     dependencies:
+      arktype: 2.1.25
       cachedir: 2.4.0
-      comline: 0.3.3(zod@4.1.12)
+      comline: 0.4.0(arktype@2.1.25)(zod@4.1.12)
       diff: 8.0.2
       fastest-levenshtein: 1.0.16
       picocolors: 1.1.1
