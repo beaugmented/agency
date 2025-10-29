@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.8.1
+
+### Patch Changes
+
+- ba526bc: ⬆️ Upgrade command-line parser, allowing for zod 4+ to be used without warnings.
+
 ## 0.8.0
 
 ### Minor Changes
