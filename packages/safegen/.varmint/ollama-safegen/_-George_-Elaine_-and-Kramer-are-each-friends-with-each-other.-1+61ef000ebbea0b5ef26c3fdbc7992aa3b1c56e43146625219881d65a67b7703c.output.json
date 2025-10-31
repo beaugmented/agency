@@ -1,0 +1,70 @@
+{
+	"data": {
+		"$schema": "http://json-schema.org/draft-07/schema#",
+		"type": "object",
+		"properties": {
+			"facts": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"Jerry, George, Elaine, and Kramer are each friends with each other."
+						]
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"George, Elaine, and Kramer are each friends with each other."
+						]
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"Elaine, Kramer are each friends with each other."
+						]
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"Kramer, Jerry are each friends with each other."
+						]
+					}
+				}
+			]
+		},
+		"required": [
+			"facts"
+		],
+		"additionalProperties": false,
+		"additionalSchema": {
+			"type": "object",
+			"properties": {
+				"subject": {
+					"type": "string"
+				},
+				"predicate": {
+					"type": "string"
+				},
+				"object": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"subject",
+				"predicate",
+				"object"
+			]
+		}
+	},
+	"usdPrice": 0
+}
