@@ -91,7 +91,7 @@
 	"devDependencies": {
 		"@anthropic-ai/sdk": "0.68.0",
 		"@google/genai": "1.28.0",
-		"@types/node": "24.9.2",
+		"@types/node": "24.10.0",
 		"@types/tmp": "0.2.6",
 		"break-check": "0.6.20",
 		"eslint": "9.38.0",
