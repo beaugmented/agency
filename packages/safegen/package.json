@@ -85,7 +85,7 @@
 	},
 	"dependencies": {
 		"@standard-schema/spec": "1.0.0",
-		"atom.io": "0.44.2",
+		"atom.io": "0.44.3",
 		"varmint": "0.5.10"
 	},
 	"devDependencies": {
