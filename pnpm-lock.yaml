@@ -73,8 +73,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.22
-        version: 0.6.22(zod@4.1.12)
+        specifier: 0.6.23
+        version: 0.6.23(zod@4.1.12)
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
@@ -131,8 +131,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.22
-        version: 0.6.22(zod@4.1.12)
+        specifier: 0.6.23
+        version: 0.6.23(zod@4.1.12)
       eslint:
         specifier: 9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -1280,8 +1280,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  break-check@0.6.22:
-    resolution: {integrity: sha512-qNr+GKfV7W+LdDchFuqRWqV/vzhCfgTAAj3tO0xC69HEENBTkL4NJV+Nrj1KCOwpav4X6tWHjyDkfeu9Ke+I6Q==}
+  break-check@0.6.23:
+    resolution: {integrity: sha512-vCAksy6xidNzNZBWu/ywmPKkQRoniCqRuAAjVAzz8jKXBrAzQactIe1C20uLS0mdMCrJUCB9xxyQ7CdsqZo7uA==}
     hasBin: true
 
   buffer-equal-constant-time@1.0.1:
@@ -2291,8 +2291,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  takua@0.1.0:
-    resolution: {integrity: sha512-9ome/QgwuH1fX+2LZbtznD9FrujZnT+98Kn4a7Su+Vlm2l7r3suuahNTHshCvywq6vedfADto3r1+thh3i7pfA==}
+  takua@0.1.1:
+    resolution: {integrity: sha512-0BZ8xPR+MgaNam5kQEhiwPpjdI6MRS6Q0uqGp5Jn7NXhvkw2qcfu9wEzcqhM+Q6Lvwu6qMlQN77vTTZKD+suvQ==}
 
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
@@ -3604,13 +3604,13 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  break-check@0.6.22(zod@4.1.12):
+  break-check@0.6.23(zod@4.1.12):
     dependencies:
       arktype: 2.1.25
       comline: 0.4.3(arktype@2.1.25)(zod@4.1.12)
       minimatch: 10.1.1
       simple-git: 3.30.0
-      takua: 0.1.0
+      takua: 0.1.1
     transitivePeerDependencies:
       - supports-color
       - zod
@@ -4619,7 +4619,7 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0:
     optional: true
 
-  takua@0.1.0:
+  takua@0.1.1:
     dependencies:
       picocolors: 1.1.1
 
