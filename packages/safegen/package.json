@@ -93,7 +93,7 @@
 		"@google/genai": "1.29.0",
 		"@types/node": "24.10.0",
 		"@types/tmp": "0.2.6",
-		"break-check": "0.6.20",
+		"break-check": "0.6.21",
 		"eslint": "9.39.1",
 		"ollama": "0.6.2",
 		"openai": "6.8.1",
