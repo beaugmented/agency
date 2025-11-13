@@ -20,7 +20,8 @@ export const OPEN_AI_PRICING_FACTS: Record<
 		promptPricePerTokenCached: 0.125 / MILLION,
 		completionPricePerToken: 10 / MILLION,
 	},
-	"gpt-5.1-mini": { // ❗ not in the pricing page -- using figures for 5.1 codex mini
+	"gpt-5.1-mini": {
+		// ❗ not in the pricing page -- using figures for 5.1 codex mini
 		promptPricePerToken: 0.25 / MILLION,
 		promptPricePerTokenCached: 0.025 / MILLION,
 		completionPricePerToken: 2 / MILLION,
@@ -79,7 +80,7 @@ export const OPEN_AI_PRICING_FACTS: Record<
 	},
 	o3: {
 		promptPricePerToken: 2 / MILLION,
-		promptPricePerTokenCached: .5 / MILLION,
+		promptPricePerTokenCached: 0.5 / MILLION,
 		completionPricePerToken: 8 / MILLION,
 	},
 	"o3-mini": {
