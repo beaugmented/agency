@@ -1,0 +1,38 @@
+name: Lint
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  Biome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: ./.github/actions/setup
+      - run: bun lint:biome
+  ESLint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: ./.github/actions/setup
+      - run: bun lint:eslint
+  Types:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: ./.github/actions/setup
+      - run: bun lint:types
