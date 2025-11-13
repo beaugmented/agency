@@ -1,7 +1,5 @@
-// 7 Aug 2025
+// 13 Nov 2025
 // https://platform.openai.com/docs/pricing
-// ❗The pricing is ambiguous. Different figures are given on
-// https://platform.openai.com/docs/pricing?latest-pricing=standard
 
 import type { ChatModel, CompletionUsage } from "openai/resources"
 
@@ -12,6 +10,22 @@ export const OPEN_AI_PRICING_FACTS: Record<
 	NonPreviewNonSnapshottedTextModel,
 	PricingFacts
 > = {
+	"gpt-5.1": {
+		promptPricePerToken: 1.25 / MILLION,
+		promptPricePerTokenCached: 0.125 / MILLION,
+		completionPricePerToken: 10 / MILLION,
+	},
+	"gpt-5.1-codex": {
+		promptPricePerToken: 1.25 / MILLION,
+		promptPricePerTokenCached: 0.125 / MILLION,
+		completionPricePerToken: 10 / MILLION,
+	},
+	"gpt-5.1-mini": { // ❗ not in the pricing page -- using figures for 5.1 codex mini
+		promptPricePerToken: 0.25 / MILLION,
+		promptPricePerTokenCached: 0.025 / MILLION,
+		completionPricePerToken: 2 / MILLION,
+	},
+
 	"gpt-5": {
 		promptPricePerToken: 1.25 / MILLION,
 		promptPricePerTokenCached: 0.125 / MILLION,
@@ -29,19 +43,19 @@ export const OPEN_AI_PRICING_FACTS: Record<
 	},
 
 	"gpt-4.1": {
-		promptPricePerToken: 3 / MILLION,
-		promptPricePerTokenCached: 0.75 / MILLION,
-		completionPricePerToken: 12 / MILLION,
+		promptPricePerToken: 2 / MILLION,
+		promptPricePerTokenCached: 0.5 / MILLION,
+		completionPricePerToken: 8 / MILLION,
 	},
 	"gpt-4.1-mini": {
-		promptPricePerToken: 0.8 / MILLION,
-		promptPricePerTokenCached: 0.2 / MILLION,
-		completionPricePerToken: 3.2 / MILLION,
+		promptPricePerToken: 0.4 / MILLION,
+		promptPricePerTokenCached: 0.1 / MILLION,
+		completionPricePerToken: 1.6 / MILLION,
 	},
 	"gpt-4.1-nano": {
-		promptPricePerToken: 0.2 / MILLION,
-		promptPricePerTokenCached: 0.05 / MILLION,
-		completionPricePerToken: 0.8 / MILLION,
+		promptPricePerToken: 0.1 / MILLION,
+		promptPricePerTokenCached: 0.025 / MILLION,
+		completionPricePerToken: 0.4 / MILLION,
 	},
 	"gpt-4o": {
 		promptPricePerToken: 2.5 / MILLION,
@@ -64,9 +78,9 @@ export const OPEN_AI_PRICING_FACTS: Record<
 		completionPricePerToken: 4.4 / MILLION,
 	},
 	o3: {
-		promptPricePerToken: 10 / MILLION,
-		promptPricePerTokenCached: 2.5 / MILLION,
-		completionPricePerToken: 40 / MILLION,
+		promptPricePerToken: 2 / MILLION,
+		promptPricePerTokenCached: .5 / MILLION,
+		completionPricePerToken: 8 / MILLION,
 	},
 	"o3-mini": {
 		promptPricePerToken: 1.1 / MILLION,
