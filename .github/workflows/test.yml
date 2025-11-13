@@ -1,0 +1,69 @@
+name: Test
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: ./.github/actions/setup
+      - run: pnpm run build
+  Test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    services:
+      postgres:
+        image: postgres:17.2-alpine3.19
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready --health-interval 1s --health-timeout 0.5s --health-retries 30
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: ./.github/actions/setup
+      - name: test
+        env:
+          VITE_OPENAI_API_KEY: fake-key
+        run: |
+          printenv > packages/safegen/.env
+          bun run test
+  BreakCheck:
+    name: Break Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    services:
+      postgres:
+        image: postgres:17.2-alpine3.19
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready --health-interval 1s --health-timeout 0.5s --health-retries 30
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: ./.github/actions/setup
+      - name: break-check
+        env:
+          VITE_OPENAI_API_KEY: fake-key
+        run: |
+          printenv > packages/safegen/.env
+          pnpm run test:semver
