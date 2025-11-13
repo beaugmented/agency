@@ -1,5 +1,12 @@
 # @beaugmented/agency
 
+## 0.8.2
+
+### Patch Changes
+
+- d8585fc: ✨ Added support for OpenAI's GPT 5.1- series models.
+- d8585fc: 🛸 Updated pricing facts with current data. The `gpt-4.1` series and `o3` have both had their prices significantly reduced.
+
 ## 0.8.1
 
 ### Patch Changes
