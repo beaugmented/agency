@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 7
 
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
       - uses: ./.github/actions/setup
       - uses: changesets/action@v1.5.3
         id: changesets
