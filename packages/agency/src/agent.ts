@@ -20,7 +20,7 @@ export type AgentCompletion<Update> = {
 }
 
 export type Agent<State = null, Update = null> = {
-	conversation: Loadable<(AssistantMessage | SystemMessage | UserMessage)[]>
+	conversation: Loadable<readonly (AssistantMessage | SystemMessage | UserMessage)[]>
 	state: Loadable<State>
 	stream?: (handleDelta: (delta: string) => void) => { release: () => void }
 	callAssistant: () => Promise<{

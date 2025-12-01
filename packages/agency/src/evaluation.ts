@@ -15,7 +15,7 @@ export const evaluationSchema = z.object({
 export type Evaluation = z.infer<typeof evaluationSchema>
 
 export type EvaluationOptions = {
-	exchange: (Message | SystemMessage | UserMessage)[]
+	exchange: readonly(Message | SystemMessage | UserMessage)[]
 	statement: string
 }
 export async function evaluateAgentResponse({
