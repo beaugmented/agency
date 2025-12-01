@@ -49,7 +49,7 @@ export class Grunt<State extends Agenda>
 	}
 
 	public get conversation(): Loadable<
-		(AssistantMessage | SystemMessage | UserMessage)[]
+		readonly (AssistantMessage | SystemMessage | UserMessage)[]
 	> {
 		const conversationLoadable = getState(
 			findState(conversationSelectors, this.id),
