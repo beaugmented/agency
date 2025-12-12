@@ -1,0 +1,82 @@
+{
+	"data": {
+		"$schema": "http://json-schema.org/draft-07/schema#",
+		"type": "object",
+		"properties": {
+			"facts": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"subject": "Jerry, George, Elaine, and Kramer are each friends with each other.",
+							"predicate": "is a friend of",
+							"object": "with"
+						},
+						"required": [
+							"subject",
+							"predicate",
+							"object"
+						],
+						"additionalProperties": false
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"subject": "George, Elaine, and Kramer are each friends with each other.",
+							"predicate": "is a friend of",
+							"object": "with"
+						},
+						"required": [
+							"subject",
+							"predicate",
+							"object"
+						],
+						"additionalProperties": false
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"subject": "Elaine, Kramer are each friends with each other.",
+							"predicate": "is a friend of",
+							"object": "with"
+						},
+						"required": [
+							"subject",
+							"predicate",
+							"object"
+						],
+						"additionalProperties": false
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"subject": "Kramer, Jerry are each friends with each other.",
+							"predicate": "is a friend of",
+							"object": "with"
+						},
+						"required": [
+							"subject",
+							"predicate",
+							"object"
+						],
+						"additionalProperties": false
+					}
+				}
+			]
+		},
+		"required": [
+			"facts"
+		]
+	},
+	"usdPrice": 0
+}
