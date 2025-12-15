@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.8.3
+
+### Patch Changes
+
+- 24b3d01: ✨ Added support for OpenAI's GPT 5.2- series models.
+
 ## 0.8.2
 
 ### Patch Changes
