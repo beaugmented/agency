@@ -31,6 +31,7 @@ jobs:
       - name: test
         env:
           VITE_OPENAI_API_KEY: fake-key
+          VITE_GOOGLEAI_API_KEY: fake-key
         run: |
           printenv > packages/safegen/.env
           bun run test
@@ -45,6 +46,7 @@ jobs:
       - name: break-check
         env:
           VITE_OPENAI_API_KEY: fake-key
+          VITE_GOOGLEAI_API_KEY: fake-key
         run: |
           printenv > packages/safegen/.env
           pnpm run test:semver
