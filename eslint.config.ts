@@ -163,7 +163,9 @@ const config = {
 		"@typescript-eslint/unbound-method": 0,
 		"@typescript-eslint/unified-signatures": ERROR,
 
-		"atom.io/explicit-state-types": ERROR,
+		"atom.io/exact-catch-types": ERROR,
+		"atom.io/explicit-state-types": [ERROR, { permitAnnotation: true }],
+		"atom.io/naming-convention": ERROR,
 
 		"import/first": ERROR,
 		"import/no-duplicates": ERROR,

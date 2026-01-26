@@ -8,8 +8,8 @@ import type {
 	UserMessage,
 } from "./agent"
 
-export const messageIndices = atomFamily<string[], string>({
-	key: `messageIndices`,
+export const messageKeysAtoms = atomFamily<string[], string>({
+	key: `messageKeys`,
 	default: [],
 })
 
@@ -17,7 +17,7 @@ export const chatMessageAtoms = atomFamily<
 	Loadable<Omit<Message, `id`>>,
 	string
 >({
-	key: `messages`,
+	key: `chatMessage`,
 	default: {
 		role: `user`,
 		content: ``,
@@ -28,11 +28,11 @@ export const conversationSelectors = selectorFamily<
 	Loadable<(AssistantMessage | SystemMessage | UserMessage)[]>,
 	string
 >({
-	key: `conversationMessages`,
+	key: `conversation`,
 	get:
 		(conversationKey) =>
 		({ get }) => {
-			const messageIds = get(messageIndices, conversationKey)
+			const messageIds = get(messageKeysAtoms, conversationKey)
 			const allMessages = Promise.all(
 				messageIds.map((messageId) => get(chatMessageAtoms, messageId)),
 			)
