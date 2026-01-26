@@ -16,7 +16,7 @@ import type {
 import {
 	chatMessageAtoms,
 	conversationSelectors,
-	messageIndices,
+	messageKeysAtoms,
 } from "./conversation"
 import { aiComplete, openAiParamsSelectors, squirrel } from "./openai"
 import { orientationAtoms } from "./orientation"
@@ -40,7 +40,7 @@ export class Grunt<State extends Agenda>
 				messageIds.push(messageId)
 				setState(findState(chatMessageAtoms, id), message)
 			}
-			setState(findState(messageIndices, id), messageIds)
+			setState(findState(messageKeysAtoms, id), messageIds)
 		}
 		if (initialState) {
 			setState(findState(agendaAtoms, id), initialState)
@@ -65,7 +65,7 @@ export class Grunt<State extends Agenda>
 	public async callAssistant(): Promise<AgentCompletion<Partial<State>>> {
 		const messageId = `${this.id}-${crypto.randomUUID()}`
 		const messageAtom = findState(chatMessageAtoms, messageId)
-		const messageIndex = findState(messageIndices, this.id)
+		const messageIndex = findState(messageKeysAtoms, this.id)
 		const agendaAtom = findState(agendaAtoms, this.id)
 		const paramsLoadable = getState(findState(openAiParamsSelectors, this.id))
 		const params = await paramsLoadable
@@ -107,7 +107,7 @@ export class Grunt<State extends Agenda>
 
 	public addUserMessage(content: string): void {
 		const messageId = `${this.id}-${crypto.randomUUID()}`
-		setState(findState(messageIndices, this.id), (messageIds) => [
+		setState(findState(messageKeysAtoms, this.id), (messageIds) => [
 			...messageIds,
 			messageId,
 		])

@@ -42,7 +42,7 @@ export const openAiParamsSelectors = selectorFamily<
 	Loadable<OpenAIResources.Chat.Completions.ChatCompletionCreateParamsNonStreaming>,
 	string
 >({
-	key: `openAIParams`,
+	key: `openAiParams`,
 	get:
 		(key) =>
 		async ({ get }) => {

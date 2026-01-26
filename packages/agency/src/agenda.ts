@@ -7,14 +7,14 @@ export type Agenda = {
 }
 
 export const agendaAtoms = atomFamily<Agenda, string>({
-	key: `agendas`,
+	key: `agenda`,
 	default: {},
 })
 export const agendaSystemMessageSelectors = selectorFamily<
 	SystemMessage | null,
 	string
 >({
-	key: `agendaPrompts`,
+	key: `agendaSystemMessage`,
 	get:
 		(agendaKey) =>
 		({ find, get }) => {
