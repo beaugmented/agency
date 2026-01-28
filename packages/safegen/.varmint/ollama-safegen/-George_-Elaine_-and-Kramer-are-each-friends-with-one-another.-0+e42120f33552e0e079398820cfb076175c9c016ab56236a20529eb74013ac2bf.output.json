@@ -1,0 +1,27 @@
+{
+	"data": {
+		"facts": [
+			{
+				"subject": "Jerry",
+				"predicate": "is a friend of",
+				"object": "George"
+			},
+			{
+				"subject": "George",
+				"predicate": "is a friend of",
+				"object": "Elaine"
+			},
+			{
+				"subject": "Elaine",
+				"predicate": "is a friend of",
+				"object": "Kramer"
+			},
+			{
+				"subject": "Kramer",
+				"predicate": "is a friend of",
+				"object": "Jerry"
+			}
+		]
+	},
+	"usdPrice": 0
+}
