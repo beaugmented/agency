@@ -74,6 +74,7 @@ export function setUpAnthropicJsonGenerator(
 			output_tokens: 0,
 			server_tool_use: null,
 			service_tier: `standard`,
+			inference_geo: null,
 		}
 
 		return { data, usage, usdPrice }
