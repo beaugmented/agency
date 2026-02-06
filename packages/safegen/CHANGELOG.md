@@ -1,5 +1,11 @@
 # @beaugmented/agency
 
+## 0.8.4
+
+### Patch Changes
+
+- d4bd746: 🛸 Added `inference_geo` to `AnthropicSafeGenerator`'s `lastUsage` property.
+
 ## 0.8.3
 
 ### Patch Changes
