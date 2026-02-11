@@ -82,8 +82,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0(jiti@2.6.1)
       openai:
-        specifier: 6.20.0
-        version: 6.20.0(ws@8.18.2)(zod@4.3.6)
+        specifier: 6.21.0
+        version: 6.21.0(ws@8.18.2)(zod@4.3.6)
       tmp:
         specifier: 0.2.5
         version: 0.2.5
@@ -140,8 +140,8 @@ importers:
         specifier: 0.6.3
         version: 0.6.3
       openai:
-        specifier: 6.20.0
-        version: 6.20.0(ws@8.18.2)(zod@4.3.6)
+        specifier: 6.21.0
+        version: 6.21.0(ws@8.18.2)(zod@4.3.6)
       rimraf:
         specifier: 6.1.2
         version: 6.1.2
@@ -1910,8 +1910,8 @@ packages:
   ollama@0.6.3:
     resolution: {integrity: sha512-KEWEhIqE5wtfzEIZbDCLH51VFZ6Z3ZSa6sIOg/E/tBV8S51flyqBOXi+bRxlOYKDf8i327zG9eSTb8IJxvm3Zg==}
 
-  openai@6.20.0:
-    resolution: {integrity: sha512-BD3FbcTeQiFE41sCVsGSrY68wjDrcynw0f0g6VjCm0bvhRqUxzKgQGtFZMiSOoazxsN2Tk4NWlzVnjGA8R2QrQ==}
+  openai@6.21.0:
+    resolution: {integrity: sha512-26dQFi76dB8IiN/WKGQOV+yKKTTlRCxQjoi2WLt0kMcH8pvxVyvfdBDkld5GTl7W1qvBpwVOtFcsqktj3fBRpA==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -4197,7 +4197,7 @@ snapshots:
     dependencies:
       whatwg-fetch: 3.6.20
 
-  openai@6.20.0(ws@8.18.2)(zod@4.3.6):
+  openai@6.21.0(ws@8.18.2)(zod@4.3.6):
     optionalDependencies:
       ws: 8.18.2
       zod: 4.3.6
