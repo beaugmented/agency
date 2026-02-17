@@ -15,6 +15,7 @@ env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 permissions:
+  contents: write
   id-token: write
 
 jobs:
