@@ -36,7 +36,7 @@
 	"devDependencies": {
 		"@types/node": "24.11.0",
 		"@types/tmp": "0.2.6",
-		"break-check": "0.6.24",
+		"break-check": "0.6.25",
 		"concurrently": "9.2.1",
 		"eslint": "10.0.2",
 		"openai": "6.25.0",
