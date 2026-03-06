@@ -10,6 +10,18 @@ export const OPEN_AI_PRICING_FACTS: Record<
 	NonPreviewNonSnapshottedTextModel,
 	PricingFacts
 > = {
+	"gpt-5.4": {
+		promptPricePerToken: 2.5 / MILLION,
+		promptPricePerTokenCached: 0.25 / MILLION,
+		completionPricePerToken: 15 / MILLION,
+	},
+
+	"gpt-5.3-chat-latest": {
+		promptPricePerToken: 1.75 / MILLION,
+		promptPricePerTokenCached: 0.175 / MILLION,
+		completionPricePerToken: 14 / MILLION,
+	},
+
 	"gpt-5.2": {
 		promptPricePerToken: 1.75 / MILLION,
 		promptPricePerTokenCached: 0.175 / MILLION,
