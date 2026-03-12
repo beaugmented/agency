@@ -1,5 +1,11 @@
 # safegen
 
+## 0.8.6
+
+### Patch Changes
+
+- 6feb78e: ✨ Added pricing facts for OpenAI GPT-5.4 and GPT-5.3-chat-latest.
+
 ## 0.8.5
 
 ### Patch Changes
