@@ -1,5 +1,11 @@
 # safegen
 
+## 0.8.7
+
+### Patch Changes
+
+- abcc110: ✨ Added pricing facts for OpenAI GPT-5.4-mini and GPT-5.4-nano.
+
 ## 0.8.6
 
 ### Patch Changes
