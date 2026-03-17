@@ -1,4 +1,4 @@
-// 13 Nov 2025
+// 17 Mar 2026
 // https://platform.openai.com/docs/pricing
 
 import type { ChatModel, CompletionUsage } from "openai/resources"
@@ -14,6 +14,16 @@ export const OPEN_AI_PRICING_FACTS: Record<
 		promptPricePerToken: 2.5 / MILLION,
 		promptPricePerTokenCached: 0.25 / MILLION,
 		completionPricePerToken: 15 / MILLION,
+	},
+	"gpt-5.4-mini": {
+		promptPricePerToken: 0.75 / MILLION,
+		promptPricePerTokenCached: 0.075 / MILLION,
+		completionPricePerToken: 4.5 / MILLION,
+	},
+	"gpt-5.4-nano": {
+		promptPricePerToken: 0.2 / MILLION,
+		promptPricePerTokenCached: 0.02 / MILLION,
+		completionPricePerToken: 1.25 / MILLION,
 	},
 
 	"gpt-5.3-chat-latest": {
