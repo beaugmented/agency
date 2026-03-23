@@ -1,6 +1,7 @@
 // 17 Mar 2026
 // https://platform.openai.com/docs/pricing
 
+import { toEntries } from "atom.io/json"
 import type { ChatModel, CompletionUsage } from "openai/resources"
 
 import type { PricingFacts } from "../safegen"
@@ -168,10 +169,10 @@ export const OPEN_AI_PRICING_FACTS: Record<
 export function getModelPrices(
 	model: ChatModel | (string & {}),
 ): PricingFacts | undefined {
-	const pricingFactsKeys = Object.keys(OPEN_AI_PRICING_FACTS)
+	const pricingFactsKeys = toEntries(OPEN_AI_PRICING_FACTS)
 	const maybeFacts = pricingFactsKeys
-		.filter((key) => model.startsWith(key))
-		.sort((a, b) => b.length - a.length)[0]
+		.filter(([key]) => model.startsWith(key))
+		.sort(([a], [b]) => b.length - a.length)[0][0]
 
 	if (!maybeFacts) {
 		return undefined
