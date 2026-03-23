@@ -5,7 +5,6 @@
 		"module": "preserve",
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
-		"baseUrl": "./",
 		"types": ["vitest/globals"],
 		"resolveJsonModule": true,
 		"allowJs": true,
