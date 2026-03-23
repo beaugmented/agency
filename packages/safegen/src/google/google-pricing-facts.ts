@@ -1,4 +1,5 @@
 import type { GenerateContentResponseUsageMetadata } from "@google/genai"
+import { toEntries } from "atom.io/json"
 
 import type { PricingFacts } from "../safegen"
 
@@ -81,10 +82,10 @@ export function isGoogleModelSupported(
 export function getModelPrices(
 	model: ModelName | (string & {}),
 ): PricingFacts | undefined {
-	const pricingFactsKeys = Object.keys(GOOGLE_PRICING_FACTS)
+	const pricingFactsKeys = toEntries(GOOGLE_PRICING_FACTS)
 	const maybeFacts = pricingFactsKeys
-		.filter((key) => model.startsWith(key))
-		.sort((a, b) => b.length - a.length)[0]
+		.filter(([key]) => model.startsWith(key))
+		.sort(([a], [b]) => b.length - a.length)[0][0]
 
 	if (!maybeFacts) {
 		return undefined
