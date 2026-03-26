@@ -37,7 +37,7 @@
 		"break-check": "0.6.25",
 		"concurrently": "9.2.1",
 		"eslint": "10.1.0",
-		"openai": "6.32.0",
+		"openai": "6.33.0",
 		"tmp": "0.2.5",
 		"tsdown": "0.21.5",
 		"typescript": "6.0.2",
