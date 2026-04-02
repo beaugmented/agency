@@ -30,8 +30,8 @@ importers:
         specifier: 8.58.0
         version: 8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2)
       atom.io:
-        specifier: 0.46.29
-        version: 0.46.29(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1))
+        specifier: 0.46.30
+        version: 0.46.30(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1))
       cross-env:
         specifier: 10.1.0
         version: 10.1.0
@@ -60,8 +60,8 @@ importers:
   packages/agency:
     dependencies:
       atom.io:
-        specifier: 0.46.29
-        version: 0.46.29(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1))
+        specifier: 0.46.30
+        version: 0.46.30(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1))
       varmint:
         specifier: 0.5.12
         version: 0.5.12(zod@4.3.6)
@@ -112,8 +112,8 @@ importers:
         specifier: '>=2.1.0'
         version: 2.1.20
       atom.io:
-        specifier: 0.46.29
-        version: 0.46.29(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1))
+        specifier: 0.46.30
+        version: 0.46.30(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1))
       varmint:
         specifier: 0.5.12
         version: 0.5.12(zod@4.3.6)
@@ -1083,8 +1083,8 @@ packages:
     resolution: {integrity: sha512-trmleAnZ2PxN/loHWVhhx1qeOHSRXq4TDsBBxq3GqeJitfk3+jTQ+v/C1km/KYq9M7wKqCewMh+/NAvVH7m+bw==}
     engines: {node: '>=20.19.0'}
 
-  atom.io@0.46.29:
-    resolution: {integrity: sha512-rX+YkoXhocpTPG7B2Pt4+qUIU4uNADiF64uRNn6Z/ZdxdZZj3hdpMmlT6WrsmXYBXFyAmD7tgngTK9OugjCXhQ==}
+  atom.io@0.46.30:
+    resolution: {integrity: sha512-2sKJo9j/nfPQL+WG0bRMmw7Z6rJOZgs1SsC8756SkQbO8OsChGbTdb0ClNwYtOuh6UKmomdtx06ZzAW4UqnVhQ==}
     peerDependencies:
       '@floating-ui/react': '>=0.25.0'
       '@floating-ui/react-dom': '>=2.0.0'
@@ -3203,7 +3203,7 @@ snapshots:
       estree-walker: 3.0.3
       pathe: 2.0.3
 
-  atom.io@0.46.29(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1)):
+  atom.io@0.46.30(@typescript-eslint/parser@8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2))(eslint@10.1.0(jiti@2.6.1)):
     optionalDependencies:
       '@typescript-eslint/parser': 8.58.0(eslint@10.1.0(jiti@2.6.1))(typescript@6.0.2)
       eslint: 10.1.0(jiti@2.6.1)
