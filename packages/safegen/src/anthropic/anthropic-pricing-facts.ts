@@ -1,4 +1,4 @@
-// 17 February 2026
+// 08 April 2026
 // https://platform.claude.com/docs/en/about-claude/pricing
 
 import type Anthropic from "@anthropic-ai/sdk"
@@ -10,6 +10,11 @@ export const MILLION: number = 10 ** 6
 
 export const ANTHROPIC_PRICING_FACTS: Record<SupportedModelName, PricingFacts> =
 	{
+		"claude-mythos-preview": {
+			promptPricePerToken: 25 / MILLION,
+			completionPricePerToken: 125 / MILLION,
+		},
+
 		"claude-opus-4-6": {
 			promptPricePerToken: 5 / MILLION,
 			completionPricePerToken: 25 / MILLION,
