@@ -1,5 +1,11 @@
 # safegen
 
+## 0.8.8
+
+### Patch Changes
+
+- b79e149: ✨ Added pricing facts for Claude Mythos.
+
 ## 0.8.7
 
 ### Patch Changes
