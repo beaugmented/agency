@@ -73,8 +73,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.25
-        version: 0.6.25(zod@4.3.6)
+        specifier: 0.6.26
+        version: 0.6.26(zod@4.3.6)
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
@@ -131,8 +131,8 @@ importers:
         specifier: 0.2.6
         version: 0.2.6
       break-check:
-        specifier: 0.6.25
-        version: 0.6.25(zod@4.3.6)
+        specifier: 0.6.26
+        version: 0.6.26(zod@4.3.6)
       eslint:
         specifier: 10.2.0
         version: 10.2.0(jiti@2.6.1)
@@ -870,6 +870,12 @@ packages:
   '@rolldown/pluginutils@1.0.0-rc.15':
     resolution: {integrity: sha512-UromN0peaE53IaBRe9W7CjrZgXl90fqGpK+mIZbA3qSTeYqg3pqpROBdIPvOG3F5ereDHNwoHBI2e50n1BDr1g==}
 
+  '@simple-git/args-pathspec@1.0.3':
+    resolution: {integrity: sha512-ngJMaHlsWDTfjyq9F3VIQ8b7NXbBLq5j9i5bJ6XLYtD6qlDXT7fdKY2KscWWUF8t18xx052Y/PUO1K1TRc9yKA==}
+
+  '@simple-git/argv-parser@1.1.0':
+    resolution: {integrity: sha512-sUKOu2lb5vGIWADNNLpscyj07DAeQZU3KLbnE2Tj53tW6BbDQKMly2CCfnR4oYzqtRELCPWfwaPg+Q0T8qfKBg==}
+
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
@@ -1188,6 +1194,9 @@ packages:
   arktype@2.1.29:
     resolution: {integrity: sha512-jyfKk4xIOzvYNayqnD8ZJQqOwcrTOUbIU4293yrzAjA3O1dWh61j71ArMQ6tS/u4pD7vabSPe7nG3RCyoXW6RQ==}
 
+  arktype@2.2.0:
+    resolution: {integrity: sha512-t54MZ7ti5BhOEvzEkgKnWvqj+UbDfWig+DHr5I34xatymPusKLS0lQpNJd8M6DzmIto2QGszHfNKoFIT8tMCZQ==}
+
   array-union@2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
@@ -1261,12 +1270,16 @@ packages:
     resolution: {integrity: sha512-Pdk8c9poy+YhOgVWw1JNN22/HcivgKWwpxKq04M/jTmHyCZn12WPJebZxdjSa5TmBqISrUSgNYU3eRORljfCCw==}
     engines: {node: 20 || >=22}
 
+  brace-expansion@5.0.5:
+    resolution: {integrity: sha512-VZznLgtwhn+Mact9tfiwx64fA9erHH/MCXEUfB/0bX/6Fz6ny5EGTXYltMocqg4xFAQZtnO3DHWWXi8RiuN7cQ==}
+    engines: {node: 18 || 20 || >=22}
+
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  break-check@0.6.25:
-    resolution: {integrity: sha512-sr4tYWxuHrCpFX26+v1G8J8V0zInOvJD7qp0kbaH9wBTQ2FJEfymmPeVArnwQVjFdjar26hye7aO1bUME/u5Eg==}
+  break-check@0.6.26:
+    resolution: {integrity: sha512-fTNIMgVs1oisBUjQ83L73Wb84J6gr1PCYYkNInVfSeY1eJlKDrkPM/uZLEvYHGSMiAUOdpZwljgP5nxsVgHDBQ==}
     hasBin: true
 
   buffer-equal-constant-time@1.0.1:
@@ -1308,6 +1321,17 @@ packages:
 
   comline@0.4.4:
     resolution: {integrity: sha512-tNQP7KH2FCLKqXZtekUmayBs+qRoMNEaDqi5m8zE/RVPRJuQbPKkNBsTrGXVGXy0bCZKF0wiAEITGmTcycK4ZQ==}
+    peerDependencies:
+      arktype: ^2.1.25
+      zod: ^4.1.12
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      zod:
+        optional: true
+
+  comline@0.4.5:
+    resolution: {integrity: sha512-UrgoSNg1RhuiZ5Obz8Adkiw5iR6rNeoEbAv5dBLcvK5mQFVQAL7bg7LSjMeKsi460R4x8lRW2dJfuBQMzhI9rA==}
     peerDependencies:
       arktype: ^2.1.25
       zod: ^4.1.12
@@ -1881,6 +1905,10 @@ packages:
     resolution: {integrity: sha512-oRjTw/97aTBN0RHbYCdtF1MQfvusSIBQM0IZEgzl6426+8jSC0nF1a/GmnVLpfB9yyr6g6FTqWqiZVbxrtaCIg==}
     engines: {node: 18 || 20 || >=22}
 
+  minimatch@10.2.5:
+    resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
+    engines: {node: 18 || 20 || >=22}
+
   minimatch@3.1.5:
     resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
 
@@ -2161,8 +2189,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-git@3.32.3:
-    resolution: {integrity: sha512-56a5oxFdWlsGygOXHWrG+xjj5w9ZIt2uQbzqiIGdR/6i5iococ7WQ/bNPzWxCJdEUGUCmyMH0t9zMpRJTaKxmw==}
+  simple-git@3.36.0:
+    resolution: {integrity: sha512-cGQjLjK8bxJw4QuYT7gxHw3/IouVESbhahSsHrX97MzCL1gu2u7oy38W6L2ZIGECEfIBG4BabsWDPjBxJENv9Q==}
 
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -2260,6 +2288,9 @@ packages:
 
   treetrunks@0.1.6:
     resolution: {integrity: sha512-B8fk0BmozRf0cwPUmSM7snwZMtyavDgUhngt/jZgwnYwReuG0bOJE/RDMGNyDBCixKzTxV/0XLTGbFBMke5ySw==}
+
+  treetrunks@0.1.7:
+    resolution: {integrity: sha512-QpS2El77DaQYyN9Hwyeaswaa8v1mfeMnRif1ayzV4lyMNnhnbwHbVKoZyheA35OZJJm88yhkyKExXG2tyWlqDQ==}
 
   ts-algebra@2.0.0:
     resolution: {integrity: sha512-FPAhNPFMrkwz76P7cdjdmiShwMynZYN6SgOujD1urY4oNm80Ou9oMdmbR45LotcKOXoy7wSmHkRFE6Mxbrhefw==}
@@ -3099,6 +3130,12 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.0-rc.15': {}
 
+  '@simple-git/args-pathspec@1.0.3': {}
+
+  '@simple-git/argv-parser@1.1.0':
+    dependencies:
+      '@simple-git/args-pathspec': 1.0.3
+
   '@standard-schema/spec@1.1.0': {}
 
   '@turbo/darwin-64@2.9.6':
@@ -3399,6 +3436,12 @@ snapshots:
       '@ark/util': 0.56.0
       arkregex: 0.0.5
 
+  arktype@2.2.0:
+    dependencies:
+      '@ark/schema': 0.56.0
+      '@ark/util': 0.56.0
+      arkregex: 0.0.5
+
   array-union@2.1.0: {}
 
   ast-kit@3.0.0-beta.1:
@@ -3437,16 +3480,20 @@ snapshots:
     dependencies:
       balanced-match: 4.0.2
 
+  brace-expansion@5.0.5:
+    dependencies:
+      balanced-match: 4.0.2
+
   braces@3.0.3:
     dependencies:
       fill-range: 7.1.1
 
-  break-check@0.6.25(zod@4.3.6):
+  break-check@0.6.26(zod@4.3.6):
     dependencies:
-      arktype: 2.1.29
-      comline: 0.4.4(arktype@2.1.29)(zod@4.3.6)
-      minimatch: 10.2.4
-      simple-git: 3.32.3
+      arktype: 2.2.0
+      comline: 0.4.5(arktype@2.2.0)(zod@4.3.6)
+      minimatch: 10.2.5
+      simple-git: 3.36.0
       takua: 0.1.1
     transitivePeerDependencies:
       - supports-color
@@ -3487,6 +3534,14 @@ snapshots:
       treetrunks: 0.1.6
     optionalDependencies:
       arktype: 2.1.29
+      zod: 4.3.6
+
+  comline@0.4.5(arktype@2.2.0)(zod@4.3.6):
+    dependencies:
+      picocolors: 1.1.1
+      treetrunks: 0.1.7
+    optionalDependencies:
+      arktype: 2.2.0
       zod: 4.3.6
 
   comment-parser@1.4.1: {}
@@ -4054,6 +4109,10 @@ snapshots:
     dependencies:
       brace-expansion: 5.0.2
 
+  minimatch@10.2.5:
+    dependencies:
+      brace-expansion: 5.0.5
+
   minimatch@3.1.5:
     dependencies:
       brace-expansion: 1.1.11
@@ -4320,10 +4379,12 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-git@3.32.3:
+  simple-git@3.36.0:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
+      '@simple-git/args-pathspec': 1.0.3
+      '@simple-git/argv-parser': 1.1.0
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
@@ -4403,6 +4464,8 @@ snapshots:
   tree-kill@1.2.2: {}
 
   treetrunks@0.1.6: {}
+
+  treetrunks@0.1.7: {}
 
   ts-algebra@2.0.0: {}
 
